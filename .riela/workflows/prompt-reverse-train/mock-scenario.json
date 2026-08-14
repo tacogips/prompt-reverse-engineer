@@ -32,8 +32,22 @@
       "status": "passed",
       "nextStep": "generate-candidates",
       "round": 1,
-      "contractVersion": "reusable-style-transfer-v1",
+      "contractVersion": "prompt-only-style-reconstruction-v1",
       "forbiddenClauseCount": 0
+    }
+  },
+  "audit-input-isolation": {
+    "provider": "scenario-mock",
+    "model": "gpt-5.6-terra",
+    "when": {
+      "isolation_passed": true
+    },
+    "payload": {
+      "isolation_passed": true,
+      "nextStep": "generate-candidates",
+      "round": 1,
+      "auditPath": "isolation-audit/round-0001.json",
+      "exitReason": null
     }
   },
   "generate-candidates": {

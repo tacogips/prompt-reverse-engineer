@@ -1,0 +1,60 @@
+{
+  "bestCandidate": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/candidates/candidate-003",
+  "bestLoss": 0.1095,
+  "candidatesPerRound": 3,
+  "lossFunction": {
+    "compatibility": "new_run_local_version_required_before_loss_comparison",
+    "requiredComponent": "source_fidelity"
+  },
+  "maxGeneralizationGap": 0.1,
+  "maxRefinementRounds": 3,
+  "parentTrainDir": "train-0006",
+  "phase": "review",
+  "provisionalExitReason": "training_and_validation_reached",
+  "exitReason": "target_validation_and_test_reached",
+  "round": 1,
+  "roundWinner": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/candidates/candidate-003",
+  "roundWinnerLoss": 0.1095,
+  "schema_version": 1,
+  "sealedTestManifest": {
+    "byteSize": 1410,
+    "contentsOpened": false,
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+    "sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c"
+  },
+  "selection": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/selection.json",
+  "startedAt": "2026-08-14T11:23:17Z",
+  "status": "complete",
+  "targetLoss": 0.25,
+  "testTargetLoss": 0.32,
+  "testWorstCaseLoss": 0.42,
+  "updatedAt": "2026-08-14T12:40:36Z",
+  "validationManifest": {
+    "byteSize": 3043,
+    "contentsOpened": true,
+    "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8"
+  },
+  "validationTargetLoss": 0.3,
+  "validationWorstCaseLoss": 0.4,
+  "transferability": {
+    "evaluation": "targets/editorial-anime-poster-001/train-0007/transferability/evaluation.json",
+    "status": "passed",
+    "aggregateValidationLoss": 0.05425,
+    "worstCaseLoss": 0.06,
+    "generalizationGap": -0.05525
+  },
+  "testAudit": {
+    "evaluation": "targets/editorial-anime-poster-001/train-0007/test-audit/evaluation.json",
+    "status": "passed",
+    "aggregateTestLoss": 0.05725,
+    "worstCaseLoss": 0.0625,
+    "validationTestGap": 0.003,
+    "sealedTestManifestSha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c"
+  },
+  "workflowSnapshot": {
+    "generationRecordContract": "generation-provenance-v1",
+    "generationRecordContractSha256": "cc97417a020e456aac965a578ab3493650dd319e451a6d94539a8d8f15b61241",
+    "path": "targets/editorial-anime-poster-001/train-0007/workflow"
+  }
+}

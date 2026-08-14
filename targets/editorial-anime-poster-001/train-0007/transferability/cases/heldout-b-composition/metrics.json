@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "case_id": "heldout-b-composition",
+  "applicable_components": ["source_fidelity", "style_fidelity", "composition_adherence", "text_adherence", "technical"],
+  "loss": { "total": 0.048, "source_fidelity": 0.03, "style_fidelity": 0.18, "composition_adherence": 0.01, "text_adherence": 0.0, "technical": 0.02 },
+  "assertions_passed": true,
+  "failed_assertions": []
+}

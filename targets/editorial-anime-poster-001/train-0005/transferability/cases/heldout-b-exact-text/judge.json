@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_source_truth_candidate",
+  "judge": {"loss_function_version": "judge-v4-source-fidelity-style-transfer", "prompt_sha256": "e1b430e07aa4fc53bca95f66083632b3954d96e97bab55691fe2752d97f99803", "model": "gpt-5.6-terra", "temperature": 0, "repeat": 1, "assessed_at": "2026-08-14T07:22:12Z", "assessment_resolution": "original"},
+  "inputs": {"style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png", "source_truth": "targets/editorial-anime-poster-001/validation/heldout-b-0005.png", "candidate": "targets/editorial-anime-poster-001/train-0005/transferability/cases/heldout-b-exact-text/image.png"},
+  "loss": {"source_fidelity": 0.04, "semantic": 0.01, "composition": 0.06, "color": 0.04, "style": 0.06, "technical": 0.01},
+  "evidence": {"source_fidelity": ["The source chair, blue bottle, plant, and white pot remain intact with correct count and material cues."], "semantic": ["No person, clothing, or object content is imported from the style reference."], "composition": ["The poster crop is adapted to make room for the requested caption, while retaining all three source objects."], "color": ["The candidate uses the style reference's cream base and saturated teal, coral, navy, and ochre relationships."], "style": ["The candidate matches the illustrated contour, flat shading, dry-brush texture, and geometric poster vocabulary."], "technical": ["The caption is crisp, all object edges are coherent, and no extra readable or pseudo-readable text is visible."]},
+  "instruction_assessment": {"text_adherence": {"applicable": true, "loss": 0.0, "passed": true, "expected_text": "SIT WITH COLOR", "observed_text": "SIT WITH COLOR", "visible_occurrences": 1, "additional_text": false, "evidence": "The lower caption reads exactly SIT WITH COLOR once, with correct spelling and no other text."}},
+  "dominant_differences": ["Use slightly more of the source's original horizontal scene balance when reserving caption space."],
+  "confidence": 0.98
+}

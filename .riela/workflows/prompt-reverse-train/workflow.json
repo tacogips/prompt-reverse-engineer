@@ -1,6 +1,6 @@
 {
   "workflowId": "prompt-reverse-train",
-  "description": "Train a reusable style-transfer prompt policy, reject subject-specific overfitting, and validate optional pose, composition, and exact-text instructions on held-out inputs before completion.",
+  "description": "Reverse-engineer a self-contained textual style prompt from target truth, generate with source images only, reject source-specific overfitting, and validate optional instructions on held-out inputs.",
   "defaults": {
     "maxLoopIterations": 40,
     "nodeTimeoutMs": 900000,
@@ -24,6 +24,10 @@
     {
       "id": "generalize-prompt",
       "nodeFile": "nodes/node-generalize-prompt.json"
+    },
+    {
+      "id": "audit-input-isolation",
+      "nodeFile": "nodes/node-audit-input-isolation.json"
     },
     {
       "id": "generate-candidates",
@@ -81,7 +85,22 @@
       "role": "worker",
       "transitions": [
         {
-          "toStepId": "generate-candidates"
+          "toStepId": "audit-input-isolation"
+        }
+      ]
+    },
+    {
+      "id": "audit-input-isolation",
+      "nodeId": "audit-input-isolation",
+      "role": "worker",
+      "transitions": [
+        {
+          "toStepId": "generate-candidates",
+          "label": "isolation_passed"
+        },
+        {
+          "toStepId": "review-training",
+          "label": "!(isolation_passed)"
         }
       ]
     },

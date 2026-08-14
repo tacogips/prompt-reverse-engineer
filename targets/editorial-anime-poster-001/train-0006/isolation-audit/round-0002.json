@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "audit_type": "input-isolation",
+  "audited_at": "2026-08-14T09:23:53Z",
+  "workflow_execution_id": "prompt-reverse-train-session-19",
+  "round": 2,
+  "status": "passed",
+  "runtime_input_check": {
+    "validation_manifest_representation": "repository-relative path only",
+    "sealed_test_manifest_representation": "repository-relative path only",
+    "inline_validation_or_test_cases_present": false,
+    "result": "allowed"
+  },
+  "manifests": {
+    "validation": {
+      "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+      "recorded_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "recorded_byte_size": 3043,
+      "computed_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "computed_byte_size": 3043,
+      "hash_unchanged": true
+    },
+    "sealed_test": {
+      "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+      "recorded_sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+      "recorded_byte_size": 1410,
+      "computed_sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+      "computed_byte_size": 1410,
+      "hash_unchanged": true
+    }
+  },
+  "prompt_template_check": {
+    "prompt_path": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/prompt/prompt.md",
+    "computed_prompt_sha256": "3cb3612d3c0c59fa4abed41709c1482e1152d6391d08d483d35bd3ae7991b69d",
+    "template_validation_path": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/prompt/template-validation.json",
+    "template_validation_sha256": "b897499922819f4d474a830dfeed46b8a48c022d846bbc05f6a2b101898461bb",
+    "recorded_prompt_sha256": "3cb3612d3c0c59fa4abed41709c1482e1152d6391d08d483d35bd3ae7991b69d",
+    "template_status": "passed",
+    "forbidden_subject_specific_clause_count": 0,
+    "matches": true
+  },
+  "audited_step_executions": [
+    {
+      "step_id": "generalize-prompt",
+      "execution_id": "generalize-prompt-attempt-1-exec-1",
+      "status": "completed",
+      "evidence_source": "workflow delivery comm-000102"
+    },
+    {
+      "step_id": "audit-input-isolation",
+      "execution_id": null,
+      "status": "completed",
+      "evidence_source": "current audit invocation"
+    }
+  ],
+  "relevant_access_events": [
+    {
+      "step_id": "generalize-prompt",
+      "execution_id": "generalize-prompt-attempt-1-exec-1",
+      "evidence": "Its delivered payload contains only reusable-template contract status, forbidden-clause count, the round, and prompt/template-validation paths; it contains no validation or sealed-test manifest, fixture, description, instruction, assertion, or hash.",
+      "protected_paths_accessed": [],
+      "classification": "allowed",
+      "reason": "The current step-scoped workflow delivery shows no protected input disclosure."
+    },
+    {
+      "step_id": "audit-input-isolation",
+      "execution_id": null,
+      "evidence": "The audit read state, intake evidence, run configuration, current prompt/template validation, and prior audit evidence; it recomputed SHA-256 and byte sizes for both protected manifests without opening either manifest.",
+      "protected_paths_accessed": [
+        "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json (SHA-256 and byte size only)",
+        "targets/editorial-anime-poster-001/test/sealed-test-manifest.json (SHA-256 and byte size only)"
+      ],
+      "classification": "allowed",
+      "reason": "The audit step is explicitly authorized to inspect this evidence and hash protected manifests without parsing them."
+    }
+  ],
+  "allowed_historical_access": [
+    {
+      "step_id": "validate-transferability",
+      "classification": "allowed",
+      "reason": "Prior transferability artifacts may follow a legitimate validation execution and do not constitute access by a prohibited current optimization step."
+    }
+  ],
+  "prohibited_access_events": [],
+  "diagnostics": []
+}

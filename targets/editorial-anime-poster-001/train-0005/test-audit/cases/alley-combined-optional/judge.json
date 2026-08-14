@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_source_truth_candidate",
+  "judge": {"loss_function_version": "judge-v4-source-fidelity-style-transfer", "prompt_sha256": "e1b430e07aa4fc53bca95f66083632b3954d96e97bab55691fe2752d97f99803", "model": "gpt-5.6-terra", "temperature": 0, "repeat": 1, "assessed_at": "2026-08-14T07:30:37Z", "assessment_resolution": "original"},
+  "inputs": {"style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png", "source_truth": "targets/editorial-anime-poster-001/test/source-alley.png", "candidate": "targets/editorial-anime-poster-001/train-0005/test-audit/cases/alley-combined-optional/image.png"},
+  "loss": {"source_fidelity": 0.06, "semantic": 0.01, "composition": 0.04, "color": 0.03, "style": 0.05, "technical": 0.01},
+  "evidence": {
+    "source_fidelity": ["Exactly one red bicycle, the doorway, potted green plants, and wet alley are retained; source architectural detail is modestly stylized."],
+    "semantic": ["No person or literal content from the style reference is imported and no extra bicycle appears."],
+    "composition": ["The requested square poster framing has the bicycle as the dominant foreground subject with the alley visibly receding behind it."],
+    "color": ["The scene uses the reference's cream, teal, coral, and ochre palette logic while preserving the red bicycle and green plants."],
+    "style": ["The result carries the reference's graphic ink contours, cel shading, layered circles, brush strokes, and print texture."],
+    "technical": ["Bicycle and building geometry are coherent; RAIN ROUTE appears once, spelled exactly, with no other readable or pseudo-readable text."]
+  },
+  "instruction_assessment": {
+    "composition_adherence": {"applicable": true, "loss": 0.0, "passed": true, "evidence": "Square poster framing, foreground bicycle emphasis, and receding alley are visible."},
+    "additional_adherence": {"applicable": true, "loss": 0.0, "passed": true, "evidence": "One red bicycle, doorway, and potted plants are visibly retained."},
+    "text_adherence": {"applicable": true, "loss": 0.0, "passed": true, "evidence": "RAIN ROUTE is rendered verbatim once; no other text is visible."}
+  },
+  "dominant_differences": ["Keep the bicycle fractionally closer to the geometric center without reducing the visible alley depth."],
+  "confidence": 0.96
+}

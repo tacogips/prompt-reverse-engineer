@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "round": 3,
+  "selection_rule": "lowest_total_loss_then_candidate_id",
+  "loss_function_version": "style-inversion-v2",
+  "candidate_paths_received": [],
+  "candidates": [],
+  "round_winner": null,
+  "selected_candidate": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-001",
+  "selection_status": "no_current_candidates_retained_prior_eligible_best",
+  "generation_failure": {
+    "attempt_evidence": "targets/editorial-anime-poster-001/train-0008/rounds/round-0003/candidates/attempts/attempt-0001.json",
+    "error_code": "moderation_blocked",
+    "detail": "All requested candidate calls failed before artifact persistence; no candidate image, realized generation record, judge response, or metrics record exists for round 3."
+  },
+  "contract_eligibility": {
+    "current_contract_path": ".riela/workflows/prompt-reverse-train/prompt-template-contract.json",
+    "current_contract_id": "prompt-only-style-reconstruction-v1",
+    "retained_candidate": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-001",
+    "retained_candidate_round_selection": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/selection.json",
+    "retained_candidate_promotion_eligible": true,
+    "current_round_template_validation_path": "targets/editorial-anime-poster-001/train-0008/rounds/round-0003/prompt/template-validation.json",
+    "current_round_template_validation_status": "passed",
+    "current_round_template_validation_contract_version": "prompt-only-style-reconstruction-v1",
+    "current_round_has_realized_candidates": false,
+    "excluded_prior_bests": [
+      {
+        "candidate": "targets/editorial-anime-poster-001/best.json -> train-0003/rounds/round-0001/candidates/candidate-004",
+        "reason": "Recorded under a different loss-function version and lacks current prompt-template-contract eligibility evidence; it is neither numerically comparable nor promotion-eligible in this run."
+      },
+      {
+        "candidate": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/candidates/candidate-003",
+        "reason": "Recorded under source-style-judge-v2 rather than style-inversion-v2; it is excluded from numeric comparison and promotion in this run."
+      }
+    ]
+  },
+  "global_best_before_round": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-001",
+  "global_best_after_round": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-001",
+  "global_best_loss_before_round": 0.183,
+  "global_best_loss_after_round": 0.183,
+  "style_component_ceiling": 0.25,
+  "retained_best_style_components_within_ceiling": true,
+  "target_reached": false,
+  "provenance_check": {
+    "current_round_candidate_records_verified": false,
+    "reason": "No current-round candidates were generated; no provenance records exist to assess.",
+    "retained_candidate_provenance_verified_by": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/selection.json"
+  }
+}

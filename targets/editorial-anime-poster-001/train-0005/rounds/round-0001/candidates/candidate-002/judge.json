@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_source_truth_candidate",
+  "judge": {
+    "loss_function_version": "judge-v4-source-fidelity-style-transfer",
+    "prompt_sha256": "e1b430e07aa4fc53bca95f66083632b3954d96e97bab55691fe2752d97f99803",
+    "model": "gpt-5.6-terra",
+    "temperature": 0,
+    "repeat": 1,
+    "assessed_at": "2026-08-14T07:11:58Z"
+  },
+  "inputs": {
+    "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "candidate": "targets/editorial-anime-poster-001/train-0005/rounds/round-0001/candidates/candidate-002/image.png"
+  },
+  "loss": {
+    "source_fidelity": 0.10,
+    "semantic": 0.04,
+    "composition": 0.08,
+    "color": 0.07,
+    "style": 0.08,
+    "technical": 0.08
+  },
+  "evidence": {
+    "source_fidelity": ["The child’s facial proportions, short hair, seated right-facing viewpoint, gray shirt, and extended arm are closely preserved.", "The shirt logo is altered and partly obscured by painted treatment."],
+    "semantic": ["The candidate contains only the source-controlled child and tiled surroundings; no style-truth subject, jewelry, or clothing is copied."],
+    "composition": ["The source’s close portrait crop and diagonal body placement are retained while circular fields provide transferable graphic layout."],
+    "color": ["The cream, teal, coral, ochre, and navy relationship matches the style truth while retaining a recognizably light source shirt."],
+    "style": ["Dark ink contours, cel shading, painted abrasion, speckling, and large color circles give a strong editorial-poster transfer.", "Fine strand and accessory-level decorative detail remains simpler than in the style truth."],
+    "technical": ["Face, ear, arms, tiles, and garment seams are clean and coherent.", "The partially legible altered shirt-logo marks are text-like despite no text instruction." ]
+  },
+  "dominant_differences": ["Avoid degraded text-like marks when no text instruction is present.", "Preserve the source shirt graphic more faithfully.", "Increase the style truth's fine decorative contour detail."],
+  "confidence": 0.95
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "case_id": "heldout-b-exact-text",
+  "case_type": "text",
+  "applicable_components": ["source_fidelity", "style_fidelity", "text_adherence", "technical"],
+  "style_sub_losses": {"medium_rendering": 0.14, "palette_tone": 0.12, "line_shape": 0.19, "texture_material": 0.14, "graphic_language": 0.19},
+  "loss": {"total": 0.054, "source_fidelity": 0.04, "style_fidelity": 0.156, "text_adherence": 0.0, "technical": 0.02},
+  "assertions_passed": true,
+  "failed_assertions": [],
+  "style_component_ceiling": 0.25,
+  "style_component_ceiling_passed": true,
+  "raw_judge_file": "judge.json"
+}

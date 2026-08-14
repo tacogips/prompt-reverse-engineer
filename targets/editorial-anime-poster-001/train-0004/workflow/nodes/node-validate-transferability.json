@@ -1,0 +1,12 @@
+{
+  "id": "validate-transferability",
+  "description": "Validate the frozen style prompt on held-out inputs and optional pose, composition, and exact-text instructions.",
+  "nodeType": "agent",
+  "executionBackend": "codex-agent",
+  "model": "gpt-5.6-terra",
+  "promptTemplateFile": "prompts/validate-transferability.md",
+  "variables": {},
+  "output": {
+    "description": "Return adapter JSON routing a passing or budget-exhausted run to review and a correctable overfit run to refinement."
+  }
+}

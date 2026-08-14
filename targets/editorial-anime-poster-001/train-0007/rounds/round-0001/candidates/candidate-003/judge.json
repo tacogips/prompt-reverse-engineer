@@ -1,0 +1,37 @@
+{
+  "confidence": 0.92,
+  "dominant_differences": [
+    "Add nuanced shadow facets and varied overprint detail.",
+    "Increase abstract field complexity without obscuring source-controlled content."
+  ],
+  "evidence": {
+    "color": [
+      "Warm off-white paper with saturated teal, navy, yellow, coral-pink, and ochre echoes the truth, although its large fields are slightly flatter."
+    ],
+    "composition": [
+      "The source crop, head-to-torso scale, arm placement, and left tiled background persist while a teal disc, coral field, rules, and brush arc create an editorial layout."
+    ],
+    "semantic": [
+      "The same single seated child and indoor tile relationship remain visible, without copying the style-truth adult subject or adding entities."
+    ],
+    "source_fidelity": [
+      "The source child’s right-facing profile, short dark hair, neutral expression, grey graphic T-shirt, light trousers, seated posture, forearm, and tiled corner are retained."
+    ],
+    "style": [
+      "Variable navy contours, loose hair accents, cel shading, paper texture, dry-brush streaks, speckles, discs, rules, and angular panels strongly reproduce the anime editorial-poster treatment; the truth retains more intricate overprint polish."
+    ],
+    "technical": [
+      "Facial features, ear, hands, clothing folds, edge control, and print textures are coherent, with no unrequested readable or pseudo-readable text."
+    ]
+  },
+  "loss": {
+    "color": 0.13,
+    "composition": 0.09,
+    "semantic": 0.04,
+    "source_fidelity": 0.06,
+    "style": 0.21,
+    "technical": 0.04
+  },
+  "presentation_order": "style_truth_source_truth_candidate",
+  "schema_version": 2
+}

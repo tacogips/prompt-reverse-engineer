@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_source_truth_candidate",
+  "loss": {
+    "source_fidelity": 0.12,
+    "semantic": 0.04,
+    "composition": 0.1,
+    "color": 0.08,
+    "style": 0.12,
+    "technical": 0.03
+  },
+  "evidence": {
+    "source_fidelity": [
+      "The candidate retains one seated young child in the same right-facing three-quarter view, with the short dark undercut, facial proportions, grey T-shirt, yellow-and-black Batman chest mark, pale blue bottoms, bent right arm, and tiled setting from the source.",
+      "The hair is substantially fuller and more tousled than the compact source haircut, and the face is rendered with smoother, more idealized cheek and eye detail."
+    ],
+    "semantic": [
+      "The image remains a single child seated indoors and retains the source clothing emblem rather than importing the style truth's adult woman, long hair, jewelry, or garments.",
+      "No new readable poster copy, watermark, or unrelated subject is visible."
+    ],
+    "composition": [
+      "The vertical close crop, off-center face, cream negative space, colored arcs, thin rules, navy block, and dry-brush diagonal create a poster organization close to the style truth while the source's seated placement remains legible.",
+      "The child fills more of the frame and has less upward portrait energy than the style reference."
+    ],
+    "color": [
+      "Cream, deep navy, teal, coral, mustard, and gold flecks reproduce the style truth's high-contrast poster palette and separate the child from the background."
+    ],
+    "style": [
+      "Dark ink contours, cel-shaded planes, paper grain, paint splatter, geometric fields, and dry-brush marks visibly transfer the editorial anime-poster treatment.",
+      "The facial shading and shirt remain more softly painted and less finely layered than the style truth's intricate linework and graphic garment treatment."
+    ],
+    "technical": [
+      "Face, ear, limbs, clothing seams, logo, tiles, and graphic edges are coherent at original resolution, with no visible duplication, watermark, or corrupted text."
+    ]
+  },
+  "dominant_differences": [
+    "Keep the source haircut's compact silhouette instead of adding a large tousled crown.",
+    "Increase the style truth's fine contour and layered graphic-detail density in the face and shirt.",
+    "Retain the source profile framing while adding more of the reference's upward directional energy."
+  ],
+  "confidence": 0.93,
+  "provenance_verification": {
+    "candidate_image": "targets/editorial-anime-poster-001/train-0006/rounds/round-0001/candidates/candidate-001/image.png",
+    "recorded_sha256": "ed3d10a0d97b38ec0ae83562416599f3fce81ab9840c8a75ffedc32f9aafc7f4",
+    "observed_sha256": "ed3d10a0d97b38ec0ae83562416599f3fce81ab9840c8a75ffedc32f9aafc7f4",
+    "verified": true
+  }
+}

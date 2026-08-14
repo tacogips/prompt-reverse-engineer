@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "step": "validate-transferability",
+  "verified_at": "2026-08-14T07:12:30Z",
+  "prompt": {
+    "path": "targets/editorial-anime-poster-001/train-0005/rounds/round-0001/prompt/prompt.md",
+    "sha256": "225d563ace0193437dbb976557ecdf0d1afd3cc463a3a33ffcbf4fe2968a87bf",
+    "frozen_before_validation_manifest_access": true
+  },
+  "validation_manifest": {
+    "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "expected_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "actual_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "expected_byte_size": 3043,
+    "actual_byte_size": 3043,
+    "verified_before_parse": true,
+    "verification_passed": true
+  },
+  "training_source": {
+    "path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e"
+  },
+  "sealed_test_manifest_opened": false
+}

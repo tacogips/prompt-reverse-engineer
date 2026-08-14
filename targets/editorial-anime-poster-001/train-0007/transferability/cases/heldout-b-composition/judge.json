@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "judge_version": "source-style-judge-v2",
+  "judge_config": "targets/editorial-anime-poster-001/train-0007/judge/config.json",
+  "original_resolution_assessed": true,
+  "loss": { "source_fidelity": 0.03, "style_fidelity": 0.18, "composition_adherence": 0.01, "text_adherence": 0.0, "technical": 0.02 },
+  "assertions": { "square_aspect_ratio": true, "yellow_chair_centered": true, "blue_bottle_left": true, "plant_right": true, "negative_space_above": true, "object_count_preserved": true, "no_invented_text": true },
+  "evidence": ["The square poster places one yellow chair centrally, one blue bottle on the left, one potted plant on the right, and a broad unoccupied area above.", "All source objects are retained once and the override is limited to layout.", "The clean inked object rendering, fibrous off-white ground, saturated graphic color fields, and sparse brush marks transfer the style without importing style-truth content or text."],
+  "confidence": 0.94
+}

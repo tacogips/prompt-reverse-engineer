@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "iteration": 8,
+  "parent_iteration": 7,
+  "status": "failed",
+  "started_at": "2026-08-14T12:53:50Z",
+  "completed_at": "2026-08-14T14:39:00Z",
+  "hypothesis": "A source-preserving editorial print hierarchy can transfer the inferred style while retaining optional-instruction control.",
+  "workflow_family": "analyze-generate-select-refine-loop",
+  "workflow_revision": "targets/editorial-anime-poster-001/train-0008/workflow/workflow.json",
+  "judge_revision": "09e7ebb8913bf5574e67aaf3bc4b0ab462d403430f304b70a0c7bbe61619e295",
+  "selected_candidate": "rounds/round-0002/candidates/candidate-001",
+  "failure_reason": "generalization_test_failed",
+  "diagnostic_paths": [
+    "targets/editorial-anime-poster-001/train-0008/evaluation.json",
+    "targets/editorial-anime-poster-001/train-0008/analysis.md",
+    "targets/editorial-anime-poster-001/train-0008/test-audit/evaluation.json"
+  ]
+}

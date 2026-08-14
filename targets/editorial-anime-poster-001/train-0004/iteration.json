@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "iteration": 4,
+  "status": "failed",
+  "exit_reason": "validation_input_contamination_detected",
+  "failed_step": "generalize-prompt",
+  "session_id": "prompt-reverse-train-session-11",
+  "promotable": false,
+  "diagnostic": "Inline validation cases were present in runtime variables and therefore in the runtime snapshot. The run was cancelled before candidate generation when the prompt-synthesis node attempted to inspect that snapshot.",
+  "remediation": "Use a hash-recorded frozen validation-manifest path only; permit only validate-transferability to open it after freezing the prompt hash. Rotate to new held-out sources for the next iteration."
+}

@@ -3,11 +3,19 @@
   "images": [
     {
       "file": "person-reference.png",
-      "role": "person_identity",
+      "role": "legacy_training_source",
       "width": 1196,
       "height": 1370,
       "format": "PNG",
       "sha256": "813ec67c85c0a3bcc7749b58d6560e09419759a8a73f1680c228fc5023cb1aeb"
+    },
+    {
+      "file": "source-child.jpeg",
+      "role": "source",
+      "width": 1160,
+      "height": 1412,
+      "format": "JPEG",
+      "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e"
     }
   ]
 }

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "candidate_id": "candidate-001",
+  "attempt": 2,
+  "recorded_at": "2026-08-14T09:04:53Z",
+  "stage": "provenance-validation",
+  "status": "failed",
+  "error_type": "prompt_hash_mismatch",
+  "error_message": "The saved image was generated only after adding a generic safety-integrity prefix not present in the frozen prompt.md. A generation-provenance-v1 record would therefore not match the required prompt_file and prompt_sha256.",
+  "image_path": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-001/image.png",
+  "image_sha256": "1ea8c2280c7be5617df2397b6389bf2fcffffa6891ab32abe4aee18d64d28270",
+  "archived_image_path": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-001/failure-attempt-002-image.png",
+  "preserved_for_audit": true
+}

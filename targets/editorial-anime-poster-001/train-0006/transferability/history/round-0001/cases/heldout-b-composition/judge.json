@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "judge_version": "judge-v4-source-fidelity-style-transfer",
+  "original_resolution_assessed": true,
+  "loss": {
+    "source_fidelity": 0.10,
+    "style_fidelity": 0.06,
+    "composition_adherence": 0.02,
+    "text_adherence": 0.0,
+    "technical": 0.04
+  },
+  "assertions": {
+    "square_aspect_ratio": true,
+    "yellow_chair_centered": true,
+    "blue_bottle_left": true,
+    "plant_right": true,
+    "negative_space_above": true,
+    "object_count_preserved": true,
+    "no_invented_text": true
+  },
+  "evidence": [
+    "The output is square with a centered yellow chair, a blue bottle left, a potted plant right, and substantial empty area above.",
+    "All three source objects are retained once.",
+    "Graphic color blocks, painterly texture, and poster framing transfer cleanly with no text."
+  ]
+}

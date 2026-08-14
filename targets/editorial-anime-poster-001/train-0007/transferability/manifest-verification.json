@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "manifest": {
+    "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "byteSize": 3043
+  },
+  "intake_evidence_path": "targets/editorial-anime-poster-001/train-0007/intake-evidence.json",
+  "verified_at": "2026-08-14T12:28:10Z",
+  "sha256_matches_intake": true,
+  "byte_size_matches_intake": true,
+  "integrity_verified_before_open": true,
+  "prompt": {
+    "path": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/prompt/prompt.md",
+    "sha256": "8b5c0b8d88d86154665bb11281c19992ddefea8bf98e4f7f029c7146c9972e5f",
+    "frozen_before_manifest_open": true
+  }
+}

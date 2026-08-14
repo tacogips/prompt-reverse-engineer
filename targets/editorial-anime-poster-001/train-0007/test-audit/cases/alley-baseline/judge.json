@@ -1,0 +1,10 @@
+{
+  "schema_version": 2,
+  "judge_version": "source-style-judge-v2",
+  "judge_config": "targets/editorial-anime-poster-001/train-0007/judge/config.json",
+  "presentation_order": "style_truth_source_truth_candidate",
+  "loss": {"source_fidelity": 0.07, "style_fidelity": 0.14, "text_adherence": 0.0, "technical": 0.04},
+  "assertions": {"one_red_bicycle": true, "wet_narrow_alley": true, "pale_concrete_wall": true, "doorway": true, "potted_green_plants": true, "no_invented_text": true},
+  "evidence": ["The candidate retains one red bicycle, the wet narrow alley, pale concrete wall, doorway, and grouped potted plants in the source's landscape framing.", "The candidate applies deep navy ink contours, pale paper grain, cel-shaded planes, saturated teal, yellow, coral, and pink abstract poster fields while preserving the source scene.", "No readable or pseudo-readable text is visible; bicycle geometry, edges, and wet-surface detail are clean."],
+  "confidence": 0.9
+}

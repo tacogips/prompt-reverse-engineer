@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "judge_version": "judge-v4-source-fidelity-style-transfer",
+  "original_resolution_assessed": true,
+  "loss": { "source_fidelity": 0.06, "style_fidelity": 0.08, "text_adherence": 0.01, "technical": 0.03 },
+  "assertions": { "exact_text": "SIT WITH COLOR", "exact_text_occurrences": 1, "additional_text": false, "object_count_preserved": true, "no_pseudo_text": true },
+  "evidence": ["The visible headline reads exactly SIT WITH COLOR once, with no other lettering or pseudo-readable marks.", "The yellow chair, blue bottle, and potted plant are retained once.", "The graphic poster treatment is clean, though slightly less portrait-like in its color-field balance than the style reference."]
+}

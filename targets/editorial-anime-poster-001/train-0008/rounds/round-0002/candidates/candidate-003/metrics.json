@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "candidate_id": "candidate-003",
+  "target_files": ["truth/style-reference.png"],
+  "loss_function_version": "style-inversion-v2",
+  "loss": {
+    "total": 0.193,
+    "medium_rendering": 0.21,
+    "palette_tone": 0.25,
+    "line_shape": 0.23,
+    "texture_material": 0.23,
+    "graphic_language": 0.26,
+    "source_fidelity": 0.11,
+    "technical": 0.08
+  },
+  "reward": 0.807,
+  "evaluators": [
+    { "name": "prompt-as-a-judge", "version": "style-inversion-v2:09e7ebb8913bf5574e67aaf3bc4b0ab462d403430f304b70a0c7bbe61619e295", "raw_output_file": "judge.json" }
+  ],
+  "provenance_eligible": true
+}

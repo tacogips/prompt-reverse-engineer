@@ -1,6 +1,6 @@
 {
   "id": "analyze-images",
-  "description": "Analyze style and source truth while authoring an initial reusable prompt that will be normalized before generation.",
+  "description": "Analyze target style and source truth, then encode the target style into a self-contained textual prompt for source-only generation.",
   "nodeType": "agent",
   "executionBackend": "codex-agent",
   "model": "gpt-5.6-terra",

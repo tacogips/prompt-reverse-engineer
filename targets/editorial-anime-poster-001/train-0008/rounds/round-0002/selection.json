@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "round": 2,
+  "selection_rule": "lowest_total_loss_then_candidate_id",
+  "loss_function_version": "style-inversion-v2",
+  "candidate_paths_received": [
+    "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-001",
+    "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-002",
+    "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-003"
+  ],
+  "candidates": [
+    {
+      "candidate": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-001",
+      "candidate_id": "candidate-001",
+      "metrics_file": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-001/metrics.json",
+      "total_loss": 0.183,
+      "reward": 0.817,
+      "provenance_eligible": true,
+      "promotion_eligible": true
+    },
+    {
+      "candidate": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-002",
+      "candidate_id": "candidate-002",
+      "metrics_file": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-002/metrics.json",
+      "total_loss": 0.186,
+      "reward": 0.814,
+      "provenance_eligible": true,
+      "promotion_eligible": true
+    },
+    {
+      "candidate": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-003",
+      "candidate_id": "candidate-003",
+      "metrics_file": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-003/metrics.json",
+      "total_loss": 0.193,
+      "reward": 0.807,
+      "provenance_eligible": true,
+      "promotion_eligible": true
+    }
+  ],
+  "round_winner": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-001",
+  "selected_candidate": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-001",
+  "selection_status": "selected",
+  "contract_eligibility": {
+    "current_contract_path": ".riela/workflows/prompt-reverse-train/prompt-template-contract.json",
+    "current_contract_id": "prompt-only-style-reconstruction-v1",
+    "template_validation_path": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/prompt/template-validation.json",
+    "template_validation_status": "passed",
+    "template_validation_contract_version": "prompt-only-style-reconstruction-v1",
+    "prompt_sha256": "327ed88e2ca58c4e247bb52304706af0e59915e74c6ce06840628da2ce3c045a",
+    "prompt_sha256_matches_prompt_file": true,
+    "required_literal_clauses_present_verbatim": true,
+    "eligible_current_candidates": [
+      "candidate-001",
+      "candidate-002",
+      "candidate-003"
+    ],
+    "excluded_prior_bests": [
+      {
+        "candidate": "targets/editorial-anime-poster-001/best.json -> train-0003/rounds/round-0001/candidates/candidate-004",
+        "reason": "The recorded best uses judge-v3-style-identity-provenance rather than style-inversion-v2 and has no current prompt-template-contract eligibility evidence; its loss is neither comparable nor promotion-eligible in this run."
+      },
+      {
+        "candidate": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/candidates/candidate-003",
+        "reason": "The prior selection records judge_version source-style-judge-v2 rather than style-inversion-v2; it is excluded from numeric comparison and promotion in this run."
+      }
+    ]
+  },
+  "global_best_before_round": null,
+  "global_best_after_round": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-001",
+  "global_best_loss_before_round": null,
+  "global_best_loss_after_round": 0.183,
+  "style_component_ceiling": 0.25,
+  "style_components_within_ceiling": true,
+  "target_reached": false,
+  "provenance_check": {
+    "candidate_records_verified": true,
+    "each_candidate_has_exactly_one_source_reference": true,
+    "truth_or_style_input_detected": false,
+    "prompt_hashes_verified": true,
+    "output_hashes_verified": true
+  }
+}

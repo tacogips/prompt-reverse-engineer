@@ -1,6 +1,6 @@
 {
   "id": "generate-candidates",
-  "description": "Generate N style-transfer candidates from the current prompt and both image references.",
+  "description": "Generate N candidates from the reconstructed text prompt and source image only; target/style truth is forbidden as a generation input.",
   "nodeType": "agent",
   "executionBackend": "codex-agent",
   "model": "gpt-5.6-terra",

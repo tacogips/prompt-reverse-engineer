@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "contract_id": "prompt-only-style-reconstruction-v1",
+  "contract_schema_version": 3,
+  "validated_at": "2026-08-14T13:24:31Z",
+  "prompt_path": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/prompt/prompt.md",
+  "prompt_sha256": "327ed88e2ca58c4e247bb52304706af0e59915e74c6ce06840628da2ce3c045a",
+  "self_contained_text_check": {
+    "passed": true,
+    "evidence": "The executable prompt encodes medium, palette, contrast, lighting, line and mark quality, texture, abstract graphic vocabulary, and overrideable composition defaults as text."
+  },
+  "sole_source_role_check": {
+    "passed": true,
+    "required_role": "source_reference",
+    "prompt_behavior": "Image 1 is explicitly the arbitrary source reference and exclusive authority for depicted content and identity."
+  },
+  "forbidden_generation_role_check": {
+    "passed": true,
+    "forbidden_roles": [
+      "style_reference",
+      "style_truth",
+      "target_reference"
+    ],
+    "style_image_required": false,
+    "style_image_mentions": []
+  },
+  "optional_instruction_fields": {
+    "required": [
+      "pose",
+      "composition",
+      "text",
+      "additional"
+    ],
+    "supported": [
+      "pose",
+      "composition",
+      "text",
+      "additional"
+    ],
+    "exact_text_behavior": "When text is supplied it is rendered verbatim with no other readable or pseudo-readable text; when absent, no text is rendered."
+  },
+  "suspected_source_specific_clauses": [],
+  "suspected_source_specific_clause_dispositions": [],
+  "forbidden_clause_count": 0,
+  "textual_style_clause_inventory": {
+    "medium_rendering": [
+      "refined editorial anime poster illustration",
+      "clean flat-to-gently-graded cel shading",
+      "crisp print-like color separation"
+    ],
+    "palette_tone": [
+      "limited palette of ink navy, saturated blue-teal, coral pink, mustard yellow, and warm off-white",
+      "restrained matte-gold accent lines and dots"
+    ],
+    "line_shape": [
+      "elegant variable-weight deep-navy ink contours that taper into expressive fine strokes"
+    ],
+    "texture_material": [
+      "warm off-white paper ground",
+      "subtle screen-print grain, imperfect overprint edges, sparse paint flecks, and occasional dry-brush sweeps"
+    ],
+    "graphic_language": [
+      "adaptable asymmetric editorial balance through generous negative-space rhythm",
+      "broad opaque color fields, source-controlled focal form, and sparse fine orbital line-and-dot accents",
+      "abstract layers frame rather than replace source-controlled content"
+    ],
+    "lighting_contrast": [
+      "flat-to-gently-graded cel shading",
+      "crisp print-like color separation"
+    ],
+    "overrideable_composition_defaults": [
+      "adaptable asymmetric editorial balance",
+      "generous negative-space rhythm",
+      "no copied geometry or fixed placement"
+    ]
+  },
+  "required_literal_exact_checks": [
+    {
+      "clause": "Perform only a benign, non-sexual artistic style transformation; do not introduce nudity, sexualization, age changes, violence, injury, or other unsafe content.",
+      "present_verbatim": true
+    },
+    {
+      "clause": "The source reference is the only image input available at generation time.",
+      "present_verbatim": true
+    }
+  ],
+  "precedence_check": {
+    "passed": true,
+    "declared_order": [
+      "safety_and_integrity",
+      "explicit_optional_instructions",
+      "source_content_and_identity_preservation",
+      "textual_style_specification"
+    ],
+    "prompt_order_matches_contract": true,
+    "unspecified_attributes_remain_source_controlled": true
+  },
+  "complexity_statistics": {
+    "line_count": 24,
+    "word_count": 375,
+    "byte_count": 2838,
+    "required_literal_clause_count": 2,
+    "required_literal_clause_count_present_verbatim": 2,
+    "optional_field_count": 4,
+    "style_dimension_count": 5
+  },
+  "status": "passed"
+}

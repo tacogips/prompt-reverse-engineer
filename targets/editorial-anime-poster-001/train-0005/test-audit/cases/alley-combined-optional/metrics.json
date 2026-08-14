@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "case_id": "alley-combined-optional",
+  "case_type": "combined_optional",
+  "loss": {"total": 0.0425, "source_fidelity": 0.06, "semantic": 0.01, "composition": 0.04, "color": 0.03, "style": 0.05, "technical": 0.01},
+  "weights": {"source_fidelity": 0.3, "semantic": 0.1, "composition": 0.15, "color": 0.15, "style": 0.25, "technical": 0.05},
+  "instruction_losses": {"composition_adherence": 0.0, "additional_adherence": 0.0, "text_adherence": 0.0},
+  "reward": 0.9575,
+  "raw_judge_file": "judge.json"
+}

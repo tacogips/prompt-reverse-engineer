@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "style-inversion-v2",
+  "target_candidate_order": "style_truth_then_candidate",
+  "aggregation": "component_wise_median",
+  "repeat_count": 3,
+  "repeat_losses": [{"medium_rendering": 0.13, "palette_tone": 0.12, "line_shape": 0.18, "texture_material": 0.14, "graphic_language": 0.18, "source_fidelity": 0.04, "technical": 0.03}, {"medium_rendering": 0.13, "palette_tone": 0.12, "line_shape": 0.18, "texture_material": 0.14, "graphic_language": 0.18, "source_fidelity": 0.04, "technical": 0.03}, {"medium_rendering": 0.13, "palette_tone": 0.12, "line_shape": 0.18, "texture_material": 0.14, "graphic_language": 0.18, "source_fidelity": 0.04, "technical": 0.03}],
+  "loss": {"medium_rendering": 0.13, "palette_tone": 0.12, "line_shape": 0.18, "texture_material": 0.14, "graphic_language": 0.18, "source_fidelity": 0.04, "technical": 0.03},
+  "evidence": {"medium_rendering": ["Crisp cel-shaded anime illustration and print-like separation are visible."], "palette_tone": ["Warm off-white, navy, teal, coral, mustard, and restrained gold are present."], "line_shape": ["Navy contours and orbital gold lines are present, but the support shapes are more brushy than geometric."], "texture_material": ["Paper grain, sparse flecks, and dry-brush edges are visible without obscuring the source."], "graphic_language": ["Broad fields, focal source figure, and fine ornaments form an editorial hierarchy, though it is less structured than the style truth."], "source_fidelity": ["The source person's face, clothing, standing pose, full body, shoes, and wooden stool are preserved."], "technical": ["Hands, facial features, and object geometry are clean; no readable or pseudo-readable text is present."]},
+  "dominant_transferable_differences": ["Use more decisively bounded opaque geometric support fields rather than primarily brushy background sweeps."],
+  "confidence": 0.9
+}

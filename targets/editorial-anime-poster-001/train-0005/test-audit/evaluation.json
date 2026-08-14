@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "evaluated_at": "2026-08-14T07:30:37Z",
+  "status": "complete",
+  "sealed_test_manifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+    "sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+    "byte_size": 1410,
+    "integrity_verified_before_parse": true,
+    "opened_by": "audit-generalization"
+  },
+  "freeze_record": "targets/editorial-anime-poster-001/train-0005/test-audit/freeze-record.json",
+  "prompt": {"path": "targets/editorial-anime-poster-001/train-0005/rounds/round-0001/prompt/prompt.md", "sha256": "225d563ace0193437dbb976557ecdf0d1afd3cc463a3a33ffcbf4fe2968a87bf", "frozen_before_test_generation": true},
+  "judge": {"version": "judge-v4-source-fidelity-style-transfer", "prompt_sha256": "e1b430e07aa4fc53bca95f66083632b3954d96e97bab55691fe2752d97f99803", "model": "gpt-5.6-terra", "weights": {"source_fidelity": 0.3, "semantic": 0.1, "composition": 0.15, "color": 0.15, "style": 0.25, "technical": 0.05}},
+  "thresholds": {"aggregate_test_loss_max": 0.32, "worst_case_loss_max": 0.42, "max_validation_test_gap": 0.1},
+  "source_separation": {
+    "training_source_sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+    "validation_source_sha256": ["71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9", "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1"],
+    "test_source_sha256": "56f945880a137fb787e0d2dba7d56b869f8bbf26c9b14488ad27a28e1fbb05f9",
+    "test_source_is_distinct_from_training": true,
+    "test_source_is_distinct_from_every_validation_source": true,
+    "untouched_test_source_count": 1,
+    "passed": true
+  },
+  "coverage": {"required_case_types": ["baseline", "combined_optional"], "observed_case_types": ["baseline", "combined_optional"], "complete": true},
+  "cases": [
+    {"id": "alley-baseline", "type": "baseline", "source_sha256": "56f945880a137fb787e0d2dba7d56b869f8bbf26c9b14488ad27a28e1fbb05f9", "image": "test-audit/cases/alley-baseline/image.png", "loss": 0.0495, "passed": true},
+    {"id": "alley-combined-optional", "type": "combined_optional", "source_sha256": "56f945880a137fb787e0d2dba7d56b869f8bbf26c9b14488ad27a28e1fbb05f9", "image": "test-audit/cases/alley-combined-optional/image.png", "loss": 0.0425, "passed": true}
+  ],
+  "aggregate_test_loss": 0.046,
+  "worst_case_loss": 0.0495,
+  "aggregate_validation_loss": 0.0525,
+  "validation_to_test_gap": -0.0065,
+  "assertions": {
+    "template_validation_passed": true,
+    "validation_prerequisites_passed": true,
+    "source_separation_passed": true,
+    "required_coverage_passed": true,
+    "all_instruction_assertions_passed": true,
+    "exact_text_passed": true,
+    "no_unrequested_text_passed": true,
+    "aggregate_loss_passed": true,
+    "worst_case_loss_passed": true,
+    "validation_test_gap_passed": true,
+    "no_refinement_routed": true
+  },
+  "passed": true,
+  "exit_reason": "target_validation_and_test_reached",
+  "pass_reasons": ["The test manifest hash and byte size matched intake evidence before it was parsed.", "The one test source hash is disjoint from the training source and every validation source.", "Baseline and combined_optional coverage are both present.", "The combined case preserves one red bicycle, the doorway, and potted plants; uses square poster framing; and renders RAIN ROUTE verbatim once with no other text. The baseline contains no typography.", "Aggregate loss 0.046 <= 0.32, worst-case loss 0.0495 <= 0.42, and validation-to-test gap -0.0065 <= 0.1."],
+  "failure_reasons": []
+}

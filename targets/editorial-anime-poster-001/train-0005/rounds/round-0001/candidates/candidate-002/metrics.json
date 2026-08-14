@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "candidate_id": "candidate-002",
+  "target_files": ["truth/style-reference.png"],
+  "source_file": "input/source-child.jpeg",
+  "loss": {
+    "total": 0.0805,
+    "source_fidelity": 0.10,
+    "semantic": 0.04,
+    "composition": 0.08,
+    "color": 0.07,
+    "style": 0.08,
+    "technical": 0.08
+  },
+  "reward": 0.9195,
+  "weights": {"source_fidelity": 0.30, "semantic": 0.10, "composition": 0.15, "color": 0.15, "style": 0.25, "technical": 0.05},
+  "evaluators": [{"name": "prompt-as-a-judge", "version": "judge-v4-source-fidelity-style-transfer", "raw_output_file": "judge.json"}]
+}

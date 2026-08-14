@@ -1,22 +1,21 @@
 # Task
 
-Read `{{workflowInput}}`, `<targetDir>/<trainDir>/state.json`, and the current round prompt. Generate exactly `candidatesPerRound` distinct candidates using the built-in image-generation tool.
+Read `{{workflowInput}}`, state, and the current frozen prompt. Generate exactly `candidatesPerRound` distinct candidates with the built-in image-generation tool.
 
-Input roles for every generation call:
+This is prompt-only style reconstruction. Supply exactly one image to every generation call:
 
-- Image 1: `styleReference`, style/composition/palette/texture reference only
-- Image 2: `sourceReference` (or legacy `personReference`), exclusive content and identity reference
+- Image 1: `sourceReference` (or legacy `personReference`), the exclusive content and identity authority.
 
-This is a `style-transfer` request. Use the persisted subject-agnostic prompt unchanged. Re-state only generic image-role invariants on every call; never add a textual description of the current source's age, gender, ethnicity, face, hair, gaze, pose, clothing, objects, or scene. Apply the run's optional instructions exactly, if present. Use one built-in image-generation call per candidate; do not use an API/CLI fallback. Variants may explore controlled style-level differences, but must not intentionally change source-controlled attributes.
+Never attach, load for generation, or pass `styleReference`, any truth image, or any target/style image. The prompt text is the only carrier of the reconstructed style. A generation call containing the truth hash or a forbidden generation role is invalid and must fail the node.
 
-Before generation, require the current round's `prompt/template-validation.json` to have status `passed`, zero forbidden subject-specific clauses, and a prompt hash matching `prompt.md`. Stop rather than generating from an unvalidated or stale prompt.
+Do not open validation/test manifests, fixtures, expected assertions, or evidence. Use the frozen prompt unchanged, plus only the run's structured optional instructions. Never append a source description or safety text at call time.
 
-Save every output inside:
+Before generation, require passed template validation, matching prompt hash, zero forbidden source-specific clauses, exact required literal checks, a sole-source-image role check, and a passed forbidden-style-image-input check.
 
-`<targetDir>/<trainDir>/rounds/round-NNNN/candidates/candidate-NNN/`
+This node is idempotent. Reuse only terminal candidates with matching prompt/source hashes and conformant provenance. Preserve failures, generate only missing ids, and issue independent missing calls concurrently when possible.
 
-Each candidate directory must contain `image.png` and `generation.json`. Record the exact prompt hash, input hashes, tool mode, candidate id, round, and any available generation metadata. Never invent seeds or provider values that were not exposed.
+Save each result under `<targetDir>/<trainDir>/rounds/round-NNNN/candidates/candidate-NNN/` as `image.png` and `generation.json`. The record must conform to `workflow/generation-record-contract.json`, contain exactly one `input_images` entry with role `source_reference`, and contain no truth/style hash. Recompute every persisted hash from disk.
 
-Inspect each saved output sufficiently to detect obvious corruption or a missing person. Preserve failed outputs with a failure record rather than silently replacing evidence. When exactly the configured candidate count has a terminal record, set `state.json.phase` to `judge` and update its timestamp.
+Inspect outputs for corruption and missing source content. On complete success clear stale current-state generation failures while preserving attempt evidence, set state status `running`, phase `judge`, and update the timestamp.
 
 Return one JSON object only with `status`, `nextStep`, `round`, and `candidatePaths`. Set `nextStep` to `judge-candidates`.

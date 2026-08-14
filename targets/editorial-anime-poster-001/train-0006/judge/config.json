@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "judge-v4-source-fidelity-style-transfer",
+  "provider": "openai",
+  "model": "gpt-5.6",
+  "temperature": 0,
+  "repeats": 1,
+  "aggregation": "single_original_resolution_assessment",
+  "prompt_sha256": "20bd547710cbd50731ed7e30f7cfe6f624544e67bf7ca47b4b3df0d9c6ad5b74",
+  "weights": {
+    "source_fidelity": 0.3,
+    "semantic": 0.1,
+    "composition": 0.15,
+    "color": 0.15,
+    "style": 0.25,
+    "technical": 0.05
+  },
+  "input_order": [
+    "style_truth",
+    "source_truth",
+    "candidate"
+  ],
+  "calibration_suite": "targets/editorial-anime-poster-001/train-0006/judge/calibration/v1/manifest.json",
+  "calibration_status": "provisional_passed",
+  "notes": "One actual original-resolution visual assessment was recorded for each calibration relation. This source-fidelity rubric supersedes the parent's legacy identity component and its numeric losses must not be compared to legacy identity-judge totals."
+}

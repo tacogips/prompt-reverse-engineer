@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "calibration_version": "v1",
+  "loss_function_version": "style-inversion-v2",
+  "judge_prompt": "targets/editorial-anime-poster-001/train-0008/judge/prompt.md",
+  "judge_prompt_sha256": "09e7ebb8913bf5574e67aaf3bc4b0ab462d403430f304b70a0c7bbe61619e295",
+  "calibrated_at": "2026-08-14T13:04:05Z",
+  "method": "Direct original-resolution visual assessment against the persisted judge rubric; no candidate prompt was considered.",
+  "actual_repeat_count": 1,
+  "cases": [
+    {
+      "id": "target-self-match",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "source_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "candidate": "targets/editorial-anime-poster-001/truth/style-reference.png"
+      },
+      "expected_relation": "Identical images must have zero observable loss in every component when the source-role image is also identical.",
+      "observed_component_losses": {
+        "medium_rendering": 0.0,
+        "palette_tone": 0.0,
+        "line_shape": 0.0,
+        "texture_material": 0.0,
+        "graphic_language": 0.0,
+        "source_fidelity": 0.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "The compared image bytes and visible pixels are the same.",
+        "All observable rendering, style, content, and technical attributes coincide."
+      ],
+      "pass": true
+    },
+    {
+      "id": "source-self-match",
+      "inputs": {
+        "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+        "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"
+      },
+      "expected_relation": "An image compared to itself in the source-fidelity role must have zero source-fidelity and technical loss.",
+      "observed_component_losses": {
+        "medium_rendering": 0.0,
+        "palette_tone": 0.0,
+        "line_shape": 0.0,
+        "texture_material": 0.0,
+        "graphic_language": 0.0,
+        "source_fidelity": 0.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "The source and candidate are the same saved image.",
+        "The rubric's source-fidelity and technical observations therefore have no mismatch."
+      ],
+      "pass": true
+    },
+    {
+      "id": "unstyled-source-cross-domain-mismatch",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+        "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"
+      },
+      "expected_relation": "The untouched photographic source preserves source content but visibly fails the teacher's reusable illustrated poster style.",
+      "observed_component_losses": {
+        "medium_rendering": 0.96,
+        "palette_tone": 0.79,
+        "line_shape": 0.93,
+        "texture_material": 0.68,
+        "graphic_language": 0.88,
+        "source_fidelity": 0.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "The candidate is an unstyled casual photograph, not a cel-shaded editorial illustration with print-separated color.",
+        "It lacks the target's constrained graphic palette, ink contours, abstract support shapes, paper/overprint treatment, and editorial hierarchy.",
+        "Because it is the source image itself, depicted source content is fully preserved."
+      ],
+      "pass": true
+    },
+    {
+      "id": "order-swap-check",
+      "inputs": {
+        "first_presented": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+        "second_presented": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+        "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"
+      },
+      "expected_relation": "Swapping display order must not change the cross-domain style losses or the self source-fidelity result when labels retain their semantic roles.",
+      "observed_component_losses": {
+        "medium_rendering": 0.96,
+        "palette_tone": 0.79,
+        "line_shape": 0.93,
+        "texture_material": 0.68,
+        "graphic_language": 0.88,
+        "source_fidelity": 0.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "Role labels, rather than display position, identify style truth, source truth, and candidate.",
+        "The observable mismatch remains the photographic candidate's absence of the transferable illustrated poster language."
+      ],
+      "pass": true
+    }
+  ],
+  "pass_criteria": [
+    "Both self-match checks return zero in every reported component.",
+    "The cross-domain check has high style losses while retaining zero source-fidelity loss.",
+    "The order-swap result equals the labeled cross-domain result."
+  ],
+  "status": "passed"
+}

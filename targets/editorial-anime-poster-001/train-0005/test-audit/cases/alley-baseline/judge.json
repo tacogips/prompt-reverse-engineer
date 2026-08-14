@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_source_truth_candidate",
+  "judge": {
+    "loss_function_version": "judge-v4-source-fidelity-style-transfer",
+    "prompt_sha256": "e1b430e07aa4fc53bca95f66083632b3954d96e97bab55691fe2752d97f99803",
+    "model": "gpt-5.6-terra",
+    "temperature": 0,
+    "repeat": 1,
+    "assessed_at": "2026-08-14T07:30:37Z",
+    "assessment_resolution": "original"
+  },
+  "inputs": {
+    "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "source_truth": "targets/editorial-anime-poster-001/test/source-alley.png",
+    "candidate": "targets/editorial-anime-poster-001/train-0005/test-audit/cases/alley-baseline/image.png"
+  },
+  "loss": {
+    "source_fidelity": 0.06,
+    "semantic": 0.01,
+    "composition": 0.07,
+    "color": 0.03,
+    "style": 0.06,
+    "technical": 0.01
+  },
+  "evidence": {
+    "source_fidelity": ["One red bicycle, wet narrow alley, pale concrete wall, doorway, and potted green plants are all retained; the illustration slightly simplifies source surface detail."],
+    "semantic": ["The candidate contains no person or copied subject from the style reference and adds no extra bicycle."],
+    "composition": ["The source alley still recedes to the left with the bicycle at the right foreground; abstract border graphics are stylistic overlays rather than source-content substitutions."],
+    "color": ["Cream, teal, coral, and ochre poster relationships are applied while the bicycle remains red and the plants remain green."],
+    "style": ["Crisp ink contours, flat cel shading, speckled print grain, discs, and brush accents closely match the transferable style language."],
+    "technical": ["The bicycle geometry and building edges are coherent, and no readable or pseudo-readable text is present."]
+  },
+  "instruction_assessment": {
+    "text_adherence": {"applicable": true, "loss": 0.0, "passed": true, "evidence": "No typography or text-like marks are visible."}
+  },
+  "dominant_differences": ["Preserve slightly more of the source's subdued wet-wall texture beneath the poster treatment."],
+  "confidence": 0.95
+}

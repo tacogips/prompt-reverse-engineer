@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_source_truth_candidate",
+  "judge": {"loss_function_version": "judge-v4-source-fidelity-style-transfer", "prompt_sha256": "e1b430e07aa4fc53bca95f66083632b3954d96e97bab55691fe2752d97f99803", "model": "gpt-5.6-terra", "temperature": 0, "repeat": 1, "assessed_at": "2026-08-14T07:22:12Z", "assessment_resolution": "original"},
+  "inputs": {"style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png", "source_truth": "targets/editorial-anime-poster-001/validation/heldout-a-0005.png", "candidate": "targets/editorial-anime-poster-001/train-0005/transferability/cases/heldout-a-pose/image.png"},
+  "loss": {"source_fidelity": 0.09, "semantic": 0.02, "composition": 0.10, "color": 0.04, "style": 0.06, "technical": 0.02},
+  "evidence": {"source_fidelity": ["The source woman remains recognizable with her dark hair, green sweater, cream trousers, brown shoes, and wooden stool."], "semantic": ["One person and one stool are retained without imported style-reference content."], "composition": ["The seated portrait is clear but uses a nearly frontal rather than strongly three-quarter view."], "color": ["The high-contrast poster palette and clothing color relationship are preserved."], "style": ["The inked anime portrait planes, brush texture, speckles, and geometric poster treatment transfer cleanly."], "technical": ["Both hands are visibly folded on the lap; anatomy, shoes, stool, and edges are clean with no text."]},
+  "instruction_assessment": {"pose_adherence": {"applicable": true, "loss": 0.04, "passed": true, "evidence": "The person is seated upright on the wooden stool with both hands folded visibly on the lap; the view is only mildly three-quarter."}, "text_adherence": {"applicable": true, "loss": 0.0, "passed": true, "evidence": "No typography or text-like marks are visible."}},
+  "dominant_differences": ["Increase the three-quarter turn while retaining the same pose and identity."],
+  "confidence": 0.94
+}

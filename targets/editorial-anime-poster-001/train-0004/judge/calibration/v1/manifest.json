@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "suite_version": "v1",
+  "status": "provisional_passed",
+  "executed_at": "2026-08-14T06:37:25Z",
+  "execution_method": "local original-resolution visual inspection against the versioned judge rubric",
+  "actual_repeat_count": 1,
+  "configured_judge": {
+    "provider": "openai",
+    "model": "gpt-5.6-terra",
+    "temperature": 0,
+    "prompt_path": "targets/editorial-anime-poster-001/train-0004/judge/prompt.md",
+    "prompt_sha256": "7d3905959a20554a42505c9bee2fe411498eb337e919d4d59992b9030d777944"
+  },
+  "pass_rule": "Near-zero means <= 0.02, high means >= 0.70, low means <= 0.05, and an order effect is material when any component changes by more than 0.05. Every required directional relation must hold.",
+  "cases": [
+    {
+      "case_id": "style-self-match",
+      "timestamp": "2026-08-14T06:37:25Z",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+        "candidate": "targets/editorial-anime-poster-001/truth/style-reference.png"
+      },
+      "presentation_order": "style_truth_source_truth_candidate",
+      "expected_relation": "The pixel-identical Style truth candidate has near-zero style, color, composition, and technical loss.",
+      "observed_component_losses": {
+        "source_fidelity": 1.0,
+        "semantic": 0.9,
+        "composition": 0.0,
+        "color": 0.0,
+        "style": 0.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "Candidate and Style truth are the same local PNG, so the visible poster layout, palette, contour treatment, texture, and technical rendering match exactly.",
+        "The candidate visibly depicts Style truth content rather than Source truth content; high source-fidelity and semantic loss is expected outside this style-only relation."
+      ],
+      "judge_prompt_sha256": "7d3905959a20554a42505c9bee2fe411498eb337e919d4d59992b9030d777944",
+      "confidence": 1.0,
+      "pass": true
+    },
+    {
+      "case_id": "source-self-match",
+      "timestamp": "2026-08-14T06:37:25Z",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+        "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"
+      },
+      "presentation_order": "style_truth_source_truth_candidate",
+      "expected_relation": "The pixel-identical Source truth candidate has near-zero source-fidelity and semantic loss.",
+      "observed_component_losses": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.85,
+        "color": 0.8,
+        "style": 1.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "Candidate and Source truth are the same local photograph, so the subject, clothing, pose, framing, and background geometry match exactly.",
+        "The photograph visibly lacks the Style truth's illustrated linework, color blocks, poster composition, brush marks, and print texture."
+      ],
+      "judge_prompt_sha256": "7d3905959a20554a42505c9bee2fe411498eb337e919d4d59992b9030d777944",
+      "confidence": 1.0,
+      "pass": true
+    },
+    {
+      "case_id": "obvious-cross-domain-mismatch",
+      "timestamp": "2026-08-14T06:37:25Z",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+        "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"
+      },
+      "presentation_order": "style_truth_source_truth_candidate",
+      "expected_relation": "The unstyled source retains low source-fidelity loss while producing high style and color loss against Style truth.",
+      "observed_component_losses": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.85,
+        "color": 0.8,
+        "style": 1.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "The candidate is exactly Source truth, preserving all visible source-controlled content.",
+        "It is a natural phone photograph with neutral stone surroundings and lacks the style reference's graphic palette, ink contours, flat cel shading, abstract forms, brush gestures, and print grain."
+      ],
+      "judge_prompt_sha256": "7d3905959a20554a42505c9bee2fe411498eb337e919d4d59992b9030d777944",
+      "confidence": 1.0,
+      "pass": true
+    },
+    {
+      "case_id": "target-candidate-order-swap",
+      "timestamp": "2026-08-14T06:37:25Z",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+        "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"
+      },
+      "presentation_order": "candidate_then_style_truth_source_truth_with_labels_preserved",
+      "baseline_case_id": "obvious-cross-domain-mismatch",
+      "expected_relation": "Changing only display order with labels preserved does not materially change assessment.",
+      "observed_component_losses": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.85,
+        "color": 0.8,
+        "style": 1.0,
+        "technical": 0.0
+      },
+      "component_absolute_deltas_from_baseline": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.0,
+        "color": 0.0,
+        "style": 0.0,
+        "technical": 0.0
+      },
+      "material_order_effect": false,
+      "evidence": [
+        "The same labeled local photograph remains an exact Source truth match and visibly lacks the Style truth's visual treatment.",
+        "Every component is unchanged from the cross-domain assessment."
+      ],
+      "judge_prompt_sha256": "7d3905959a20554a42505c9bee2fe411498eb337e919d4d59992b9030d777944",
+      "confidence": 1.0,
+      "pass": true
+    }
+  ],
+  "all_required_relations_pass": true
+}

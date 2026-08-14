@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "workflowExecutionId": "prompt-reverse-train-session-24",
+  "targetDir": "targets/editorial-anime-poster-001",
+  "styleReference": "targets/editorial-anime-poster-001/truth/style-reference.png",
+  "sourceReference": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+  "validationManifest": {
+    "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "byteSize": 3043,
+    "contentsOpened": false
+  },
+  "sealedTestManifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+    "sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+    "byteSize": 1410,
+    "contentsOpened": false
+  },
+  "metadataValidated": true,
+  "createdAt": "2026-08-14T12:53:50Z"
+}

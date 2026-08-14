@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "round": 2,
+  "phase": "output",
+  "candidatesPerRound": 3,
+  "maxRefinementRounds": 2,
+  "targetLoss": 0.25,
+  "validationTargetLoss": 0.3,
+  "validationWorstCaseLoss": 0.4,
+  "testTargetLoss": 0.32,
+  "testWorstCaseLoss": 0.42,
+  "maxGeneralizationGap": 0.1,
+  "bestCandidate": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-002",
+  "bestLoss": 0.1025,
+  "provisionalExitReason": "transferability_validation_failed",
+  "parentTrainDir": "train-0003",
+  "startedAt": "2026-08-14T07:44:47Z",
+  "updatedAt": "2026-08-14T10:49:25Z",
+  "completedAt": "2026-08-14T10:49:25Z",
+  "review": {
+    "status": "failed",
+    "evaluation": "targets/editorial-anime-poster-001/train-0006/evaluation.json",
+    "analysis": "targets/editorial-anime-poster-001/train-0006/analysis.md",
+    "exitReason": "validation_required_assertions_failed_and_generation_provenance_history_mismatch",
+    "bestJsonUpdated": false,
+    "findings": [
+      "heldout-a-pose failed three_quarter_view and brown_shoes_preserved",
+      "sealed test audit was skipped without opening the manifest after validation failure",
+      "four historical validation generation records have declared output.path/hash mismatches"
+    ]
+  },
+  "generationStatus": "complete",
+  "generationCompletedAt": "2026-08-14T09:36:37Z",
+  "generationFailure": {
+    "round": 2,
+    "recordedAt": "2026-08-14T09:04:53Z",
+    "reason": "The exact frozen prompt was rejected by built-in output moderation for all three candidate calls. Three subsequent calls succeeded only with an additional generic safety-integrity prefix, so their realized prompts do not hash to the frozen prompt.md and cannot receive conformant generation-provenance-v1 records.",
+    "candidateDirectories": [
+      "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-001",
+      "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-002",
+      "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-003"
+    ],
+    "nextAction": "Require a new frozen, template-validated prompt revision that includes any required generic safety-integrity language before generation."
+  },
+  "terminalCandidatePaths": [
+    "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-001",
+    "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-002",
+    "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-003"
+  ],
+  "judgingStatus": "complete",
+  "judgingCompletedAt": "2026-08-14T09:48:49Z",
+  "roundWinner": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-002",
+  "roundWinnerLoss": 0.1025,
+  "selection": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/selection.json",
+  "validationManifest": { "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json", "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8", "byteSize": 3043, "contentsOpened": true },
+  "validationGate": { "frozenPrompt": { "path": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/prompt/prompt.md", "sha256": "3cb3612d3c0c59fa4abed41709c1482e1152d6391d08d483d35bd3ae7991b69d" }, "manifestIntegrity": { "actualByteSize": 3043, "actualSha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8", "passed": true, "verifiedAt": "2026-08-14T10:13:52Z" }, "evaluation": "targets/editorial-anime-poster-001/train-0006/transferability/evaluation.json", "failedAssertions": ["heldout-a-pose: three_quarter_view", "heldout-a-pose: brown_shoes_preserved"], "remainingRefinementRounds": 0, "status": "failed", "completedAt": "2026-08-14T10:13:52Z" },
+  "sealedTestManifest": { "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json", "sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c", "byteSize": 1410, "contentsOpened": false },
+  "testAudit": {
+    "status": "skipped_prerequisite_failed",
+    "evaluation": "targets/editorial-anime-poster-001/train-0006/test-audit/evaluation.json",
+    "exitReason": "transferability_validation_failed",
+    "testManifestOpened": false,
+    "generationAttempted": false,
+    "judgingAttempted": false,
+    "completedAt": "2026-08-14T10:21:56Z"
+  },
+  "workflowSnapshot": { "path": "targets/editorial-anime-poster-001/train-0006/workflow", "generationRecordContract": "generation-provenance-v1", "generationRecordContractSha256": "8e8e43652c23fa156689bdc8a7e23cf3c01ee9633ea9a8133327170066692585" }
+}

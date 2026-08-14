@@ -1,0 +1,183 @@
+{
+  "workflowId": "prompt-reverse-train",
+  "description": "Train a reusable style-transfer prompt policy, reject subject-specific overfitting, and validate optional pose, composition, and exact-text instructions on held-out inputs before completion.",
+  "defaults": {
+    "maxLoopIterations": 40,
+    "nodeTimeoutMs": 900000,
+    "timeoutPolicy": "fail"
+  },
+  "prompts": {
+    "rielaPromptTemplate": "Route the run strictly from the persisted phase in the target iteration state. Never skip required artifact validation.",
+    "workerSystemPromptTemplate": "Work only inside the repository. Follow AGENTS.md. Persist evidence and machine-readable state before returning."
+  },
+  "managerStepId": "intake-or-plan",
+  "entryStepId": "intake-or-plan",
+  "nodes": [
+    {
+      "id": "intake-or-plan",
+      "nodeFile": "nodes/node-intake-or-plan.json"
+    },
+    {
+      "id": "analyze-images",
+      "nodeFile": "nodes/node-analyze-images.json"
+    },
+    {
+      "id": "generalize-prompt",
+      "nodeFile": "nodes/node-generalize-prompt.json"
+    },
+    {
+      "id": "audit-input-isolation",
+      "nodeFile": "nodes/node-audit-input-isolation.json"
+    },
+    {
+      "id": "generate-candidates",
+      "nodeFile": "nodes/node-generate-candidates.json"
+    },
+    {
+      "id": "judge-candidates",
+      "nodeFile": "nodes/node-judge-candidates.json"
+    },
+    {
+      "id": "refine-prompt",
+      "nodeFile": "nodes/node-refine-prompt.json"
+    },
+    {
+      "id": "validate-transferability",
+      "nodeFile": "nodes/node-validate-transferability.json"
+    },
+    {
+      "id": "audit-generalization",
+      "nodeFile": "nodes/node-audit-generalization.json"
+    },
+    {
+      "id": "review-training",
+      "nodeFile": "nodes/node-review-training.json"
+    },
+    {
+      "id": "workflow-output",
+      "nodeFile": "nodes/node-workflow-output.json"
+    }
+  ],
+  "steps": [
+    {
+      "id": "intake-or-plan",
+      "nodeId": "intake-or-plan",
+      "role": "manager",
+      "transitions": [
+        {
+          "toStepId": "analyze-images"
+        }
+      ]
+    },
+    {
+      "id": "analyze-images",
+      "nodeId": "analyze-images",
+      "role": "worker",
+      "transitions": [
+        {
+          "toStepId": "generalize-prompt"
+        }
+      ]
+    },
+    {
+      "id": "generalize-prompt",
+      "nodeId": "generalize-prompt",
+      "role": "worker",
+      "transitions": [
+        {
+          "toStepId": "audit-input-isolation"
+        }
+      ]
+    },
+    {
+      "id": "audit-input-isolation",
+      "nodeId": "audit-input-isolation",
+      "role": "worker",
+      "transitions": [
+        {
+          "toStepId": "generate-candidates",
+          "label": "isolation_passed"
+        },
+        {
+          "toStepId": "review-training",
+          "label": "!(isolation_passed)"
+        }
+      ]
+    },
+    {
+      "id": "generate-candidates",
+      "nodeId": "generate-candidates",
+      "role": "worker",
+      "transitions": [
+        {
+          "toStepId": "judge-candidates"
+        }
+      ]
+    },
+    {
+      "id": "judge-candidates",
+      "nodeId": "judge-candidates",
+      "role": "worker",
+      "transitions": [
+        {
+          "toStepId": "validate-transferability",
+          "label": "run_validation"
+        },
+        {
+          "toStepId": "refine-prompt",
+          "label": "!(run_validation)"
+        }
+      ]
+    },
+    {
+      "id": "refine-prompt",
+      "nodeId": "refine-prompt",
+      "role": "worker",
+      "transitions": [
+        {
+          "toStepId": "generalize-prompt"
+        }
+      ]
+    },
+    {
+      "id": "validate-transferability",
+      "nodeId": "validate-transferability",
+      "role": "worker",
+      "transitions": [
+        {
+          "toStepId": "audit-generalization",
+          "label": "stop_training"
+        },
+        {
+          "toStepId": "refine-prompt",
+          "label": "!(stop_training)"
+        }
+      ]
+    },
+    {
+      "id": "audit-generalization",
+      "nodeId": "audit-generalization",
+      "role": "worker",
+      "transitions": [
+        {
+          "toStepId": "review-training"
+        }
+      ]
+    },
+    {
+      "id": "review-training",
+      "nodeId": "review-training",
+      "role": "worker",
+      "transitions": [
+        {
+          "toStepId": "workflow-output"
+        }
+      ]
+    },
+    {
+      "id": "workflow-output",
+      "nodeId": "workflow-output",
+      "role": "worker"
+    }
+  ]
+}

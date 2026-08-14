@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "skipped_prerequisite_failed",
+  "audit_started_at": "2026-08-14T10:21:56Z",
+  "audit_completed_at": "2026-08-14T10:21:56Z",
+  "sealed_test_manifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+    "sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+    "byteSize": 1410,
+    "integrity_verified_before_open": false,
+    "contents_opened": false
+  },
+  "prerequisites": {
+    "template_validation_passed": true,
+    "validation_evaluation_path": "targets/editorial-anime-poster-001/train-0006/transferability/evaluation.json",
+    "validation_status": "failed",
+    "validation_audit_prerequisite_passed": false,
+    "failed_assertions": [
+      "heldout-a-pose: three_quarter_view",
+      "heldout-a-pose: brown_shoes_preserved"
+    ]
+  },
+  "exit_reason": "transferability_validation_failed",
+  "generation_attempted": false,
+  "judging_attempted": false,
+  "test_cases_loaded": false,
+  "next_step": "review-training",
+  "skip_reason": "The transferability validation gate failed required pose assertions. The sealed test manifest was not opened and no one-shot test generation or judging was performed."
+}

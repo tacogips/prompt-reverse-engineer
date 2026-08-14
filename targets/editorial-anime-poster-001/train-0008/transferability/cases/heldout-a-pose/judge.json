@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "style-inversion-v2",
+  "target_candidate_order": "style_truth_then_candidate",
+  "aggregation": "component_wise_median",
+  "repeat_count": 3,
+  "repeat_losses": [{"medium_rendering": 0.13, "palette_tone": 0.12, "line_shape": 0.18, "texture_material": 0.14, "graphic_language": 0.18, "source_fidelity": 0.05, "technical": 0.03}, {"medium_rendering": 0.13, "palette_tone": 0.12, "line_shape": 0.18, "texture_material": 0.14, "graphic_language": 0.18, "source_fidelity": 0.05, "technical": 0.03}, {"medium_rendering": 0.13, "palette_tone": 0.12, "line_shape": 0.18, "texture_material": 0.14, "graphic_language": 0.18, "source_fidelity": 0.05, "technical": 0.03}],
+  "loss": {"medium_rendering": 0.13, "palette_tone": 0.12, "line_shape": 0.18, "texture_material": 0.14, "graphic_language": 0.18, "source_fidelity": 0.05, "technical": 0.03},
+  "evidence": {"medium_rendering": ["The image applies clean cel shading and print-like color separation."], "palette_tone": ["The limited navy, teal, coral, mustard, off-white, and gold system is visible."], "line_shape": ["Variable navy ink and gold orbit marks are visible; geometric support forms remain comparatively loose."], "texture_material": ["Warm paper grain and restrained distressed brush marks are visible."], "graphic_language": ["The asymmetric broad-field, focal-form, and fine-ornament hierarchy is present."], "source_fidelity": ["The same face, hairstyle, sweater, trousers, shoes, and stool are preserved while the requested pose changes."], "technical": ["The seated body, folded hands, and stool contact are coherent; no unrequested text is visible."]},
+  "dominant_transferable_differences": ["Increase the crispness and geometric definition of the abstract support fields."],
+  "confidence": 0.9
+}

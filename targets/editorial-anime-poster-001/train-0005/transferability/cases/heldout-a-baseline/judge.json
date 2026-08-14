@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_source_truth_candidate",
+  "judge": {"loss_function_version": "judge-v4-source-fidelity-style-transfer", "prompt_sha256": "e1b430e07aa4fc53bca95f66083632b3954d96e97bab55691fe2752d97f99803", "model": "gpt-5.6-terra", "temperature": 0, "repeat": 1, "assessed_at": "2026-08-14T07:22:12Z", "assessment_resolution": "original"},
+  "inputs": {"style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png", "source_truth": "targets/editorial-anime-poster-001/validation/heldout-a-0005.png", "candidate": "targets/editorial-anime-poster-001/train-0005/transferability/cases/heldout-a-baseline/image.png"},
+  "loss": {"source_fidelity": 0.08, "semantic": 0.02, "composition": 0.08, "color": 0.04, "style": 0.06, "technical": 0.02},
+  "evidence": {"source_fidelity": ["The same single woman, shoulder-length dark hair, green sweater, cream trousers, brown shoes, and wooden stool remain visible."], "semantic": ["No content from the style reference is copied into the subject; no extra entity is visible."], "composition": ["The full-body portrait layout and stool are retained, though the poster graphics make the stool more central."], "color": ["The candidate adopts the style reference's cream, coral, teal, navy, and ochre contrast logic while preserving source-controlled clothing."], "style": ["Contour ink, flat shading, brushed texture, speckles, disks, and vertical graphic rules match the transferable style language."], "technical": ["Hands, feet, stool geometry, and edges are coherent; no readable or pseudo-readable text appears."]},
+  "instruction_assessment": {"text_adherence": {"applicable": true, "loss": 0.0, "passed": true, "evidence": "No typography or text-like marks are visible."}},
+  "dominant_differences": ["Keep the source's original separation from the stool slightly more prominent."],
+  "confidence": 0.95
+}

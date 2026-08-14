@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "iteration": 5,
+  "parent_iteration": 3,
+  "status": "failed",
+  "started_at": "2026-08-14T06:52:08Z",
+  "completed_at": "2026-08-14T07:38:10Z",
+  "hypothesis": "A frozen reusable style-transfer template with held-out optional-instruction cases can satisfy arbitrary-input generalization gates without source-specific clauses.",
+  "workflow_family": "analyze-generate-select-refine-loop",
+  "workflow_revision": "d7b6000c0f091daafe18d634fe2008dbde2a46d1edf668ffb15cf45615fc69da",
+  "judge_revision": "judge-v4-source-fidelity-style-transfer",
+  "selected_candidate": "rounds/round-0001/candidates/candidate-003",
+  "failure_reason": "Generation records do not implement the required provenance schema, so the generated images, references, and prompt hashes cannot be independently verified using declared fields."
+}

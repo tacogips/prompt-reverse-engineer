@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "round": 1,
+  "phase": "output",
+  "candidatesPerRound": 3,
+  "maxRefinementRounds": 2,
+  "targetLoss": 0.25,
+  "validationTargetLoss": 0.3,
+  "validationWorstCaseLoss": 0.4,
+  "testTargetLoss": 0.32,
+  "testWorstCaseLoss": 0.42,
+  "maxGeneralizationGap": 0.1,
+  "bestCandidate": "targets/editorial-anime-poster-001/train-0005/rounds/round-0001/candidates/candidate-003",
+  "bestLoss": 0.0745,
+  "provisionalExitReason": "training_and_validation_reached",
+  "parentTrainDir": "train-0003",
+  "styleReference": "targets/editorial-anime-poster-001/truth/style-reference.png",
+  "sourceReference": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+  "manifestRecords": {
+    "validation": {
+      "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+      "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "byteSize": 3043
+    },
+    "sealedTest": {
+      "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+      "sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+      "byteSize": 1410
+    }
+  },
+  "workflowSnapshot": {
+    "path": "targets/editorial-anime-poster-001/train-0005/workflow",
+    "workflowSha256": "d7b6000c0f091daafe18d634fe2008dbde2a46d1edf668ffb15cf45615fc69da"
+  },
+  "createdAt": "2026-08-14T06:52:08Z",
+  "validation": {
+    "evaluation": "targets/editorial-anime-poster-001/train-0005/transferability/evaluation.json",
+    "passed": true,
+    "aggregateLoss": 0.0525,
+    "worstCaseLoss": 0.066,
+    "generalizationGap": -0.022,
+    "sealedTestManifestOpened": false
+  },
+  "testAudit": {
+    "evaluation": "targets/editorial-anime-poster-001/train-0005/test-audit/evaluation.json",
+    "passed": true,
+    "aggregateLoss": 0.046,
+    "worstCaseLoss": 0.0495,
+    "validationTestGap": -0.0065,
+    "sealedTestManifestOpened": true,
+    "openedBy": "audit-generalization"
+  },
+  "exitReason": "generation_provenance_schema_nonconformant",
+  "nextStep": "workflow-output",
+  "review": {
+    "reviewed_at": "2026-08-14T07:38:10Z",
+    "result": "failed",
+    "failure_code": "generation_provenance_schema_nonconformant",
+    "diagnostic": "Every training, validation, and test generation record omits the required generation.output.path, generation.output.sha256, generation.input_images[], generation.prompt_file, and generation.prompt_sha256 fields. Recorded aliases were not used as provenance substitutes."
+  },
+  "completedAt": "2026-08-14T07:38:10Z",
+  "updatedAt": "2026-08-14T07:38:10Z"
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "round": 1,
+  "workflowExecutionId": "prompt-reverse-train-session-16",
+  "auditedAt": "2026-08-14T07:58:55Z",
+  "status": "passed",
+  "manifestChecks": {
+    "validation": {
+      "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+      "freshSha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "recordedSha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "recordedByteSize": 3043,
+      "hashMatches": true,
+      "contentsOpenedByAudit": false
+    },
+    "sealedTest": {
+      "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+      "freshSha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+      "recordedSha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+      "recordedByteSize": 1410,
+      "hashMatches": true,
+      "contentsOpenedByAudit": false
+    }
+  },
+  "promptTemplateCheck": {
+    "promptPath": "targets/editorial-anime-poster-001/train-0006/rounds/round-0001/prompt/prompt.md",
+    "templateValidationPath": "targets/editorial-anime-poster-001/train-0006/rounds/round-0001/prompt/template-validation.json",
+    "templateValidationSha256": "0e61f8a040a1504a9c99ad6ce7afdca84b288b2fbc7ce079a510aa2583ead902",
+    "recordedPromptSha256": "5f48e6b147faa25c74460bf6469016c6d5b622831afd48c1a352111b381219f4",
+    "freshPromptSha256": "5f48e6b147faa25c74460bf6469016c6d5b622831afd48c1a352111b381219f4",
+    "hashMatches": true,
+    "templateStatus": "passed",
+    "forbiddenClauseCount": 0
+  },
+  "runtimeInputIsolation": {
+    "validationManifestRepresentation": "path_only",
+    "sealedTestManifestRepresentation": "path_only",
+    "inlineValidationCasesDetected": false,
+    "inlineTestCasesDetected": false,
+    "protectedFixtureDescriptionsDetected": false,
+    "protectedInstructionsOrAssertionsDetected": false
+  },
+  "auditedStepExecutions": [
+    {
+      "stepId": "intake-or-plan",
+      "executionId": "intake-or-plan-attempt-1-exec-1",
+      "classification": "allowed",
+      "reason": "The execution referenced both manifest paths only for the permitted existence/hash/byte-size intake check; intake evidence records contentsOpened as false and its delivered payload contained no protected-manifest data."
+    },
+    {
+      "stepId": "analyze-images",
+      "executionId": "analyze-images-attempt-1-exec-2",
+      "classification": "allowed",
+      "reason": "No validation/test path or protected manifest hash appeared in the step-scoped backend events or delivered message payload."
+    },
+    {
+      "stepId": "generalize-prompt",
+      "executionId": "generalize-prompt-attempt-1-exec-3",
+      "classification": "allowed",
+      "reason": "No validation/test path or protected manifest hash appeared in the step-scoped backend events or delivered message payload."
+    },
+    {
+      "stepId": "audit-input-isolation",
+      "executionId": "audit-input-isolation-attempt-1-exec-4",
+      "classification": "allowed",
+      "reason": "The current audit is authorized to inspect intake, runtime, and session evidence and to hash both protected manifests without opening them."
+    }
+  ],
+  "accessEvents": [
+    {
+      "source": "runtime-artifacts/prompt-reverse-train-session-16/runtime-snapshot.json",
+      "stepId": "intake-or-plan",
+      "executionId": "intake-or-plan-attempt-1-exec-1",
+      "accessKind": "manifest path, SHA-256, and byte-size intake check",
+      "protectedInput": "validation manifest and sealed test manifest",
+      "classification": "allowed"
+    },
+    {
+      "source": "runtime-artifacts/runtime-message-log.sqlite",
+      "stepId": "intake-or-plan",
+      "executionId": "intake-or-plan-attempt-1-exec-1",
+      "accessKind": "delivered workflow message",
+      "protectedInput": "none in payload",
+      "classification": "allowed"
+    },
+    {
+      "source": "runtime-artifacts/runtime-message-log.sqlite",
+      "stepId": "analyze-images",
+      "executionId": "analyze-images-attempt-1-exec-2",
+      "accessKind": "delivered workflow message",
+      "protectedInput": "none",
+      "classification": "allowed"
+    },
+    {
+      "source": "runtime-artifacts/runtime-message-log.sqlite",
+      "stepId": "generalize-prompt",
+      "executionId": "generalize-prompt-attempt-1-exec-3",
+      "accessKind": "delivered workflow message",
+      "protectedInput": "none",
+      "classification": "allowed"
+    }
+  ],
+  "prohibitedAccessEvents": [],
+  "diagnostics": [],
+  "nextStep": "generate-candidates"
+}

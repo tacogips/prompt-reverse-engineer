@@ -1,0 +1,10 @@
+{
+  "schema_version": 2,
+  "judge_version": "source-style-judge-v2",
+  "judge_config": "targets/editorial-anime-poster-001/train-0007/judge/config.json",
+  "presentation_order": "style_truth_source_truth_candidate",
+  "loss": {"source_fidelity": 0.07, "style_fidelity": 0.12, "composition_adherence": 0.04, "text_adherence": 0.0, "technical": 0.03},
+  "assertions": {"square_aspect_ratio": true, "one_red_bicycle": true, "bicycle_center_foreground": true, "alley_receding": true, "doorway_preserved": true, "potted_green_plants_preserved": true, "exact_text_RAIN_ROUTE": true, "no_unrequested_text": true},
+  "evidence": ["The square poster places one red bicycle prominently in the foreground while the alley recedes behind it; the doorway and potted plants remain visible.", "The candidate uses the requested editorial anime treatment with navy linework, off-white paper, cel shading, cyan, coral, yellow, and geometric overprint accents.", "The only readable text is the exact requested spelling 'RAIN ROUTE'; edges and bicycle geometry are clean."],
+  "confidence": 0.91
+}

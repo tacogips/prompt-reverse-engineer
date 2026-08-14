@@ -13,19 +13,24 @@ The mock run must complete with exit code `0`. Its stable execution path is:
 1. `intake-or-plan`
 2. `analyze-images`
 3. `generalize-prompt`
-4. `generate-candidates`
-5. `judge-candidates`
-6. `validate-transferability`
-7. `audit-generalization`
-8. `review-training`
-9. `workflow-output`
+4. `audit-input-isolation`
+5. `generate-candidates`
+6. `judge-candidates`
+7. `validate-transferability`
+8. `audit-generalization`
+9. `review-training`
+10. `workflow-output`
 
 The mock template gate reports zero forbidden subject-specific clauses. The mock judge sets `when.run_validation` to true, and the transferability gate covers baseline, pose, composition, and exact-text behavior before setting `when.stop_training` to true. The one-shot audit then evaluates an untouched source and cannot route back to refinement. Therefore `refine-prompt` must not execute. The final stable exit reason is `target_validation_and_test_reached`. Session ids, timestamps, and absolute runtime paths are unstable and must not be asserted.
 
 Static regression checks must also confirm:
 
+- target/style truth is used by analysis and judging but never appears in candidate, validation, test, or final inference generation inputs;
+- each realized generation has exactly one image input with role `source_reference`;
+- the final prompt contains a concrete textual style specification and requires no style-reference image;
 - `prompt-template-contract.json` requires two distinct held-out source hashes;
 - `generalize-prompt` occurs before every `generate-candidates` path;
+- `audit-input-isolation` occurs between every `generalize-prompt` and `generate-candidates` path and can route contamination to review without generation;
 - `validate-transferability` occurs before `review-training` after a provisional training stop;
 - `audit-generalization` occurs after transferability validation and before review;
 - the template contract exposes optional `pose`, `composition`, `text`, and `additional` fields;
@@ -33,3 +38,6 @@ Static regression checks must also confirm:
 - a failed transferability gate routes to `refine-prompt` while budget remains.
 - test source hashes cannot overlap training or validation hashes;
 - the one-shot audit has no transition to `refine-prompt`.
+- ordinary runtime input carries validation and test manifest paths only, never inline cases;
+- only `validate-transferability` may open the frozen validation manifest;
+- pre-validation manifest access is treated as contamination and forces iteration failure.

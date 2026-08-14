@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "manifest": {
+    "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "byteSize": 3043,
+    "integrity_verified_before_open": true
+  },
+  "prompt": {
+    "path": "targets/editorial-anime-poster-001/train-0006/rounds/round-0001/prompt/prompt.md",
+    "sha256": "5f48e6b147faa25c74460bf6469016c6d5b622831afd48c1a352111b381219f4",
+    "frozen_before_manifest_open": true
+  },
+  "judge_version": "judge-v4-source-fidelity-style-transfer",
+  "source_hashes": [
+    "71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9",
+    "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1"
+  ],
+  "training_source_hash": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+  "case_coverage": {
+    "baseline": 1,
+    "pose": 1,
+    "composition": 1,
+    "text": 1,
+    "distinct_heldout_sources": 2,
+    "training_source_excluded": true
+  },
+  "loss_method": "unweighted mean of applicable validation components; no separate validation weights were present in intake, so no unrecorded weights were invented.",
+  "cases": [
+    {
+      "id": "heldout-a-baseline",
+      "type": "baseline",
+      "loss": 0.085,
+      "assertions_passed": false,
+      "failed_assertions": [
+        "wooden_stool_preserved"
+      ]
+    },
+    {
+      "id": "heldout-a-pose",
+      "type": "pose",
+      "loss": 0.048,
+      "assertions_passed": true,
+      "failed_assertions": []
+    },
+    {
+      "id": "heldout-b-composition",
+      "type": "composition",
+      "loss": 0.044,
+      "assertions_passed": true,
+      "failed_assertions": []
+    },
+    {
+      "id": "heldout-b-exact-text",
+      "type": "text",
+      "loss": 0.0575,
+      "assertions_passed": true,
+      "failed_assertions": []
+    }
+  ],
+  "aggregate_validation_loss": 0.058625,
+  "worst_case_loss": 0.085,
+  "training_loss": 0.0985,
+  "generalization_gap": -0.039875,
+  "thresholds": {
+    "aggregate_validation_loss_max": 0.3,
+    "worst_case_loss_max": 0.4,
+    "generalization_gap_max": 0.1
+  },
+  "thresholds_passed": true,
+  "pass_reasons": [
+    "Template validation passed with zero forbidden clauses.",
+    "All four required case types are covered across two source hashes disjoint from training.",
+    "All output and input hashes recomputed before judging.",
+    "Pose, composition, and exact-text assertions passed; no-text cases contain no invented text.",
+    "Aggregate, worst-case, and gap thresholds passed."
+  ],
+  "fail_reasons": [
+    "Baseline required source preservation failed: the wooden stool is absent from heldout-a-baseline."
+  ],
+  "next_action": "refine-prompt"
+}

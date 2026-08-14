@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "evaluated_at": "2026-08-14T07:22:12Z",
+  "validation_manifest": {"path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json", "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8", "byte_size": 3043, "integrity_verified_before_parse": true},
+  "prompt": {"path": "targets/editorial-anime-poster-001/train-0005/rounds/round-0001/prompt/prompt.md", "sha256": "225d563ace0193437dbb976557ecdf0d1afd3cc463a3a33ffcbf4fe2968a87bf", "frozen_before_manifest_access": true},
+  "judge": {"version": "judge-v4-source-fidelity-style-transfer", "prompt_sha256": "e1b430e07aa4fc53bca95f66083632b3954d96e97bab55691fe2752d97f99803", "model": "gpt-5.6-terra", "weights": {"source_fidelity": 0.3, "semantic": 0.1, "composition": 0.15, "color": 0.15, "style": 0.25, "technical": 0.05}},
+  "coverage": {"required_case_types": ["baseline", "pose", "composition", "text"], "observed_case_types": ["baseline", "pose", "composition", "text"], "complete": true},
+  "training_source_sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+  "held_out_sources": [{"id": "heldout-a", "sha256": "71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9"}, {"id": "heldout-b", "sha256": "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1"}],
+  "source_hash_checks": {"distinct_held_out_source_count": 2, "minimum_required": 2, "training_source_excluded": true, "passed": true},
+  "cases": [{"id": "heldout-a-baseline", "type": "baseline", "loss": 0.06, "passed": true}, {"id": "heldout-a-pose", "type": "pose", "loss": 0.066, "passed": true}, {"id": "heldout-b-composition", "type": "composition", "loss": 0.0405, "passed": true}, {"id": "heldout-b-exact-text", "type": "text", "loss": 0.0435, "passed": true}],
+  "aggregate_validation_loss": 0.0525,
+  "worst_case_loss": 0.066,
+  "training_loss": 0.0745,
+  "generalization_gap": -0.022,
+  "thresholds": {"aggregate_validation_loss_max": 0.3, "worst_case_loss_max": 0.4, "max_generalization_gap": 0.1},
+  "assertions": {"template_validation_passed": true, "forbidden_subject_specific_clause_count": 0, "all_explicit_instructions_passed": true, "exact_text_passed": true, "no_text_cases_have_no_invented_text": true, "sealed_test_manifest_opened": false},
+  "passed": true,
+  "pass_reasons": ["Frozen manifest hash and size matched intake evidence before parsing.", "Four required cases cover baseline, pose, composition, and exact text across two held-out hashes that exclude the training hash.", "All explicit-instruction assertions passed; the exact text is verbatim once and no-text cases contain no typography.", "Aggregate loss 0.0525 <= 0.3, worst-case loss 0.066 <= 0.4, and generalization gap -0.022 <= 0.1."],
+  "failure_reasons": []
+}

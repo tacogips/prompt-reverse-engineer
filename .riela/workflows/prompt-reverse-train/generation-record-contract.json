@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "contract_id": "generation-provenance-v1",
+  "path_policy": "repository-relative",
+  "required": [
+    "schema_version",
+    "provider",
+    "model",
+    "model_version",
+    "tool_mode",
+    "output",
+    "input_images",
+    "prompt_file",
+    "prompt_sha256",
+    "seed",
+    "provider_parameters",
+    "generated_at",
+    "raw_response_file"
+  ],
+  "output_required": [
+    "path",
+    "sha256",
+    "width",
+    "height",
+    "format"
+  ],
+  "input_image_required": [
+    "role",
+    "path",
+    "sha256"
+  ],
+  "example": {
+    "schema_version": 1,
+    "provider": "openai",
+    "model": "built-in-imagegen",
+    "model_version": null,
+    "tool_mode": "image-edit",
+    "output": {
+      "path": "targets/example/train-0001/rounds/round-0001/candidates/candidate-001/image.png",
+      "sha256": "<sha256-of-saved-output>",
+      "width": 1024,
+      "height": 1024,
+      "format": "png"
+    },
+    "input_images": [
+      {
+        "role": "source_reference",
+        "path": "targets/example/input/source.png",
+        "sha256": "<sha256-of-source-reference>"
+      }
+    ],
+    "prompt_file": "targets/example/train-0001/rounds/round-0001/prompt/prompt.md",
+    "prompt_sha256": "<sha256-of-exact-prompt-file>",
+    "seed": null,
+    "provider_parameters": {},
+    "generated_at": "<RFC3339 timestamp>",
+    "raw_response_file": null
+  },
+  "rules": [
+    "Every path is repository-relative.",
+    "Candidate, validation, and test generations contain exactly one image input with role source_reference; style truth is judge-only and must never appear in input_images.",
+    "Hash the saved output bytes, every input image, and the exact prompt file after they exist on disk.",
+    "Use null for an unavailable model version, seed, or raw response; never invent a value.",
+    "Additional fields are allowed, but aliases do not replace required fields."
+  ]
+}

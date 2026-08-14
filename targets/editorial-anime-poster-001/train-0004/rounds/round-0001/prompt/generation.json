@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "provider": "openai",
+  "model": "image_gen",
+  "model_version": null,
+  "seed": null,
+  "width": null,
+  "height": null,
+  "steps": null,
+  "guidance": null,
+  "sampler": null,
+  "prompt_sha256": "2c974052a42d45d038a4d69a41177db6cd8598eb02b7218aff8f02f72027ef79",
+  "input_images": [
+    {
+      "role": "style_reference",
+      "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+      "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+    },
+    {
+      "role": "source_reference",
+      "path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+      "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e"
+    }
+  ],
+  "provider_parameters": {
+    "generation_mode": "style-transfer",
+    "candidates_requested": 3,
+    "optional_instruction_fields": [
+      "pose",
+      "composition",
+      "text",
+      "additional"
+    ],
+    "aspect_ratio_policy": "infer_from_style_reference_unless_composition_instruction_overrides",
+    "note": "Intended shared settings only; no image generation has occurred in this analysis step."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "provider": "openai",
+  "model": "image_gen",
+  "model_version": null,
+  "generation_mode": "style-transfer",
+  "seed": null,
+  "width": null,
+  "height": null,
+  "steps": null,
+  "guidance": null,
+  "sampler": null,
+  "prompt_sha256": "225d563ace0193437dbb976557ecdf0d1afd3cc463a3a33ffcbf4fe2968a87bf",
+  "input_images": [
+    {
+      "role": "style_reference",
+      "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+      "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+    },
+    {
+      "role": "source_reference",
+      "path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+      "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e"
+    }
+  ],
+  "provider_parameters": {
+    "optional_instruction_fields": [
+      "pose",
+      "composition",
+      "text",
+      "additional"
+    ],
+    "unresolved_parameters_recording": "Provider exposes no seed, dimensions, steps, guidance, or sampler at analysis time; realized values must be added per candidate."
+  },
+  "raw_response_file": null
+}

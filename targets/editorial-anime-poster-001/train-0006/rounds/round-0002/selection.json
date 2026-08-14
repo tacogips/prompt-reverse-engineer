@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "round": 2,
+  "selection_rule": "lowest_total_loss_then_candidate_id",
+  "judge_version": "judge-v4-source-fidelity-style-transfer",
+  "calibration_status": "provisional_passed",
+  "candidates": [
+    {
+      "candidate_id": "candidate-001",
+      "path": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-001",
+      "total_loss": 0.1085,
+      "reward": 0.8915
+    },
+    {
+      "candidate_id": "candidate-002",
+      "path": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-002",
+      "total_loss": 0.1025,
+      "reward": 0.8975
+    },
+    {
+      "candidate_id": "candidate-003",
+      "path": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-003",
+      "total_loss": 0.1085,
+      "reward": 0.8915
+    }
+  ],
+  "round_winner": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-002",
+  "contract_eligibility": {
+    "current_contract_id": "reusable-style-transfer-v2",
+    "eligible_current_candidates": ["candidate-001", "candidate-002", "candidate-003"],
+    "excluded_prior_bests": [
+      {
+        "candidate": "targets/editorial-anime-poster-001/train-0006/rounds/round-0001/candidates/candidate-001",
+        "reason": "Its template-validation.json has contract_version reusable-style-transfer-v1 rather than current reusable-style-transfer-v2; the historical 0.0985 score is ineligible for promotion."
+      },
+      {
+        "candidate": "targets/editorial-anime-poster-001/best.json -> train-0003/rounds/round-0001/candidates/candidate-004",
+        "reason": "It uses legacy judge-v3-style-identity-provenance and has no current-v2 template-validation eligibility; legacy identity losses are not numerically comparable to the current source-fidelity loss."
+      }
+    ]
+  },
+  "global_best_before_round": null,
+  "global_best_loss_before_round": null,
+  "global_best_after_round": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-002",
+  "global_best_loss_after_round": 0.1025,
+  "retained_global_best": "round_winner_after_contract_eligibility_filter",
+  "target_loss": 0.25,
+  "target_reached": true
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "style-inversion-v2",
+  "target_candidate_order": "style_truth_then_candidate",
+  "aggregation": "component_wise_median",
+  "repeat_count": 3,
+  "repeat_losses": [{"medium_rendering": 0.14, "palette_tone": 0.12, "line_shape": 0.19, "texture_material": 0.14, "graphic_language": 0.19, "source_fidelity": 0.04, "technical": 0.02}, {"medium_rendering": 0.14, "palette_tone": 0.12, "line_shape": 0.19, "texture_material": 0.14, "graphic_language": 0.19, "source_fidelity": 0.04, "technical": 0.02}, {"medium_rendering": 0.14, "palette_tone": 0.12, "line_shape": 0.19, "texture_material": 0.14, "graphic_language": 0.19, "source_fidelity": 0.04, "technical": 0.02}],
+  "loss": {"medium_rendering": 0.14, "palette_tone": 0.12, "line_shape": 0.19, "texture_material": 0.14, "graphic_language": 0.19, "source_fidelity": 0.04, "technical": 0.02},
+  "evidence": {"medium_rendering": ["The still life is rendered with polished cel shading and clear print-like color separation."], "palette_tone": ["The target-derived limited palette and warm paper ground are visibly retained."], "line_shape": ["Navy contours and delicate gold ornaments appear; the geometric field vocabulary is less structured than the style truth."], "texture_material": ["Fine paper grain and restrained dry-brush texture remain visible."], "graphic_language": ["The typography, broad painted fields, focal objects, and sparse ornament form a readable editorial poster hierarchy."], "source_fidelity": ["One chair, one blue bottle, and one potted plant are all preserved."], "technical": ["The visible text reads exactly 'SIT WITH COLOR' once; no other readable or pseudo-readable text is present."]},
+  "dominant_transferable_differences": ["Use more opaque geometric panel structure in the abstract support fields."],
+  "confidence": 0.93
+}

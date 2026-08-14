@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "judge_version": "judge-v4-source-fidelity-style-transfer",
+  "original_resolution_assessed": true,
+  "loss": {
+    "source_fidelity": 0.10,
+    "style_fidelity": 0.07,
+    "pose_adherence": 0.03,
+    "text_adherence": 0.0,
+    "technical": 0.04
+  },
+  "assertions": {
+    "seated_upright_on_stool": true,
+    "three_quarter_view": true,
+    "both_hands_folded_on_lap": true,
+    "source_identity_preserved": true,
+    "hair_preserved": true,
+    "green_sweater_preserved": true,
+    "cream_trousers_preserved": true,
+    "brown_shoes_preserved": true,
+    "wooden_stool_preserved": true,
+    "no_invented_text": true
+  },
+  "evidence": [
+    "The same person is seated upright on the stool in a three-quarter-like presentation with both hands visibly folded on the lap.",
+    "Hair, sweater, trousers, shoes, and stool are retained.",
+    "The stylized palette, bold contours, and brush/graphic background transfer without text."
+  ]
+}

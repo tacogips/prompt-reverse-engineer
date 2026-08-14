@@ -1,0 +1,102 @@
+{
+  "schema_version": 2,
+  "contract_id": "prompt-only-style-reconstruction-v1",
+  "contract_schema_version": 3,
+  "prompt_file": "targets/editorial-anime-poster-001/train-0008/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "5524441b1223299d69b181bc1c1abe077db82015795b4a0fcdac901af05b3b66",
+  "generation_metadata_file": "targets/editorial-anime-poster-001/train-0008/rounds/round-0001/prompt/generation.json",
+  "validation": {
+    "self_contained_textual_style_specification": true,
+    "required_literal_exact_checks": [
+      {
+        "clause": "Perform only a benign, non-sexual artistic style transformation; do not introduce nudity, sexualization, age changes, violence, injury, or other unsafe content.",
+        "present_verbatim": true
+      },
+      {
+        "clause": "The source reference is the only image input available at generation time.",
+        "present_verbatim": true
+      }
+    ],
+    "sole_source_role_check": {
+      "input_image_count": 1,
+      "roles": [
+        "source_reference"
+      ],
+      "passed": true
+    },
+    "forbidden_generation_role_check": {
+      "forbidden_roles": [
+        "style_reference",
+        "style_truth",
+        "target_reference"
+      ],
+      "roles_present": [],
+      "passed": true
+    },
+    "image_1_source_reference_stated": true,
+    "optional_instruction_fields_exposed": [
+      "pose",
+      "composition",
+      "text",
+      "additional"
+    ],
+    "absent_text_means_no_generated_text": true,
+    "exact_text_is_verbatim_when_supplied": true,
+    "explicit_instruction_precedence_stated": true,
+    "precedence_order": [
+      "safety_and_integrity",
+      "explicit_optional_instructions",
+      "source_content_and_identity_preservation",
+      "textual_style_specification"
+    ],
+    "preserves_unspecified_source_attributes": true,
+    "requires_style_image_at_generation_time": false,
+    "style_image_role_instructions_removed": true,
+    "suspected_source_specific_clauses": [],
+    "suspected_source_specific_clause_dispositions": [],
+    "forbidden_clause_count": 0,
+    "textual_style_clause_inventory": {
+      "medium_rendering": [
+        "refined editorial anime poster illustration",
+        "clean flat-to-gently-graded cel shading",
+        "crisp print-like color separation"
+      ],
+      "palette_tone": [
+        "ink navy, saturated blue-teal, coral pink, mustard yellow, and warm off-white",
+        "restrained matte-gold accent lines and dots"
+      ],
+      "line_shape": [
+        "elegant variable-weight deep-navy ink contours",
+        "expressive fine strokes"
+      ],
+      "texture_material": [
+        "warm off-white paper ground",
+        "subtle screen-print grain",
+        "imperfect overprint edges",
+        "sparse paint flecks",
+        "occasional dry-brush sweeps"
+      ],
+      "graphic_language": [
+        "adaptable asymmetric editorial balance",
+        "generous negative-space rhythm",
+        "layered abstract circles, panels, and diagonal color bands",
+        "fine orbital line-and-dot ornament"
+      ],
+      "lighting_contrast_and_composition_defaults": [
+        "clean flat-to-gently-graded cel shading",
+        "crisp print-like color separation",
+        "adaptable asymmetric editorial balance"
+      ]
+    },
+    "complexity_statistics": {
+      "line_count": 24,
+      "word_count": 352,
+      "byte_count": 2649,
+      "required_literal_clause_count": 2,
+      "optional_instruction_field_count": 4,
+      "style_dimension_count": 5
+    }
+  },
+  "result": "pass",
+  "status": "pass"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "review-training",
+  "description": "Review training and held-out artifacts, verify the anti-overfitting gate, and finalize the iteration record.",
+  "nodeType": "agent",
+  "executionBackend": "codex-agent",
+  "model": "gpt-5.6-terra",
+  "promptTemplateFile": "prompts/review-training.md",
+  "variables": {},
+  "output": {
+    "description": "Return JSON with verification status, exit reason, best candidate, and artifact paths."
+  }
+}

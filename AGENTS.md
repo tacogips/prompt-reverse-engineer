@@ -2,18 +2,17 @@
 
 ## Project Purpose
 
-This repository researches prompt reverse engineering from reference images. Given one or more style target images, the system must infer a reusable prompt policy and Riela workflow that can apply the learned visual language to an arbitrary source image. The learned prompt must not be a caption or reconstruction prompt for the particular source used during training.
+This repository researches prompt inversion from generated target images. Given one or more immutable target/style truth images, the system must infer the self-contained text prompt that plausibly produced their visual language. The learned prompt must apply that language to an arbitrary source image without receiving the target/style truth as a generation input.
 
-The work is iterative and reinforcement-learning-inspired: generate candidates, measure their differences from the target, analyze the errors, update the workflow and prompt strategy, and repeat. The objective is to reduce a defined loss across iterations without overfitting to one accidental generation seed.
+The work is iterative and reinforcement-learning-inspired: generate candidates, measure their reusable style-language differences from the target, analyze the errors, update the workflow and prompt strategy, and repeat. The objective is not to reproduce the teacher image. It is to infer a transferable text model of the hidden style prompt and reduce its style loss across arbitrary input images without overfitting to one subject, composition, scene, or accidental generation seed.
 
-The final deliverable is a Riela workflow that accepts a style target, an arbitrary source image, and optional pose, composition, exact-text, or additional instructions. It produces a reverse-engineered reusable generation specification, relevant parameters, validation evidence, and an explicit generalization status.
+Training accepts target/style truth, an arbitrary source image, and optional pose, composition, exact-text, or additional instructions. Target truth is available only to analysis, judging, refinement, and review. Candidate, validation, test, and deployed inference generation receive the source image plus the reconstructed text prompt only. The deliverable includes that prompt, relevant parameters, validation evidence, and explicit generalization status.
 
 ## Reusable Prompt Contract
 
-The primary learned artifact is a subject-agnostic style-transfer template. It has two required image roles:
+The primary learned artifact is a subject-agnostic, self-contained textual style prompt. Generation has exactly one required image role: `source_reference`, which exclusively controls depicted content and identity. `style_reference`, `style_truth`, and target images are forbidden generation roles. The prompt text itself must encode the reconstructed medium, palette, contrast, lighting, line quality, texture, mark making, abstract graphic vocabulary, and overrideable composition defaults.
 
-1. `style_reference`: controls only transferable visual language;
-2. `source_reference`: exclusively controls depicted content and identity.
+The teacher image is evidence for a hidden style prompt, not an image-reconstruction target. Its subject, identity, objects, readable text, pose, camera crop, exact geometry, concrete layout, and scene are content leakage and must not be rewarded, copied, or required. Only transferable visual factors—medium/rendering, palette/tone, line/shape, texture/material, and abstract graphic language—belong in the learned style model.
 
 The template accepts optional structured instructions:
 
@@ -26,11 +25,15 @@ Instruction precedence is: safety and artifact integrity, explicit optional inst
 
 Never hard-code observations from the current source into the reusable prompt. Forbidden source-specific prompt content includes observed age, gender, ethnicity, skin tone, facial features, hair, gaze, expression, pose direction, clothing, accessories, logos, text, objects, scene contents, or a target-specific subject description. These observations belong in source analysis and judge evidence only. Generic instructions to preserve source-controlled attributes are allowed.
 
-Every round must write `prompt/template-validation.json`. Candidate generation is forbidden until this record passes with zero subject-specific clauses and a hash matching `prompt.md`.
+Every round must write `prompt/template-validation.json` and `isolation-audit/round-NNNN.json`. Candidate generation is forbidden until the template record passes with zero subject-specific clauses and the isolation audit proves that validation/test inputs were not accessed by prohibited nodes. A contamination failure must be written to `state.json` by the workflow and routed to normal review/output without requiring an operator to patch state manually.
+
+Target/style truth must never be attached to a generation call. Every candidate, validation, and test `generation.json` must contain exactly one `input_images` entry with role `source_reference`. If the truth hash or a truth/style role appears in generation provenance, the candidate and run are invalid regardless of visual score.
 
 ## Generalization and Overfitting Control
 
-Training loss and validation loss are separate. Training loss measures a candidate made from the training source. Validation loss measures the frozen prompt on held-out source images and optional-instruction cases. Never combine them into a single number that hides a regression.
+Training loss and validation loss are separate. Training loss measures a candidate made from the training source. Validation loss measures the frozen prompt on held-out source images and optional-instruction cases. Never combine them into a single number that hides a regression. Ordinary runtime input must carry only a repository-relative frozen validation-manifest path, never inline validation cases, source descriptions, instructions, or expected assertions. Intake records that file's hash and size without opening it; only `validate-transferability` may open it after the prompt hash is frozen.
+
+Training optimization uses loss-function version `style-inversion-v3`. Seventy percent of its weight belongs to five explicit teacher-derived style dimensions: `medium_rendering`, `palette_tone`, `line_shape`, `texture_material`, and `graphic_language`. `palette_tone` includes source-relative skin, hair, and clothing treatment; `graphic_language` includes conditional typography/dialogue treatment without teacher wording. `source_fidelity` and `technical` guard against destroying the new input; they do not define the desired style. Every style dimension and authorized human-feedback check has its own gate, so high source fidelity cannot hide a weak style transfer. Pixel similarity and teacher-content similarity are forbidden metrics.
 
 A workflow may claim arbitrary-input behavior only after a held-out gate that:
 
@@ -50,7 +53,7 @@ Use `allowUnvalidatedPrototype: true` only for explicitly exploratory runs. Such
 Additional anti-overfitting controls are mandatory:
 
 - freeze validation inputs, instructions, thresholds, and expected assertions before prompt optimization;
-- do not reveal held-out source descriptions to prompt-synthesis nodes;
+- do not reveal held-out source descriptions to prompt-synthesis nodes, including through runtime variables, run configuration, intake evidence, or runtime snapshots;
 - normalize every revised prompt through the reusable-template contract;
 - prefer short transferable style clauses over growing lists of source-specific exceptions;
 - reject validation improvements caused by changing the judge or validation set;
@@ -138,16 +141,18 @@ Do not modify `truth/` while training. It is the immutable ground truth for the 
     "model_version": "version-or-null"
   },
   "evaluation": {
-    "metric_version": "v1",
+    "metric_version": "style-inversion-v3",
     "judge_model": "multimodal-judge-model",
     "weights": {
-      "source_fidelity": 0.30,
-      "semantic": 0.10,
-      "composition": 0.15,
-      "color": 0.15,
-      "style": 0.25,
-      "technical": 0.05
+      "medium_rendering": 0.20,
+      "palette_tone": 0.15,
+      "line_shape": 0.15,
+      "texture_material": 0.10,
+      "graphic_language": 0.10,
+      "source_fidelity": 0.20,
+      "technical": 0.10
     },
+    "style_component_max_loss": 0.25,
     "candidates_per_round": 4,
     "max_refinement_rounds": 8,
     "target_loss": 0.15,
@@ -233,6 +238,8 @@ Do not put secrets, credentials, or undocumented runtime substitutions in prompt
 
 Each round's `prompt/generation.json` contains the intended shared settings. Each candidate's `generation.json` contains the exact realized settings and must override or expand the shared record when necessary.
 
+The authoritative realized-record contract is `.riela/workflows/prompt-reverse-train/generation-record-contract.json`. Training, validation, and sealed-test generation records must use its exact required fields. In particular, use `output.path`, `output.sha256`, `input_images[]`, `prompt_file`, and `prompt_sha256`; aliases do not satisfy the contract. All persisted paths are repository-relative, and every recorded hash must be recomputed from saved bytes before the workflow advances.
+
 ```json
 {
   "schema_version": 1,
@@ -251,6 +258,10 @@ Each round's `prompt/generation.json` contains the intended shared settings. Eac
 ```
 
 Preserve provider-specific parameters under a `provider_parameters` object. Record seeds whenever the provider exposes them. Never claim reproducibility when a provider does not guarantee it.
+
+Generation nodes are retry-idempotent. A retry must reuse an existing terminal artifact when its prompt, manifest, input, and output hashes verify. It may generate only missing cases or candidates and must never replace a recorded validation or one-shot test result with a fresh stochastic sample. Independent generation calls should run concurrently where supported so multimodal nodes remain within the configured workflow timeout.
+
+Real image-generation runs should set a generous agent deadline, for example `--default-timeout-ms 3600000 --timeout-ms 7200000`, in addition to supervised execution flags.
 
 ### Prompt-as-a-judge loss function
 
@@ -272,14 +283,15 @@ The loss function is itself a learned and versioned part of the Riela workflow. 
 
 The judge receives, at minimum:
 
-- the immutable target image;
+- the immutable target image as style evidence only;
+- the source image controlling candidate content;
 - exactly one generated candidate image;
 - stable labels identifying which image is the target and which is the candidate;
 - the scoring rubric and required JSON output schema.
 
 The generation prompt may be supplied only in a separate diagnosis phase. The primary similarity score must be based on the images, not on how plausible or well-written the generation prompt appears. Do not let the judge reward prompt wording, intent, or rationales that are not visible in the candidate.
 
-The judge prompt must instruct the model to compare observable differences systematically, score each loss component in `[0, 1]`, cite concise visual evidence for every component, calculate no weighted total itself unless necessary, and return valid JSON only. The workflow must calculate the weighted total deterministically from the returned component values.
+The judge prompt must instruct the model to compare observable transferable-style differences systematically, score each loss component in `[0, 1]`, cite concise visual evidence for every component, calculate no weighted total itself unless necessary, and return valid JSON only. It must explicitly ignore target subject, objects, text, pose, crop, exact composition, concrete layout, and scene. The workflow must calculate the weighted total deterministically from the returned component values.
 
 Reusable arbitrary-input evaluators use `source_fidelity` rather than a person-only `identity` key. For a person, it covers recognizable identity, age, anatomy, hair, clothing, and unspecified pose. For an object, it covers count, geometry, material, markings, and parts. For a scene, it covers entities, spatial relationships, and structure. A legacy `identity` evaluator is a different loss-function version and its totals must not be compared directly.
 
@@ -290,17 +302,21 @@ Use a schema equivalent to:
   "schema_version": 1,
   "target_candidate_order": "target_then_candidate",
   "loss": {
-    "semantic": 0.190,
-    "composition": 0.310,
-    "color": 0.240,
-    "style": 0.360,
+    "medium_rendering": 0.190,
+    "palette_tone": 0.240,
+    "line_shape": 0.310,
+    "texture_material": 0.220,
+    "graphic_language": 0.260,
+    "source_fidelity": 0.190,
     "technical": 0.410
   },
   "evidence": {
-    "semantic": ["The candidate contains the same primary subject."],
-    "composition": ["The subject occupies less of the frame in the candidate."],
-    "color": ["The candidate background is warmer."],
-    "style": ["The candidate has smoother, less textured rendering."],
+    "medium_rendering": ["The candidate uses flatter cel shading than the teacher style."],
+    "palette_tone": ["The candidate background is warmer than the teacher style's palette system."],
+    "line_shape": ["The candidate contours are softer and less graphic."],
+    "texture_material": ["The candidate lacks the teacher style's paper and overprint behavior."],
+    "graphic_language": ["The abstract shape layering is less editorial."],
+    "source_fidelity": ["The candidate preserves the source subject and objects."],
     "technical": ["The candidate has softer edge detail."]
   },
   "dominant_differences": [
@@ -328,11 +344,12 @@ The visual training judge must not reward prompt wording. Template generality is
   "target_files": ["truth/target.png"],
   "loss": {
     "total": 0.284,
+    "medium_rendering": 0.190,
+    "palette_tone": 0.240,
+    "line_shape": 0.310,
+    "texture_material": 0.220,
+    "graphic_language": 0.260,
     "source_fidelity": 0.190,
-    "semantic": 0.190,
-    "composition": 0.310,
-    "color": 0.240,
-    "style": 0.360,
     "technical": 0.410
   },
   "reward": 0.716,
@@ -388,11 +405,11 @@ This file summarizes the iteration rather than duplicating all candidate details
 For every iteration:
 
 1. Read `target.json`, `truth/manifest.json`, the target images, `best.json`, and the previous iteration's analysis.
-2. Inspect the current best candidate against the truth at full resolution. Identify whether the dominant limitation is in image analysis, prompt synthesis, candidate generation, judging, selection, refinement, or loop control.
+2. Inspect the current best candidate against the truth at full resolution for reusable style dimensions only, and against its source for content fidelity. Identify whether the dominant limitation is in style modeling, prompt synthesis, candidate generation, judging, selection, refinement, or loop control.
 3. Form a testable hypothesis about either the workflow policy or the judge loss function.
 4. Copy the previous best workflow and judge into the new iteration and make a focused update. Avoid changing many unrelated variables at once unless the iteration is explicitly marked as a new workflow family.
 5. Execute the workflow's internal refinement rounds. Generate the configured number of candidates per round and prefer controlled seed variation so prompt quality is not confused with a lucky seed.
-6. Evaluate every candidate with the same versioned judge. Select the round winner using the declared rule, then use the target, the winner, the judge evidence, and the current prompt to produce the next prompt when the workflow strategy requires it.
+6. Evaluate every candidate with the same versioned judge. Select the round winner using the declared rule and per-style ceilings, then use the style model, target, winner, judge evidence, and current prompt to produce the next prompt when the workflow strategy requires it.
 7. Stop the internal loop when `target_loss` is reached, `max_refinement_rounds` is exhausted, or another predeclared safety or budget condition fires. Always record the exact exit reason.
 8. Before completion, freeze the best prompt and run the held-out transferability suite. If it fails and budget remains, refine from validation evidence without exposing held-out source descriptions; otherwise exit honestly.
 9. Write all provenance, prompts, template validations, generation records, raw judge responses, metrics, selections, transferability cases, refinements, and analysis artifacts.
@@ -422,14 +439,14 @@ The Riela workflow shape is intentionally not fixed. Workflow topology, prompts,
 Implement and measure the following as a useful baseline, not as the mandatory final architecture:
 
 1. Ingest and validate the target image or images.
-2. Analyze observable features such as subject identity, object count, geometry, spatial relationships, camera and framing, lighting, palette, materials, typography, rendering medium, texture, and notable absences. Record uncertainty instead of inventing details.
-3. Convert the analysis into an initial structured image-generation prompt and parameters.
+2. Separate teacher-image content from reusable style evidence. Model medium/rendering, palette/tone, line/shape, texture/material, and abstract graphic language; blacklist teacher subject, objects, text, pose, crop, concrete layout, and scene. Record uncertainty instead of inventing details.
+3. Convert only the reusable style model into an initial structured image-generation prompt and parameters.
 4. Generate `N = candidates_per_round` images in parallel.
-5. Run the versioned prompt-as-a-judge loss function independently on every target/candidate pair.
+5. Run the versioned prompt-as-a-judge loss independently on every style-truth/source/candidate triplet; never use pixel similarity or teacher-content matching.
 6. Select the candidate with the lowest aggregate loss using a deterministic tie-break rule.
 7. If its loss is at or below `target_loss`, return it and exit successfully.
 8. Otherwise, provide the target image, selected candidate, current generation prompt, component losses, and evidence-backed differences to a refinement node. Produce a revised prompt that addresses the dominant differences while preserving already-correct features.
-9. Generate another parallel batch of `N` candidates from the revised state and repeat selection and refinement. When the generator supports image conditioning, pass both the target and selected candidate as explicit, labeled image inputs together with the revised prompt. When it does not, pass their persisted visual analyses and judge evidence; never imply that an image was supplied when it was not.
+9. Generate another parallel batch of `N` candidates from the revised text prompt and source image only. The refinement node may inspect target truth and selected candidates, but it must convert its conclusions into text; neither target truth nor a previous candidate may be attached to the next generation call.
 10. Exit when the target loss is reached or after `M = max_refinement_rounds`. On budget exhaustion, return the best-so-far result with a non-success exit reason rather than pretending convergence.
 
 The loop must retain the global best candidate across all rounds. A later round must not replace it merely because it is the winner of that round. Generate candidates in parallel where Riela permits it, but make selection and state updates deterministic after all expected results arrive. Define how partial generation failures, invalid judge output, ties, timeouts, and provider rate limits affect the round.
@@ -438,7 +455,7 @@ The loop must retain the global best candidate across all rounds. A later round 
 
 Agents must explore approaches that are materially different from the baseline. Merely changing wording, `N`, or `M` does not create a new workflow family. Candidate alternatives include, but are not limited to:
 
-- coarse-to-fine optimization: solve composition and semantics first, then color, style, and fine detail;
+- coarse-to-fine style optimization: solve medium and palette first, then line/shape, texture/material, and graphic language;
 - hierarchical decomposition: infer scene graph, camera, lighting, materials, and style in separate branches before prompt synthesis;
 - population or evolutionary search: maintain several parent prompts, mutate and recombine them, and preserve diversity rather than following one winner;
 - pairwise tournament judging: rank candidates through comparisons before assigning calibrated absolute loss;
@@ -446,7 +463,7 @@ Agents must explore approaches that are materially different from the baseline. 
 - region-aware refinement: crop or segment mismatching regions, diagnose them separately, then revise the global prompt;
 - prompt ablation and attribution: add or remove controlled prompt clauses to measure which wording causes which visual change;
 - surrogate or memory-guided search: learn from prior targets to propose promising prompt structures before generation;
-- generator-specific inversion or image-to-image refinement when supported, while keeping a text-only path available for comparison;
+- generator-specific textual prompt inversion and controlled prompt ablation, while keeping target/style truth strictly judge-only during generation;
 - adaptive budgeting: change batch size, judge repeats, or exploration strength based on uncertainty and observed progress.
 
 Each workflow family must declare its hypothesis, expected advantage, expected failure mode, compute budget, and comparison baseline. Compare families across multiple targets and seeds using a fixed judge version and equalized budget where possible. Preserve failed approaches: negative results are research evidence.
@@ -499,9 +516,12 @@ A target is complete only when:
 - all loops are bounded and their recorded exit reasons agree with their configured thresholds and budgets;
 - the final workflow has been validated with fresh generation attempts;
 - every final prompt passes the reusable-template contract with zero subject-specific clauses;
+- the final style model explicitly separates transferable style factors from teacher-image content leakage and maps each factor to prompt clauses;
+- every teacher-derived style dimension passes its frozen ceiling on training, validation, and one-shot test evidence;
+- every generation record has exactly one source image input and no target/style truth path or hash;
 - held-out validation covers at least two distinct non-training sources plus baseline, pose, composition, and exact-text cases;
 - a one-shot untouched test audit covers baseline and combined optional instructions on a source disjoint from training and validation;
 - aggregate validation loss, worst-case loss, and train/validation gap satisfy their frozen thresholds;
 - the selected workflow family has been compared against at least one materially different approach, unless a documented resource limit prevents it;
-- the workflow can accept target images without relying on hidden context;
+- the training workflow can accept target images without hidden context, while its learned prompt can generate without those target images;
 - limitations, evaluator changes, and nondeterminism are documented.

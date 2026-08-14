@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "iteration": 5,
+  "status": "failed",
+  "selected_candidate": "rounds/round-0001/candidates/candidate-003",
+  "best_candidate_path": "targets/editorial-anime-poster-001/train-0005/rounds/round-0001/candidates/candidate-003",
+  "rounds_executed": 1,
+  "configured_max_refinement_rounds": 2,
+  "training": {
+    "total_loss": 0.0745,
+    "reward": 0.9255,
+    "target_loss": 0.25,
+    "target_reached": true
+  },
+  "validation": {
+    "aggregate_loss": 0.0525,
+    "worst_case_loss": 0.066,
+    "aggregate_threshold": 0.3,
+    "worst_case_threshold": 0.4,
+    "generalization_gap": -0.022,
+    "max_generalization_gap": 0.1,
+    "coverage": {
+      "baseline": true,
+      "pose": true,
+      "composition": true,
+      "text": true,
+      "distinct_held_out_source_hashes": 2
+    },
+    "reported_passed": true
+  },
+  "test_audit": {
+    "aggregate_loss": 0.046,
+    "worst_case_loss": 0.0495,
+    "aggregate_threshold": 0.32,
+    "worst_case_threshold": 0.42,
+    "validation_test_gap": -0.0065,
+    "max_validation_test_gap": 0.1,
+    "coverage": {
+      "baseline": true,
+      "combined_optional": true
+    },
+    "reported_passed": true
+  },
+  "template_validation": {
+    "path": "targets/editorial-anime-poster-001/train-0005/rounds/round-0001/prompt/template-validation.json",
+    "reported_passed": true,
+    "forbidden_subject_specific_clause_count": 0
+  },
+  "selection_verification": {
+    "rule": "lowest_total_loss_then_candidate_id",
+    "candidate_totals": {
+      "candidate-001": 0.116,
+      "candidate-002": 0.0805,
+      "candidate-003": 0.0745
+    },
+    "selected_candidate_matches_lowest": true,
+    "global_best_not_replaced_by_worse_round_winner": true
+  },
+  "metric_verification": {
+    "all_component_losses_in_range": true,
+    "weighted_totals_and_rewards_recomputed_within_rounding_tolerance": true
+  },
+  "isolation_verification": {
+    "validation_manifest_opened_before_validate_transferability": false,
+    "sealed_test_manifest_opened_before_audit_generalization": false,
+    "manifest_hashes_and_sizes_fixed": true,
+    "audit_failure_routed_to_refinement": false
+  },
+  "provenance_verification": {
+    "passed": false,
+    "affected_generation_records": 9,
+    "missing_documented_fields": [
+      "generation.output.path",
+      "generation.output.sha256",
+      "generation.input_images[]",
+      "generation.prompt_file",
+      "generation.prompt_sha256"
+    ],
+    "note": "The verifier did not treat undeclared aliases as provenance fields. Because the required recorded fields do not exist, output image paths and hashes, input reference paths and hashes, and prompt paths and hashes cannot be verified under the required schema."
+  },
+  "exit_reason": "generation_provenance_schema_nonconformant",
+  "is_new_best": false,
+  "best_json_updated": false,
+  "reviewed_at": "2026-08-14T07:38:10Z"
+}

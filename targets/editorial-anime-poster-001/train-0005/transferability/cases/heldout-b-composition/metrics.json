@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "case_id": "heldout-b-composition",
+  "case_type": "composition",
+  "loss": {"total": 0.0405, "source_fidelity": 0.04, "semantic": 0.02, "composition": 0.03, "color": 0.04, "style": 0.06, "technical": 0.02},
+  "weights": {"source_fidelity": 0.3, "semantic": 0.1, "composition": 0.15, "color": 0.15, "style": 0.25, "technical": 0.05},
+  "instruction_losses": {"composition_adherence": 0.01, "text_adherence": 0.0},
+  "reward": 0.9595,
+  "raw_judge_file": "judge.json"
+}

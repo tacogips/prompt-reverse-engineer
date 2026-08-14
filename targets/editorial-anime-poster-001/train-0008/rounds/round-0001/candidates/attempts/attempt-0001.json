@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "attempt_id": "attempt-0001",
+  "round": "round-0001",
+  "attempted_candidate_ids": [
+    "candidate-001",
+    "candidate-002",
+    "candidate-003"
+  ],
+  "provider": "openai",
+  "model": "built-in-imagegen",
+  "model_version": null,
+  "tool_mode": "image-edit",
+  "input_images": [
+    {
+      "role": "source_reference",
+      "path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+      "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e"
+    }
+  ],
+  "prompt_file": "targets/editorial-anime-poster-001/train-0008/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "5524441b1223299d69b181bc1c1abe077db82015795b4a0fcdac901af05b3b66",
+  "requested_at": "2026-08-14T13:19:57Z",
+  "execution": {
+    "strategy": "three_independent_concurrent_calls",
+    "structured_optional_instructions": {},
+    "result": "failed_before_artifact_persistence",
+    "error_kind": "image_generation_user_error",
+    "error_code": "moderation_blocked",
+    "moderation_stage": "output",
+    "moderation_categories": [
+      "other"
+    ],
+    "request_id": "32dcbfff-742d-496a-b137-e53aedb00fbe"
+  },
+  "output_artifacts": [],
+  "provenance_checks": {
+    "prompt_hash_matches_template_validation": true,
+    "forbidden_source_specific_clause_count": 0,
+    "required_literal_checks_passed": true,
+    "sole_source_image_role_check_passed": true,
+    "forbidden_style_image_input_check_passed": true,
+    "forbidden_generation_roles_present": [],
+    "style_or_truth_input_used": false
+  }
+}

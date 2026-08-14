@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "target_id": "editorial-anime-poster-001",
-  "objective": "Reverse-engineer a reusable prompt that renders the supplied person in the supplied editorial anime poster style.",
+  "objective": "Reverse-engineer a self-contained textual prompt that recreates the supplied editorial anime poster style on arbitrary source images without supplying the target image to generation, while honoring optional pose, composition, exact-text, and additional instructions.",
   "created_at": "2026-08-14T03:48:58Z",
   "generator": {
     "provider": "openai",
@@ -9,22 +9,26 @@
     "model_version": null
   },
   "evaluation": {
-    "metric_version": "v1",
+    "metric_version": "style-inversion-v3",
     "judge_model": "gpt-5.6-terra",
     "weights": {
-      "semantic": 0.30,
-      "composition": 0.25,
-      "color": 0.15,
-      "style": 0.20,
+      "medium_rendering": 0.20,
+      "palette_tone": 0.15,
+      "line_shape": 0.15,
+      "texture_material": 0.10,
+      "graphic_language": 0.10,
+      "source_fidelity": 0.20,
       "technical": 0.10
     },
+    "style_component_max_loss": 0.25,
     "candidates_per_round": 4,
     "max_refinement_rounds": 3,
-    "target_loss": 0.08,
+    "target_loss": 0.18,
     "judge_repeats": 3
   },
   "stopping_criteria": {
-    "target_total_loss": 0.08,
+    "target_total_loss": 0.18,
+    "style_component_max_loss": 0.25,
     "maximum_refinement_rounds": 3,
     "fresh_seed_validation_required": true
   }

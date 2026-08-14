@@ -1,15 +1,31 @@
 # Workflow Input Contract
 
-`prompt-reverse-train` learns a reusable style policy. It does not learn a textual description of the training source.
+`prompt-reverse-train` reconstructs a reusable textual image-generation style prompt. It does not describe the training source and does not require the target/style truth at inference time.
 
 ## Required inputs
 
 - `targetDir`: repository-relative target directory.
 - `trainDir`: new immutable iteration directory name.
-- `styleReference`: repository-relative style truth.
+- `styleReference`: repository-relative target/style truth used only for analysis and loss evaluation; it is forbidden as a generation input.
 - `sourceReference`: repository-relative training source. The legacy name `personReference` is accepted for old runs only.
 - `candidatesPerRound`, `maxRefinementRounds`, and `targetLoss`.
 - `validationTargetLoss`, `validationWorstCaseLoss`, `testTargetLoss`, `testWorstCaseLoss`, and `maxGeneralizationGap`.
+- `validationManifest`: repository-relative path to the frozen optimization-validation manifest.
+- `sealedTestManifest`: repository-relative path to the one-shot test manifest.
+
+## Optional research feedback
+
+`feedbackFiles` is an optional array of repository-relative JSON or Markdown files containing explicit human findings from earlier iterations. Intake verifies and hashes these files, analysis records how each finding changes the style model and prompt, and review requires every finding to be resolved, rejected with evidence, or deferred with a test requirement. Feedback is ordinary training evidence, not a sealed fixture.
+
+```json
+{
+  "feedbackFiles": [
+    "targets/example/feedback/feedback-0001.json"
+  ]
+}
+```
+
+Feedback must describe transferable behavior. A request to copy a teacher subject's literal identity, skin tone, hair color, garment, wording, or exact layout must be converted into a relative style rule or rejected as content leakage.
 
 ## Optional generation instructions
 
@@ -26,9 +42,19 @@
 
 Every field is independently optional. `null` or absence means no override. `text` is verbatim: the output must contain exactly the supplied string and no additional text. Explicit instructions override only the named attribute; all unspecified source content remains invariant.
 
-## Optimization validation cases
+Every candidate, validation, test, and final inference generation receives exactly one image: the corresponding `sourceReference`. The learned prompt text must carry the reconstructed style. Passing `styleReference` or its hash to the generator invalidates the run.
 
-These cases may provide refinement feedback. Use at least two source hashes distinct from the training source and cover all four case types.
+## Frozen optimization validation cases
+
+These cases may provide refinement feedback, but must not be embedded in ordinary workflow variables. The runtime input contains only `validationManifest`. Intake records its path, SHA-256, and size without opening it. Only `validate-transferability` may verify the hash and open it after the current prompt hash is frozen. Prompt-synthesis, analysis, generation, and training-judge nodes must not inspect its contents through the manifest, run configuration, intake evidence, runtime snapshots, or logs.
+
+```json
+{
+  "validationManifest": "targets/example/validation/sealed-validation-manifest.json"
+}
+```
+
+The frozen file uses at least two source hashes distinct from the training source and covers all four case types:
 
 ```json
 {

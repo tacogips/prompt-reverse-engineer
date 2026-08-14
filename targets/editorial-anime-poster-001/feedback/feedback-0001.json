@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "feedback_id": "feedback-0001",
+  "source_iteration": "train-0008",
+  "source_prompt": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/prompt/prompt.md",
+  "summary": "The reconstructed prompt captures the global poster palette but does not explicitly model the style's semantic treatment of clothing, hair, skin, or lettering/dialogue.",
+  "items": [
+    {
+      "id": "skin-color-treatment",
+      "category": "palette_tone.semantic_regions.skin",
+      "requirement": "Extract relative skin-plane hue, saturation, highlight, shadow, and outline relationships while preserving the source person's skin identity and avoiding a fixed teacher skin tone.",
+      "required_probe": "person baseline on a source identity distinct from the teacher"
+    },
+    {
+      "id": "hair-color-treatment",
+      "category": "palette_tone.semantic_regions.hair",
+      "requirement": "Extract source-relative hair value grouping, palette harmonization, highlight color, shadow color, and contour treatment without copying the teacher hairstyle or literal hair color.",
+      "required_probe": "person baseline with visible hair"
+    },
+    {
+      "id": "clothing-color-treatment",
+      "category": "palette_tone.semantic_regions.clothing",
+      "requirement": "Extract how garments are simplified into limited-palette planes, shadows, accents, seams, and print texture while preserving the source garment identity and markings.",
+      "required_probe": "person baseline with visible clothing"
+    },
+    {
+      "id": "typography-dialogue-treatment",
+      "category": "graphic_language.typography_dialogue",
+      "requirement": "Extract the teacher image's transferable lettering or dialogue visual grammar—medium, stroke, hierarchy, orientation, placement, ornament, and container treatment—without copying its wording or language. Apply it only when exact optional text is supplied.",
+      "required_probe": "held-out exact-text case with spelling and style judged separately"
+    }
+  ]
+}

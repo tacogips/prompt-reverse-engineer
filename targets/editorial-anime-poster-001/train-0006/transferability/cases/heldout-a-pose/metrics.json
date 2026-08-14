@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "case_id": "heldout-a-pose",
+  "applicable_components": ["source_fidelity", "style_fidelity", "pose_adherence", "text_adherence", "technical"],
+  "loss": { "total": 0.08, "source_fidelity": 0.16, "style_fidelity": 0.07, "pose_adherence": 0.13, "text_adherence": 0.0, "technical": 0.04 },
+  "assertions_passed": false,
+  "failed_assertions": ["three_quarter_view", "brown_shoes_preserved"]
+}

@@ -1,0 +1,24 @@
+{
+  "candidate_id": "candidate-001",
+  "evaluators": [
+    {
+      "name": "prompt-as-a-judge",
+      "raw_output_file": "judge.json",
+      "version": "source-style-judge-v2"
+    }
+  ],
+  "loss": {
+    "color": 0.16,
+    "composition": 0.13,
+    "semantic": 0.05,
+    "source_fidelity": 0.08,
+    "style": 0.26,
+    "technical": 0.05,
+    "total": 0.14
+  },
+  "reward": 0.86,
+  "schema_version": 1,
+  "target_files": [
+    "truth/style-reference.png"
+  ]
+}

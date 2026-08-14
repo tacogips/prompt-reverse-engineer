@@ -1,34 +1,27 @@
 # Task
 
-Normalize and validate the current round's `prompt/prompt.md` against `prompt-template-contract.json` before any image generation.
+Normalize and validate the current round's `prompt/prompt.md` against `prompt-template-contract.json` before generation.
 
-The learned artifact must be a reusable style-transfer template for an arbitrary source image. It must not describe the training source or any held-out source. Do not open the source image, source analysis, validation images, or sealed test manifest in this step. Detect concrete content clauses from the prompt itself and replace them with generic reference-driven invariants.
+Copy every `required_literal_clauses` entry into the executable prompt body verbatim. A paraphrase does not pass. The learned artifact is a prompt-only style reconstruction template for an arbitrary source image. The source reference is Image 1 and the only generation image. The target/style truth is unavailable at generation time.
 
-Required template behavior:
+Read only `prompt-template-contract.json`, the current prompt and its metadata, any existing template validation, and minimal state. Do not open source images, target/style truth, analyses, manifests, fixtures, runtime snapshots, session logs, judge evidence, or earlier source-specific prompts.
 
-- Image 1 is the style reference only.
-- Image 2 is the arbitrary source reference and exclusively controls depicted content and identity.
-- Preserve all observable source attributes unless an explicit optional instruction overrides that exact attribute.
-- Support optional `pose`, `composition`, `text`, and `additional` instructions.
-- Exact text is verbatim and may affect only text/layout needed to place it.
-- When optional text is absent, generate no text-like marks.
-- Optional instructions have priority over style defaults, while unspecified attributes remain source-controlled.
-- Describe only transferable style properties: medium, palette, contrast, line quality, texture, graphic vocabulary, and overrideable default composition language.
+Required behavior:
 
-Forbidden content includes any literal or paraphrased description of a source's age, gender, ethnicity, skin, face, hair, gaze, expression, pose direction, clothing, accessories, logo, text, objects, or scene. Generic invariant names are allowed; observed values are not. Do not preserve a useful-looking specific clause merely because it lowered training loss.
+- Image 1 is the arbitrary source reference and exclusively controls depicted content and identity.
+- The prompt itself explicitly describes the reconstructed visual style: medium, palette, contrast, lighting, line/mark quality, texture, abstract graphic vocabulary, and overrideable default composition language.
+- The prompt contains source-relative skin, hair, and clothing color/rendering treatment from `style-model.json`; it must not hard-code a teacher person's literal traits.
+- The optional `text` branch contains generator-executable typography/dialogue treatment while keeping the supplied text verbatim and excluding teacher wording.
+- No clause requires, mentions, or assumes a target/style reference image at generation time.
+- Preserve observable source attributes unless an optional instruction overrides that exact attribute.
+- Support optional `pose`, `composition`, `text`, and `additional` fields.
+- Exact text is verbatim; absent text produces no text-like marks.
+- Optional instructions outrank style defaults while unspecified attributes remain source-controlled.
 
-Rewrite `prompt.md` minimally when necessary. Recompute its hash in `prompt/generation.json`. Write `prompt/template-validation.json` containing:
+Target-derived relative style clauses are required and are not overfitting. Source-specific content clauses are forbidden. A semantic-region rule such as preserving source skin identity while applying target-derived cel-shading relationships is allowed; a teacher person's literal skin, hair, garment color, wording, or identity is forbidden. Remove any literal or paraphrased description of a training or held-out source's identity, age, gender, ethnicity, face, hair, pose, clothing, objects, text, or scene. Also remove all style-image role instructions.
 
-- schema and contract version;
-- prompt path and SHA-256;
-- required role and optional-field checks;
-- every suspected subject-specific clause with classification and disposition;
-- forbidden subject-specific clause count after normalization;
-- style-clause inventory;
-- optional-instruction precedence check;
-- complexity statistics, including word count and style-clause count;
-- status `passed` only when all checks pass and the forbidden count is zero.
+Rewrite minimally, recompute the prompt hash, and write `prompt/template-validation.json` with schema/contract versions, prompt path/hash, sole-source-role check, forbidden-generation-role check, optional fields, suspected source-specific clauses and dispositions, zero forbidden count, textual style-clause inventory, required literal exact checks, precedence check, complexity statistics, and status. Pass only when the prompt is self-contained as text, has zero source-specific clauses, and requires no style image.
 
-Do not generate images. If safe normalization is impossible, set state status to `failed` with an actionable diagnostic. Otherwise set state phase to `generate`.
+Do not generate. On pass set state phase to `generate`; otherwise fail with an actionable diagnostic.
 
-Return one JSON object only with `status`, `nextStep`, `round`, `promptPath`, `templateValidationPath`, `contractVersion`, and `forbiddenClauseCount`. Set `nextStep` to `generate-candidates` only when status is `passed`.
+Return one JSON object only with `status`, `nextStep`, `round`, `promptPath`, `templateValidationPath`, `contractVersion`, and `forbiddenClauseCount`. Set `nextStep` to `generate-candidates` only on pass.

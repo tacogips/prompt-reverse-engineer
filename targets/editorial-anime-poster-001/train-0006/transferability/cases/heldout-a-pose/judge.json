@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "judge_version": "judge-v4-source-fidelity-style-transfer",
+  "original_resolution_assessed": true,
+  "loss": { "source_fidelity": 0.16, "style_fidelity": 0.07, "pose_adherence": 0.13, "text_adherence": 0.0, "technical": 0.04 },
+  "assertions": { "seated_upright_on_stool": true, "three_quarter_view": false, "both_hands_folded_on_lap": true, "source_identity_preserved": true, "hair_preserved": true, "green_sweater_preserved": true, "cream_trousers_preserved": true, "brown_shoes_preserved": false, "wooden_stool_preserved": true, "no_invented_text": true },
+  "evidence": ["The person is seated upright on the stool with hands folded visibly on the lap, and the hair, sweater, trousers, and stool are retained.", "The face is presented nearly frontally rather than in the requested three-quarter view.", "The crop excludes the lower legs and brown shoes, so an unspecified source-controlled clothing detail is not preserved visibly.", "The graphic poster treatment is clean and contains no unrequested text."]
+}

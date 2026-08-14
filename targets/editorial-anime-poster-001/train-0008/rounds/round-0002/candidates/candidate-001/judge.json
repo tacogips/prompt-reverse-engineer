@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "style-inversion-v2",
+  "target_candidate_order": "style_truth_then_candidate",
+  "aggregation": "component_wise_median",
+  "repeat_count": 3,
+  "repeat_losses": [
+    {
+      "medium_rendering": 0.19,
+      "palette_tone": 0.22,
+      "line_shape": 0.2,
+      "texture_material": 0.2,
+      "graphic_language": 0.22,
+      "source_fidelity": 0.14,
+      "technical": 0.12
+    },
+    {
+      "medium_rendering": 0.19,
+      "palette_tone": 0.22,
+      "line_shape": 0.2,
+      "texture_material": 0.2,
+      "graphic_language": 0.22,
+      "source_fidelity": 0.14,
+      "technical": 0.12
+    },
+    {
+      "medium_rendering": 0.19,
+      "palette_tone": 0.22,
+      "line_shape": 0.2,
+      "texture_material": 0.2,
+      "graphic_language": 0.22,
+      "source_fidelity": 0.14,
+      "technical": 0.12
+    }
+  ],
+  "loss": {
+    "medium_rendering": 0.19,
+    "palette_tone": 0.22,
+    "line_shape": 0.2,
+    "texture_material": 0.2,
+    "graphic_language": 0.22,
+    "source_fidelity": 0.14,
+    "technical": 0.12
+  },
+  "evidence": {
+    "medium_rendering": [
+      "The candidate is a polished anime illustration with crisp navy contours and controlled cel-shaded facial planes.",
+      "Its broad brushy treatment is slightly more digital-painterly than the style truth's precise editorial print separation."
+    ],
+    "palette_tone": [
+      "Warm off-white, deep navy, teal, coral, mustard, and restrained gold are all visibly present.",
+      "The large coral and mustard brush areas are less like the truth's opaque graphic color blocks."
+    ],
+    "line_shape": [
+      "The hair and silhouette use energetic variable-weight navy contours, while the gold orbital arcs and dots provide fine ornament.",
+      "The image has fewer decisive geometric panels or structured support shapes than the style language calls for."
+    ],
+    "texture_material": [
+      "Fine paper grain, flecks, and dry-brush sweeps are visible without obscuring the figure.",
+      "Overprint-edge irregularity is subtler and less materially layered than in the style truth."
+    ],
+    "graphic_language": [
+      "The off-center figure, broad painted fields, pale breathing room, and orbit marks create an editorial poster rhythm.",
+      "The hierarchy is less clearly divided into opaque field, focal form, and sparse fine ornament than the style truth."
+    ],
+    "source_fidelity": [
+      "The source person's recognizable face, short dark hairstyle, seated pose, gray graphic shirt, and light trousers are preserved.",
+      "The tiled setting and source framing are largely replaced by abstract poster space."
+    ],
+    "technical": [
+      "Facial features, hands, clothing edges, and the shirt graphic remain clean and legible.",
+      "A few crowded hair strands and noisy background splatters reduce print clarity slightly."
+    ]
+  },
+  "dominant_transferable_differences": [
+    "Use more clearly bounded opaque teal, coral, and mustard support fields instead of predominantly brushy background areas.",
+    "Strengthen the layered editorial print hierarchy while keeping the source setting and crop more intact."
+  ],
+  "confidence": 0.88,
+  "provenance_eligibility": {
+    "eligible": true,
+    "input_image_count": 1,
+    "input_roles": [
+      "source_reference"
+    ],
+    "truth_or_style_input_detected": false,
+    "prompt_hash_verified": true,
+    "output_hash_verified": true
+  }
+}

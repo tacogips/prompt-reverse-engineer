@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "initializedAt": "2026-08-14T06:32:36Z",
+  "repositoryRelativePathsValidated": true,
+  "styleReference": {
+    "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f",
+    "format": "PNG",
+    "width": 1023,
+    "height": 1537
+  },
+  "trainingSource": {
+    "path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+    "format": "JPEG",
+    "width": 1160,
+    "height": 1412
+  },
+  "validationSources": [
+    {
+      "path": "targets/editorial-anime-poster-001/input/person-reference.png",
+      "sha256": "813ec67c85c0a3bcc7749b58d6560e09419759a8a73f1680c228fc5023cb1aeb"
+    },
+    {
+      "path": "targets/editorial-anime-poster-001/validation/source-clock.png",
+      "sha256": "580246325a2ef1b223d12f6310e3264356279475f9383eb79ef11f5387e95104"
+    }
+  ],
+  "validationContract": {
+    "distinctHeldOutSourceHashes": 2,
+    "trainingLeakageDetected": false,
+    "caseTypes": [
+      "baseline",
+      "pose",
+      "composition",
+      "text"
+    ],
+    "exactTextCase": "clock-exact-text",
+    "machineReadableExpectedBehavior": true
+  },
+  "sealedTestManifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+    "sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+    "byteSize": 1410,
+    "contentsOpened": false
+  },
+  "legacyMetricHandling": {
+    "parentMetric": "legacy identity judge",
+    "runMetric": "source-fidelity-judge-v1",
+    "numericComparisonWithParentProhibited": true
+  }
+}

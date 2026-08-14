@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_source_truth_candidate",
+  "judge": {"loss_function_version": "judge-v4-source-fidelity-style-transfer", "prompt_sha256": "e1b430e07aa4fc53bca95f66083632b3954d96e97bab55691fe2752d97f99803", "model": "gpt-5.6-terra", "temperature": 0, "repeat": 1, "assessed_at": "2026-08-14T07:22:12Z", "assessment_resolution": "original"},
+  "inputs": {"style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png", "source_truth": "targets/editorial-anime-poster-001/validation/heldout-b-0005.png", "candidate": "targets/editorial-anime-poster-001/train-0005/transferability/cases/heldout-b-composition/image.png"},
+  "loss": {"source_fidelity": 0.04, "semantic": 0.02, "composition": 0.03, "color": 0.04, "style": 0.06, "technical": 0.02},
+  "evidence": {"source_fidelity": ["One mustard-yellow chair, one cobalt-blue bottle, and one green plant in a white pot are retained."], "semantic": ["The source object set is complete and no style-reference person or text is introduced."], "composition": ["The square output centers the chair, places the bottle left and plant right, and provides generous open space above."], "color": ["The candidate applies the source style's saturated warm/cool poster relationships."], "style": ["Graphic disks, brush marks, ink contours, flat planes, and paper-like speckling reflect the style reference."], "technical": ["Chair legs, bottle silhouette, pot, and leaf shapes are clean at original resolution; no text is present."]},
+  "instruction_assessment": {"composition_adherence": {"applicable": true, "loss": 0.01, "passed": true, "evidence": "All requested object placements and square framing are visibly satisfied."}, "text_adherence": {"applicable": true, "loss": 0.0, "passed": true, "evidence": "No typography or text-like marks are visible."}},
+  "dominant_differences": ["Keep the output's graphic rules subordinate to the requested negative space."],
+  "confidence": 0.97
+}

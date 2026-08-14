@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "case_id": "alley-combined-optional",
+  "applicable_components": ["source_fidelity", "style_fidelity", "composition_adherence", "text_adherence", "technical"],
+  "loss": {"total": 0.052, "source_fidelity": 0.07, "style_fidelity": 0.12, "composition_adherence": 0.04, "text_adherence": 0.0, "technical": 0.03},
+  "assertions_passed": true,
+  "failed_assertions": []
+}
