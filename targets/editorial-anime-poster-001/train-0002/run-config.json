@@ -1,0 +1,33 @@
+{
+  "_rielaInput": {
+    "communicationIds": [],
+    "messages": [],
+    "sourceStepIds": [],
+    "stepId": "intake-or-plan",
+    "workflowExecutionId": "prompt-reverse-train-session-5"
+  },
+  "workflowInput": {
+    "acceptanceCriteria": [
+      "The selected image preserves the person reference identity.",
+      "The selected image matches the style reference without copying its person's identity.",
+      "The judge calibration relations pass before candidate scoring.",
+      "The judge loss is at or below 0.08, or the workflow exits honestly at the configured maximum round."
+    ],
+    "candidatesPerRound": 4,
+    "constraints": [
+      "Use repository-relative paths in persisted artifacts.",
+      "Use the built-in image generation tool, not an API or CLI fallback.",
+      "Preserve all candidates and raw judge evidence.",
+      "Do not alter truth or input images.",
+      "Do not modify the failed train-0001 evidence."
+    ],
+    "maxRefinementRounds": 3,
+    "parentTrainDir": "train-0001",
+    "personReference": "targets/editorial-anime-poster-001/input/person-reference.png",
+    "targetDir": "targets/editorial-anime-poster-001",
+    "requestedWork": "Continue training a reusable prompt that renders the supplied person in the supplied editorial anime poster style, inheriting the first iteration's visible style gap.",
+    "styleReference": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "targetLoss": 0.08,
+    "trainDir": "train-0002"
+  }
+}

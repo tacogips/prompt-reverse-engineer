@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "candidate_id": "candidate-003",
+  "round": 1,
+  "mode": "style-transfer",
+  "tool_mode": "built-in-image-generation",
+  "provider": "openai-built-in",
+  "model": "image_gen__imagegen",
+  "model_version": null,
+  "seed": null,
+  "prompt_file": "targets/editorial-anime-poster-001/train-0001/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "d0aa2b6320767fa15dd08eeb29c6f29c5ec4826bb8b5446931e4e2482e2ae4bb",
+  "input_images": [
+    {
+      "label": "Image 1",
+      "role": "style_reference_only",
+      "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+      "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+    },
+    {
+      "label": "Image 2",
+      "role": "person_identity_reference_only",
+      "path": "targets/editorial-anime-poster-001/input/person-reference.png",
+      "sha256": "813ec67c85c0a3bcc7749b58d6560e09419759a8a73f1680c228fc5023cb1aeb"
+    }
+  ],
+  "output": {
+    "path": "targets/editorial-anime-poster-001/train-0001/rounds/round-0001/candidates/candidate-003/image.png",
+    "sha256": "5e0d3cefd206ab7d6dcd45d77e32be658bfcf8cba9dc6c2881b107ad9d332339",
+    "width": 1023,
+    "height": 1537
+  },
+  "available_generation_metadata": {
+    "seed": null,
+    "provider_parameters": null
+  },
+  "inspection": {
+    "status": "passed",
+    "method": "visual inspection and PNG dimension check",
+    "observations": [
+      "PNG decoded successfully at 1023x1537.",
+      "One visible male head-and-shoulders portrait is present.",
+      "No obvious image corruption was observed."
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "iteration": 3,
+  "parent_iteration": 2,
+  "status": "complete",
+  "started_at": "2026-08-14T04:43:04Z",
+  "completed_at": "2026-08-14T05:09:57Z",
+  "hypothesis": "Fresh generations using the train-0002 prompt policy and the corrected declared-field provenance review contract can preserve person identity and editorial-anime style while reaching the target loss.",
+  "workflow_family": "analyze-generate-select-refine-loop",
+  "workflow_revision": "82b7f00793fdc7499d9ac18056cb7a61502e82ce5094e1d26b276fe94e9a6048",
+  "judge_revision": "211c19d7d28bed017cf73e261491974d88ced5b9551d7dbedc06c15eff788066",
+  "selected_candidate": "rounds/round-0001/candidates/candidate-004"
+}

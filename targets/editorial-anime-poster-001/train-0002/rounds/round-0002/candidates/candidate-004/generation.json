@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "candidate_id": "candidate-004",
+  "round": 2,
+  "provider": "openai-built-in",
+  "model": "image_gen__imagegen",
+  "model_version": null,
+  "seed": null,
+  "width": 1023,
+  "height": 1537,
+  "steps": null,
+  "guidance": null,
+  "sampler": null,
+  "prompt_file": "targets/editorial-anime-poster-001/train-0002/rounds/round-0002/prompt/prompt.md",
+  "prompt_sha256": "b3cd2eca16b499745a538aea979fdabc9747ced33e85415376d3c00c0eb94bed",
+  "input_images": [
+    {
+      "label": "Image 1",
+      "role": "style_reference_only",
+      "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+      "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+    },
+    {
+      "label": "Image 2",
+      "role": "person_identity_reference_only",
+      "path": "targets/editorial-anime-poster-001/input/person-reference.png",
+      "sha256": "813ec67c85c0a3bcc7749b58d6560e09419759a8a73f1680c228fc5023cb1aeb"
+    }
+  ],
+  "provider_parameters": {
+    "tool_mode": "built-in-image-generation",
+    "mode": "style-transfer",
+    "controlled_variant": "small navy outer-edge blocks and subtle lower-corner teal dry-brush field",
+    "identity_role_invariants_repeated": true,
+    "seed_reproducibility": "not guaranteed; provider did not expose a seed"
+  },
+  "image_sha256": "30f569f375427cf4b2ac19138f57f3774430347e976defe5b9a00c4deea7ff52",
+  "raw_response_file": null
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.13,
+    "semantic": 0.01,
+    "composition": 0.07,
+    "color": 0.03,
+    "style": 0.14,
+    "technical": 0.01
+  },
+  "evidence": {
+    "identity": [
+      "The candidate depicts a warm tan-skinned young man with the source's thick brows, brown almond eyes, straight nose, closed lips, strong jaw, short dark close-sided hair, and left-facing three-quarter pose.",
+      "The hair is more voluminous and stylized, while the eye direction and cheek/jaw planes are less specifically matched to the photograph."
+    ],
+    "semantic": [
+      "One male editorial anime portrait is visibly present.",
+      "No copied style-reference woman, jewelry, garment, readable words, logo, or watermark is present."
+    ],
+    "composition": [
+      "The close portrait is framed by a coral circle, mustard disk, cream field, teal edge passages, vertical rules, navy blocks, and brush movement in a tall poster format.",
+      "The subject remains more centered and less upward-directed than the style reference's transferable composition."
+    ],
+    "color": [
+      "Navy, teal, coral, mustard, and cream occur in clear high-contrast graphic blocks consistent with the reference palette.",
+      "The figure uses a flatter, less interwoven distribution of accent color than the style truth."
+    ],
+    "style": [
+      "The candidate visibly uses dark variable contours, cel-shaded planes, colored hair streaks, printed flecks, brush textures, and layered geometric poster graphics.",
+      "The rendering has less fine loose contour energy and less intricate garment/graphic layering than the style truth."
+    ],
+    "technical": [
+      "The portrait is clean and anatomically coherent at native resolution, with intact facial features and no duplicate anatomy, pseudo-text, logo, or watermark."
+    ]
+  },
+  "dominant_differences": [
+    "Reduce hair volume and better match the source haircut silhouette.",
+    "Restore the person reference's more precise upward-left gaze and facial planes.",
+    "Increase fine expressive ink and layered editorial detail."
+  ],
+  "confidence": 0.93
+}

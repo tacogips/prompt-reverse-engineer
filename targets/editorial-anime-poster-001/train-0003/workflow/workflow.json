@@ -1,0 +1,117 @@
+{
+  "workflowId": "prompt-reverse-train",
+  "description": "Train a prompt-reverse-engineering policy by analyzing a style target, generating identity-preserving candidates, judging image differences, and refining until convergence or budget exhaustion.",
+  "defaults": {
+    "maxLoopIterations": 40,
+    "nodeTimeoutMs": 900000,
+    "timeoutPolicy": "fail"
+  },
+  "prompts": {
+    "rielaPromptTemplate": "Route the run strictly from the persisted phase in the target iteration state. Never skip required artifact validation.",
+    "workerSystemPromptTemplate": "Work only inside the repository. Follow AGENTS.md. Persist evidence and machine-readable state before returning."
+  },
+  "managerStepId": "intake-or-plan",
+  "entryStepId": "intake-or-plan",
+  "nodes": [
+    {
+      "id": "intake-or-plan",
+      "nodeFile": "nodes/node-intake-or-plan.json"
+    },
+    {
+      "id": "analyze-images",
+      "nodeFile": "nodes/node-analyze-images.json"
+    },
+    {
+      "id": "generate-candidates",
+      "nodeFile": "nodes/node-generate-candidates.json"
+    },
+    {
+      "id": "judge-candidates",
+      "nodeFile": "nodes/node-judge-candidates.json"
+    },
+    {
+      "id": "refine-prompt",
+      "nodeFile": "nodes/node-refine-prompt.json"
+    },
+    {
+      "id": "review-training",
+      "nodeFile": "nodes/node-review-training.json"
+    },
+    {
+      "id": "workflow-output",
+      "nodeFile": "nodes/node-workflow-output.json"
+    }
+  ],
+  "steps": [
+    {
+      "id": "intake-or-plan",
+      "nodeId": "intake-or-plan",
+      "role": "manager",
+      "transitions": [
+        {
+          "toStepId": "analyze-images"
+        }
+      ]
+    },
+    {
+      "id": "analyze-images",
+      "nodeId": "analyze-images",
+      "role": "worker",
+      "transitions": [
+        {
+          "toStepId": "generate-candidates"
+        }
+      ]
+    },
+    {
+      "id": "generate-candidates",
+      "nodeId": "generate-candidates",
+      "role": "worker",
+      "transitions": [
+        {
+          "toStepId": "judge-candidates"
+        }
+      ]
+    },
+    {
+      "id": "judge-candidates",
+      "nodeId": "judge-candidates",
+      "role": "worker",
+      "transitions": [
+        {
+          "toStepId": "review-training",
+          "label": "stop_training"
+        },
+        {
+          "toStepId": "refine-prompt",
+          "label": "!(stop_training)"
+        }
+      ]
+    },
+    {
+      "id": "refine-prompt",
+      "nodeId": "refine-prompt",
+      "role": "worker",
+      "transitions": [
+        {
+          "toStepId": "generate-candidates"
+        }
+      ]
+    },
+    {
+      "id": "review-training",
+      "nodeId": "review-training",
+      "role": "worker",
+      "transitions": [
+        {
+          "toStepId": "workflow-output"
+        }
+      ]
+    },
+    {
+      "id": "workflow-output",
+      "nodeId": "workflow-output",
+      "role": "worker"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# Positive Prompt
+
+Style-transfer editorial anime poster artwork, vertical 2:3 composition. Use the two supplied images with strict roles: **Image 1 is the style reference only**—transfer its bold Japanese-inspired editorial anime poster language: crisp deep-navy ink contours, clean cel shading, large layered coral-pink, mustard-yellow, teal-cyan, and cream geometric colour fields, oversized abstract circles, fine vertical rules and graphic blocks, energetic dry-brush sweeps, sparse paint flecks, and refined subtle printed-paper grain. **Image 2 is the person identity reference only**—preserve this exact young adult man's recognisable identity in an illustrated form: warm tan skin, strong dark eyebrows, brown almond-shaped eyes, prominent straight nose, medium-full closed lips, defined masculine jaw, small cheek moles where scale permits, short textured black hair with a tall tousled swept-up top and close-cut sides. Keep his left-facing three-quarter head-and-shoulders pose, gaze angled left and slightly upward, and calm neutral expression. Make him the single dominant portrait, centred low-to-middle in the tall frame, with a newly designed simple dark high-collar editorial garment using abstract colour blocks that does not reproduce Image 1 wardrobe. Render an original identity-preserving male portrait in the visual language of Image 1, with no text areas.
+
+# Negative Prompt
+
+Do not copy or resemble Image 1's person identity, feminine face, hairstyle, pose-specific features, clothes, ear jewelry, pendants, accessories, or readable text. No female subject, no different person, no altered hair colour, no front-facing gaze, no smile, no photorealism, no duplicated face or limbs, no logos, no watermarks, no signatures, no letters, words, Japanese characters, garbled typography, pseudo-text, brand marks, or illegible text-like marks. Avoid muddy low-contrast colour, soft airbrushed 3D rendering, generic background, deformed anatomy, and excessive accessories.
+
+# Rationale
+
+This opening prompt separates the two reference roles: it translates the style truth into transferable graphic treatment while anchoring the candidate's face, hair, gaze, expression, and pose to the person truth. It uses text-free abstract poster elements to avoid source-specific copy artifacts.

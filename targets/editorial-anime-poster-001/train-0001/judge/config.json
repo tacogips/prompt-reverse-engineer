@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "judge-v1",
+  "provider": "openai",
+  "model": "gpt-5.6-terra",
+  "temperature": 0,
+  "repeats": 1,
+  "aggregation": "single_deterministic_assessment",
+  "prompt_sha256": "80418297c36f21277861589325ebed27544c7e22655c2a0a71236dc6b563306f",
+  "weights": {
+    "identity": 0.3,
+    "semantic": 0.1,
+    "composition": 0.15,
+    "color": 0.15,
+    "style": 0.25,
+    "technical": 0.05
+  },
+  "input_order": [
+    "style_truth",
+    "person_truth",
+    "candidate"
+  ],
+  "calibration_suite": null,
+  "notes": "The workflow computes weighted total loss deterministically. This initial judge version has no recorded calibration suite."
+}

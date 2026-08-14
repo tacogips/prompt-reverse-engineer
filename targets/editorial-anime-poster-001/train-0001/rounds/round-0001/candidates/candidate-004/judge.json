@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.15,
+    "semantic": 0.015,
+    "composition": 0.09,
+    "color": 0.06,
+    "style": 0.19,
+    "technical": 0.02
+  },
+  "evidence": {
+    "identity": ["The candidate visibly matches the intended masculine subject's warm tan complexion, dark textured close-sided hair, brows, almond eyes, nose, jaw, neutral expression, and left-facing orientation.", "Its hair mass is more exaggerated and its face and gaze remain somewhat more frontal than the person reference."],
+    "semantic": ["A single male head-and-shoulders editorial anime poster is clearly depicted.", "The style-reference woman's face, elaborate jewelry, source-specific clothing, and readable text have not been copied."],
+    "composition": ["The candidate has a strong large-scale portrait, left-facing pose, cream field, oversized coral and mustard circles, navy blocks, and thin vertical rules that match the transferable poster system.", "The subject is more centered and the lower garment is less vertically dynamic than the style truth."],
+    "color": ["The high-contrast navy, teal, coral, mustard, and cream palette closely matches the reference's transferable color system.", "The portrait has fewer bright hair-color accents and less varied warm shading than the style truth."],
+    "style": ["Visible navy linework, flat angular cel shading, grain, paint flecks, and brush strokes align with the reference's editorial anime treatment.", "The rendering is more polished and uniform, with less fine, loose contour energy and less complex design detail than the source."],
+    "technical": ["The portrait anatomy and linework are coherent and clean at native resolution; no warping, duplicate anatomy, watermark, or garbled typography is visible."]
+  },
+  "dominant_differences": ["Vary hair contours and introduce restrained teal/coral accent strands.", "Push the eye line upward-left without losing the source likeness.", "Add richer editorial garment line and texture detail while keeping it distinct from the style-reference outfit."],
+  "confidence": 0.93
+}

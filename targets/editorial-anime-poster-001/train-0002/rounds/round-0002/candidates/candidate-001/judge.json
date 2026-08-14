@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.12,
+    "semantic": 0.01,
+    "composition": 0.05,
+    "color": 0.02,
+    "style": 0.1,
+    "technical": 0.01
+  },
+  "evidence": {
+    "identity": [
+      "The candidate visibly retains the intended man's warm tan skin, thick dark brows, almond brown eyes, straight prominent nose, closed medium-full lips, defined jaw, small cheek moles, close-sided dark quiff, unadorned ear, and left-facing three-quarter pose.",
+      "Its quiff is noticeably fuller and more windblown than the compact source haircut, and the gaze reads more level-left than distinctly upward-left."
+    ],
+    "semantic": [
+      "The image shows one masculine head-and-shoulders editorial anime portrait.",
+      "It does not visibly borrow the style-reference woman's face, long hair, jewelry, or readable text."
+    ],
+    "composition": [
+      "The 2:3 vertical poster has a dominant close portrait, cream negative space, coral and mustard disks, teal fields, thin vertical rules, navy blocks, and dry-brush movement.",
+      "The subject is more centered and less upward-looking than the style truth, but the transferable poster arrangement remains clear."
+    ],
+    "color": [
+      "Deep navy, teal/cyan, coral red, mustard yellow, muted gold, and cream appear as clean high-contrast graphic regions.",
+      "The candidate's navy garment occupies more of the lower frame than the style truth's lighter multicolour garment balance."
+    ],
+    "style": [
+      "Variable dark ink contours, crisp cel-shaded face planes, dense fine hair flyaways, restrained hair accents, layered disks and rules, dry-brush strokes, flecks, and printed-paper grain closely reproduce the transferable editorial-anime treatment.",
+      "The garment's construction and small graphic details are plainer and more geometric than the style truth's finer layered linework."
+    ],
+    "technical": [
+      "At 1023x1537, facial features, ear, hairline, collar, and graphic edges are coherent and clean, without visible duplication, corruption, watermark, logo, or text-like marks."
+    ]
+  },
+  "dominant_differences": [
+    "Reduce the quiff's windblown mass while keeping the source haircut silhouette.",
+    "Raise the leftward gaze slightly.",
+    "Add finer layered garment-line detail."
+  ],
+  "confidence": 0.94
+}

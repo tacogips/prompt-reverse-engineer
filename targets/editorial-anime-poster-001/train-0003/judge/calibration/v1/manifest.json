@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "suite_version": "v1",
+  "status": "provisional_passed",
+  "executed_at": "2026-08-14T04:49:29Z",
+  "execution_method": "local original-resolution visual inspection against the versioned judge rubric",
+  "actual_repeat_count": 1,
+  "configured_judge": {
+    "provider": "openai",
+    "model": "gpt-5.6-terra",
+    "temperature": 0,
+    "prompt_path": "targets/editorial-anime-poster-001/train-0003/judge/prompt.md",
+    "prompt_sha256": "211c19d7d28bed017cf73e261491974d88ced5b9551d7dbedc06c15eff788066"
+  },
+  "pass_rule": "Every required directional relation must hold. Near-zero means <= 0.02, high means >= 0.70, low means <= 0.05, and an order effect is material when any compared component changes by more than 0.05.",
+  "cases": [
+    {
+      "case_id": "style-self-match",
+      "timestamp": "2026-08-14T04:49:29Z",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "person_truth": "targets/editorial-anime-poster-001/input/person-reference.png",
+        "candidate": "targets/editorial-anime-poster-001/truth/style-reference.png"
+      },
+      "presentation_order": "style_truth_person_truth_candidate",
+      "expected_relation": "The pixel-identical Style truth candidate must have near-zero style, color, composition, and technical losses.",
+      "observed_component_losses": {
+        "identity": 1.0,
+        "semantic": 0.75,
+        "composition": 0.0,
+        "color": 0.0,
+        "style": 0.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "Candidate and Style truth are the same local PNG, so the visible poster layout, palette, ink contours, graphic treatment, and technical detail match exactly.",
+        "The candidate visibly remains the non-transferable illustrated woman rather than Person truth, so high identity and semantic loss is expected outside this style-only relation."
+      ],
+      "judge_prompt_sha256": "211c19d7d28bed017cf73e261491974d88ced5b9551d7dbedc06c15eff788066",
+      "confidence": 1.0,
+      "pass": true
+    },
+    {
+      "case_id": "identity-self-match",
+      "timestamp": "2026-08-14T04:49:29Z",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "person_truth": "targets/editorial-anime-poster-001/input/person-reference.png",
+        "candidate": "targets/editorial-anime-poster-001/input/person-reference.png"
+      },
+      "presentation_order": "style_truth_person_truth_candidate",
+      "expected_relation": "The pixel-identical Person truth candidate must have near-zero identity and semantic loss.",
+      "observed_component_losses": {
+        "identity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.85,
+        "color": 0.9,
+        "style": 1.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "Candidate and Person truth are the same local photograph: face geometry, skin tone, short quiff, gaze, expression, and pose visibly match exactly.",
+        "The unstyled neutral photographic background lacks the Style truth's editorial composition, palette, contour drawing, and print treatment, as expected for this identity-only calibration."
+      ],
+      "judge_prompt_sha256": "211c19d7d28bed017cf73e261491974d88ced5b9551d7dbedc06c15eff788066",
+      "confidence": 1.0,
+      "pass": true
+    },
+    {
+      "case_id": "obvious-cross-domain-mismatch",
+      "timestamp": "2026-08-14T04:49:29Z",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "person_truth": "targets/editorial-anime-poster-001/input/person-reference.png",
+        "candidate": "targets/editorial-anime-poster-001/input/person-reference.png"
+      },
+      "presentation_order": "style_truth_person_truth_candidate",
+      "expected_relation": "The unstyled person photograph must retain low identity loss while producing high style and color loss against Style truth.",
+      "observed_component_losses": {
+        "identity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.85,
+        "color": 0.9,
+        "style": 1.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "The candidate is exactly Person truth, preserving the same man's face, hair, gaze, expression, and pose.",
+        "It is a neutral-background photograph with no navy ink contours, cel shading, coral/mustard/teal poster blocks, abstract disks/rules, brush marks, or printed-paper texture."
+      ],
+      "judge_prompt_sha256": "211c19d7d28bed017cf73e261491974d88ced5b9551d7dbedc06c15eff788066",
+      "confidence": 1.0,
+      "pass": true
+    },
+    {
+      "case_id": "target-candidate-order-swap",
+      "timestamp": "2026-08-14T04:49:29Z",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "person_truth": "targets/editorial-anime-poster-001/input/person-reference.png",
+        "candidate": "targets/editorial-anime-poster-001/input/person-reference.png"
+      },
+      "presentation_order": "candidate_then_style_truth_person_truth_with_labels_preserved",
+      "baseline_case_id": "obvious-cross-domain-mismatch",
+      "expected_relation": "Changing display order only, with image labels and roles preserved, must not materially change the assessment.",
+      "observed_component_losses": {
+        "identity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.85,
+        "color": 0.9,
+        "style": 1.0,
+        "technical": 0.0
+      },
+      "component_absolute_deltas_from_baseline": {
+        "identity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.0,
+        "color": 0.0,
+        "style": 0.0,
+        "technical": 0.0
+      },
+      "material_order_effect": false,
+      "evidence": [
+        "The roles remain labeled: the same photograph exactly matches Person truth and visibly lacks the editorial treatment of Style truth.",
+        "Every observed component is unchanged from the baseline cross-domain assessment."
+      ],
+      "judge_prompt_sha256": "211c19d7d28bed017cf73e261491974d88ced5b9551d7dbedc06c15eff788066",
+      "confidence": 1.0,
+      "pass": true
+    }
+  ],
+  "all_required_relations_pass": true
+}

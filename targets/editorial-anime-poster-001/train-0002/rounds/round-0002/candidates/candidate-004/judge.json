@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.13,
+    "semantic": 0.01,
+    "composition": 0.065,
+    "color": 0.025,
+    "style": 0.115,
+    "technical": 0.01
+  },
+  "evidence": {
+    "identity": [
+      "The candidate visibly keeps the intended man's tan skin, thick brows, brown almond eyes, straight nose, closed lips, jaw, cheek moles, visible ear, and left-facing three-quarter pose.",
+      "The face is more generic and soft than the person truth, the quiff is overly voluminous, and the gaze reads level-left instead of upward-left."
+    ],
+    "semantic": [
+      "The candidate visibly depicts one masculine editorial anime poster portrait.",
+      "It contains none of the style reference's woman-specific identity, jewelry, long hair, accessories, or readable text."
+    ],
+    "composition": [
+      "The close portrait, coral disk, mustard disk, teal side fields, cream ground, thin vertical rules, navy block, and brush marks establish the requested poster composition.",
+      "The symmetrical side fields and centered portrait are more static than the style truth's asymmetrical directional layout."
+    ],
+    "color": [
+      "The integrated deep navy, teal, coral, mustard, gold, and cream palette is visible in clean poster blocks.",
+      "The balance is more navy-and-teal heavy across the garment than the style truth."
+    ],
+    "style": [
+      "Dark contours, cel shading, coloured hair accents, layered disks, flecks, brush marks, and paper grain visibly transfer the editorial-anime treatment.",
+      "The face is smoother and the garment's large panels are simpler than the style truth's finer variable ink and layered editorial detail."
+    ],
+    "technical": [
+      "The original-resolution image has coherent facial anatomy, ear, collar, and graphic edges, with no visible duplication, corruption, watermark, logo, or text-like marks."
+    ]
+  },
+  "dominant_differences": [
+    "Preserve a less generic source-face structure.",
+    "Reduce hair mass and raise the gaze slightly.",
+    "Break the centered composition with more delicate layered editorial detail."
+  ],
+  "confidence": 0.93
+}

@@ -1,0 +1,31 @@
+# macOS metadata
+.DS_Store
+
+# Riela local runtime state (workflow definitions under .riela/workflows stay tracked)
+.riela/sessions/
+
+# Target image data: truth, source, validation, generated, and derived images
+targets/**/*.png
+targets/**/*.jpg
+targets/**/*.jpeg
+targets/**/*.webp
+targets/**/*.gif
+targets/**/*.heic
+targets/**/*.heif
+targets/**/*.avif
+targets/**/*.tif
+targets/**/*.tiff
+targets/**/*.bmp
+
+# Per-run runtime state and local databases
+targets/**/runtime-artifacts/
+targets/**/*.sqlite
+targets/**/*.sqlite-shm
+targets/**/*.sqlite-wal
+targets/**/*.db
+targets/**/*.db-shm
+targets/**/*.db-wal
+
+# Provider payloads may contain large binary or transient response data
+targets/**/raw-responses/
+targets/**/raw_response/

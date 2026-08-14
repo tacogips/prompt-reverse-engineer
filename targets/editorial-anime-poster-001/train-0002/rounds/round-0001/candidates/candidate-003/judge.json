@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.12,
+    "semantic": 0.01,
+    "composition": 0.06,
+    "color": 0.025,
+    "style": 0.13,
+    "technical": 0.01
+  },
+  "evidence": {
+    "identity": [
+      "The candidate closely retains the intended man's warm tan skin, thick dark brows, brown almond eyes, straight prominent nose, medium-full closed lips, defined jaw, unadorned ear, short dark close-sided quiff, and left-facing three-quarter pose.",
+      "The quiff is much larger and more windblown than the photo, and the illustrated eye line is leftward rather than as distinctly upward-left."
+    ],
+    "semantic": [
+      "The image visibly contains one masculine head-and-shoulders editorial anime portrait.",
+      "The style-reference woman's identity, long hair, jewelry, garments, accessories, and readable text are absent."
+    ],
+    "composition": [
+      "A 2:3 vertical poster uses a dominant close portrait, coral and mustard disks, teal and cream negative-space fields, thin vertical rules, navy blocks, and dry-brush movement.",
+      "The portrait is more centered and has less of the reference's upward-looking directional lift."
+    ],
+    "color": [
+      "Deep navy anchors, teal/cyan, coral, mustard-yellow, and cream are all visible in clean, high-contrast regions closely distributed like the style truth.",
+      "The face and garment have somewhat more uniform color-plane treatment than the reference."
+    ],
+    "style": [
+      "Crisp dark contours, cel-shaded facial planes, colored hair strokes, layered disks and rules, dry-brush marks, flecks, and subtle print grain strongly reproduce the transferable editorial-anime language.",
+      "Compared with the style truth, the face and hair are more smoothly modeled, with less delicate contour variation, fewer loose flyaway lines, and simpler layered garment detail."
+    ],
+    "technical": [
+      "At 1023x1537, the face, eyes, ears, hairline, collar, and graphic edges are coherent and clean, with no visible duplicate anatomy, corruption, pseudo-text, logo, or watermark."
+    ]
+  },
+  "dominant_differences": [
+    "Reduce the exaggerated hair volume and retain the reference's shorter swept-up silhouette.",
+    "Make the gaze more clearly upward-left while preserving the source face.",
+    "Introduce finer, more varied ink flyaways and garment-layer detail."
+  ],
+  "confidence": 0.94
+}

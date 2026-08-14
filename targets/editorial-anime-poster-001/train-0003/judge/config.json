@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "judge-v3-style-identity-provenance",
+  "provider": "openai",
+  "model": "gpt-5.6-terra",
+  "temperature": 0,
+  "repeats": 1,
+  "aggregation": "single_deterministic_assessment",
+  "prompt_sha256": "211c19d7d28bed017cf73e261491974d88ced5b9551d7dbedc06c15eff788066",
+  "weights": {
+    "identity": 0.3,
+    "semantic": 0.1,
+    "composition": 0.15,
+    "color": 0.15,
+    "style": 0.25,
+    "technical": 0.05
+  },
+  "input_order": [
+    "style_truth",
+    "person_truth",
+    "candidate"
+  ],
+  "calibration_suite": "targets/editorial-anime-poster-001/train-0003/judge/calibration/v1/manifest.json",
+  "calibration_status": "provisional_passed",
+  "notes": "Calibration was executed once by local original-resolution visual inspection against this versioned rubric; no repeated model calls are claimed. The v3 rubric retains the validated separate style/identity scoring policy and strengthens observable checks for the parent run's compact-hair and upward-gaze mismatch."
+}

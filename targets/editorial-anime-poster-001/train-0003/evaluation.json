@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "iteration": 3,
+  "status": "complete",
+  "selected_candidate": "rounds/round-0001/candidates/candidate-004",
+  "rounds_executed": 1,
+  "configured_max_refinement_rounds": 2,
+  "configured_target_loss": 0.08,
+  "workflow_exit_reason": "target_loss_reached",
+  "exit_reason": "target_loss_reached",
+  "selection_rule": "lowest_total_loss_then_candidate_id",
+  "total_loss": 0.0785,
+  "reward": 0.9215,
+  "previous_best_loss": null,
+  "absolute_improvement": null,
+  "relative_improvement": null,
+  "is_new_best": true,
+  "judge_version": "judge-v3-style-identity-provenance",
+  "judge_prompt_sha256": "211c19d7d28bed017cf73e261491974d88ced5b9551d7dbedc06c15eff788066",
+  "comparison_note": "No prior completed candidate exists under judge-v3-style-identity-provenance. train-0002 is failed and uses judge-v2-style-identity, so its loss is not comparable.",
+  "verification": {
+    "passed": true,
+    "tolerance": 1e-9,
+    "passed_checks": [
+      "All required train-0003 artifacts, declared generated-image paths, declared prompt paths, and declared reference-image paths exist within the repository.",
+      "All four declared generation.output.sha256 values exactly match fresh SHA-256 calculations of their repository-local PNG outputs.",
+      "All declared generation.prompt_sha256 and generation.input_images[].sha256 values exactly match fresh SHA-256 calculations.",
+      "All generated PNG files are preserved under train-0003 and decode as 1023x1537 PNG images.",
+      "All six candidate loss components are in [0, 1], agree with raw judge records, and recompute totals and rewards within 1e-9 using judge-v3 weights.",
+      "candidate-004 is the deterministic lowest-total-loss round winner and remains the global best after round 1.",
+      "Every provisional calibration relation is recorded as passed before candidate scoring.",
+      "target_loss_reached is valid because 0.0785 is at or below 0.08 in round 1 of the configured maximum 2 rounds."
+    ],
+    "failed_checks": []
+  }
+}

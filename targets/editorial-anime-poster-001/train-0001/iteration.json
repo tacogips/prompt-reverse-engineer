@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "iteration": 1,
+  "parent_iteration": null,
+  "status": "failed",
+  "started_at": "2026-08-14T03:18:11Z",
+  "completed_at": "2026-08-14T03:43:22Z",
+  "hypothesis": "A style-transfer prompt using separate style and person references can preserve the person's identity while adopting transferable editorial anime-poster attributes.",
+  "workflow_family": "analyze-generate-select-refine-loop",
+  "workflow_revision": "82b7f00793fdc7499d9ac18056cb7a61502e82ce5094e1d26b276fe94e9a6048",
+  "judge_revision": "80418297c36f21277861589325ebed27544c7e22655c2a0a71236dc6b563306f",
+  "selected_candidate": "rounds/round-0001/candidates/candidate-001",
+  "failure_reason": "verification_failed_missing_target_truth_manifest_and_judge_calibration_version"
+}

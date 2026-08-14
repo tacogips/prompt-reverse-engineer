@@ -1,0 +1,27 @@
+{
+  "workflowInput": {
+    "requestedWork": "Validate the best prompt learned in train-0002 on fresh image generations, preserving its identity and style improvements while using the corrected provenance review contract.",
+    "targetDir": "targets/editorial-anime-poster-001",
+    "trainDir": "train-0003",
+    "parentTrainDir": "train-0002",
+    "styleReference": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "personReference": "targets/editorial-anime-poster-001/input/person-reference.png",
+    "candidatesPerRound": 4,
+    "maxRefinementRounds": 2,
+    "targetLoss": 0.08,
+    "acceptanceCriteria": [
+      "The selected image preserves the person reference identity.",
+      "The selected image matches the style reference without copying its person's identity.",
+      "The judge calibration relations pass before candidate scoring.",
+      "Every generated image hash is verified against generation.output.sha256.",
+      "The judge loss is at or below 0.08, or the workflow exits honestly at the configured maximum round."
+    ],
+    "constraints": [
+      "Use repository-relative paths in persisted artifacts.",
+      "Use the built-in image generation tool, not an API or CLI fallback.",
+      "Preserve all candidates and raw judge evidence.",
+      "Do not alter truth or input images.",
+      "Do not modify failed train-0001 or train-0002 evidence."
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "iteration": 3,
+  "candidate": "rounds/round-0001/candidates/candidate-004",
+  "total_loss": 0.0785,
+  "judge_version": "judge-v3-style-identity-provenance",
+  "judge_prompt_sha256": "211c19d7d28bed017cf73e261491974d88ced5b9551d7dbedc06c15eff788066",
+  "updated_at": "2026-08-14T05:09:57Z"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "images": [
+    {
+      "file": "person-reference.png",
+      "role": "person_identity",
+      "width": 1196,
+      "height": 1370,
+      "format": "PNG",
+      "sha256": "813ec67c85c0a3bcc7749b58d6560e09419759a8a73f1680c228fc5023cb1aeb"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.11,
+    "semantic": 0.01,
+    "composition": 0.055,
+    "color": 0.025,
+    "style": 0.115,
+    "technical": 0.01
+  },
+  "evidence": {
+    "identity": [
+      "The candidate closely retains the man's warm tan skin, strong brows, brown almond eyes, straight prominent nose, closed lips, defined jaw, cheek moles, unadorned ear, and left-facing three-quarter view.",
+      "The eye line is level-left rather than upward-left, and the hairstyle is much fuller and more windblown than the photo's short textured quiff."
+    ],
+    "semantic": [
+      "The candidate is visibly a single masculine head-and-shoulders editorial anime portrait.",
+      "The style-reference woman's identity, jewelry, long hair, accessories, and all text are absent."
+    ],
+    "composition": [
+      "The vertical poster visibly combines a dominant portrait with coral and mustard disks, cream negative space, teal fields, vertical rules, navy blocks, and brush marks.",
+      "The portrait remains more centered and has less upward lift than the style truth."
+    ],
+    "color": [
+      "Clean navy, teal/cyan, coral, mustard, gold, and cream areas closely match the transferable palette.",
+      "The face and garment use slightly smoother, more uniform colour planes than the reference."
+    ],
+    "style": [
+      "Crisp contours, cel-shaded facial planes, colourful hair accents, graphic disks, brush gestures, flecks, and print grain reproduce the editorial-anime language.",
+      "The facial and hair contours are less varied and airy than the style truth, while the garment's broad panels omit much of its fine layered detailing."
+    ],
+    "technical": [
+      "At full resolution, the face, ear, hairline, collar, and poster geometry are clean and coherent, with no duplicates, corruption, logo, watermark, or text-like artifacts."
+    ]
+  },
+  "dominant_differences": [
+    "Constrain the hair to the short source quiff.",
+    "Make the gaze slightly upward-left.",
+    "Increase fine variable-width ink and garment detail."
+  ],
+  "confidence": 0.94
+}

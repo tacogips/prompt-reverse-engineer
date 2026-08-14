@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "iteration": 2,
+  "parent_iteration": 1,
+  "status": "failed",
+  "started_at": "2026-08-14T03:48:58Z",
+  "completed_at": "2026-08-14T04:38:17Z",
+  "hypothesis": "Focused prompt refinement that bounds hair volume while increasing variable ink contours and layered garment detail will reduce the remaining style loss without sacrificing the person-reference identity.",
+  "workflow_family": "analyze-generate-select-refine-loop",
+  "workflow_revision": "82b7f00793fdc7499d9ac18056cb7a61502e82ce5094e1d26b276fe94e9a6048",
+  "judge_revision": "fa5ee740833c0f6745c32f4c3c0c082269ed909994e95cfe900f93660ba0d16b",
+  "selected_candidate": "rounds/round-0002/candidates/candidate-001",
+  "failure_reason": "verification_failed_image_provenance_mismatch_round_0001"
+}
