@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "suite": "calibration/v1",
+  "assessment_method": "direct observable image assessment by the analysis node; no generated candidate or held-out fixture was opened",
+  "judge_prompt_file": "targets/editorial-anime-poster-001/train-0010/judge/prompt.md",
+  "judge_prompt_sha256": "49d0dec16e4fc644fcb31974182e145fe471d4d7eb6ca4c6c054e5f6a6fa7cae",
+  "actual_repeat_count": 1,
+  "timestamp": "2026-08-14T15:27:47Z",
+  "cases": [
+    {
+      "id": "target-self-match",
+      "inputs": {"style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png", "source_truth": "targets/editorial-anime-poster-001/truth/style-reference.png", "candidate": "targets/editorial-anime-poster-001/truth/style-reference.png"},
+      "expected_relation": "identical style and content should produce near-zero losses",
+      "observed_component_losses": {"medium_rendering": 0.0, "palette_tone": 0.0, "line_shape": 0.0, "texture_material": 0.0, "graphic_language": 0.0, "source_fidelity": 0.0, "technical": 0.0},
+      "evidence": ["All visible style and content attributes are identical because the same image occupies all roles."],
+      "pass": true
+    },
+    {
+      "id": "source-self-match",
+      "inputs": {"style_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg", "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg", "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"},
+      "expected_relation": "identical source/content should produce near-zero losses when style evidence equals the candidate",
+      "observed_component_losses": {"medium_rendering": 0.0, "palette_tone": 0.0, "line_shape": 0.0, "texture_material": 0.0, "graphic_language": 0.0, "source_fidelity": 0.0, "technical": 0.0},
+      "evidence": ["All visible attributes are identical because the same image occupies all roles."],
+      "pass": true
+    },
+    {
+      "id": "unstyled-source-cross-domain-mismatch",
+      "inputs": {"style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png", "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg", "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"},
+      "expected_relation": "unaltered photographic source preserves content but must fail transferable editorial style dimensions",
+      "observed_component_losses": {"medium_rendering": 0.95, "palette_tone": 0.9, "line_shape": 0.95, "texture_material": 0.85, "graphic_language": 0.9, "source_fidelity": 0.0, "technical": 0.05},
+      "evidence": ["Candidate is photographic rather than cel-shaded editorial print.", "Candidate lacks warm-paper/navy/teal/coral/yellow poster relationship, navy contours, print grain, and editorial support hierarchy.", "Candidate content is itself the source, so source fidelity is intact."],
+      "pass": true
+    },
+    {
+      "id": "order-swap-check",
+      "inputs": {"presentation_one": ["targets/editorial-anime-poster-001/truth/style-reference.png", "targets/editorial-anime-poster-001/input/source-child.jpeg", "targets/editorial-anime-poster-001/input/source-child.jpeg"], "presentation_two": ["targets/editorial-anime-poster-001/input/source-child.jpeg", "targets/editorial-anime-poster-001/truth/style-reference.png", "targets/editorial-anime-poster-001/input/source-child.jpeg"]},
+      "expected_relation": "role labels, not display order, determine assessment; reordering the visual presentation must not alter the mismatch conclusion",
+      "observed_component_losses": {"medium_rendering": 0.95, "palette_tone": 0.9, "line_shape": 0.95, "texture_material": 0.85, "graphic_language": 0.9, "source_fidelity": 0.0, "technical": 0.05},
+      "evidence": ["With explicit role labels, the same unstyled photographic candidate remains a style mismatch and content self-match in either presentation order."],
+      "pass": true
+    }
+  ],
+  "pass_criteria": {"self_match_max_loss": 0.01, "cross_domain_style_min_loss": 0.8, "cross_domain_source_fidelity_max_loss": 0.01, "order_swap_component_delta_max": 0.01},
+  "status": "passed"
+}

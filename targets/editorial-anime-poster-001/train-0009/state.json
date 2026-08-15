@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "round": 1,
+  "phase": "output",
+  "exitReason": "input_isolation_contaminated",
+  "lossFunctionVersion": "style-inversion-v3",
+  "styleComponentMaxLoss": 0.25,
+  "candidatesPerRound": 3,
+  "maxRefinementRounds": 3,
+  "targetLoss": 0.18,
+  "validationTargetLoss": 0.3,
+  "validationWorstCaseLoss": 0.4,
+  "testTargetLoss": 0.32,
+  "testWorstCaseLoss": 0.42,
+  "maxGeneralizationGap": 0.1,
+  "bestCandidate": null,
+  "bestLoss": null,
+  "parentTrainDir": "train-0008",
+  "sourceReference": {
+    "path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+    "size": 296435
+  },
+  "styleReference": {
+    "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f",
+    "size": 2180933
+  },
+  "validationManifest": {
+    "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "size": 3043,
+    "contentsOpened": false
+  },
+  "sealedTestManifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-0009.json",
+    "sha256": "20c5f991fadd4ed4efe3eff5cfec42c53044bba24dafe4c570cc90fa0c02db9d",
+    "size": 2090,
+    "contentsOpened": false
+  },
+  "feedbackFiles": [
+    {
+      "path": "targets/editorial-anime-poster-001/feedback/feedback-0001.json",
+      "sha256": "eda20f0f0b83d6fa9d09da1f538c9a71be6d330e84ce09d2c805900439208c00",
+      "size": 2032,
+      "feedbackId": "feedback-0001"
+    }
+  ],
+  "startedAt": "2026-08-14T15:11:02Z",
+  "updatedAt": "2026-08-14T15:21:39Z",
+  "completedAt": "2026-08-14T15:21:39Z",
+  "review": {
+    "status": "failed",
+    "evaluation": "targets/editorial-anime-poster-001/train-0009/evaluation.json",
+    "analysis": "targets/editorial-anime-poster-001/train-0009/analysis.md",
+    "evidence": "targets/editorial-anime-poster-001/train-0009/review-evidence.json",
+    "bestJsonUpdated": false
+  },
+  "templateValidation": {
+    "path": "targets/editorial-anime-poster-001/train-0009/rounds/round-0001/prompt/template-validation.json",
+    "status": "passed",
+    "promptSha256": "0b0f346eafd6f47c17ae1f547f75835365b26491e6edf34a0d27ef30e7ef5d3d"
+  },
+  "contaminationFailure": {
+    "detectedAt": "2026-08-14T15:19:11Z",
+    "reason": "analysis-stage filename inventory printed historical validation/test fixture paths before the authorized stages; no sealed manifest or fixture contents were opened",
+    "isolationAudit": "targets/editorial-anime-poster-001/train-0009/isolation-audit/round-0001.json",
+    "candidateGenerationAuthorized": false,
+    "route": "review-training"
+  }
+}

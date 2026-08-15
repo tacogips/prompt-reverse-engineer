@@ -1,0 +1,78 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "target_candidate_order": "style_truth_then_candidate",
+  "assessment_scope": "Visible-image assessment only; the style truth supplied reusable style evidence and the source truth supplied content-preservation evidence.",
+  "provenance_check": {
+    "eligible": true,
+    "input_image_roles": [
+      "source_reference"
+    ],
+    "style_or_truth_input_detected": false,
+    "evidence": "generation.json records exactly the source-child JPEG as the sole input image; its recorded SHA-256 matches the source state and the candidate output hash recomputed from saved bytes."
+  },
+  "loss": {
+    "medium_rendering": 0.15,
+    "palette_tone": 0.2,
+    "line_shape": 0.18,
+    "texture_material": 0.18,
+    "graphic_language": 0.16,
+    "source_fidelity": 0.17,
+    "technical": 0.06
+  },
+  "palette_sub_losses": {
+    "overall_palette": 0.16,
+    "skin_treatment": 0.17,
+    "hair_treatment": 0.18,
+    "clothing_treatment": 0.2
+  },
+  "conditional_checks": {
+    "typography_dialogue": {
+      "applicable": false,
+      "loss": null,
+      "spelling_adherence": null,
+      "unrequested_text": false,
+      "evidence": [
+        "No optional exact-text instruction was authorized. The visible Batman chest mark is source-derived garment artwork rather than new poster lettering."
+      ]
+    }
+  },
+  "evidence": {
+    "medium_rendering": [
+      "The candidate is a polished opaque anime illustration with sharply bounded face, arm, and shirt planes rather than photographic shading.",
+      "Its separated poster-print fields and controlled dark outlines closely match the style truth's transferable render mode, though its facial planes are more naturalistic and numerous."
+    ],
+    "palette_tone": [
+      "Overall palette: warm paper, deep navy, teal, coral, and muted gold are visibly organized as a limited print relationship.",
+      "Skin treatment: the source complexion remains recognizable and is translated to warm cel-shadow and narrow highlight planes without borrowing the teacher's literal complexion.",
+      "Hair treatment: the source haircut and dark color remain intact, but the mass has less of the truth's cool/coral accent separation.",
+      "Clothing treatment: the gray source shirt, Batman logo, seams, and folds remain legible; restrained value facets are present, but the garment lacks the truth style's clearer interlocking accent-facet hierarchy."
+    ],
+    "line_shape": [
+      "Deep-navy variable contours define the silhouette, shirt seams, face, and hair, with a few fine tapered hair strands.",
+      "The linework is somewhat uniformly comic around the garment and less selectively calligraphic than the style truth."
+    ],
+    "texture_material": [
+      "Warm paper grain, fine speckling, and scattered print flecks are visible across the ground and support fields.",
+      "The texture is gentler and more even than the truth's broken overprint and dry-brush variety."
+    ],
+    "graphic_language": [
+      "Large coral and teal support fields, fine gold orbital connectors, dots, and open paper space form a readable asymmetric editorial poster hierarchy.",
+      "The support shapes are effective but use fewer distinct block/rule/brush relationships than the style truth."
+    ],
+    "source_fidelity": [
+      "The source child, recognizable profile, dark haircut, gray Batman shirt, logo, and seated arm pose are retained.",
+      "The original tiled surrounding scene and source framing are substantially replaced by abstract poster support fields, reducing preservation of unspecified source environment."
+    ],
+    "technical": [
+      "Anatomy, facial features, garment logo, and shirt construction are coherent and crisp, with no unsafe content or newly invented readable text.",
+      "Minor over-smoothing of background/source-detail context is the only visible technical-preservation issue."
+    ]
+  },
+  "dominant_transferable_differences": [
+    "Make clothing's source-preserving fold planes slightly more distinct through sparse harmonizing accent edges while retaining the gray shirt and Batman marking.",
+    "Vary paper/overprint interruption more selectively and use fewer naturalistic micro-shading planes.",
+    "Retain more source-controlled scene context when adding abstract editorial support fields."
+  ],
+  "confidence": 0.88
+}

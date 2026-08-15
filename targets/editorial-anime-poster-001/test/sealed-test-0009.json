@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "sealed_for_iteration": "train-0009",
+  "source": {
+    "file": "targets/editorial-anime-poster-001/inference/oogiri-prompt-only-v2-0001/source.webp",
+    "sha256": "a8cb92edc23638e890924efbac706f16bd0568d0aad8669f47cd11433cde20bf",
+    "width": 1600,
+    "height": 1066,
+    "format": "WEBP"
+  },
+  "testCases": [
+    {
+      "id": "office-portrait-baseline",
+      "type": "baseline",
+      "sourceReference": "targets/editorial-anime-poster-001/inference/oogiri-prompt-only-v2-0001/source.webp",
+      "optionalInstructions": {},
+      "expected": {
+        "preserve": [
+          "the source person's identity and skin identity",
+          "brown hair with visible fringe and tied-back structure",
+          "black eyeglasses",
+          "black business suit and white collared shirt",
+          "crossed-arm pose",
+          "plain white studio background"
+        ],
+        "text": null
+      }
+    },
+    {
+      "id": "office-portrait-combined-optional",
+      "type": "combined_optional",
+      "sourceReference": "targets/editorial-anime-poster-001/inference/oogiri-prompt-only-v2-0001/source.webp",
+      "optionalInstructions": {
+        "pose": "Uncross her arms and have her point confidently upward with one hand.",
+        "composition": "Use a vertical editorial poster composition with the person in the lower two-thirds and clear headline space above.",
+        "text": "STYLE IS RELATIVE",
+        "additional": "Preserve her identity, brown hair, black eyeglasses, black business suit, and white shirt. Apply the learned dialogue and lettering treatment to the supplied text only."
+      },
+      "expectedText": "STYLE IS RELATIVE",
+      "expected": {
+        "aspect_ratio": "vertical poster",
+        "pose": "one hand pointing upward, arms not crossed",
+        "headline_position": "clear upper area",
+        "preserve": [
+          "the source person's identity and skin identity",
+          "brown hair",
+          "black eyeglasses",
+          "black business suit",
+          "white collared shirt"
+        ]
+      }
+    }
+  ]
+}

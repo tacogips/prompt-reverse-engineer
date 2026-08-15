@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "assessment_method": "independent original-resolution visual review",
+  "configured_repeats": 3,
+  "actual_repeats": 1,
+  "target_candidate_order": "style_truth_then_candidate",
+  "loss": {"medium_rendering": 0.16, "palette_tone": 0.16, "line_shape": 0.17, "texture_material": 0.18, "graphic_language": 0.16, "source_fidelity": 0.06, "technical": 0.04},
+  "palette_sub_losses": {"overall_palette": 0.16, "skin_treatment": null, "hair_treatment": null, "clothing_treatment": null},
+  "conditional_checks": {"typography_dialogue": {"applicable": false, "loss": null, "spelling_adherence": null, "unrequested_text": false, "evidence": ["No text is visible."]}, "composition_adherence": {"passed": true, "evidence": ["A square layout centers the yellow chair, keeps bottle left and plant right, and leaves broad empty space above."]}},
+  "evidence": {"medium_rendering": ["The still life uses crisp cel-shaded print separation."], "palette_tone": ["Source yellow, blue, green, and white identities coexist with the editorial palette relationship."], "line_shape": ["Crisp navy contours and modest fine accents are present."], "texture_material": ["Warm paper grain and restrained overprint texture are visible."], "graphic_language": ["Support fields, dots, rules, arcs, and negative space are adapted without copying the teacher layout."], "source_fidelity": ["Exactly one chair, bottle, and potted plant are preserved."], "technical": ["Object geometry is clean and readable."]},
+  "dominant_transferable_differences": ["More delicate ornament could improve the resemblance while retaining clear still-life geometry."],
+  "confidence": 0.89
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "case_id": "heldout-a-baseline",
+  "case_type": "baseline",
+  "loss": {"total": 0.147, "medium_rendering": 0.16, "palette_tone": 0.18, "line_shape": 0.19, "texture_material": 0.20, "graphic_language": 0.18, "source_fidelity": 0.08, "technical": 0.05},
+  "weighted_total_unrounded": 0.1465,
+  "judge_proposed_total": null,
+  "total_correction": null,
+  "instruction_gates": {"no_text": {"passed": true, "reason": "No readable or pseudo-readable text."}},
+  "style_component_ceiling": 0.25,
+  "style_component_ceiling_passed": true,
+  "feedback_gates_passed": true
+}

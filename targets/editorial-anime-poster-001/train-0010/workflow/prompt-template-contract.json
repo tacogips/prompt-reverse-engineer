@@ -1,0 +1,80 @@
+{
+  "schema_version": 3,
+  "contract_id": "prompt-only-style-reconstruction-v1",
+  "required_image_roles": [
+    "source_reference"
+  ],
+  "forbidden_generation_image_roles": [
+    "style_reference",
+    "style_truth",
+    "target_reference"
+  ],
+  "optional_instruction_fields": [
+    "pose",
+    "composition",
+    "text",
+    "additional"
+  ],
+  "instruction_precedence": [
+    "safety_and_integrity",
+    "explicit_optional_instructions",
+    "source_content_and_identity_preservation",
+    "textual_style_specification"
+  ],
+  "required_literal_clauses": [
+    "Perform only a benign, non-sexual artistic style transformation; do not introduce nudity, sexualization, age changes, violence, injury, or other unsafe content.",
+    "The source reference is the only image input available at generation time."
+  ],
+  "required_behaviors": [
+    "Encode the reconstructed target style entirely as generator-executable text; never require, mention, or assume a style-reference image at generation time.",
+    "Treat the source reference as the exclusive authority for depicted content and identity.",
+    "Preserve source age, identity, anatomy, object count, geometry, hairstyle, clothing, pose, and composition unless an optional instruction explicitly overrides that attribute.",
+    "Apply the prompt's textual medium, palette, contrast, line, texture, graphic-vocabulary, lighting, and composition defaults without importing target-image content.",
+    "Encode transferable semantic-region color treatment for skin, hair, and clothing without fixing a teacher person's literal colors or changing source identity.",
+    "When optional text is supplied, apply the reconstructed typography or dialogue-treatment style without copying teacher wording; when text is absent, render no text.",
+    "Render optional text exactly when supplied and render no text when it is absent.",
+    "Keep unspecified attributes controlled by the source reference rather than invented prompt prose."
+  ],
+  "forbidden_hard_coding": [
+    "observed age or age group of any training or held-out source",
+    "observed gender or gender presentation of any training or held-out source",
+    "observed race, ethnicity, nationality, or skin tone of any training or held-out source",
+    "observed facial geometry, facial features, or facial hair of any training or held-out source",
+    "observed hair color, length, cut, volume, or silhouette of any training or held-out source",
+    "observed gaze direction, expression, body pose, or camera-facing direction of any training or held-out source",
+    "observed clothing, accessories, logos, or text of any training or held-out source",
+    "source-specific subject names, objects, or scene descriptions",
+    "any instruction to attach or inspect the target/style truth during generation"
+  ],
+  "allowed_target_style_specificity": [
+    "target-derived illustration medium and rendering technique expressed in text",
+    "target-derived palette, contrast, and lighting relationships expressed in text",
+    "target-derived relative skin, hair, and clothing color-treatment rules that preserve source identity and content",
+    "target-derived typography, lettering, dialogue, or speech-container treatment with teacher wording excluded",
+    "target-derived line quality and mark making expressed in text",
+    "target-derived texture and print treatment expressed in text",
+    "target-derived abstract graphic vocabulary expressed in text",
+    "target-derived default composition language that yields to source preservation and explicit optional instructions"
+  ],
+  "validation_requirements": {
+    "minimum_distinct_held_out_source_hashes": 2,
+    "minimum_distinct_test_source_hashes": 1,
+    "required_case_types": [
+      "baseline",
+      "pose",
+      "composition",
+      "text"
+    ],
+    "exact_text_required": true,
+    "reject_training_source_hash_in_held_out_set": true,
+    "reject_test_hash_overlap_with_training_or_validation": true,
+    "reject_truth_hash_in_any_generation_input": true,
+    "required_test_case_types": [
+      "baseline",
+      "combined_optional"
+    ],
+    "reject_unrequested_text": true,
+    "reject_prompt_if_subject_specific_clause_count_exceeds": 0,
+    "max_generalization_gap": 0.1
+  }
+}

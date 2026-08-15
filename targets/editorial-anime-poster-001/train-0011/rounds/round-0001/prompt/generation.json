@@ -1,0 +1,22 @@
+{
+  "schema_version": 2,
+  "contract_id": "generation-provenance-v2",
+  "status": "planned_shared_settings_only",
+  "provider": "openai",
+  "model": "built-in-imagegen",
+  "model_version": null,
+  "tool_mode": "image-edit",
+  "base_prompt_file": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/prompt/prompt.md",
+  "base_prompt_sha256": "9bcef001c13e5361c5d6336d4f9d301c5a60e0cca557b99cce44e5c3d162e647",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "9bcef001c13e5361c5d6336d4f9d301c5a60e0cca557b99cce44e5c3d162e647",
+  "optional_instructions": {},
+  "optional_instructions_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+  "input_images": [{"role": "source_reference", "path": "targets/editorial-anime-poster-001/input/source-child.jpeg", "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e"}],
+  "seed": null,
+  "provider_parameters": {"planned_candidate_count": 3},
+  "output": null,
+  "generated_at": null,
+  "raw_response_file": null,
+  "note": "This is an intended shared settings record, not a realized generation record. Each realized candidate must satisfy every required generation-provenance-v2 field and hash saved bytes."
+}

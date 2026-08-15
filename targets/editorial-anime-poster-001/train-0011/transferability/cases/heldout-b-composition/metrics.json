@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "case_id": "heldout-b-composition",
+  "case_type": "composition",
+  "loss": {"total": 0.132, "medium_rendering": 0.16, "palette_tone": 0.16, "line_shape": 0.17, "texture_material": 0.18, "graphic_language": 0.16, "source_fidelity": 0.06, "technical": 0.04},
+  "weighted_total_unrounded": 0.1315,
+  "judge_proposed_total": null,
+  "total_correction": null,
+  "instruction_gates": {"composition_adherence": {"passed": true, "reason": "Square composition with prescribed object placement and negative space."}, "no_text": {"passed": true, "reason": "No text is visible."}},
+  "style_component_ceiling": 0.25,
+  "style_component_ceiling_passed": true,
+  "feedback_gates_passed": true
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 2,
+  "provider": "openai",
+  "model": "built-in-imagegen",
+  "model_version": null,
+  "tool_mode": "image-edit",
+  "output": {
+    "path": "targets/editorial-anime-poster-001/train-0011/test-audit/cases/sea-landscape-combined-optional/image.png",
+    "sha256": "73c8e3e4e2d2bd6fc77b2b62e16180599e2a6d98f75cc84ff0deaaae5ce5473f",
+    "width": 1254,
+    "height": 1254,
+    "format": "PNG"
+  },
+  "input_images": [
+    {
+      "role": "source_reference",
+      "path": "targets/editorial-anime-poster-001/test/source-sea-0011.jpg",
+      "sha256": "3f549d23fc70b278222062e81994a2ee385e402ab56be283d1b7daf40b6d1942"
+    }
+  ],
+  "base_prompt_file": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/prompt/prompt.md",
+  "base_prompt_sha256": "9bcef001c13e5361c5d6336d4f9d301c5a60e0cca557b99cce44e5c3d162e647",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0011/test-audit/cases/sea-landscape-combined-optional/effective-prompt-sent.md",
+  "prompt_sha256": "2bc19d2ff80f63479731209d3645ffd48d3536dc061ef6c19212d3ecc24cf688",
+  "optional_instructions": {
+    "additional": "Keep the landscape unpopulated. Apply the learned lettering treatment to the supplied text only and preserve the mountain, island, lake, sky, and reflected depth.",
+    "composition": "Use a square editorial poster composition centered on the island, keeping layered mountains behind it and the lake reflection below.",
+    "text": "BEYOND THE BLUE"
+  },
+  "optional_instructions_sha256": "94c8f66ace4fbe39de78078423cc94aaf37787fcaaf1202184677fcb36c3388c",
+  "seed": null,
+  "provider_parameters": {},
+  "generated_at": "2026-08-14T16:39:11Z",
+  "raw_response_file": null,
+  "provenance_conformance": {
+    "passed": false,
+    "failure": "The exact sent prompt has one fewer newline before the authorized-instructions heading than the frozen deterministic effective-prompt file, so its bytes and hash differ from the required effective prompt."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "round": 1,
+  "prompt_sha256": "796cf42cadd935d4bb1fe3ce366a02fc307204380ee06fbbbcbfead6582e98e1",
+  "source_reference": {
+    "path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e"
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "failed",
+      "provider": "openai",
+      "model": "built-in-imagegen",
+      "failure_class": "moderation_blocked",
+      "failure_stage": "output",
+      "failure_categories": [
+        "other"
+      ],
+      "request_id": "9e92ce63-0041-49ec-9f90-63a4a04f875e",
+      "message": "The built-in image generation tool rejected one independent source-only call during output safety filtering.",
+      "recovered_by": "attempt-2"
+    },
+    {
+      "attempt": 2,
+      "status": "completed",
+      "candidate_ids": [
+        "candidate-001",
+        "candidate-002"
+      ]
+    },
+    {
+      "attempt": 3,
+      "status": "completed",
+      "candidate_ids": [
+        "candidate-003"
+      ]
+    }
+  ]
+}

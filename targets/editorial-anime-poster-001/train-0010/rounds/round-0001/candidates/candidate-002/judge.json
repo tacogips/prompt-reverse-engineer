@@ -1,0 +1,108 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "target_candidate_order": "style_truth_then_candidate",
+  "provenance_eligibility": {
+    "eligible": true,
+    "input_image_count": 1,
+    "input_roles": [
+      "source_reference"
+    ],
+    "truth_or_style_input_present": false,
+    "reason": "generation.json records only the training source as source_reference and the frozen text prompt."
+  },
+  "aggregation": "component_wise_median",
+  "repeats": [
+    {
+      "repeat": 1,
+      "loss": {
+        "medium_rendering": 0.16,
+        "palette_tone": 0.3,
+        "line_shape": 0.16,
+        "texture_material": 0.26,
+        "graphic_language": 0.23,
+        "source_fidelity": 0.07,
+        "technical": 0.08
+      }
+    },
+    {
+      "repeat": 2,
+      "loss": {
+        "medium_rendering": 0.16,
+        "palette_tone": 0.3,
+        "line_shape": 0.16,
+        "texture_material": 0.26,
+        "graphic_language": 0.23,
+        "source_fidelity": 0.07,
+        "technical": 0.08
+      }
+    },
+    {
+      "repeat": 3,
+      "loss": {
+        "medium_rendering": 0.16,
+        "palette_tone": 0.3,
+        "line_shape": 0.16,
+        "texture_material": 0.26,
+        "graphic_language": 0.23,
+        "source_fidelity": 0.07,
+        "technical": 0.08
+      }
+    }
+  ],
+  "loss": {
+    "medium_rendering": 0.16,
+    "palette_tone": 0.3,
+    "line_shape": 0.16,
+    "texture_material": 0.26,
+    "graphic_language": 0.23,
+    "source_fidelity": 0.07,
+    "technical": 0.08
+  },
+  "palette_sub_losses": {
+    "overall_palette": 0.2,
+    "skin_treatment": 0.13,
+    "hair_treatment": 0.15,
+    "clothing_treatment": 0.3
+  },
+  "conditional_checks": {
+    "typography_dialogue": {
+      "applicable": false,
+      "loss": null,
+      "spelling_adherence": null,
+      "unrequested_text": false,
+      "evidence": [
+        "No optional exact-text instruction was supplied. The shirt mark remains source-controlled clothing content."
+      ]
+    }
+  },
+  "evidence": {
+    "medium_rendering": [
+      "Crisp anime anatomy, opaque cel planes, and a print-like finish closely match the requested transferable medium."
+    ],
+    "palette_tone": [
+      "Warm paper, deep navy, coral, teal, and restrained gold are balanced well across the image, while the source-preserved shirt remains mostly neutral and does not receive enough harmonizing color facets.",
+      "Skin's warm planes and hair's dark cool/warm accents are effective; clothing is the maximum palette sub-loss."
+    ],
+    "line_shape": [
+      "The face, shirt, and arm use decisive deep-navy contours with fine tapered hair detail and gold orbit lines."
+    ],
+    "texture_material": [
+      "Fine paper grain, scattered flecks, and a few brushed white interruptions are present, though overprint and dry-brush texture remain lighter than the style evidence."
+    ],
+    "graphic_language": [
+      "The opaque navy diagonal, coral corner field, gold orbit, dots, and star ornament establish an adaptable editorial hierarchy without copying the teacher layout."
+    ],
+    "source_fidelity": [
+      "The source person's face, short hairstyle, profile direction, seated pose, garments, logo, and tiled setting remain recognizable with only the intended rendering transformation."
+    ],
+    "technical": [
+      "Edges, anatomy, and logo treatment are coherent, with no unrequested display lettering or obvious artifact."
+    ]
+  },
+  "dominant_transferable_differences": [
+    "Bring source-preserved clothing into the limited palette with clearer, restrained interlocking color facets.",
+    "Add slightly more tactile imperfect overprint and dry-brush variation while retaining the clean source details."
+  ],
+  "confidence": 0.92
+}

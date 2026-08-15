@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "assessment_method": "independent original-resolution visual review",
+  "configured_repeats": 3,
+  "actual_repeats": 1,
+  "target_candidate_order": "style_truth_then_candidate",
+  "loss": {"medium_rendering": 0.16, "palette_tone": 0.18, "line_shape": 0.19, "texture_material": 0.20, "graphic_language": 0.18, "source_fidelity": 0.08, "technical": 0.05},
+  "palette_sub_losses": {"overall_palette": 0.16, "skin_treatment": 0.14, "hair_treatment": 0.18, "clothing_treatment": 0.17},
+  "conditional_checks": {"typography_dialogue": {"applicable": false, "loss": null, "spelling_adherence": null, "unrequested_text": false, "evidence": ["No readable or pseudo-readable text is visible."]}, "feedback_checks": {"skin-color-treatment": {"passed": true, "loss": 0.14}, "hair-color-treatment": {"passed": true, "loss": 0.18}, "clothing-color-treatment": {"passed": true, "loss": 0.17}}},
+  "evidence": {"medium_rendering": ["Crisp cel-shaded illustration and opaque print separation are clearly present."], "palette_tone": ["Warm paper, navy, teal, coral, yellow, and muted-gold relationships are coherent; source-relative skin, hair, and garment treatment remain intact."], "line_shape": ["Navy contours and restrained tapered accents are present, though less intricate than the style truth."], "texture_material": ["Paper grain, flecking, and overprint-like edges are visible without obscuring source details."], "graphic_language": ["Asymmetric discs, brush sweeps, dots, and orbital connectors create a reusable editorial hierarchy."], "source_fidelity": ["The person, full-body framing, sweater, trousers, shoes, and stool are retained."], "technical": ["No anatomy, geometry, or legibility defect is apparent."]},
+  "dominant_transferable_differences": ["Increase the delicacy and density of fine navy line accents only if source details remain clear."],
+  "confidence": 0.86
+}

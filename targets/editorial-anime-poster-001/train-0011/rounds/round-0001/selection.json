@@ -1,0 +1,65 @@
+{
+  "schema_version": 2,
+  "round": 1,
+  "loss_function_version": "style-inversion-v3",
+  "selection_rule": "lowest_total_loss_among_current contract-, provenance-, and per-style-ceiling-eligible candidates; tie_break_candidate_id_ascending",
+  "contract": {
+    "contract_id": "prompt-only-style-reconstruction-v1",
+    "template_validation": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/prompt/template-validation.json",
+    "template_status": "passed",
+    "template_contract_matches_current": true,
+    "prompt_hash_matches_disk": true,
+    "required_literal_clauses_present": true
+  },
+  "current_candidates": [
+    {
+      "candidate_id": "candidate-001",
+      "path": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/candidates/candidate-001",
+      "total_loss": 0.161,
+      "reward": 0.839,
+      "contract_eligible": true,
+      "provenance_eligible": true,
+      "style_component_ceiling_passed": true,
+      "selection_eligible": true
+    },
+    {
+      "candidate_id": "candidate-002",
+      "path": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/candidates/candidate-002",
+      "total_loss": 0.16,
+      "reward": 0.84,
+      "contract_eligible": true,
+      "provenance_eligible": true,
+      "style_component_ceiling_passed": true,
+      "selection_eligible": true
+    },
+    {
+      "candidate_id": "candidate-003",
+      "path": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/candidates/candidate-003",
+      "total_loss": 0.1515,
+      "reward": 0.8485,
+      "contract_eligible": true,
+      "provenance_eligible": true,
+      "style_component_ceiling_passed": true,
+      "selection_eligible": true
+    }
+  ],
+  "prior_best_comparison": {
+    "eligible_prior_bests": [],
+    "excluded": [
+      {
+        "iteration": "train-0010",
+        "candidate": "rounds/round-0001/candidates/candidate-003",
+        "recorded_loss": 0.139,
+        "reason": "Excluded regardless of recorded loss: the parent iteration is status failed and promotion_eligible false because its one-shot test prompt hashes did not match the frozen prompt and its test metric arithmetic was invalid."
+      }
+    ],
+    "comparison_result": "No eligible prior best exists under the current contract and complete-iteration gate; this selection is limited to current eligible candidates."
+  },
+  "selected_candidate": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/candidates/candidate-003",
+  "selected_candidate_id": "candidate-003",
+  "selected_total_loss": 0.1515,
+  "selected_reward": 0.8485,
+  "training_target_reached": true,
+  "all_style_components_at_or_below_ceiling": true,
+  "provisional_exit_reason": "training_target_reached"
+}

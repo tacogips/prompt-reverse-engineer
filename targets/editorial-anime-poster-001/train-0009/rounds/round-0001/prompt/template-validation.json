@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "contract_schema_version": 3,
+  "contract_id": "prompt-only-style-reconstruction-v1",
+  "validated_at": "2026-08-14T15:17:30Z",
+  "round": 1,
+  "prompt_path": "targets/editorial-anime-poster-001/train-0009/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "0b0f346eafd6f47c17ae1f547f75835365b26491e6edf34a0d27ef30e7ef5d3d",
+  "self_contained_text_check": {
+    "passed": true,
+    "evidence": "The positive prompt defines all style behavior in text and states that the source reference is the only image input available at generation time."
+  },
+  "sole_source_role_check": {
+    "required_roles": [
+      "source_reference"
+    ],
+    "planned_input_roles": [
+      "source_reference"
+    ],
+    "count": 1,
+    "passed": true
+  },
+  "forbidden_generation_role_check": {
+    "forbidden_roles": [
+      "style_reference",
+      "style_truth",
+      "target_reference"
+    ],
+    "found_roles": [],
+    "passed": true
+  },
+  "optional_instruction_fields": {
+    "required": [
+      "pose",
+      "composition",
+      "text",
+      "additional"
+    ],
+    "implemented": [
+      "pose",
+      "composition",
+      "text",
+      "additional"
+    ],
+    "passed": true
+  },
+  "required_literal_checks": [
+    {
+      "clause": "Perform only a benign, non-sexual artistic style transformation; do not introduce nudity, sexualization, age changes, violence, injury, or other unsafe content.",
+      "location": "positive_prompt",
+      "exact_match": true
+    },
+    {
+      "clause": "The source reference is the only image input available at generation time.",
+      "location": "positive_prompt",
+      "exact_match": true
+    }
+  ],
+  "textual_style_clause_inventory": {
+    "medium_rendering": "polished editorial anime poster illustration; opaque flat-to-gently-graded cel-shaded planes; crisp screen-print-like color separation",
+    "palette_tone": "warm off-white paper ground, deep navy anchors, saturated teal, coral, mustard, and restrained matte-gold accents",
+    "contrast_lighting": "high-contrast support fields, pale negative space, restrained highlight bands, and controlled value blocks",
+    "line_mark_quality": "precise variable-weight deep-navy ink contours, sparse tapered fine strokes, and dark seam or edge anchors",
+    "texture_material": "warm paper grain, screen-print speckling, imperfect overprint edges, sparse paint flecks, and dry-brush sweeps",
+    "semantic_region_treatment": "source-preserved skin, hair, and clothing receive relative cel-shading, value-plane, contour, accent, and print-texture treatment without fixed literal colors or replacement identity",
+    "graphic_language": "firm-edged opaque abstract support fields with sparse fine gold orbital lines, dots, and connectors",
+    "composition_defaults": "adaptable asymmetric editorial balance that frames source-controlled focal content and yields to source preservation and explicit composition instructions",
+    "conditional_text": "only supplied text is rendered verbatim as an opt-in editorial display accent; no other readable or pseudo-readable text is allowed, and absent text produces no text"
+  },
+  "precedence_check": {
+    "declared_order": [
+      "safety_and_integrity",
+      "explicit_optional_instructions",
+      "source_content_and_identity_preservation",
+      "textual_style_specification"
+    ],
+    "prompt_order_matches_contract": true,
+    "unspecified_attributes_remain_source_controlled": true,
+    "passed": true
+  },
+  "suspected_source_specific_clauses": [],
+  "source_specific_clause_dispositions": [],
+  "forbidden_clause_count": 0,
+  "complexity_statistics": {
+    "positive_prompt_paragraphs": 6,
+    "optional_instruction_branches": 4,
+    "required_literal_clause_count": 2,
+    "textual_style_dimension_count": 9,
+    "suspected_source_specific_clause_count": 0
+  },
+  "status": "passed"
+}

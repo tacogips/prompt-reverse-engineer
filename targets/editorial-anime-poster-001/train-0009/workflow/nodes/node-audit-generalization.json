@@ -1,0 +1,12 @@
+{
+  "id": "audit-generalization",
+  "description": "Run a one-shot audit on untouched test inputs that are hidden from prompt synthesis and refinement.",
+  "nodeType": "agent",
+  "executionBackend": "codex-agent",
+  "model": "gpt-5.6-terra",
+  "promptTemplateFile": "prompts/audit-generalization.md",
+  "variables": {},
+  "output": {
+    "description": "Return JSON with one-shot test status and route unconditionally to final review."
+  }
+}

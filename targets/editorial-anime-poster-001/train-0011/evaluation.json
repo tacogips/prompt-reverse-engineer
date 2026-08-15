@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "iteration": 11,
+  "loss_function_version": "style-inversion-v3",
+  "status": "failed",
+  "selected_candidate": "rounds/round-0001/candidates/candidate-003",
+  "rounds_executed": 1,
+  "maximum_rounds": 3,
+  "selection_rule": "lowest_total_loss_among_current contract-, provenance-, and per-style-ceiling-eligible candidates; tie_break_candidate_id_ascending",
+  "training": {
+    "total_loss": 0.1515,
+    "reward": 0.8485,
+    "target_loss": 0.18,
+    "target_reached": true,
+    "all_style_components_at_or_below_ceiling": true
+  },
+  "validation": {
+    "status": "passed",
+    "evaluation": "targets/editorial-anime-poster-001/train-0011/transferability/evaluation.json",
+    "aggregate_loss": 0.142625,
+    "worst_case_loss": 0.153,
+    "training_validation_gap": -0.008875,
+    "coverage": [
+      "baseline",
+      "pose",
+      "composition",
+      "text"
+    ],
+    "distinct_held_out_source_hashes": 2
+  },
+  "test_audit": {
+    "status": "failed",
+    "evaluation": "targets/editorial-anime-poster-001/train-0011/test-audit/evaluation.json",
+    "aggregate_loss": 0.08425,
+    "worst_case_loss": 0.0985,
+    "validation_test_gap": -0.058375,
+    "numeric_thresholds_passed": true,
+    "required_coverage_present": true,
+    "blocking_gates": [
+      "baseline empty-optional provenance: optional_instructions_sha256 mismatch and effective prompt differs from base",
+      "combined-optional provenance: effective prompt differs from deterministic authorized suffix by one newline",
+      "combined-optional exact-text and no-unrequested-text gates fail"
+    ]
+  },
+  "promotion": {
+    "eligible": false,
+    "best_json_updated": false,
+    "reason": "One-shot sealed-test audit failed non-negotiable provenance and typography gates."
+  },
+  "exit_reason": "generalization_test_failed",
+  "completed_at": "2026-08-14T16:44:23Z"
+}

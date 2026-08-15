@@ -1,0 +1,26 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "provider": "openai",
+  "model": "gpt-5.6-terra",
+  "temperature": 0,
+  "repeats": 3,
+  "aggregation": "component_wise_median",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0010/judge/prompt.md",
+  "prompt_sha256": "49d0dec16e4fc644fcb31974182e145fe471d4d7eb6ca4c6c054e5f6a6fa7cae",
+  "calibration_suite": "targets/editorial-anime-poster-001/train-0010/judge/calibration/v1/manifest.json",
+  "weights": {
+    "medium_rendering": 0.2,
+    "palette_tone": 0.15,
+    "line_shape": 0.15,
+    "texture_material": 0.1,
+    "graphic_language": 0.1,
+    "source_fidelity": 0.2,
+    "technical": 0.1
+  },
+  "style_weight_total": 0.7,
+  "style_component_max_loss": 0.25,
+  "palette_tone_aggregation": "max(overall_palette,skin_treatment,hair_treatment,clothing_treatment)",
+  "conditional_typography_dialogue": "authorized exact-text probes only; separately record typography style, spelling adherence, and unrequested text",
+  "output_schema_version": 2
+}

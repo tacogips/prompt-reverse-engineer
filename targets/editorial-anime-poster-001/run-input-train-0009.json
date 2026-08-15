@@ -1,0 +1,45 @@
+{
+  "workflowInput": {
+    "requestedWork": "Continue style-prompt inversion from train-0008 using its recorded evidence and feedback-0001. Correct the missing source-relative semantic treatments for skin, hair, and clothing, and learn conditional lettering/dialogue treatment when optional exact text is supplied. Preserve arbitrary source identity and content; never copy the teacher person's literal traits or wording.",
+    "targetDir": "targets/editorial-anime-poster-001",
+    "trainDir": "train-0009",
+    "parentTrainDir": "train-0008",
+    "feedbackFiles": [
+      "targets/editorial-anime-poster-001/feedback/feedback-0001.json"
+    ],
+    "styleReference": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "sourceReference": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "optionalInstructions": {},
+    "lossFunctionVersion": "style-inversion-v3",
+    "styleComponentMaxLoss": 0.25,
+    "candidatesPerRound": 3,
+    "maxRefinementRounds": 3,
+    "targetLoss": 0.18,
+    "validationTargetLoss": 0.30,
+    "validationWorstCaseLoss": 0.40,
+    "testTargetLoss": 0.32,
+    "testWorstCaseLoss": 0.42,
+    "maxGeneralizationGap": 0.10,
+    "validationManifest": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sealedTestManifest": "targets/editorial-anime-poster-001/test/sealed-test-0009.json",
+    "acceptanceCriteria": [
+      "Every feedback-0001 item has a traceable disposition, source-preserving style rule, exact prompt clause, and validation probe in feedback-resolution.json.",
+      "palette_tone separately models and evaluates source-relative skin, hair, and clothing treatments; no good global palette score may hide a missing semantic-region treatment.",
+      "graphic_language conditionally models lettering and dialogue treatment, applies it only to supplied optional text, and never copies teacher wording or language.",
+      "The final prompt is self-contained text, preserves arbitrary source identity and content, and requires no target or style-reference image at generation time.",
+      "Every generation receives exactly one source_reference image; target/style truth remains analysis-and-judge-only.",
+      "Frozen validation and a fresh one-shot sealed test prove baseline transfer and optional pose, composition, and exact-text adherence.",
+      "All generation and judge models, prompts, hashes, semantic-region losses, typography loss, and arithmetic are persisted."
+    ],
+    "constraints": [
+      "Use repository-relative paths in persisted artifacts.",
+      "Use the built-in image generation tool.",
+      "Treat train-0008 prompt, analyses, evaluation, and judge evidence as research evidence, not as unquestioned truth.",
+      "Do not modify prior iteration evidence.",
+      "Target/style truth is analysis-and-judge-only and forbidden as a generation input.",
+      "Do not open validationManifest before validate-transferability.",
+      "Do not open sealedTestManifest before audit-generalization.",
+      "Do not compare style-inversion-v3 losses numerically with style-inversion-v2 or earlier versions."
+    ]
+  }
+}

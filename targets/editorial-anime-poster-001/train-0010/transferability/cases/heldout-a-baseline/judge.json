@@ -1,0 +1,18 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "judge_config": "targets/editorial-anime-poster-001/train-0010/judge/config.json",
+  "target_candidate_order": "style_truth_then_candidate",
+  "aggregation": "component_wise_median",
+  "repeats": [
+    {"repeat": 1, "loss": {"medium_rendering": 0.1, "palette_tone": 0.12, "line_shape": 0.13, "texture_material": 0.17, "graphic_language": 0.15, "source_fidelity": 0.06, "technical": 0.04}},
+    {"repeat": 2, "loss": {"medium_rendering": 0.1, "palette_tone": 0.12, "line_shape": 0.13, "texture_material": 0.17, "graphic_language": 0.15, "source_fidelity": 0.06, "technical": 0.04}},
+    {"repeat": 3, "loss": {"medium_rendering": 0.1, "palette_tone": 0.12, "line_shape": 0.13, "texture_material": 0.17, "graphic_language": 0.15, "source_fidelity": 0.06, "technical": 0.04}}
+  ],
+  "loss": {"medium_rendering": 0.1, "palette_tone": 0.12, "line_shape": 0.13, "texture_material": 0.17, "graphic_language": 0.15, "source_fidelity": 0.06, "technical": 0.04},
+  "palette_sub_losses": {"overall_palette": 0.11, "skin_treatment": 0.08, "hair_treatment": 0.13, "clothing_treatment": 0.12},
+  "conditional_checks": {"typography_dialogue": {"applicable": false, "loss": null, "spelling_adherence": null, "unrequested_text": false, "evidence": ["No readable or pseudo-readable text is visible."]}},
+  "evidence": {"medium_rendering": ["The result is a clean cel-shaded editorial illustration with opaque color separation."], "palette_tone": ["Warm paper, navy, teal, coral, and yellow form a limited relationship; the source sweater, trousers, and brown shoes remain recognizable."], "line_shape": ["Crisp dark variable contours organize figure and stool, though the fine tapered strand vocabulary is restrained."], "texture_material": ["Paper grain and broad dry-brush/print texture are visible but less nuanced than the style evidence."], "graphic_language": ["Asymmetric teal and coral support fields with gold orbital dots and lines create an editorial hierarchy."], "source_fidelity": ["The person, clothing, shoes, stool, full-body framing, and both visible hands and feet are preserved."], "technical": ["No obvious anatomy defect or unrequested text is visible."]},
+  "dominant_transferable_differences": ["Increase fine tapered ink-strand and overprint nuance without obscuring source detail."],
+  "confidence": 0.89
+}

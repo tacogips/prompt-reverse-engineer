@@ -1,0 +1,96 @@
+{
+  "schema_version": 2,
+  "contract_id": "prompt-only-style-reconstruction-v1",
+  "contract_schema_version": 3,
+  "contract_file": ".riela/workflows/prompt-reverse-train/prompt-template-contract.json",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "9bcef001c13e5361c5d6336d4f9d301c5a60e0cca557b99cce44e5c3d162e647",
+  "required_image_roles": [
+    "source_reference"
+  ],
+  "sole_source_role_check": {
+    "passed": true,
+    "executable_prompt_statement": "The source reference is the only image input available at generation time.",
+    "generation_image_roles": [
+      "source_reference"
+    ]
+  },
+  "forbidden_generation_image_roles": [
+    "style_reference",
+    "style_truth",
+    "target_reference"
+  ],
+  "forbidden_generation_role_check": {
+    "passed": true,
+    "detected_roles": []
+  },
+  "optional_instruction_fields": [
+    "pose",
+    "composition",
+    "text",
+    "additional"
+  ],
+  "optional_instruction_support": {
+    "pose": "Supported and scoped only to pose or viewpoint.",
+    "composition": "Supported and scoped only to framing, placement, crop, or layout.",
+    "text": "Supported verbatim as the only readable or pseudo-readable lettering; absent text renders no text.",
+    "additional": "Supported only within its explicit narrow scope."
+  },
+  "required_literal_exact_checks": [
+    {
+      "clause": "Perform only a benign, non-sexual artistic style transformation; do not introduce nudity, sexualization, age changes, violence, injury, or other unsafe content.",
+      "present_verbatim": true
+    },
+    {
+      "clause": "The source reference is the only image input available at generation time.",
+      "present_verbatim": true
+    }
+  ],
+  "source_preservation_check": {
+    "passed": true,
+    "statement": "The prompt preserves source-controlled identity and content unless an authorized optional instruction explicitly overrides only its named attribute."
+  },
+  "precedence_check": {
+    "passed": true,
+    "declared_order": [
+      "safety_and_integrity",
+      "explicit_optional_instructions",
+      "source_content_and_identity_preservation",
+      "textual_style_specification"
+    ],
+    "prompt_behavior": "Optional instructions override only their named attributes; all unspecified attributes remain source-controlled."
+  },
+  "conditional_typography": {
+    "text_only": true,
+    "exact_verbatim": true,
+    "absent_means_no_text": true,
+    "teacher_wording_excluded": true,
+    "generator_executable_treatment": "Readable high-contrast editorial display ink with elegant calligraphic/display-like strokes, adaptive orientation, open-space placement, and sparse dot/line ornament."
+  },
+  "textual_style_clause_inventory": {
+    "medium_rendering": "Polished editorial anime poster illustration with crisp opaque two-to-three-step cel-shaded planes and screen-print-like color separation.",
+    "palette_tone": "Limited warm-paper, deep-navy, teal, coral, warm-yellow, and restrained muted-gold poster-print relationship; skin, hair, and clothing retain literal source identity while receiving relative tonal treatment.",
+    "contrast_lighting": "Coherent cel-shaded light, shadow, and narrow highlight planes with selective deep-navy contour.",
+    "line_mark_quality": "Decisive variable-weight deep-navy ink contours resolving into sparse tapered fine strokes.",
+    "texture_material": "Warm paper grain, restrained screen-print speckling, imperfect overprint edges, sparse paint flecks, and occasional dry-brush interruptions.",
+    "graphic_vocabulary": "Broad opaque abstract discs, blocks, rules, brush sweeps, arcs, dots, connectors, and sparse muted-gold orbital lines.",
+    "composition_defaults": "Adaptable asymmetric editorial hierarchy and generous negative-space rhythm, yielding to the source and explicit composition instructions.",
+    "semantic_region_treatment": "Source-preserved skin cel-shading planes, source-preserved hair value blocks with relative accents, and restrained fold-following clothing print facets without garment replacement or wholesale recoloring."
+  },
+  "suspected_source_specific_clauses": [],
+  "source_specific_clause_dispositions": [],
+  "subject_specific_clause_count": 0,
+  "forbidden_clause_count": 0,
+  "style_reference_required_at_generation": false,
+  "self_contained_text_check": true,
+  "complexity_statistics": {
+    "line_count": 21,
+    "word_count": 501,
+    "byte_count": 3801,
+    "required_literal_clause_count": 2,
+    "optional_instruction_field_count": 4,
+    "textual_style_dimension_count": 8
+  },
+  "status": "passed",
+  "validated_at": "2026-08-14T16:13:18Z"
+}

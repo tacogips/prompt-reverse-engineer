@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "assessment_method": "independent original-resolution visual review",
+  "configured_repeats": 3,
+  "actual_repeats": 1,
+  "target_candidate_order": "style_truth_then_candidate",
+  "loss": {"medium_rendering": 0.16, "palette_tone": 0.17, "line_shape": 0.18, "texture_material": 0.19, "graphic_language": 0.18, "source_fidelity": 0.07, "technical": 0.04},
+  "palette_sub_losses": {"overall_palette": 0.17, "skin_treatment": null, "hair_treatment": null, "clothing_treatment": null},
+  "conditional_checks": {"typography_dialogue": {"applicable": true, "loss": 0.15, "spelling_adherence": true, "unrequested_text": false, "evidence": ["The single readable phrase is exactly ‘SIT WITH COLOR’; it uses high-contrast editorial display lettering with sparse ornamental lines and dots."]}, "text_adherence": {"passed": true, "expected_text": "SIT WITH COLOR", "visible_text": "SIT WITH COLOR", "exact_occurrences": 1, "additional_text": false}},
+  "evidence": {"medium_rendering": ["Crisp cel shading and opaque print separation are visible."], "palette_tone": ["The source objects retain their literal colors within the warm-paper/navy/teal/coral/yellow system."], "line_shape": ["Clear navy contours and display-letter strokes are present."], "texture_material": ["Paper grain and restrained screen-print imperfections are visible."], "graphic_language": ["Asymmetric support fields, print ornament, and open-space text placement form a reusable editorial layout."], "source_fidelity": ["The chair, bottle, and potted plant are retained."], "technical": ["Text is fully legible with no pseudo-text or visible artifact."]},
+  "dominant_transferable_differences": ["Typography is appropriately editorial but less calligraphically expressive than the style truth."],
+  "confidence": 0.88
+}

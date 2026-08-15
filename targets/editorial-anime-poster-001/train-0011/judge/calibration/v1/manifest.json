@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "style-inversion-v3",
+  "judge_prompt_file": "targets/editorial-anime-poster-001/train-0011/judge/prompt.md",
+  "judge_prompt_sha256": "fa54cefc3f8d4091cf82aab05657a21de4fec241e1abc1761b4d2aeab752730c",
+  "timestamp": "2026-08-14T16:09:27Z",
+  "actual_repeat_count": 1,
+  "provisional": true,
+  "cases": [
+    {
+      "id": "target-self-match",
+      "inputs": {"style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png", "source_truth": "targets/editorial-anime-poster-001/truth/style-reference.png", "candidate": "targets/editorial-anime-poster-001/truth/style-reference.png"},
+      "expected_relation": "Identical visible image should have no style or source-fidelity discrepancy when all roles intentionally use the same immutable image.",
+      "observed_component_losses": {"medium_rendering": 0.0, "palette_tone": 0.0, "line_shape": 0.0, "texture_material": 0.0, "graphic_language": 0.0, "source_fidelity": 0.0, "technical": 0.0},
+      "evidence": ["The three inspected role images are byte-identical, so the specified visible features and content are identical."],
+      "pass": true
+    },
+    {
+      "id": "source-self-match",
+      "inputs": {"style_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg", "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg", "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"},
+      "expected_relation": "Identical visible source image should have no discrepancy in the self-match calibration, demonstrating source-content comparison is not person-only.",
+      "observed_component_losses": {"medium_rendering": 0.0, "palette_tone": 0.0, "line_shape": 0.0, "texture_material": 0.0, "graphic_language": 0.0, "source_fidelity": 0.0, "technical": 0.0},
+      "evidence": ["The three inspected role images are byte-identical; observed subject content, garment marking, composition, and technical state match exactly."],
+      "pass": true
+    },
+    {
+      "id": "unstyled-source-cross-domain-mismatch",
+      "inputs": {"style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png", "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg", "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"},
+      "expected_relation": "The unstyled photographic source preserves content but is a strong reusable-style mismatch against the illustrated poster truth.",
+      "observed_component_losses": {"medium_rendering": 0.95, "palette_tone": 0.82, "line_shape": 0.91, "texture_material": 0.8, "graphic_language": 0.92, "source_fidelity": 0.0, "technical": 0.02},
+      "evidence": ["Candidate is a photographic image rather than opaque editorial-anime cel-shaded poster print.", "It lacks the limited print palette, navy ink contour, paper/overprint behavior, and abstract support hierarchy.", "It visibly preserves the source content because it is the source image itself."],
+      "pass": true
+    },
+    {
+      "id": "order-swap-check",
+      "inputs": {"style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png", "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg", "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"},
+      "presentation_orders": ["style_truth_then_candidate", "candidate_then_style_truth"],
+      "expected_relation": "The same cross-domain mismatch remains high regardless of visual presentation order after role labels are retained.",
+      "observed_component_losses": {"style_truth_then_candidate": {"medium_rendering": 0.95, "palette_tone": 0.82, "line_shape": 0.91, "texture_material": 0.8, "graphic_language": 0.92, "source_fidelity": 0.0, "technical": 0.02}, "candidate_then_style_truth": {"medium_rendering": 0.95, "palette_tone": 0.82, "line_shape": 0.91, "texture_material": 0.8, "graphic_language": 0.92, "source_fidelity": 0.0, "technical": 0.02}},
+      "evidence": ["Visible differences are medium-level and remain unchanged when presentation order changes; labels, not order, define roles."],
+      "pass": true
+    }
+  ],
+  "status": "passed",
+  "pass_criteria": "Both self-matches have zero discrepancy; cross-domain mismatch has style losses greater than 0.75 with source_fidelity at or below 0.05; order-swap component deltas are zero.",
+  "summary": "All four observable calibration relations passed. This provisional suite is evidence for a stable v3 rubric and must be retained unchanged during this iteration."
+}

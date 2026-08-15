@@ -1,0 +1,19 @@
+{
+  "schema_version": 2,
+  "provider": "openai",
+  "model": "built-in-imagegen",
+  "model_version": null,
+  "tool_mode": "image-edit",
+  "output": {"path": "targets/editorial-anime-poster-001/train-0011/transferability/cases/heldout-b-composition/image.png", "sha256": "75f32587b67f3acfc5753a1809b95b6b47c8150ed526bfef786a73316f45452a", "width": 1254, "height": 1254, "format": "png"},
+  "input_images": [{"role": "source_reference", "path": "targets/editorial-anime-poster-001/validation/heldout-b-0005.png", "sha256": "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1"}],
+  "base_prompt_file": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/prompt/prompt.md",
+  "base_prompt_sha256": "9bcef001c13e5361c5d6336d4f9d301c5a60e0cca557b99cce44e5c3d162e647",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0011/transferability/cases/heldout-b-composition/effective-prompt.md",
+  "prompt_sha256": "f32931d291392f8d362dcadbd8193c7b8359490ac3ee2d1d62438e4e2a7c923e",
+  "optional_instructions": {"composition": "Use a square poster layout with the yellow chair centered, the blue bottle to its left, the plant to its right, and generous negative space above."},
+  "optional_instructions_sha256": "6dcfc0270640ffc4f867143854de8a25368a3e197c5f6dc331eaf18948ddde36",
+  "seed": null,
+  "provider_parameters": {},
+  "generated_at": "2026-08-14T16:32:10Z",
+  "raw_response_file": null
+}

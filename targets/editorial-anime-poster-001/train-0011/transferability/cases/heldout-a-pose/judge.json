@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "assessment_method": "independent original-resolution visual review",
+  "configured_repeats": 3,
+  "actual_repeats": 1,
+  "target_candidate_order": "style_truth_then_candidate",
+  "loss": {"medium_rendering": 0.17, "palette_tone": 0.18, "line_shape": 0.20, "texture_material": 0.20, "graphic_language": 0.17, "source_fidelity": 0.10, "technical": 0.05},
+  "palette_sub_losses": {"overall_palette": 0.16, "skin_treatment": 0.14, "hair_treatment": 0.18, "clothing_treatment": 0.17},
+  "conditional_checks": {"typography_dialogue": {"applicable": false, "loss": null, "spelling_adherence": null, "unrequested_text": false, "evidence": ["No text is visible."]}, "pose_adherence": {"passed": true, "evidence": ["The person is seated upright on the stool in a three-quarter view with hands visibly folded on the lap."]}, "feedback_checks": {"skin-color-treatment": {"passed": true, "loss": 0.14}, "hair-color-treatment": {"passed": true, "loss": 0.18}, "clothing-color-treatment": {"passed": true, "loss": 0.17}}},
+  "evidence": {"medium_rendering": ["Clean cel planes and poster-print rendering are clear."], "palette_tone": ["Source colors retain their identities within the restrained warm-paper/navy/teal/coral system."], "line_shape": ["Contours are crisp and variable-weight, with a less elaborate fine-line vocabulary than the truth."], "texture_material": ["Paper texture, speckling, and brush interruption are visible."], "graphic_language": ["Abstract layered discs, brush sweeps, dots, and gold connectors form editorial support fields."], "source_fidelity": ["Face, hair, sweater, trousers, shoes, and stool remain recognizable; only the authorized pose changes."], "technical": ["Hands, stool geometry, and clothing construction are legible."]},
+  "dominant_transferable_differences": ["Fine ornamental line density remains slightly restrained relative to the style truth."],
+  "confidence": 0.85
+}

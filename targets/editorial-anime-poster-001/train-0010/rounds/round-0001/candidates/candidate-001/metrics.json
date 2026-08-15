@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "candidate_id": "candidate-001",
+  "target_files": [
+    "truth/style-reference.png"
+  ],
+  "loss": {
+    "total": 0.214,
+    "medium_rendering": 0.2,
+    "palette_tone": 0.34,
+    "line_shape": 0.22,
+    "texture_material": 0.3,
+    "graphic_language": 0.3,
+    "source_fidelity": 0.1,
+    "technical": 0.1
+  },
+  "palette_sub_losses": {
+    "overall_palette": 0.22,
+    "skin_treatment": 0.17,
+    "hair_treatment": 0.18,
+    "clothing_treatment": 0.34,
+    "aggregation": "max"
+  },
+  "reward": 0.786,
+  "weights": {
+    "medium_rendering": 0.2,
+    "palette_tone": 0.15,
+    "line_shape": 0.15,
+    "texture_material": 0.1,
+    "graphic_language": 0.1,
+    "source_fidelity": 0.2,
+    "technical": 0.1
+  },
+  "arithmetic": "0.20*0.20 + 0.15*0.34 + 0.15*0.22 + 0.10*0.30 + 0.10*0.30 + 0.20*0.10 + 0.10*0.10 = 0.214",
+  "evaluators": [
+    {
+      "name": "prompt-as-a-judge",
+      "version": "style-inversion-v3",
+      "raw_output_file": "judge.json"
+    }
+  ]
+}

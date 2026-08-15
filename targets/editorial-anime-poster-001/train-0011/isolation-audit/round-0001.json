@@ -1,0 +1,118 @@
+{
+  "schema_version": 2,
+  "round": "round-0001",
+  "session_id": "prompt-reverse-train-session-28",
+  "audited_at": "2026-08-14T16:15:56Z",
+  "status": "passed",
+  "candidate_generation_started": false,
+  "runtime_input_is_paths_only": true,
+  "runtime_input_check": {
+    "evidence": "The persisted run configuration represents validationManifest and sealedTestManifest as repository-relative string paths; it contains no inline validation/test case array, fixture description, optional-instruction record, or expected assertion.",
+    "validation_manifest_value_type": "string",
+    "sealed_test_manifest_value_type": "string"
+  },
+  "manifests": {
+    "validation": {
+      "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+      "fresh_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "size": 3043,
+      "recorded_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "recorded_size": 3043,
+      "hash_matches_recorded": true,
+      "contents_opened_by_audit": false
+    },
+    "sealed_test": {
+      "path": "targets/editorial-anime-poster-001/test/sealed-test-0011.json",
+      "fresh_sha256": "0f8eba695bd5e47c81d84af96d15b6070cd0aeee08dee332147553c0a310a3ef",
+      "size": 1799,
+      "recorded_sha256": "0f8eba695bd5e47c81d84af96d15b6070cd0aeee08dee332147553c0a310a3ef",
+      "recorded_size": 1799,
+      "hash_matches_recorded": true,
+      "contents_opened_by_audit": false
+    }
+  },
+  "prompt_validation": {
+    "prompt_path": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/prompt/prompt.md",
+    "fresh_prompt_sha256": "9bcef001c13e5361c5d6336d4f9d301c5a60e0cca557b99cce44e5c3d162e647",
+    "template_validation_path": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/prompt/template-validation.json",
+    "fresh_template_validation_sha256": "e972859ec9c20794c7b0959270ef3345cc86356644f1e06937a53dc56d80d4ce",
+    "recorded_prompt_sha256": "9bcef001c13e5361c5d6336d4f9d301c5a60e0cca557b99cce44e5c3d162e647",
+    "template_status": "passed",
+    "forbidden_clause_count": 0,
+    "prompt_hash_matches_template": true
+  },
+  "style_truth": {
+    "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+  },
+  "audited_step_executions": [
+    {
+      "step_id": "intake-or-plan",
+      "execution_id": "intake-or-plan-attempt-1-exec-1",
+      "status": "completed",
+      "classification": "allowed",
+      "reason": "Its persisted intake evidence records only each sealed manifest's path, SHA-256, byte size, and contentsOpened=false."
+    },
+    {
+      "step_id": "analyze-images",
+      "execution_id": "analyze-images-attempt-1-exec-2",
+      "status": "completed",
+      "classification": "allowed",
+      "reason": "Its delivered payload and retained session output contain no current validation/test manifest path, manifest hash, fixture path, fixture description, instruction, or assertion; no forbidden runtime-record, run-config, or intake-evidence access event is recorded."
+    },
+    {
+      "step_id": "generalize-prompt",
+      "execution_id": "generalize-prompt-attempt-1-exec-3",
+      "status": "completed",
+      "classification": "allowed",
+      "reason": "Its delivered payload is limited to prompt/template-validation metadata and contains no current validation/test data; no forbidden runtime-record, run-config, or intake-evidence access event is recorded."
+    }
+  ],
+  "access_events": [
+    {
+      "subject": "intake-or-plan-attempt-1-exec-1",
+      "resource": "current validation and sealed-test manifests",
+      "operation": "existence, SHA-256, and byte-size metadata recording only",
+      "classification": "allowed",
+      "evidence": "intake-evidence.json and state.json record matching hashes/sizes with contentsOpened=false."
+    },
+    {
+      "subject": "analyze-images-attempt-1-exec-2",
+      "resource": "current validation/test manifests, fixtures, run-config, intake evidence, runtime snapshot, and session log",
+      "operation": "session-evidence scan found no access event or prohibited-data marker in its retained output or delivered payload",
+      "classification": "allowed",
+      "evidence": "The session message has only analysis artifact paths and generic status fields; the message payload index has no current-manifest path or hash."
+    },
+    {
+      "subject": "generalize-prompt-attempt-1-exec-3",
+      "resource": "current validation/test manifests, fixtures, run-config, intake evidence, runtime snapshot, and session log",
+      "operation": "session-evidence scan found no access event or prohibited-data marker in its retained output or delivered payload",
+      "classification": "allowed",
+      "evidence": "The session message has only prompt/template-validation metadata; the message payload index has no current-manifest path or hash."
+    },
+    {
+      "subject": "round-0001 shared planned generation record",
+      "resource": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/prompt/generation.json",
+      "operation": "provenance inspection",
+      "classification": "allowed",
+      "evidence": "The sole input_images entry is source_reference with the source hash; the current style-truth hash is absent, no truth/style role occurs, output is null, and status is planned_shared_settings_only."
+    },
+    {
+      "subject": "candidate generation",
+      "resource": "round-0001 candidate generation records and calls",
+      "operation": "pre-generation existence check",
+      "classification": "allowed",
+      "evidence": "No realized candidate generation record or generation call exists before this audit."
+    }
+  ],
+  "generation_separation": {
+    "style_truth_hash_present_in_generation_record_or_call": false,
+    "truth_or_style_image_role_present_in_generation_record_or_call": false,
+    "generation_input_roles": [
+      "source_reference"
+    ],
+    "passed": true
+  },
+  "prohibited_access_events": [],
+  "diagnostics": []
+}

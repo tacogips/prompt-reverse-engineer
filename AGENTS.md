@@ -48,6 +48,8 @@ A workflow may claim arbitrary-input behavior only after a held-out gate that:
 
 Because repeated refinement can overfit the validation suite, promotion also requires a one-shot test audit on at least one additional source hash that overlaps neither training nor validation. Ordinary workflow input carries only a repository-relative sealed-manifest path; intake records its hash and size without opening it. Prompt-synthesis and refinement nodes must not read test images, descriptions, instructions, or expected assertions. The test audit verifies the manifest hash, runs only after optimization stops, and never routes back to refinement. Review must inspect execution evidence for premature manifest access. If the audit fails, preserve the failure and start a later outer iteration with a newly sealed test set after using the old audit evidence for research.
 
+When `parentTrainDir` is set, the later iteration may read only the parent's exact state, analysis, evaluation, judge, feedback-resolution, and final-prompt files. Historical held-out findings written in those files are legitimate outer-loop feedback when the current sealed test set is fresh. Do not follow their paths to old fixture images or manifests, and do not inventory target, validation, test, or prior-train directories to discover evidence.
+
 Use `allowUnvalidatedPrototype: true` only for explicitly exploratory runs. Such a run is non-promotable: it cannot update `best.json`, cannot satisfy the definition of done, and cannot be described as reusable or generalized.
 
 Additional anti-overfitting controls are mandatory:
@@ -238,7 +240,7 @@ Do not put secrets, credentials, or undocumented runtime substitutions in prompt
 
 Each round's `prompt/generation.json` contains the intended shared settings. Each candidate's `generation.json` contains the exact realized settings and must override or expand the shared record when necessary.
 
-The authoritative realized-record contract is `.riela/workflows/prompt-reverse-train/generation-record-contract.json`. Training, validation, and sealed-test generation records must use its exact required fields. In particular, use `output.path`, `output.sha256`, `input_images[]`, `prompt_file`, and `prompt_sha256`; aliases do not satisfy the contract. All persisted paths are repository-relative, and every recorded hash must be recomputed from saved bytes before the workflow advances.
+The authoritative realized-record contract is `.riela/workflows/prompt-reverse-train/generation-record-contract.json`. Training, validation, and sealed-test generation records must use its exact required fields. In particular, use `output.path`, `output.sha256`, `input_images[]`, `base_prompt_file`, `base_prompt_sha256`, `prompt_file`, `prompt_sha256`, and the canonical optional-instruction hash; aliases do not satisfy the contract. `prompt_file` is the exact effective text sent to the tool. Optional instructions may only be appended using the contract's deterministic suffix and must never cause the frozen base prompt to be paraphrased. All persisted paths are repository-relative, and every recorded hash must be recomputed from saved bytes before the workflow advances.
 
 ```json
 {

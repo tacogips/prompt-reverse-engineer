@@ -1,0 +1,108 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "target_candidate_order": "style_truth_then_candidate",
+  "provenance_eligibility": {
+    "eligible": true,
+    "input_image_count": 1,
+    "input_roles": [
+      "source_reference"
+    ],
+    "truth_or_style_input_present": false,
+    "reason": "generation.json records only the training source as source_reference and the frozen text prompt."
+  },
+  "aggregation": "component_wise_median",
+  "repeats": [
+    {
+      "repeat": 1,
+      "loss": {
+        "medium_rendering": 0.12,
+        "palette_tone": 0.24,
+        "line_shape": 0.13,
+        "texture_material": 0.18,
+        "graphic_language": 0.16,
+        "source_fidelity": 0.09,
+        "technical": 0.07
+      }
+    },
+    {
+      "repeat": 2,
+      "loss": {
+        "medium_rendering": 0.12,
+        "palette_tone": 0.24,
+        "line_shape": 0.13,
+        "texture_material": 0.18,
+        "graphic_language": 0.16,
+        "source_fidelity": 0.09,
+        "technical": 0.07
+      }
+    },
+    {
+      "repeat": 3,
+      "loss": {
+        "medium_rendering": 0.12,
+        "palette_tone": 0.24,
+        "line_shape": 0.13,
+        "texture_material": 0.18,
+        "graphic_language": 0.16,
+        "source_fidelity": 0.09,
+        "technical": 0.07
+      }
+    }
+  ],
+  "loss": {
+    "medium_rendering": 0.12,
+    "palette_tone": 0.24,
+    "line_shape": 0.13,
+    "texture_material": 0.18,
+    "graphic_language": 0.16,
+    "source_fidelity": 0.09,
+    "technical": 0.07
+  },
+  "palette_sub_losses": {
+    "overall_palette": 0.15,
+    "skin_treatment": 0.11,
+    "hair_treatment": 0.16,
+    "clothing_treatment": 0.24
+  },
+  "conditional_checks": {
+    "typography_dialogue": {
+      "applicable": false,
+      "loss": null,
+      "spelling_adherence": null,
+      "unrequested_text": false,
+      "evidence": [
+        "No optional exact-text instruction was supplied. The visible shirt logo is preserved source content, not added poster typography."
+      ]
+    }
+  },
+  "evidence": {
+    "medium_rendering": [
+      "Polished anime drawing, crisp opaque cel planes, and clean poster-print color separation strongly realize the transferable medium."
+    ],
+    "palette_tone": [
+      "The warm paper, navy, teal, coral, and matte-gold relationship is clear and controlled. Skin retains its source-relative warm shadow and highlight grouping; hair remains a dark source-preserved mass with cool/warm accent planes.",
+      "Clothing retains the source garment and marking but is still mostly pale gray; its restrained navy/teal value facets are improved yet remain the maximum palette sub-loss."
+    ],
+    "line_shape": [
+      "Deep-navy variable contours, tapered hair strands, gold orbital arcs, dots, and connectors match the style model without copying the teacher geometry."
+    ],
+    "texture_material": [
+      "Visible warm paper grain, speckling, paint flecks, and imperfect brushed edges give a convincing tactile print surface while leaving the source readable."
+    ],
+    "graphic_language": [
+      "Firm teal and coral support fields frame the source-controlled figure, with asymmetrical negative space and a final fine-gold ornament layer; the result is editorial rather than a copy of the teacher composition."
+    ],
+    "source_fidelity": [
+      "The candidate preserves the source person's recognizable profile, short hair silhouette, seated posture, gray Batman shirt and its marking, pale trousers, and basic environment while changing only the requested art treatment."
+    ],
+    "technical": [
+      "The illustration is high-resolution and coherent, with intact anatomy, garment edges, and logo. No added display text, pseudo-text, or distracting artifact is visible."
+    ]
+  },
+  "dominant_transferable_differences": [
+    "Extend the source-preserving clothing treatment with a few more restrained harmonized print facets while keeping the original garment and logo intact.",
+    "Slightly deepen the layered support-field/overprint interplay without reducing source fidelity."
+  ],
+  "confidence": 0.94
+}

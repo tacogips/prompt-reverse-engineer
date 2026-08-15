@@ -1,0 +1,26 @@
+{
+  "schema_version": 2,
+  "status": "passed",
+  "validation_manifest": {"path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json", "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8", "size": 3043},
+  "prompt": {"path": "targets/editorial-anime-poster-001/train-0010/rounds/round-0001/prompt/prompt.md", "sha256": "796cf42cadd935d4bb1fe3ce366a02fc307204380ee06fbbbcbfead6582e98e1"},
+  "judge": {"loss_function_version": "style-inversion-v3", "config": "targets/editorial-anime-poster-001/train-0010/judge/config.json", "prompt_sha256": "49d0dec16e4fc644fcb31974182e145fe471d4d7eb6ca4c6c054e5f6a6fa7cae", "aggregation": "component_wise_median", "repeats": 3},
+  "training": {"candidate": "targets/editorial-anime-poster-001/train-0010/rounds/round-0001/candidates/candidate-003", "source_sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e", "loss": 0.139},
+  "case_coverage": {"required_types": ["baseline", "pose", "composition", "text"], "observed_types": ["baseline", "pose", "composition", "text"], "required_case_types_present": true, "distinct_held_out_source_hashes": 2, "training_hash_excluded": true},
+  "source_hashes": ["71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9", "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1"],
+  "cases": [
+    {"id": "heldout-a-baseline", "type": "baseline", "source_sha256": "71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9", "loss": 0.1055, "metrics": "targets/editorial-anime-poster-001/train-0010/transferability/cases/heldout-a-baseline/metrics.json", "passed": true},
+    {"id": "heldout-a-pose", "type": "pose", "source_sha256": "71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9", "loss": 0.1135, "metrics": "targets/editorial-anime-poster-001/train-0010/transferability/cases/heldout-a-pose/metrics.json", "passed": true},
+    {"id": "heldout-b-composition", "type": "composition", "source_sha256": "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1", "loss": 0.1005, "metrics": "targets/editorial-anime-poster-001/train-0010/transferability/cases/heldout-b-composition/metrics.json", "passed": true},
+    {"id": "heldout-b-exact-text", "type": "text", "source_sha256": "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1", "loss": 0.1035, "metrics": "targets/editorial-anime-poster-001/train-0010/transferability/cases/heldout-b-exact-text/metrics.json", "passed": true}
+  ],
+  "aggregate_validation_loss": 0.1058,
+  "worst_case_loss": 0.1135,
+  "training_loss": 0.139,
+  "generalization_gap": -0.0332,
+  "thresholds": {"aggregate_validation_loss_max": 0.3, "worst_case_loss_max": 0.4, "generalization_gap_max": 0.1, "style_component_loss_max": 0.25},
+  "pass_reasons": ["Frozen prompt template validation passed with zero forbidden clauses.", "The manifest hash and 3043-byte size matched intake before parsing.", "Two distinct held-out source hashes were used and neither is the training source hash.", "All required baseline, pose, composition, and exact-text cases are present.", "Every style component is at or below the 0.25 ceiling; semantic skin, hair, clothing, and typography probes were recorded where applicable.", "Pose, composition, exact-text, and no-text assertions passed.", "Aggregate, worst-case, and generalization-gap thresholds passed."],
+  "fail_reasons": [],
+  "next_phase": "audit",
+  "provisional_exit_reason": "training_and_validation_reached",
+  "evaluated_at": "2026-08-14T15:48:51Z"
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "target_candidate_order": "style_truth_then_candidate",
+  "loss": {
+    "medium_rendering": 0.08,
+    "palette_tone": 0.08,
+    "line_shape": 0.1,
+    "texture_material": 0.07,
+    "graphic_language": 0.06,
+    "source_fidelity": 0.05,
+    "technical": 0.04
+  },
+  "palette_sub_losses": {
+    "overall_palette": 0.08,
+    "skin_treatment": 0,
+    "hair_treatment": 0,
+    "clothing_treatment": 0
+  },
+  "conditional_checks": {
+    "typography_dialogue": {
+      "applicable": false,
+      "loss": null,
+      "spelling_adherence": null,
+      "unrequested_text": false,
+      "evidence": [
+        "No readable or pseudo-readable text appears."
+      ]
+    },
+    "provenance": {
+      "applicable": true,
+      "passed": false,
+      "evidence": [
+        "The persisted exact sent prompt differs from the frozen base prompt although this case has empty optional instructions."
+      ]
+    }
+  },
+  "evidence": {
+    "medium_rendering": ["Crisp cel-shaded mountain planes and opaque poster-print separation are clearly present."],
+    "palette_tone": ["The teal/navy, warm-paper, coral, and muted-gold relationship is coherent and limited."],
+    "line_shape": ["Mountain contours and graphic accents use decisive navy linework, though contours are less variable than the reference language."],
+    "texture_material": ["Paper grain, speckling, dry-brush marks, and overprint-like edges are visible without obscuring the landscape."],
+    "graphic_language": ["Asymmetric coral and navy support fields, dots, arcs, and ample negative space form an editorial hierarchy."],
+    "source_fidelity": ["The layered mountains, central island, calm lake, reflection, low glow, open sky, and depth are preserved."],
+    "technical": ["The image is clean and legible with no invented text or source-critical artifact."]
+  },
+  "dominant_transferable_differences": ["Increase fine variable-weight contour refinement if further work is authorized."],
+  "confidence": 0.88
+}

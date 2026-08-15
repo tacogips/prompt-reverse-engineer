@@ -1,0 +1,108 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "target_candidate_order": "style_truth_then_candidate",
+  "provenance_eligibility": {
+    "eligible": true,
+    "input_image_count": 1,
+    "input_roles": [
+      "source_reference"
+    ],
+    "truth_or_style_input_present": false,
+    "reason": "generation.json records only the training source as source_reference and the frozen text prompt."
+  },
+  "aggregation": "component_wise_median",
+  "repeats": [
+    {
+      "repeat": 1,
+      "loss": {
+        "medium_rendering": 0.2,
+        "palette_tone": 0.34,
+        "line_shape": 0.22,
+        "texture_material": 0.3,
+        "graphic_language": 0.3,
+        "source_fidelity": 0.1,
+        "technical": 0.1
+      }
+    },
+    {
+      "repeat": 2,
+      "loss": {
+        "medium_rendering": 0.2,
+        "palette_tone": 0.34,
+        "line_shape": 0.22,
+        "texture_material": 0.3,
+        "graphic_language": 0.3,
+        "source_fidelity": 0.1,
+        "technical": 0.1
+      }
+    },
+    {
+      "repeat": 3,
+      "loss": {
+        "medium_rendering": 0.2,
+        "palette_tone": 0.34,
+        "line_shape": 0.22,
+        "texture_material": 0.3,
+        "graphic_language": 0.3,
+        "source_fidelity": 0.1,
+        "technical": 0.1
+      }
+    }
+  ],
+  "loss": {
+    "medium_rendering": 0.2,
+    "palette_tone": 0.34,
+    "line_shape": 0.22,
+    "texture_material": 0.3,
+    "graphic_language": 0.3,
+    "source_fidelity": 0.1,
+    "technical": 0.1
+  },
+  "palette_sub_losses": {
+    "overall_palette": 0.22,
+    "skin_treatment": 0.17,
+    "hair_treatment": 0.18,
+    "clothing_treatment": 0.34
+  },
+  "conditional_checks": {
+    "typography_dialogue": {
+      "applicable": false,
+      "loss": null,
+      "spelling_adherence": null,
+      "unrequested_text": false,
+      "evidence": [
+        "No optional exact-text instruction was supplied. The visible shirt mark is source-controlled clothing content rather than an added text accent."
+      ]
+    }
+  },
+  "evidence": {
+    "medium_rendering": [
+      "The image is a clean anime-style illustration with opaque cel-shaded facial and arm planes, but it is less refined and editorially poster-like than the style evidence."
+    ],
+    "palette_tone": [
+      "Warm paper, navy, teal, coral, and gold are visible, but the field system is much sparser and the shirt remains largely pale gray without the style model's interlocking harmonized clothing facets.",
+      "Skin keeps the source's identity and has a warm shadow band; hair retains its dark mass with teal/coral accents; clothing is the limiting semantic region."
+    ],
+    "line_shape": [
+      "Deep navy contours and fine gold orbital arcs are present, though many hair marks are uniformly scratchy rather than the reference's more controlled variable-weight hierarchy."
+    ],
+    "texture_material": [
+      "Paper grain and brushed support-field edges are clear, but screen-print overprint variation, flecks, and dry-brush behavior are limited."
+    ],
+    "graphic_language": [
+      "Teal and coral abstract fields plus orbital lines provide a transferable poster grammar, but the hierarchy is comparatively simple and lacks the richer layered editorial balance."
+    ],
+    "source_fidelity": [
+      "The candidate preserves the source person's recognizable face direction, short dark hair, seated pose, gray graphic shirt, light trousers, and approximate setting relationships."
+    ],
+    "technical": [
+      "Anatomy and clothing are coherent. No unrequested display text or obvious generation artifact is visible."
+    ]
+  },
+  "dominant_transferable_differences": [
+    "Give source-preserved clothing clearer interlocking navy, teal, coral, and warm-yellow value facets rather than leaving it predominantly neutral gray.",
+    "Increase the controlled screen-print/overprint texture and layered poster-field hierarchy."
+  ],
+  "confidence": 0.9
+}

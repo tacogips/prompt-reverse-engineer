@@ -1,0 +1,19 @@
+{
+  "schema_version": 2,
+  "provider": "openai",
+  "model": "built-in-imagegen",
+  "model_version": null,
+  "tool_mode": "image-edit",
+  "output": {"path": "targets/editorial-anime-poster-001/train-0011/transferability/cases/heldout-a-pose/image.png", "sha256": "dc99d0978f186eb3940ea8e10f0d21d47407ac0c1dca255838a365d0fddaef8b", "width": 1024, "height": 1536, "format": "png"},
+  "input_images": [{"role": "source_reference", "path": "targets/editorial-anime-poster-001/validation/heldout-a-0005.png", "sha256": "71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9"}],
+  "base_prompt_file": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/prompt/prompt.md",
+  "base_prompt_sha256": "9bcef001c13e5361c5d6336d4f9d301c5a60e0cca557b99cce44e5c3d162e647",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0011/transferability/cases/heldout-a-pose/effective-prompt.md",
+  "prompt_sha256": "02c38f8453a3cb3144a71094820cdd0d197f571d8e64812f15cfb3b5da7b82bf",
+  "optional_instructions": {"pose": "Show the same person seated upright on the wooden stool in a three-quarter view, with both hands folded visibly on the lap."},
+  "optional_instructions_sha256": "935ed3166b206f3313145a41b172867b4e07315b11cb71970babbcfce0407ab1",
+  "seed": null,
+  "provider_parameters": {},
+  "generated_at": "2026-08-14T16:32:10Z",
+  "raw_response_file": null
+}

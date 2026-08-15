@@ -1,0 +1,10 @@
+{
+  "schema_version": 2,
+  "case_id": "office-portrait-combined-optional",
+  "case_type": "combined_optional",
+  "loss": {"total": 0.0795, "style_fidelity": 0.0914, "medium_rendering": 0.08, "palette_tone": 0.1, "line_shape": 0.08, "texture_material": 0.12, "graphic_language": 0.08, "source_fidelity": 0.08, "technical": 0.02, "pose_adherence": 0.0, "composition_adherence": 0.0, "text_adherence": 0.0, "typography_dialogue": 0.02},
+  "style_component_ceiling": 0.25,
+  "style_component_ceiling_passed": true,
+  "assertions": {"source_preserved": true, "pose_adhered": true, "composition_adhered": true, "exact_text": true, "no_unrequested_text": true, "generation_input_is_sole_source_reference": true, "frozen_prompt_hash_matches": false},
+  "reward": 0.9205
+}

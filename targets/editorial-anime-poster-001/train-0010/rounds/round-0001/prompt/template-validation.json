@@ -1,0 +1,95 @@
+{
+  "schema_version": 2,
+  "contract_file": "targets/editorial-anime-poster-001/train-0010/workflow/prompt-template-contract.json",
+  "contract_schema_version": 3,
+  "contract_id": "prompt-only-style-reconstruction-v1",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0010/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "796cf42cadd935d4bb1fe3ce366a02fc307204380ee06fbbbcbfead6582e98e1",
+  "validated_at": "2026-08-14T15:31:53Z",
+  "required_image_roles": [
+    "source_reference"
+  ],
+  "forbidden_generation_image_roles": [
+    "style_reference",
+    "style_truth",
+    "target_reference"
+  ],
+  "optional_instruction_fields": [
+    "pose",
+    "composition",
+    "text",
+    "additional"
+  ],
+  "sole_source_role_check": {
+    "passed": true,
+    "generation_metadata_path": "targets/editorial-anime-poster-001/train-0010/rounds/round-0001/prompt/generation.json",
+    "input_image_count": 1,
+    "roles": [
+      "source_reference"
+    ],
+    "reason": "The intended generation record declares exactly one input image, with role source_reference."
+  },
+  "forbidden_generation_role_check": {
+    "passed": true,
+    "forbidden_roles_found": []
+  },
+  "required_literal_checks": [
+    {
+      "clause": "Perform only a benign, non-sexual artistic style transformation; do not introduce nudity, sexualization, age changes, violence, injury, or other unsafe content.",
+      "present_verbatim": true
+    },
+    {
+      "clause": "The source reference is the only image input available at generation time.",
+      "present_verbatim": true
+    }
+  ],
+  "textual_style_clause_inventory": {
+    "medium_rendering": "polished editorial anime poster illustration with opaque flat-to-gently-graded cel-shaded planes and screen-print-like color separation",
+    "palette_tone": "warm off-white ground, deep navy anchors, saturated teal, coral, warm yellow, and restrained matte-gold accents",
+    "contrast_lighting": "controlled value blocks, restrained warm shadow bands, sparse narrow highlights, and cool/warm accent planes",
+    "line_mark_quality": "precise variable-weight deep-navy contours, sparse tapered fine strokes, and fine gold orbital line, dot, and connector ornament",
+    "texture_material": "warm paper grain, restrained screen-print speckling, imperfect overprint edges, sparse paint flecks, and dry-brush sweeps",
+    "graphic_language": "broad opaque abstract fields framing source-controlled focal content with adaptable asymmetric editorial balance",
+    "default_composition": "broad support fields and ornament are adaptable defaults that preserve source-controlled focal content and yield to explicit composition instructions",
+    "semantic_region_treatment": {
+      "skin": "preserve source identity while applying coherent cel-shaded light-to-shadow planes, warm shadow bands, sparse highlights, and selective navy contour",
+      "hair": "preserve source silhouette, literal color identity, and hairstyle while applying dark value massing, restrained cool/warm accent planes, value blocks, and navy contour",
+      "clothing": "preserve source garment shapes, markings, and logos while applying interlocking value planes, dark anchors, harmonizing color facets, and subtle print texture"
+    },
+    "conditional_typography_dialogue": "only supplied optional text is rendered verbatim as a readable high-contrast editorial display accent; absent text produces no text-like marks"
+  },
+  "precedence_check": {
+    "passed": true,
+    "declared_order": [
+      "safety_and_integrity",
+      "explicit_optional_instructions",
+      "source_content_and_identity_preservation",
+      "textual_style_specification"
+    ],
+    "prompt_order_matches_contract": true
+  },
+  "suspected_source_specific_clauses": [],
+  "suspected_source_specific_clause_dispositions": [],
+  "forbidden_clause_count": 0,
+  "checks": {
+    "self_contained_textual_style": true,
+    "source_is_exclusive_content_authority": true,
+    "source_preservation_rule": true,
+    "semantic_region_skin_hair_clothing": true,
+    "conditional_exact_text_and_no_text_default": true,
+    "optional_instruction_precedence": true,
+    "forbidden_style_reference_generation_instruction_absent": true,
+    "style_image_required_at_generation": false,
+    "subject_specific_clause_count": 0,
+    "target_specific_content_clause_count": 0
+  },
+  "complexity_statistics": {
+    "line_count": 28,
+    "word_count": 529,
+    "byte_count": 3910,
+    "required_literal_clause_count": 2,
+    "optional_instruction_branch_count": 4,
+    "textual_style_dimension_count": 8
+  },
+  "status": "passed"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "iteration": 11,
+  "parent_iteration": 10,
+  "status": "failed",
+  "started_at": "2026-08-14T16:06:58Z",
+  "completed_at": "2026-08-14T16:44:23Z",
+  "hypothesis": "Retaining feedback-driven semantic-region and typography clauses while adding restrained fold-following clothing facets will improve clothing treatment without changing source garments, and corrected prompt provenance will permit promotion.",
+  "workflow_family": "analyze-generate-select-refine-loop",
+  "workflow_revision": "targets/editorial-anime-poster-001/train-0011/workflow/workflow.json",
+  "judge_revision": "fa54cefc3f8d4091cf82aab05657a21de4fec241e1abc1761b4d2aeab752730c",
+  "selected_candidate": "rounds/round-0001/candidates/candidate-003",
+  "exit_reason": "generalization_test_failed",
+  "failure_summary": "The selected candidate and frozen validation suite pass, but the fresh sealed test fails immutable effective-prompt provenance and exact-text/no-unrequested-text gates."
+}

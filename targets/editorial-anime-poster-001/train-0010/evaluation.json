@@ -1,0 +1,74 @@
+{
+  "schema_version": 2,
+  "iteration": 10,
+  "status": "failed",
+  "selected_candidate": "rounds/round-0001/candidates/candidate-003",
+  "rounds_executed": 1,
+  "configured_max_refinement_rounds": 3,
+  "exit_reason": "generalization_test_failed",
+  "selection_rule": "lowest_total_loss_among_contract_and_provenance_eligible_candidates; tie_break_candidate_id_ascending",
+  "training_loss": 0.139,
+  "training_reward": 0.861,
+  "validation_loss": 0.1058,
+  "validation_worst_case_loss": 0.1135,
+  "generalization_gap": -0.0332,
+  "reported_test_loss": 0.0875,
+  "reported_test_worst_case_loss": 0.0955,
+  "validation_test_gap": -0.0183,
+  "recomputed_test_loss_from_component_weights": 0.08325,
+  "recomputed_test_worst_case_loss_from_component_weights": 0.0855,
+  "test_metrics_arithmetic_valid": false,
+  "is_new_best": false,
+  "promotion_eligible": false,
+  "validation_case_coverage": {
+    "required_types": [
+      "baseline",
+      "pose",
+      "composition",
+      "text"
+    ],
+    "observed_types": [
+      "baseline",
+      "pose",
+      "composition",
+      "text"
+    ],
+    "distinct_held_out_source_hashes": 2,
+    "training_validation_hashes_disjoint": true,
+    "all_required_assertions_passed": true
+  },
+  "test_case_coverage": {
+    "required_types": [
+      "baseline",
+      "combined_optional"
+    ],
+    "observed_types": [
+      "baseline",
+      "combined_optional"
+    ],
+    "distinct_test_source_hashes": 1,
+    "test_hashes_disjoint_from_training_and_validation": true,
+    "all_visual_assertions_passed": true,
+    "frozen_prompt_hashes_match": false
+  },
+  "gates": {
+    "input_isolation": true,
+    "template_contract": true,
+    "required_literal_clauses": true,
+    "feedback_resolution": true,
+    "candidate_generation_provenance": true,
+    "training_style_component_ceilings": true,
+    "validation_transferability": true,
+    "one_shot_test_provenance": false,
+    "one_shot_test_metric_arithmetic": false,
+    "one_shot_test": false,
+    "best_promotion": false
+  },
+  "failure_diagnostics": [
+    "The baseline sealed-test generation recorded prompt_sha256 0aedb8e8583d5ca019805eba11b79b9a4bcd42629e06ee84f70700b99e99fc13; freshly hashing its recorded prompt_file returns the same value, but it differs from frozen final prompt SHA-256 796cf42cadd935d4bb1fe3ce366a02fc307204380ee06fbbbcbfead6582e98e1.",
+    "The combined-optional sealed-test generation recorded prompt_sha256 540e3f65f72f6a92b1d579f55443755d2344a4b9997df716b09ad35b478c0149; freshly hashing its recorded prompt_file returns the same value, but it differs from frozen final prompt SHA-256 796cf42cadd935d4bb1fe3ce366a02fc307204380ee06fbbbcbfead6582e98e1.",
+    "Using style-inversion-v3 weights, office-portrait-baseline metrics recompute to total 0.0855 and reward 0.9145, not recorded total 0.0955 and reward 0.9045; office-portrait-combined-optional recomputes to total 0.0810 and reward 0.9190, not 0.0795 and 0.9205."
+  ],
+  "analysis": "targets/editorial-anime-poster-001/train-0010/analysis.md",
+  "reviewed_at": "2026-08-14T16:00:01Z"
+}

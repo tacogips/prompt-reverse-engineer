@@ -1,0 +1,67 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "round": 1,
+  "selection_rule": "lowest_total_loss_among_contract_and_provenance_eligible_candidates; tie_break_candidate_id_ascending",
+  "candidate_assessments": [
+    {
+      "candidate": "candidates/candidate-001",
+      "total_loss": 0.214,
+      "contract_eligible": true,
+      "contract_check": {
+        "template_validation_status": "passed",
+        "contract_version": "prompt-only-style-reconstruction-v1",
+        "current_contract_id": "prompt-only-style-reconstruction-v1",
+        "prompt_sha256_matches_disk": true,
+        "all_required_literal_clauses_present_verbatim": true
+      },
+      "provenance_eligible": true,
+      "style_component_ceiling_passed": false,
+      "exclusion_reason": null
+    },
+    {
+      "candidate": "candidates/candidate-002",
+      "total_loss": 0.172,
+      "contract_eligible": true,
+      "contract_check": {
+        "template_validation_status": "passed",
+        "contract_version": "prompt-only-style-reconstruction-v1",
+        "current_contract_id": "prompt-only-style-reconstruction-v1",
+        "prompt_sha256_matches_disk": true,
+        "all_required_literal_clauses_present_verbatim": true
+      },
+      "provenance_eligible": true,
+      "style_component_ceiling_passed": false,
+      "exclusion_reason": null
+    },
+    {
+      "candidate": "candidates/candidate-003",
+      "total_loss": 0.139,
+      "contract_eligible": true,
+      "contract_check": {
+        "template_validation_status": "passed",
+        "contract_version": "prompt-only-style-reconstruction-v1",
+        "current_contract_id": "prompt-only-style-reconstruction-v1",
+        "prompt_sha256_matches_disk": true,
+        "all_required_literal_clauses_present_verbatim": true
+      },
+      "provenance_eligible": true,
+      "style_component_ceiling_passed": true,
+      "exclusion_reason": null
+    }
+  ],
+  "prior_best_assessment": {
+    "candidate": null,
+    "eligible": false,
+    "exclusion_reason": "state.json contains no prior bestCandidate; no legacy candidate was eligible for comparison or promotion in this iteration."
+  },
+  "selected_candidate": "candidates/candidate-003",
+  "selected_candidate_path": "targets/editorial-anime-poster-001/train-0010/rounds/round-0001/candidates/candidate-003",
+  "selected_total_loss": 0.139,
+  "selected_reward": 0.861,
+  "template_validation_file": "targets/editorial-anime-poster-001/train-0010/rounds/round-0001/prompt/template-validation.json",
+  "template_validation_status": "passed",
+  "training_target_reached": true,
+  "training_target_reason": "Selected loss 0.139 is at or below targetLoss 0.18 and every reusable style component is at or below styleComponentMaxLoss 0.25.",
+  "selected_at": "2026-08-14T15:43:34Z"
+}

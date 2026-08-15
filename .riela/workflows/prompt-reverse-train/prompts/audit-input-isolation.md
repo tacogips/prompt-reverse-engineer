@@ -13,6 +13,8 @@ Inspect step-scoped execution evidence from this workflow session. Enforce these
 - Only `audit-generalization` may open the sealed test manifest or its fixture image. No earlier optimization or validation step may obtain its contents.
 - `analyze-images` and `generalize-prompt` must not open `run-config.json`, `intake-evidence.json`, runtime snapshots, or session logs. The present audit step is allowed to inspect those records only to enforce the boundary.
 - A previous legitimate `validate-transferability` execution may appear before a later refinement round. Do not flag access performed by that allowed step; flag only access by a prohibited step.
+- If `parentTrainDir` is supplied for a later outer iteration, exact parent analysis, evaluation, judge, state, feedback-resolution, and final-prompt files are authorized research evidence. Do not classify textual mentions of historical validation/test paths, assertions, or failed scores inside those exact parent files as access to the current sealed fixtures. Following such a mention to open a historical fixture remains prohibited during optimization.
+- Classify against the current iteration's manifest paths and current fixture bytes. A broad directory inventory by an optimization node is still prohibited even if it reveals only historical names, because the node must use the exact-path allowlist; however, merely reading an authorized parent file that contains a historical path is allowed.
 
 Write `<targetDir>/<trainDir>/isolation-audit/round-NNNN.json` with schema version, round, session id, audited step executions, manifest paths and freshly computed hashes, recorded hashes, every relevant access event, allowed/prohibited classification, and status.
 

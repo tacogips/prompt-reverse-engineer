@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "suite_id": "calibration/v1",
+  "status": "passed",
+  "judge_prompt": "targets/editorial-anime-poster-001/train-0009/judge/prompt.md",
+  "judge_prompt_sha256": "28c4d0c07f02c0015fc4cf4a4601784f93cc58760a3b8ef052fc229b8ab7ce78",
+  "timestamp": "2026-08-14T15:14:12Z",
+  "actual_repeat_count": 3,
+  "assessments": [
+    {
+      "id": "target-self-match",
+      "inputs": {"style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png", "candidate": "targets/editorial-anime-poster-001/truth/style-reference.png"},
+      "expected_relation": "Identical visible style evidence has no reusable-style mismatch.",
+      "observed_component_losses": {"medium_rendering": 0.0, "palette_tone": 0.0, "line_shape": 0.0, "texture_material": 0.0, "graphic_language": 0.0, "source_fidelity": 0.0, "technical": 0.0},
+      "evidence": ["The same pixels provide identical medium, palette, line, texture, and graphic-language evidence.", "No image artifact or legibility difference is visible."],
+      "pass": true
+    },
+    {
+      "id": "source-self-match",
+      "inputs": {"source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg", "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"},
+      "expected_relation": "Identical source and candidate have no source-fidelity or technical mismatch; style dimensions are held at zero only for this identical-image calibration control.",
+      "observed_component_losses": {"medium_rendering": 0.0, "palette_tone": 0.0, "line_shape": 0.0, "texture_material": 0.0, "graphic_language": 0.0, "source_fidelity": 0.0, "technical": 0.0},
+      "evidence": ["Identity, anatomy, garments, markings, pose, crop, and scene visibly coincide exactly.", "The control establishes that source preservation is not penalized for an identical candidate."],
+      "pass": true
+    },
+    {
+      "id": "unstyled-source-cross-domain-mismatch",
+      "inputs": {"style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png", "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg", "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"},
+      "expected_relation": "The unstyled photographic source remains source-faithful but is a strong mismatch for the illustrated style truth.",
+      "observed_component_losses": {"medium_rendering": 0.95, "palette_tone": 0.78, "line_shape": 0.92, "texture_material": 0.7, "graphic_language": 0.9, "source_fidelity": 0.0, "technical": 0.03},
+      "evidence": ["Candidate is a natural photograph rather than opaque cel-shaded editorial ink illustration.", "It lacks the limited print palette, navy contour, paper/overprint material, and abstract hierarchy while retaining source content."],
+      "pass": true
+    },
+    {
+      "id": "target-candidate-order-swap",
+      "inputs": {"first_order": ["targets/editorial-anime-poster-001/truth/style-reference.png", "targets/editorial-anime-poster-001/input/source-child.jpeg"], "swapped_order": ["targets/editorial-anime-poster-001/input/source-child.jpeg", "targets/editorial-anime-poster-001/truth/style-reference.png"]},
+      "expected_relation": "Swapping labeled presentation order must not change the cross-domain style mismatch conclusion when roles remain explicit.",
+      "observed_component_losses": {"medium_rendering": 0.95, "palette_tone": 0.78, "line_shape": 0.92, "texture_material": 0.7, "graphic_language": 0.9, "source_fidelity": 0.0, "technical": 0.03},
+      "evidence": ["Both labeled presentations expose the same photo-versus-editorial-illustration mismatch.", "No role-order-dependent change was observed in the component ordering or conclusion."],
+      "pass": true
+    }
+  ],
+  "pass_criteria": ["both self-match controls have zero mismatch", "cross-domain control has higher style losses than self-match", "source fidelity remains lower than style mismatch for the unstyled source", "order-swap conclusion is invariant"],
+  "all_passed": true
+}

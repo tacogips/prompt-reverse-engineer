@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "iteration": 10,
+  "parent_iteration": 9,
+  "status": "failed",
+  "started_at": "2026-08-14T15:25:54Z",
+  "completed_at": "2026-08-14T16:00:01Z",
+  "hypothesis": "Explicit source-relative skin, hair, and clothing treatment plus conditional exact-text lettering will improve style-inversion-v3 transferability without teacher-content leakage.",
+  "workflow_family": "analyze-generate-select-refine-loop",
+  "workflow_revision": "targets/editorial-anime-poster-001/train-0010/workflow/workflow.json",
+  "judge_revision": "targets/editorial-anime-poster-001/train-0010/judge/config.json",
+  "selected_candidate": "rounds/round-0001/candidates/candidate-003",
+  "exit_reason": "generalization_test_failed",
+  "failure_diagnostics": "targets/editorial-anime-poster-001/train-0010/analysis.md"
+}

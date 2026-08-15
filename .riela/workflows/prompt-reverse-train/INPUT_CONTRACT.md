@@ -17,6 +17,8 @@
 
 `feedbackFiles` is an optional array of repository-relative JSON or Markdown files containing explicit human findings from earlier iterations. Intake verifies and hashes these files, analysis records how each finding changes the style model and prompt, and review requires every finding to be resolved, rejected with evidence, or deferred with a test requirement. Feedback is ordinary training evidence, not a sealed fixture.
 
+`parentTrainDir` optionally authorizes the previous iteration's exact state, analysis, evaluation, judge, feedback-resolution, and final-prompt files as research evidence. Nodes must open only the explicit allowlisted files and must not inventory prior directories. Historical validation/test findings recorded in those files may guide a later outer iteration only when it has a fresh sealed test set; referenced historical fixtures themselves remain closed during optimization.
+
 ```json
 {
   "feedbackFiles": [

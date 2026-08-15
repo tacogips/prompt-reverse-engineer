@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "round": 1,
+  "phase": "output",
+  "lossFunctionVersion": "style-inversion-v3",
+  "styleComponentMaxLoss": 0.25,
+  "candidatesPerRound": 3,
+  "maxRefinementRounds": 3,
+  "targetLoss": 0.18,
+  "validationTargetLoss": 0.3,
+  "validationWorstCaseLoss": 0.4,
+  "testTargetLoss": 0.32,
+  "testWorstCaseLoss": 0.42,
+  "maxGeneralizationGap": 0.1,
+  "bestCandidate": "rounds/round-0001/candidates/candidate-003",
+  "bestLoss": 0.1515,
+  "selectedCandidate": "rounds/round-0001/candidates/candidate-003",
+  "selectedReward": 0.8485,
+  "selectionFile": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/selection.json",
+  "provisionalExitReason": "training_and_validation_reached",
+  "styleComponentCeilingPassed": true,
+  "judge": {
+    "config": "targets/editorial-anime-poster-001/train-0011/judge/config.json",
+    "prompt": "targets/editorial-anime-poster-001/train-0011/judge/prompt.md",
+    "promptSha256": "fa54cefc3f8d4091cf82aab05657a21de4fec241e1abc1761b4d2aeab752730c",
+    "weights": {
+      "medium_rendering": 0.2,
+      "palette_tone": 0.15,
+      "line_shape": 0.15,
+      "texture_material": 0.1,
+      "graphic_language": 0.1,
+      "source_fidelity": 0.2,
+      "technical": 0.1
+    },
+    "candidateAssessments": [
+      {
+        "candidate": "rounds/round-0001/candidates/candidate-001",
+        "metrics": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/candidates/candidate-001/metrics.json",
+        "totalLoss": 0.161
+      },
+      {
+        "candidate": "rounds/round-0001/candidates/candidate-002",
+        "metrics": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/candidates/candidate-002/metrics.json",
+        "totalLoss": 0.16
+      },
+      {
+        "candidate": "rounds/round-0001/candidates/candidate-003",
+        "metrics": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/candidates/candidate-003/metrics.json",
+        "totalLoss": 0.1515
+      }
+    ]
+  },
+  "parentTrainDir": "train-0010",
+  "sourceReference": {
+    "path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+    "width": 1160,
+    "height": 1412,
+    "format": "JPEG"
+  },
+  "styleReference": {
+    "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f",
+    "width": 1023,
+    "height": 1537,
+    "format": "PNG"
+  },
+  "validationManifest": {
+    "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "size": 3043,
+    "contentsOpened": true
+  },
+  "sealedTestManifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-0011.json",
+    "sha256": "0f8eba695bd5e47c81d84af96d15b6070cd0aeee08dee332147553c0a310a3ef",
+    "size": 1799,
+    "contentsOpened": true
+  },
+  "feedbackFiles": [
+    {
+      "path": "targets/editorial-anime-poster-001/feedback/feedback-0001.json",
+      "sha256": "eda20f0f0b83d6fa9d09da1f538c9a71be6d330e84ce09d2c805900439208c00",
+      "size": 2032,
+      "feedbackId": "feedback-0001"
+    }
+  ],
+  "startedAt": "2026-08-14T16:06:58Z",
+  "validation": {
+    "status": "passed",
+    "evaluation": "targets/editorial-anime-poster-001/train-0011/transferability/evaluation.json",
+    "promptSha256": "9bcef001c13e5361c5d6336d4f9d301c5a60e0cca557b99cce44e5c3d162e647",
+    "aggregateLoss": 0.142625,
+    "worstCaseLoss": 0.153,
+    "generalizationGap": -0.008875,
+    "completedAt": "2026-08-14T16:34:00Z"
+  },
+  "testAudit": {
+    "status": "failed",
+    "evaluation": "targets/editorial-anime-poster-001/train-0011/test-audit/evaluation.json",
+    "promptSha256": "9bcef001c13e5361c5d6336d4f9d301c5a60e0cca557b99cce44e5c3d162e647",
+    "sealedTestManifestSha256": "0f8eba695bd5e47c81d84af96d15b6070cd0aeee08dee332147553c0a310a3ef",
+    "aggregateLoss": 0.08425,
+    "worstCaseLoss": 0.0985,
+    "validationTestGap": -0.058375,
+    "completedAt": "2026-08-14T16:39:50Z"
+  },
+  "exitReason": "generalization_test_failed",
+  "review": {
+    "status": "failed",
+    "reviewedAt": "2026-08-14T16:44:23Z",
+    "evaluation": "targets/editorial-anime-poster-001/train-0011/evaluation.json",
+    "analysis": "targets/editorial-anime-poster-001/train-0011/analysis.md",
+    "findings": [
+      "The sealed-test baseline optional_instructions_sha256 is recorded as ca3d163bab0553818272261405681f3bef7eaac187cebd76878e0b63e9a10c6a but fresh canonical {} plus newline hashes to ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356.",
+      "The sealed-test baseline effective prompt is b3ea167af17e8e6c3bcb8b16eb40b9410cce526377e93ba6b3f7d1626cf529ed rather than the empty-instruction base hash 9bcef001c13e5361c5d6336d4f9d301c5a60e0cca557b99cce44e5c3d162e647.",
+      "The sealed-test combined-optional effective prompt is byte-hashed correctly as recorded but differs from the required deterministic base-plus-suffix bytes by one newline.",
+      "The combined optional case fails exact-text and no-unrequested-text gates because it includes unrequested readable text THE."
+    ]
+  },
+  "updatedAt": "2026-08-14T16:44:23Z"
+}
