@@ -1,0 +1,8 @@
+{
+  "base_prompt_file": "targets/editorial-anime-poster-001/train-0013/rounds/round-0001/prompt/prompt.md",
+  "base_prompt_sha256": "5d36046b9f55c28d0766db8b2256bd3297afe77dbac7f1b9e784a4c5c0cd4638",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0013/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "5d36046b9f55c28d0766db8b2256bd3297afe77dbac7f1b9e784a4c5c0cd4638",
+  "optional_instructions": {},
+  "optional_instructions_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+}

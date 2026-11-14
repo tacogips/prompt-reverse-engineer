@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_source_truth_candidate",
+  "loss": {
+    "source_fidelity": 0.14,
+    "semantic": 0.05,
+    "composition": 0.11,
+    "color": 0.1,
+    "style": 0.15,
+    "technical": 0.03
+  },
+  "evidence": {
+    "source_fidelity": [
+      "The candidate preserves the single seated child, rightward profile, short dark haircut, grey Batman T-shirt, pale blue bottoms, bent arm, and tiled indoor corner.",
+      "The head is larger and higher in frame, the hair is more voluminous and swept, and the shirt's Batman wordmark is cropped and less faithful to the source marking."
+    ],
+    "semantic": [
+      "One child and the source scene remain present, with no adult style-reference subject, jewelry, or invented readable poster copy.",
+      "The chest emblem is still recognizable but its lettering is incomplete from the source crop."
+    ],
+    "composition": [
+      "The colored disk, teal sweep, cream ground, gold rule, and tile geometry form a coherent vertical poster layout related to the style truth.",
+      "The oversized centered head and relatively quiet lower area are less like the reference's directional head-and-shoulders composition."
+    ],
+    "color": [
+      "Cream, coral, teal, mustard, navy, and gold flecks establish the reference palette, though the blue and coral fields are less balanced and less saturated than the style truth."
+    ],
+    "style": [
+      "The candidate uses ink outlines, flat illustrated planes, scattered flecks, dry-brush accents, and poster geometry.",
+      "Its washier, low-contrast clothing and face rendering is less crisp and less richly layered than the editorial anime style truth."
+    ],
+    "technical": [
+      "Anatomy, facial edges, clothes, background tiles, and graphic marks are clean and coherent at original resolution, without watermarking or corrupted typography."
+    ]
+  },
+  "dominant_differences": [
+    "Preserve the full source shirt emblem and its placement.",
+    "Reduce the enlarged, swept hair silhouette toward the source haircut.",
+    "Use crisper layered ink-and-cel rendering rather than pale washed shading."
+  ],
+  "confidence": 0.92,
+  "provenance_verification": {
+    "candidate_image": "targets/editorial-anime-poster-001/train-0006/rounds/round-0001/candidates/candidate-002/image.png",
+    "recorded_sha256": "bd7b02dc8437f64403963aeed76983cfdd2f634d4b7e1ab70180cfc15831f996",
+    "observed_sha256": "bd7b02dc8437f64403963aeed76983cfdd2f634d4b7e1ab70180cfc15831f996",
+    "verified": true
+  }
+}

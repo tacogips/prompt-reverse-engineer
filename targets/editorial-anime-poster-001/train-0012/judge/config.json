@@ -1,0 +1,22 @@
+{
+  "schema_version": 4,
+  "loss_function_version": "style-inversion-v3-ensemble-v1",
+  "provider": "openai",
+  "model": "gpt-5.6-terra",
+  "temperature": 0,
+  "repeats": 3,
+  "actual_calibration_repeats": 1,
+  "aggregation": "component_wise_median_across_five_independent_reference_assessments",
+  "per_reference_style_dimensions": ["medium_rendering", "palette_tone", "line_shape", "texture_material", "graphic_language"],
+  "source_and_technical_evaluation": "source_fidelity is assessed once against source truth; technical is assessed once from candidate.",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0012/judge/prompt.md",
+  "prompt_sha256": "699c5da8291695aebfc4dc0b2d77c246582bc11ec147073387895b97eecfc3e2",
+  "calibration_suite": "targets/editorial-anime-poster-001/train-0012/judge/calibration/v1/manifest.json",
+  "weights": {"medium_rendering": 0.2, "palette_tone": 0.15, "line_shape": 0.15, "texture_material": 0.1, "graphic_language": 0.1, "source_fidelity": 0.2, "technical": 0.1},
+  "style_weight_total": 0.7,
+  "style_component_max_loss": 0.25,
+  "palette_tone_aggregation": "per reference: max(overall_palette,skin_treatment,hair_treatment,clothing_treatment) across observable regions; ensemble: component-wise median of per-reference primary losses",
+  "conditional_typography_dialogue": "authorized exact-text probes only; separately record typography style, spelling adherence, single-instance adherence, and absence of unrequested text",
+  "output_schema_version": 3,
+  "history_comparability": "Ensemble-v1 losses are not numerically comparable with singleton style-inversion-v3 history."
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "style-inversion-v2",
+  "target_candidate_order": "style_truth_then_candidate",
+  "aggregation": "component_wise_median",
+  "repeat_count": 3,
+  "repeat_losses": [
+    { "medium_rendering": 0.21, "palette_tone": 0.25, "line_shape": 0.23, "texture_material": 0.23, "graphic_language": 0.26, "source_fidelity": 0.11, "technical": 0.08 },
+    { "medium_rendering": 0.21, "palette_tone": 0.25, "line_shape": 0.23, "texture_material": 0.23, "graphic_language": 0.26, "source_fidelity": 0.11, "technical": 0.08 },
+    { "medium_rendering": 0.21, "palette_tone": 0.25, "line_shape": 0.23, "texture_material": 0.23, "graphic_language": 0.26, "source_fidelity": 0.11, "technical": 0.08 }
+  ],
+  "loss": {
+    "medium_rendering": 0.21,
+    "palette_tone": 0.25,
+    "line_shape": 0.23,
+    "texture_material": 0.23,
+    "graphic_language": 0.26,
+    "source_fidelity": 0.11,
+    "technical": 0.08
+  },
+  "evidence": {
+    "medium_rendering": [
+      "Clean cel-shaded face planes and crisp navy contours visibly translate the source into anime illustration.",
+      "The finish is flatter and less editorially printed than the truth's more elaborate ink and layered color separation."
+    ],
+    "palette_tone": [
+      "Warm off-white, navy, teal, mustard, soft coral, and gold accents are present.",
+      "The color system is more muted and diffuse, with no strong coral opaque field to create the truth's graphic contrast."
+    ],
+    "line_shape": [
+      "Hair strands and the silhouette have tapered navy drawing, with fine gold arcs and dots as ornament.",
+      "The candidate lacks the style truth's more varied geometric support-shape vocabulary and energetic contour density."
+    ],
+    "texture_material": [
+      "Paper grain, flecks, and dry-brush marks are visible in the teal and mustard areas.",
+      "The texture is comparatively uniform and does not convincingly produce the truth's selective overprint layering."
+    ],
+    "graphic_language": [
+      "Pale negative space and orbit motifs give the source-controlled figure some poster framing.",
+      "The arrangement is mostly a simple figure-on-background treatment rather than the layered asymmetric editorial hierarchy required by the style model."
+    ],
+    "source_fidelity": [
+      "The source person's face, hairstyle, shirt graphic, trousers, and seated pose are strongly preserved.",
+      "Most of the original tiled setting is replaced by abstract poster fields."
+    ],
+    "technical": [
+      "The face, hands, garment seams, and shirt logo are clean and free of obvious artifacts.",
+      "Minor contour simplification does not materially impair readability."
+    ]
+  },
+  "dominant_transferable_differences": [
+    "Build a stronger three-level editorial print hierarchy with opaque abstract fields instead of a simple background.",
+    "Increase saturated coral contrast and selective overprint texture without sacrificing source preservation."
+  ],
+  "confidence": 0.88,
+  "provenance_eligibility": {
+    "eligible": true,
+    "input_image_count": 1,
+    "input_roles": ["source_reference"],
+    "truth_or_style_input_detected": false,
+    "prompt_hash_verified": true,
+    "output_hash_verified": true
+  }
+}

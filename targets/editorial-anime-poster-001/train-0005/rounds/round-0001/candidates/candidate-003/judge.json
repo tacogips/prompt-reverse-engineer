@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_source_truth_candidate",
+  "judge": {
+    "loss_function_version": "judge-v4-source-fidelity-style-transfer",
+    "prompt_sha256": "e1b430e07aa4fc53bca95f66083632b3954d96e97bab55691fe2752d97f99803",
+    "model": "gpt-5.6-terra",
+    "temperature": 0,
+    "repeat": 1,
+    "assessed_at": "2026-08-14T07:11:58Z"
+  },
+  "inputs": {
+    "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "candidate": "targets/editorial-anime-poster-001/train-0005/rounds/round-0001/candidates/candidate-003/image.png"
+  },
+  "loss": {
+    "source_fidelity": 0.12,
+    "semantic": 0.03,
+    "composition": 0.06,
+    "color": 0.05,
+    "style": 0.07,
+    "technical": 0.03
+  },
+  "evidence": {
+    "source_fidelity": ["The same child, hairstyle, facial direction, seated posture, near arm, light shirt, and tiled environment remain clearly recognizable.", "The source shirt's logo and specific gray fabric appearance are replaced by a more abstract teal, navy, coral, and ochre graphic treatment."],
+    "semantic": ["The candidate keeps the single source child and source setting with no copied person, jewelry, garment, logo, or text from the style truth."],
+    "composition": ["The source’s portrait crop, subject placement, and rightward gaze are preserved.", "Poster circles and thin vertical rules are added as transferable layout language without displacing the subject."],
+    "color": ["The cream base with teal, saturated coral, ochre yellow, and navy accents very closely reproduces the style truth’s palette and contrast logic."],
+    "style": ["The candidate strongly matches the style truth’s anime contouring, flat shaded planes, brush scuffs, speckles, geometric discs, and fine gold-like line accents.", "It has less dense ornamental hair and accessory detail than the style truth."],
+    "technical": ["Facial anatomy, ear, hands, garment folds, tiles, and graphic edges are clean at full resolution.", "No added readable, garbled, watermark-like, or pseudo-readable typography is visible." ]
+  },
+  "dominant_differences": ["Preserve more of the source shirt graphic and fabric coloring.", "Add only transferable fine ornamental line detail.", "Keep the background geometry secondary to the source environment."],
+  "confidence": 0.96
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "case_id": "heldout-a-pose",
+  "case_type": "pose",
+  "loss": {"total": 0.066, "source_fidelity": 0.09, "semantic": 0.02, "composition": 0.1, "color": 0.04, "style": 0.06, "technical": 0.02},
+  "weights": {"source_fidelity": 0.3, "semantic": 0.1, "composition": 0.15, "color": 0.15, "style": 0.25, "technical": 0.05},
+  "instruction_losses": {"pose_adherence": 0.04, "text_adherence": 0.0},
+  "reward": 0.934,
+  "raw_judge_file": "judge.json"
+}

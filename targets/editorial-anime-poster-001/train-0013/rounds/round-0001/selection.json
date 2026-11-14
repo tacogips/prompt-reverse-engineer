@@ -1,0 +1,50 @@
+{
+  "schema_version": 2,
+  "round": 1,
+  "loss_function_version": "style-inversion-v3-ensemble-v1",
+  "selection_rule": "lowest_total_loss_among_contract_and_provenance_eligible_candidates_then_candidate_id",
+  "candidate_assessments": [
+    {
+      "candidate": "candidates/candidate-001",
+      "total_loss": 0.117,
+      "reward": 0.883,
+      "style_component_ceiling_passed": true,
+      "provenance_eligible": true,
+      "prompt_contract_eligible": true,
+      "eligibility_evidence": {
+        "template_validation_status": "passed",
+        "contract_id": "prompt-only-style-reconstruction-v1",
+        "contract_id_matches_current": true,
+        "prompt_hash_matches_disk": true,
+        "required_literal_clauses_present_verbatim": true
+      }
+    },
+    {
+      "candidate": "candidates/candidate-002",
+      "total_loss": 0.134,
+      "reward": 0.866,
+      "style_component_ceiling_passed": true,
+      "provenance_eligible": true,
+      "prompt_contract_eligible": true,
+      "eligibility_evidence": {
+        "template_validation_status": "passed",
+        "contract_id": "prompt-only-style-reconstruction-v1",
+        "contract_id_matches_current": true,
+        "prompt_hash_matches_disk": true,
+        "required_literal_clauses_present_verbatim": true
+      }
+    }
+  ],
+  "prior_best_consideration": {
+    "eligible_prior_best": null,
+    "excluded_legacy_best": true,
+    "exclusion_reason": "No prior best exists in the current style-inversion-v3-ensemble-v1 regime. The parent train-0011 singleton-regime result is legacy and numerically incomparable; it is excluded rather than compared or promoted."
+  },
+  "selected_candidate": "candidates/candidate-001",
+  "selected_total_loss": 0.117,
+  "selected_reward": 0.883,
+  "tie_break_applied": false,
+  "training_target_reached": true,
+  "style_component_ceiling_passed": true,
+  "provisional_exit_reason": "training_target_reached"
+}

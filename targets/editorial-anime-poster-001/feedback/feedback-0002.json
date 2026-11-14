@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "feedback_id": "feedback-0002",
+  "source_iteration": "train-0011",
+  "source_prompt": "targets/editorial-anime-poster-001/train-0011/rounds/round-0001/prompt/prompt.md",
+  "summary": "The feedback-driven style policy passes training and held-out validation, but the fresh landscape one-shot audit exposed exact-text leakage and nondeterministic effective-prompt assembly.",
+  "items": [
+    {
+      "id": "exact-text-no-extra-lexeme",
+      "category": "graphic_language.typography_dialogue.exact_text",
+      "requirement": "When optional text is supplied, render exactly the caller's string once and prohibit every additional readable word, article, subtitle, decorative pseudo-word, and duplicated fragment. When text is absent, render no readable or pseudo-readable text.",
+      "required_probe": "fresh sealed combined-optional case plus baseline no-text case"
+    },
+    {
+      "id": "deterministic-effective-prompt-provenance",
+      "category": "artifact_integrity.effective_prompt",
+      "requirement": "Build effective prompt bytes only with the workflow helper, preserving the frozen base prompt byte-for-byte and appending only canonical authorized optional-instruction JSON. Persist and recompute all base, effective, and optional hashes before generation.",
+      "required_probe": "byte-level prefix/suffix verification for empty and non-empty optional instruction cases"
+    }
+  ]
+}

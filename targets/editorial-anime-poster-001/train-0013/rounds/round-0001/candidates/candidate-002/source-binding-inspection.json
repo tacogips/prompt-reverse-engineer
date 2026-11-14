@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "inspected_at": "2026-08-18T03:02:48Z",
+  "source_path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+  "source_sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+  "output_path": "targets/editorial-anime-poster-001/train-0013/rounds/round-0001/candidates/candidate-002/image.png",
+  "output_sha256": "23eeda668900c1baf4a9f9eb9c6f75f377c802904ae55b735e3604c10787606d",
+  "inspection_method": "visual comparison against exact source reference",
+  "output_is_valid_png": true,
+  "source_binding_passed": true,
+  "observations": [
+    "Same seated child in right-facing profile retained.",
+    "Source hairstyle, gray Batman shirt with visible logo, arms, tiled setting, and spatial pose remain recognizable.",
+    "Poster-print graphics are stylistic transformations, not source substitution."
+  ]
+}

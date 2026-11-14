@@ -1,0 +1,19 @@
+{
+  "schema_version": 3,
+  "round": 1,
+  "loss_function_version": "style-inversion-v3-ensemble-v1",
+  "selection_rule": "lowest_total_loss_then_candidate_id",
+  "candidate_paths_received": [],
+  "eligible_candidates": [],
+  "ineligible_candidates": [],
+  "selected_candidate": null,
+  "status": "not_selected",
+  "reason": "no_candidate_paths_received_from_generate-candidates",
+  "prior_best_comparison": {
+    "performed": false,
+    "reason": "no_current_contract-eligible_candidate_exists"
+  },
+  "provisional_exit_reason": "generation_failed",
+  "next_phase": "output",
+  "recorded_at": "2026-08-18T02:41:18Z"
+}

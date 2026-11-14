@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "iteration": 14,
+  "parent_iteration": 11,
+  "status": "failed",
+  "started_at": "2026-08-18T03:26:07Z",
+  "completed_at": "2026-08-18T03:40:47Z",
+  "hypothesis": "A five-image recurring-style model with explicit local source binding and split held-out generation/judging can provide transferable prompt-only inversion without truth-image generation inputs.",
+  "workflow_family": "five-reference ensemble prompt inversion with split validation generation and judging",
+  "workflow_revision": "targets/editorial-anime-poster-001/train-0014/workflow",
+  "judge_revision": "style-inversion-v3-ensemble-v1",
+  "selected_candidate": null,
+  "exit_reason": "generation_tool_terminal_failure"
+}

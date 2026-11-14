@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_source_truth_candidate",
+  "loss": {
+    "source_fidelity": 0.22,
+    "semantic": 0.12,
+    "composition": 0.12,
+    "color": 0.1,
+    "style": 0.14,
+    "technical": 0.03
+  },
+  "evidence": {
+    "source_fidelity": [
+      "The candidate retains one seated young child with the short dark hair, rightward three-quarter view, grey shirt, pale blue bottoms, and bent arm from the source.",
+      "The Batman emblem and much of the source shirt marking are removed, the shirt becomes plainer and lighter, the crop shifts the child leftward, and the background is almost entirely replaced by abstract poster fields."
+    ],
+    "semantic": [
+      "The main subject remains the source child and no style-reference adult, long hair, jewelry, or extra subject appears.",
+      "Loss of the visible source clothing logo and tile-setting detail weakens retention of the source scene; no unrequested readable text is introduced."
+    ],
+    "composition": [
+      "A vertical poster frame with cream ground, coral disk, teal field, navy block, gold rules, circular accents, and dry-brush strokes follows the style reference's graphic language.",
+      "The source child's seated arrangement is preserved but less strongly anchored by the original environment than in the other renderings."
+    ],
+    "color": [
+      "The cream, coral, teal, mustard-gold, and navy distribution closely echoes the style truth and maintains clear figure-background contrast."
+    ],
+    "style": [
+      "Fine dark contours, cel-shaded face planes, brush streaks, flecks, and geometric poster fields visibly transfer the reference's editorial anime treatment.",
+      "The rendering remains simpler and less ornate than the reference, especially in clothing detail and layered linework."
+    ],
+    "technical": [
+      "The face, ear, arm, clothing, and abstract graphic edges are clean and anatomically coherent at original resolution, without watermark, duplication, or garbled text."
+    ]
+  },
+  "dominant_differences": [
+    "Preserve the source's yellow-and-black shirt emblem and more of its garment detail.",
+    "Retain enough of the tiled source environment to keep the seated scene specific.",
+    "Add the reference's denser fine-line and accessory-like graphic detail without importing its content."
+  ],
+  "confidence": 0.93,
+  "provenance_verification": {
+    "candidate_image": "targets/editorial-anime-poster-001/train-0006/rounds/round-0001/candidates/candidate-003/image.png",
+    "recorded_sha256": "4d3c4af2f31ce403b843738e745877cc33aea510389d069a0e5f9ed3ba8fbec5",
+    "observed_sha256": "4d3c4af2f31ce403b843738e745877cc33aea510389d069a0e5f9ed3ba8fbec5",
+    "verified": true
+  }
+}

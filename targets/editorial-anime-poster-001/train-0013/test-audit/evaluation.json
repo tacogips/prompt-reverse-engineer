@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "status": "skipped_prerequisite_failed",
+  "audit_kind": "one_shot_generalization",
+  "prompt_sha256": "5d36046b9f55c28d0766db8b2256bd3297afe77dbac7f1b9e784a4c5c0cd4638",
+  "loss_function_version": "style-inversion-v3-ensemble-v1",
+  "sealed_test_manifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-0013.json",
+    "sha256": "d41d1a0d7b63452c683128c4f67dd6a51e2c1074f7b21af5804b547955b861fc",
+    "bytes": 2163,
+    "contents_opened": false,
+    "sha256_verified": false,
+    "not_verified_reason": "Validation prerequisite failed before sealed-test-manifest access was authorized."
+  },
+  "validation_evaluation": {
+    "path": "targets/editorial-anime-poster-001/train-0013/transferability/evaluation.json",
+    "status": "failed",
+    "failure_kind": "incomplete_required_judging_and_provenance",
+    "pass": false,
+    "aggregate_validation_loss": null,
+    "worst_case_loss": null,
+    "generalization_gap": null
+  },
+  "aggregate_test_loss": null,
+  "worst_case_loss": null,
+  "validation_test_gap": null,
+  "test_passed": false,
+  "coverage": [],
+  "case_count": 0,
+  "exit_reason": "transferability_validation_failed",
+  "next_step": "review-training",
+  "reasons": [
+    "Frozen transferability validation failed, so the final one-shot generalization audit is not authorized to open the sealed test manifest or generate test cases.",
+    "No test cases, test sources, expected assertions, or sealed-test-manifest contents were accessed."
+  ],
+  "recorded_at": "2026-08-18T03:13:00Z"
+}

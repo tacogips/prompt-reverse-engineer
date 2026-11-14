@@ -1,0 +1,65 @@
+{
+  "schema_version": 2,
+  "contract_version": 3,
+  "contract_id": "prompt-only-style-reconstruction-v1",
+  "contract_file": "targets/editorial-anime-poster-001/train-0014/workflow/prompt-template-contract.json",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0014/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "6cac0681206df6c29f3daa5fd48530e98c853baa6238d4a77d20d5631660e9b1",
+  "status": "passed",
+  "sole_source_role_check": {
+    "required_roles": ["source_reference"],
+    "declared_roles": ["source_reference"],
+    "passed": true
+  },
+  "forbidden_generation_role_check": {
+    "forbidden_roles": ["style_reference", "style_truth", "target_reference"],
+    "observed_roles": [],
+    "passed": true
+  },
+  "subject_specific_clause_count": 0,
+  "forbidden_style_reference_generation_clause_count": 0,
+  "forbidden_clause_count": 0,
+  "suspected_source_specific_clauses": [],
+  "source_specific_clause_dispositions": [],
+  "required_literal_exact_checks": [
+    {
+      "clause": "Perform only a benign, non-sexual artistic style transformation; do not introduce nudity, sexualization, age changes, violence, injury, or other unsafe content.",
+      "present_verbatim": true
+    },
+    {
+      "clause": "The source reference is the only image input available at generation time.",
+      "present_verbatim": true
+    }
+  ],
+  "required_literal_clauses_present": ["Perform only a benign, non-sexual artistic style transformation; do not introduce nudity, sexualization, age changes, violence, injury, or other unsafe content.","The source reference is the only image input available at generation time."],
+  "optional_instruction_fields": ["pose", "composition", "text", "additional"],
+  "text_behavior": "exact supplied text once; no text or pseudo-text when absent",
+  "source_binding_behavior": "exclusive source authority; no target/style image required, mentioned, or assumed at generation time",
+  "textual_style_clause_inventory": {
+    "medium_rendering": "polished editorial anime poster illustration; opaque two-to-three-step cel-shaded planes; screen-print-like color separation",
+    "palette_tone": "limited warm-paper, deep-navy, teal/cyan, coral/orange, warm-yellow, and restrained muted-gold poster-print relationship; source-relative skin, hair, and clothing treatment preserves literal source color identity",
+    "contrast_lighting": "coherent cel-shaded light, shadow, and narrow highlight planes; high-contrast editorial display ink when optional text is supplied",
+    "line_mark_quality": "decisive variable-weight deep-navy contours, sparse tapered fine strokes, dark seam and edge anchors",
+    "texture_material": "warm paper grain, restrained screen-print speckling, imperfect overprint edges, sparse paint flecks, halftone clusters, and dry-brush interruptions",
+    "abstract_graphic_vocabulary": "opaque abstract discs, blocks, rules, brush sweeps, arcs, dots, halftone clusters, connectors, and muted-gold orbital lines",
+    "default_composition": "adaptable asymmetric editorial hierarchy with generous negative-space rhythm; abstract elements frame source-controlled focal content without copied geometry or placement",
+    "optional_text_treatment": "exact supplied text once, readable high-contrast editorial display ink, elegant calligraphic/display-like strokes, adaptive orientation, open-space placement, and sparse dot/line ornament; no text or pseudo-text when absent"
+  },
+  "precedence_check": {
+    "order": ["safety_and_integrity", "explicit_optional_instructions", "source_content_and_identity_preservation", "textual_style_specification"],
+    "passed": true,
+    "evidence": "The prompt explicitly scopes pose, composition, text, and additional fields; preserves unspecified source attributes; and applies style as the default."
+  },
+  "complexity_statistics": {
+    "line_count": 21,
+    "word_count": 499,
+    "byte_count": 3818,
+    "positive_prompt_paragraphs": 5,
+    "negative_prompt_terms": 14,
+    "optional_field_count": 4,
+    "required_literal_clause_count": 2
+  },
+  "self_contained_text_check": true,
+  "requires_style_image_at_generation": false,
+  "validated_at": "2026-08-18T03:34:10Z"
+}

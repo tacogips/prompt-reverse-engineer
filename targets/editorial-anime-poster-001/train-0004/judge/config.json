@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "source-fidelity-judge-v1",
+  "provider": "openai",
+  "model": "gpt-5.6-terra",
+  "temperature": 0,
+  "repeats": 1,
+  "aggregation": "single_observable_assessment",
+  "prompt_sha256": "7d3905959a20554a42505c9bee2fe411498eb337e919d4d59992b9030d777944",
+  "weights": {
+    "source_fidelity": 0.3,
+    "semantic": 0.1,
+    "composition": 0.15,
+    "color": 0.15,
+    "style": 0.25,
+    "technical": 0.05
+  },
+  "input_order": [
+    "style_truth",
+    "source_truth",
+    "candidate"
+  ],
+  "calibration_suite": "targets/editorial-anime-poster-001/train-0004/judge/calibration/v1/manifest.json",
+  "calibration_status": "provisional_passed",
+  "notes": "The provisional suite was executed once by local original-resolution visual inspection against this rubric. No repeated model calls are claimed. This is a new source-fidelity loss-function version and is not numerically comparable to prior identity-key judge results."
+}

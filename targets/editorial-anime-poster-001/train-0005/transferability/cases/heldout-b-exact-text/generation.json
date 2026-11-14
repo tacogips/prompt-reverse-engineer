@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "provider": "openai",
+  "model": "image_gen",
+  "model_version": null,
+  "prompt_sha256": "225d563ace0193437dbb976557ecdf0d1afd3cc463a3a33ffcbf4fe2968a87bf",
+  "frozen_prompt_path": "targets/editorial-anime-poster-001/train-0005/rounds/round-0001/prompt/prompt.md",
+  "input_roles": [{"image": "targets/editorial-anime-poster-001/truth/style-reference.png", "role": "style_reference", "position": 1}, {"image": "targets/editorial-anime-poster-001/validation/heldout-b-0005.png", "role": "source_reference", "position": 2}],
+  "optional_instructions": {"text": "SIT WITH COLOR"},
+  "seed": null,
+  "provider_parameters": {"execution_path": "built-in-image-generation-tool", "raw_response_file": null},
+  "output": {"file": "image.png", "sha256": "884269b0a5599e63340b7c09c1eda4e159a8ac83db6f4eb45895378626719d4e", "width": 1024, "height": 1536}
+}

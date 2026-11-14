@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "suite_version": "v1",
+  "status": "provisional_passed",
+  "executed_at": "2026-08-14T07:48:04Z",
+  "execution_method": "one original-resolution local visual assessment per case against the versioned rubric",
+  "actual_repeat_count": 1,
+  "configured_judge": {
+    "provider": "openai",
+    "model": "gpt-5.6",
+    "temperature": 0,
+    "prompt_path": "targets/editorial-anime-poster-001/train-0006/judge/prompt.md",
+    "prompt_sha256": "20bd547710cbd50731ed7e30f7cfe6f624544e67bf7ca47b4b3df0d9c6ad5b74"
+  },
+  "pass_rule": "Near-zero means <= 0.02; high means >= 0.70; low means <= 0.05; an order effect is material when any compared component changes by more than 0.05. Every required relation must pass.",
+  "cases": [
+    {
+      "case_id": "style-self-match",
+      "timestamp": "2026-08-14T07:48:04Z",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+        "candidate": "targets/editorial-anime-poster-001/truth/style-reference.png"
+      },
+      "presentation_order": "style_truth_source_truth_candidate",
+      "expected_relation": "The pixel-identical Style truth candidate must have near-zero style, color, composition, and technical loss.",
+      "observed_component_losses": {
+        "source_fidelity": 1.0,
+        "semantic": 0.8,
+        "composition": 0.0,
+        "color": 0.0,
+        "style": 0.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "Candidate and Style truth are the same local PNG, so their observable palette, poster arrangement, contours, texture, and technical rendering match exactly.",
+        "The candidate depicts style-reference content rather than the source-controlled subject, producing the expected high source-fidelity and semantic losses outside this style-only relation."
+      ],
+      "judge_prompt_sha256": "20bd547710cbd50731ed7e30f7cfe6f624544e67bf7ca47b4b3df0d9c6ad5b74",
+      "confidence": 1.0,
+      "pass": true
+    },
+    {
+      "case_id": "source-self-match",
+      "timestamp": "2026-08-14T07:48:04Z",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+        "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"
+      },
+      "presentation_order": "style_truth_source_truth_candidate",
+      "expected_relation": "The pixel-identical Source truth candidate must have near-zero source-fidelity and semantic loss.",
+      "observed_component_losses": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.85,
+        "color": 0.9,
+        "style": 1.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "Candidate and Source truth are the same local JPEG, preserving the same person count, facial geometry, hairstyle, clothing, seated pose, and photographed setting.",
+        "The unstyled photograph lacks the style truth's editorial illustration, color-block palette, abstract graphics, ink contours, and printed texture."
+      ],
+      "judge_prompt_sha256": "20bd547710cbd50731ed7e30f7cfe6f624544e67bf7ca47b4b3df0d9c6ad5b74",
+      "confidence": 1.0,
+      "pass": true
+    },
+    {
+      "case_id": "obvious-cross-domain-mismatch",
+      "timestamp": "2026-08-14T07:48:04Z",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+        "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"
+      },
+      "presentation_order": "style_truth_source_truth_candidate",
+      "expected_relation": "The unstyled source candidate must retain low source-fidelity loss while producing high style and color loss against Style truth.",
+      "observed_component_losses": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.85,
+        "color": 0.9,
+        "style": 1.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "The candidate is exactly the Source truth, so source-controlled person, pose, clothing, and image content visibly match.",
+        "Its photographic beige-and-gray setting has none of the style truth's high-contrast abstract color fields, navy contour illustration, brush marks, or print texture."
+      ],
+      "judge_prompt_sha256": "20bd547710cbd50731ed7e30f7cfe6f624544e67bf7ca47b4b3df0d9c6ad5b74",
+      "confidence": 1.0,
+      "pass": true
+    },
+    {
+      "case_id": "target-candidate-order-swap",
+      "timestamp": "2026-08-14T07:48:04Z",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+        "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"
+      },
+      "presentation_order": "candidate_then_style_truth_source_truth_with_labels_preserved",
+      "baseline_case_id": "obvious-cross-domain-mismatch",
+      "expected_relation": "Changing presentation order only, while preserving role labels, must not materially change the assessment.",
+      "observed_component_losses": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.85,
+        "color": 0.9,
+        "style": 1.0,
+        "technical": 0.0
+      },
+      "component_absolute_deltas_from_baseline": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.0,
+        "color": 0.0,
+        "style": 0.0,
+        "technical": 0.0
+      },
+      "material_order_effect": false,
+      "evidence": [
+        "With roles preserved, the identical source photograph still matches Source truth exactly and visibly lacks Style truth's editorial treatment.",
+        "No observed component changes from the cross-domain baseline."
+      ],
+      "judge_prompt_sha256": "20bd547710cbd50731ed7e30f7cfe6f624544e67bf7ca47b4b3df0d9c6ad5b74",
+      "confidence": 1.0,
+      "pass": true
+    }
+  ],
+  "all_required_relations_pass": true
+}

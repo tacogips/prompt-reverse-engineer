@@ -1,0 +1,10 @@
+{
+  "base_prompt_file": "targets/editorial-anime-poster-001/train-0013/rounds/round-0001/prompt/prompt.md",
+  "base_prompt_sha256": "5d36046b9f55c28d0766db8b2256bd3297afe77dbac7f1b9e784a4c5c0cd4638",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0013/transferability/cases/heldout-b-exact-text/effective-prompt.md",
+  "prompt_sha256": "8b0a0225f04e0a5dab0a4f36fddfbad0e309926b20b45d9909eaa59ff7869fc3",
+  "optional_instructions": {
+    "text": "SIT WITH COLOR"
+  },
+  "optional_instructions_sha256": "c9fec9b8cf7afe573fca0c31850a869436fe8d55764304bcb8e41d55dc4783b9"
+}

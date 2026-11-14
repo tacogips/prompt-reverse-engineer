@@ -1,0 +1,84 @@
+{
+  "schema_version": 5,
+  "loss_function_version": "style-inversion-v3-ensemble-v1",
+  "style_reference_count": 5,
+  "evidence_scope": {
+    "style_truth_usage": "analysis_and_judge_only",
+    "generation_constraint": "Generation receives exactly one source_reference image and a self-contained textual prompt.",
+    "recurrence_rule": "Only observations recurring across diverse reference images are prompt candidates; individual content and stochastic details are excluded."
+  },
+  "dimensions": {
+    "medium_rendering": {
+      "observations": ["All five references are polished editorial anime illustrations", "Crisp opaque poster-print separation", "Bounded cel-shaded value planes", "Precise dark ink concentrated on focal forms"],
+      "inferred_transferable_rule": "Render source-controlled content as a polished editorial anime poster with crisp opaque cel-shaded planes and print separation, not photography or 3D.",
+      "prompt_clauses": ["polished editorial anime poster illustration", "crisp opaque cel-shaded value planes and print-like color separation", "precise deep-navy ink at focal contours"],
+      "confidence": 0.98,
+      "leakage_blacklist": ["reference subjects", "reference objects", "reference wording", "reference pose", "reference crop", "reference layout", "reference scenes"]
+    },
+    "palette_tone": {
+      "observations": ["Warm off-white paper ground recurs", "Deep navy/near-black anchors recur", "Saturated teal/cyan, coral/magenta-or-orange, and yellow/ochre supports vary by image", "Contrast is primarily adjacent flat value masses rather than photographic gradients"],
+      "inferred_transferable_rule": "Use a limited warm-paper editorial print relationship with dark anchors and restrained saturated accents, while retaining source literal identity through relative semantic-region treatment.",
+      "prompt_clauses": ["limited warm-paper, deep-navy, teal/cyan, coral-or-orange, yellow/ochre, and restrained muted-gold poster-print relationship", "preserve source literal color identity; translate only relative values, cel shadows, highlights, contours, and print-facet behavior"],
+      "semantic_regions": {
+        "skin": {
+          "observed_relative_behavior": {"value": "luminous light plane with restrained darker warm band", "chroma": "subdued relative warmth against saturated supports", "shading": "clean cel shadow and narrow highlight", "outline": "selective deep-navy containment"},
+          "source_preserving_transferable_rule": "Preserve source skin identity and translate only relative light, shadow, highlight, and contour grouping into graphic cel-shaded planes.",
+          "prompt_clauses": ["render visible skin as source-preserved coherent cel-shaded light, shadow, and narrow highlight planes with selective deep-navy contour", "never assign a fixed skin tone or change source identity"],
+          "confidence": 0.95,
+          "literal_teacher_color_leakage_exclusions": ["reference complexions", "reference facial coloration", "reference facial features", "reference skin hues"]
+        },
+        "hair": {
+          "observed_relative_behavior": {"value": "coherent dark-to-mid grouped mass", "chroma": "restrained relative cool and warm accents", "shading": "separated value blocks and sparse rim/strand planes", "outline": "tapered deep-navy containment"},
+          "source_preserving_transferable_rule": "Preserve source hair color, silhouette, arrangement, and identity while grouping values into a coherent mass with restrained relative accent planes.",
+          "prompt_clauses": ["group hair in its source-preserved silhouette and literal color identity into controlled value blocks with restrained relative cool and warm accent planes and tapered navy contour", "do not alter hairstyle, hair color, or hair identity"],
+          "confidence": 0.93,
+          "literal_teacher_color_leakage_exclusions": ["reference hair colors", "reference hairstyles", "reference hair silhouettes", "reference strand placements"]
+        },
+        "clothing": {
+          "observed_relative_behavior": {"value": "interlocking dark, light, and accent facets", "chroma": "limited harmonizing accent relationships rather than wholesale recoloring", "shading": "restrained fold-plane simplification", "outline": "dark seam and edge anchors"},
+          "source_preserving_transferable_rule": "Keep every source garment silhouette, construction detail, marking, logo, and literal color identity intact; add only restrained source-relative print facets following existing folds and seams.",
+          "prompt_clauses": ["treat clothing as the same source garment: retain its silhouette, construction, markings, logos, and literal color identity", "add only restrained source-relative flat print facets following existing folds, with dark seam and edge anchors, sparse harmonizing accent edges, and subtle overprint grain", "do not replace, redesign, recolor wholesale, obscure, or remove source garments, markings, or logos"],
+          "confidence": 0.96,
+          "literal_teacher_color_leakage_exclusions": ["reference outfits", "reference garment designs", "reference garment colors", "reference accessories"]
+        }
+      },
+      "confidence": 0.97,
+      "leakage_blacklist": ["reference complexions", "reference hair", "reference outfits", "reference color-field coordinates", "reference scene"]
+    },
+    "line_shape": {
+      "observations": ["Variable-weight deep-navy or near-black contours recur", "Sparse tapered loose strokes extend selected contours", "Cropped discs, blocks, rules, brush sweeps, dots, arcs, halftone clusters, and connectors recur as adaptable support forms"],
+      "inferred_transferable_rule": "Use decisive variable-weight dark ink and an adaptable abstract support vocabulary without copying literal reference geometry.",
+      "prompt_clauses": ["decisive variable-weight deep-navy ink contours resolving into sparse tapered fine strokes", "adaptable abstract discs, blocks, rules, brush sweeps, arcs, dots, halftone clusters, and connectors without copied geometry"],
+      "confidence": 0.97,
+      "leakage_blacklist": ["reference facial linework", "reference hair strands", "reference shape positions", "reference panel geometry", "reference layouts"]
+    },
+    "texture_material": {
+      "observations": ["Paper ground remains visible", "Restrained screen-print grain and occasional halftone recur", "Broken overprint edges, sparse flecks, and dry-brush interruptions recur"],
+      "inferred_transferable_rule": "Add light tactile poster-print texture that preserves source legibility and never copies individual mark trajectories.",
+      "prompt_clauses": ["visible warm paper grain with restrained screen-print speckling, occasional halftone, imperfect overprint edges, sparse paint flecks, and dry-brush interruptions", "keep texture away from important source details and legible markings"],
+      "confidence": 0.96,
+      "leakage_blacklist": ["reference brushstroke paths", "reference splatter coordinates", "reference paper defects", "reference scene texture"]
+    },
+    "graphic_language": {
+      "observations": ["Asymmetric editorial balance recurs", "Broad opaque support fields establish a rhythm around the focal content", "Fine ink/muted-gold lines, dots, arcs, and connectors complete the hierarchy", "Several but not all references contain display lettering"],
+      "inferred_transferable_rule": "Use adaptable asymmetric poster hierarchy and negative-space rhythm around source-controlled content; lettering is conditional on caller-supplied exact text.",
+      "prompt_clauses": ["place broad opaque abstract support fields behind or around source-controlled content, then add sparse fine muted-gold or ink orbital lines, dots, arcs, and connectors", "retain adaptable negative-space rhythm without copying any reference layout"],
+      "typography_dialogue": {
+        "conditional": true,
+        "activation": "Only when optional text is supplied; otherwise render no readable or pseudo-readable text.",
+        "lettering_or_dialogue_container_medium": "High-contrast editorial display ink integrated with the poster-print surface; no mandatory dialogue container.",
+        "stroke": "Elegant readable calligraphic/editorial display stroke with crisp edges and restrained fine detail.",
+        "hierarchy": "The caller-supplied exact string appears once as the only lettering content and remains a restrained display accent.",
+        "orientation": "Adaptive for readability; no fixed reference angle.",
+        "placement_grammar": "Available negative space or a suitable support field, without covering source-controlled content or copying reference placement.",
+        "ornament": "Sparse fine dot/line/arc ornament may frame supplied text but cannot become lettering.",
+        "prompt_clauses": ["only when optional text is supplied, render exactly that verbatim string once as the only readable or pseudo-readable lettering", "use readable high-contrast editorial display ink with elegant calligraphic/display-like strokes, adaptive orientation, open-space placement, and sparse dot/line ornament", "do not add any other readable word, pseudo-word, subtitle, article, decorative lexeme, duplicate, or teacher wording/script/language"],
+        "confidence": 0.94,
+        "literal_teacher_wording_language_exclusions": ["reference wording", "reference scripts", "reference languages", "reference text placement", "reference logos"]
+      },
+      "confidence": 0.96,
+      "leakage_blacklist": ["reference readable text", "reference language", "reference exact layout", "reference crop", "reference objects", "reference scenes"]
+    }
+  },
+  "global_leakage_blacklist": ["reference subjects and identities", "reference objects", "reference readable text and languages", "reference poses", "reference crops", "reference concrete layouts", "reference scenes", "training-source appearance or content", "held-out source content"]
+}

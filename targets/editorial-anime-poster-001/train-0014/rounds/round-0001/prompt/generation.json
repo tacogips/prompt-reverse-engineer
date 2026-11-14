@@ -1,0 +1,19 @@
+{
+  "schema_version": 2,
+  "record_type": "intended_shared_generation_settings",
+  "provider": "openai",
+  "model": "built-in-imagegen",
+  "model_version": null,
+  "tool_mode": "image-edit",
+  "input_images": [{"role":"source_reference","path":"targets/editorial-anime-poster-001/input/source-child.jpeg","sha256":"3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e"}],
+  "base_prompt_file": "targets/editorial-anime-poster-001/train-0014/rounds/round-0001/prompt/prompt.md",
+  "base_prompt_sha256": "6cac0681206df6c29f3daa5fd48530e98c853baa6238d4a77d20d5631660e9b1",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0014/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "6cac0681206df6c29f3daa5fd48530e98c853baa6238d4a77d20d5631660e9b1",
+  "optional_instructions": {},
+  "optional_instructions_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+  "seed": null,
+  "provider_parameters": {"source_binding":{"mechanism":"referenced_image_paths","requested_paths":["targets/editorial-anime-poster-001/input/source-child.jpeg"],"requested_sha256s":["3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e"],"recent_image_context_used":false}},
+  "generation_status": "planned_not_yet_called",
+  "raw_response_file": null
+}

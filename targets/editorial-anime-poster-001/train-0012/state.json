@@ -1,0 +1,95 @@
+{
+  "schema_version": 2,
+  "status": "failed",
+  "round": 1,
+  "phase": "output",
+  "lossFunctionVersion": "style-inversion-v3-ensemble-v1",
+  "styleComponentMaxLoss": 0.25,
+  "candidatesPerRound": 3,
+  "maxRefinementRounds": 2,
+  "targetLoss": 0.18,
+  "validationTargetLoss": 0.3,
+  "validationWorstCaseLoss": 0.4,
+  "testTargetLoss": 0.32,
+  "testWorstCaseLoss": 0.42,
+  "maxGeneralizationGap": 0.1,
+  "bestCandidate": null,
+  "bestLoss": null,
+  "targetDir": "targets/editorial-anime-poster-001",
+  "trainDir": "train-0012",
+  "sourceReference": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+  "styleReferences": [
+    {
+      "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+      "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+    },
+    {
+      "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-01.jpg",
+      "sha256": "71fe06642b4bc4753b97625ac48f593afb8bb33ded7090142c63b0289be4b1c8"
+    },
+    {
+      "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-02.jpg",
+      "sha256": "349d5d960041ced65faf5513b54a417c5f8fdf5cadf0753d8c3f4f8cd9d17540"
+    },
+    {
+      "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-03.jpg",
+      "sha256": "f5f576a601b9c507747a687460f3002319420a17908e41604c7f5c72c26d8d2b"
+    },
+    {
+      "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-04.jpg",
+      "sha256": "40788ca42d71559e9720d7d3067a4242f63487501e78eb428a602bd92fc50896"
+    }
+  ],
+  "styleReferenceSetSha256": "805f0db0aec28aa2f7a74819d572c501a8a2406106de0f159b82ba929cabfc39",
+  "parentTrainDir": "train-0011",
+  "feedbackFiles": [
+    {
+      "path": "targets/editorial-anime-poster-001/feedback/feedback-0001.json",
+      "sha256": "eda20f0f0b83d6fa9d09da1f538c9a71be6d330e84ce09d2c805900439208c00",
+      "size": 2032,
+      "feedbackId": "feedback-0001"
+    },
+    {
+      "path": "targets/editorial-anime-poster-001/feedback/feedback-0002.json",
+      "sha256": "b23526bd2e44b53140fbc7dd4b70cca7eb938036b20443e79a2b44bfb4c0ce0d",
+      "size": 1430,
+      "feedbackId": "feedback-0002"
+    }
+  ],
+  "validationManifest": {
+    "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "size": 3043,
+    "contentsOpened": false
+  },
+  "sealedTestManifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-0012.json",
+    "sha256": "bd9cd3e91491eabb1a0501c5433a99fd311a9e75547b149d24384befdf34c1bc",
+    "size": 2090,
+    "contentsOpened": false
+  },
+  "createdAt": "2026-08-18T01:39:43Z",
+  "generationFailures": [
+    {
+      "candidate": "rounds/round-0001/candidates/candidate-001",
+      "generationRecord": "rounds/round-0001/candidates/candidate-001/generation.json",
+      "reason": "rejected_source_content_missing",
+      "attemptBatch": "generate-candidates-attempt-1",
+      "notes": "A built-in-imagegen call with the sole source_reference and frozen prompt produced a valid PNG but not source-controlled content. The concurrently submitted candidate-002 and candidate-003 calls remained stalled and were terminated before any output was returned; no candidate artifacts were created for them.",
+      "recordedAt": "2026-08-18T02:39:46Z"
+    }
+  ],
+  "judgeFailures": [
+    {
+      "round": 1,
+      "reason": "no_candidate_paths_received",
+      "candidateCount": 0,
+      "sourceStepId": "generate-candidates",
+      "sourceStepExecutionId": "generate-candidates-attempt-1-exec-5",
+      "communicationId": "comm-000191",
+      "action": "no_visual_assessment_or_loss_was_created; routed_to_output",
+      "recordedAt": "2026-08-18T02:41:18Z"
+    }
+  ],
+  "updatedAt": "2026-08-18T02:41:18Z"
+}

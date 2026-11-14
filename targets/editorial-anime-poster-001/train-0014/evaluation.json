@@ -1,0 +1,87 @@
+{
+  "schema_version": 2,
+  "iteration": 14,
+  "loss_function_version": "style-inversion-v3-ensemble-v1",
+  "status": "failed",
+  "selected_candidate": null,
+  "best_candidate": null,
+  "total_loss": null,
+  "reward": null,
+  "training": {
+    "status": "not_evaluable",
+    "total_loss": null,
+    "reward": null,
+    "candidate_count_realized": 0,
+    "candidate_count_expected": 2,
+    "reason": "candidate-001 ended in generation_tool_terminal_failure before output creation; candidate-002 was not attempted after the terminal round failure."
+  },
+  "selection": {
+    "rule": "lowest_total_loss subject to per-style ceilings and all provenance/feedback gates",
+    "consistent": "not_applicable_no_realized_candidates",
+    "best_so_far_overwritten": false,
+    "reason": "No candidate metrics or round winner exist."
+  },
+  "pre_generation_verification": {
+    "style_reference_set_hash": {
+      "expected": "805f0db0aec28aa2f7a74819d572c501a8a2406106de0f159b82ba929cabfc39",
+      "fresh": "805f0db0aec28aa2f7a74819d572c501a8a2406106de0f159b82ba929cabfc39",
+      "canonical_bytes_match": true,
+      "canonical_size": 870,
+      "result": "passed"
+    },
+    "style_model": {
+      "five_dimensions_present": true,
+      "reference_count": 5,
+      "truth_usage": "analysis_and_judge_only",
+      "prompt_clause_traceability": "passed_semantically; each model rule is represented by the executable prompt and template clause inventory; only contract required literals require byte-for-byte matching."
+    },
+    "template_and_isolation": {
+      "template_validation": "passed",
+      "subject_specific_clause_count": 0,
+      "required_literal_clauses_present_verbatim": true,
+      "isolation_audit": "passed",
+      "validation_manifest_contents_opened": false,
+      "sealed_test_manifest_contents_opened": false
+    },
+    "planned_generation_provenance": {
+      "base_prompt_hash_matches": true,
+      "effective_prompt_hash_matches": true,
+      "empty_optional_instructions_hash_matches": true,
+      "effective_prompt_equals_base_prompt": true,
+      "one_source_reference_input": true,
+      "source_binding_matches_input_images": true,
+      "source_binding_mechanism": "referenced_image_paths",
+      "recent_image_context_used": false,
+      "num_last_images_to_include_omitted": true,
+      "truth_or_style_generation_input": false
+    },
+    "feedback_resolution": {
+      "authorized_items": 10,
+      "valid_dispositions": true,
+      "result": "passed"
+    }
+  },
+  "transferability": {
+    "freeze": "missing_not_run",
+    "evaluation": "missing_not_run",
+    "validation_loss": null,
+    "validation_worst_case_loss": null,
+    "validation_case_coverage": [],
+    "train_validation_gap": null,
+    "reason": "Validation manifest was intentionally not opened because no frozen successful training prompt/candidate exists."
+  },
+  "test_audit": {
+    "evaluation": "missing_not_run",
+    "test_loss": null,
+    "test_worst_case_loss": null,
+    "validation_test_gap": null,
+    "reason": "The one-shot sealed test was not opened or consumed; validation did not pass."
+  },
+  "promotion": {
+    "eligible": false,
+    "best_json_updated": false,
+    "reason": "Required realized image, per-reference median judge records, component losses, validation transferability evidence, and one-shot test evidence are absent."
+  },
+  "exit_reason": "generation_tool_terminal_failure",
+  "reviewed_at": "2026-08-18T03:40:47Z"
+}

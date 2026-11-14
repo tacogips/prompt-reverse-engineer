@@ -1,0 +1,70 @@
+{
+  "schema_version": 2,
+  "contract_id": "reusable-style-transfer-v2",
+  "required_image_roles": [
+    "style_reference",
+    "source_reference"
+  ],
+  "optional_instruction_fields": [
+    "pose",
+    "composition",
+    "text",
+    "additional"
+  ],
+  "instruction_precedence": [
+    "safety_and_integrity",
+    "explicit_optional_instructions",
+    "source_content_and_identity_preservation",
+    "style_transfer_defaults"
+  ],
+  "required_literal_clauses": [
+    "Perform only a benign, non-sexual artistic style transformation; do not introduce nudity, sexualization, age changes, violence, injury, or other unsafe content."
+  ],
+  "required_behaviors": [
+    "Perform only a benign, non-sexual artistic style transformation; do not introduce nudity, sexualization, age changes, violence, injury, or other unsafe content.",
+    "Treat the source reference as the exclusive authority for depicted content and identity.",
+    "Preserve source age, identity, anatomy, object count, geometry, hairstyle, clothing, pose, and composition unless an optional instruction explicitly overrides that attribute.",
+    "Transfer only reusable visual properties from the style reference.",
+    "Render optional text exactly when supplied and render no text when it is absent.",
+    "Keep unspecified attributes controlled by the source reference rather than invented prompt prose."
+  ],
+  "forbidden_hard_coding": [
+    "observed age or age group",
+    "observed gender or gender presentation",
+    "observed race, ethnicity, nationality, or skin tone",
+    "observed facial geometry, facial features, or facial hair",
+    "observed hair color, length, cut, volume, or silhouette",
+    "observed gaze direction, expression, body pose, or camera-facing direction",
+    "observed clothing, accessories, logos, or text",
+    "target-specific subject names or descriptions",
+    "target-specific aspect ratio, medium, genre, layout, or palette not inferred from the current style reference"
+  ],
+  "allowed_style_specificity": [
+    "medium and rendering technique",
+    "palette and contrast relationships",
+    "line quality and mark making",
+    "texture and print treatment",
+    "abstract graphic vocabulary",
+    "default composition language that yields to explicit optional instructions"
+  ],
+  "validation_requirements": {
+    "minimum_distinct_held_out_source_hashes": 2,
+    "minimum_distinct_test_source_hashes": 1,
+    "required_case_types": [
+      "baseline",
+      "pose",
+      "composition",
+      "text"
+    ],
+    "exact_text_required": true,
+    "reject_training_source_hash_in_held_out_set": true,
+    "reject_test_hash_overlap_with_training_or_validation": true,
+    "required_test_case_types": [
+      "baseline",
+      "combined_optional"
+    ],
+    "reject_unrequested_text": true,
+    "reject_prompt_if_subject_specific_clause_count_exceeds": 0,
+    "max_generalization_gap": 0.1
+  }
+}

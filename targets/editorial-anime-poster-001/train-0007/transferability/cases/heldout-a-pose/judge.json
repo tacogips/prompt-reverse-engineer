@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "judge_version": "source-style-judge-v2",
+  "judge_config": "targets/editorial-anime-poster-001/train-0007/judge/config.json",
+  "original_resolution_assessed": true,
+  "loss": { "source_fidelity": 0.06, "style_fidelity": 0.16, "pose_adherence": 0.02, "text_adherence": 0.0, "technical": 0.03 },
+  "assertions": { "seated_upright_on_stool": true, "three_quarter_view": true, "both_hands_folded_on_lap": true, "facial_identity_preserved": true, "hair_preserved": true, "green_sweater_preserved": true, "cream_trousers_preserved": true, "brown_shoes_preserved": true, "wooden_stool_preserved": true, "no_invented_text": true },
+  "evidence": ["The person is seated upright on the wooden stool at a three-quarter angle with both hands folded on the lap.", "The recognizable face, hair, sweater, trousers, shoes, and stool remain visible; the requested pose is the only material change.", "The poster treatment has the required palette, crisp ink edges, paper grain, and abstract marks, with no invented lettering."],
+  "confidence": 0.9
+}

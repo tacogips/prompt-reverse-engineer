@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "suite_version": "v1",
+  "status": "provisional_passed",
+  "executed_at": "2026-08-14T03:55:28Z",
+  "execution_method": "local original-resolution visual inspection against the versioned judge rubric",
+  "actual_repeat_count": 1,
+  "configured_judge": {
+    "provider": "openai",
+    "model": "gpt-5.6-terra",
+    "temperature": 0,
+    "prompt_path": "targets/editorial-anime-poster-001/train-0002/judge/prompt.md",
+    "prompt_sha256": "fa5ee740833c0f6745c32f4c3c0c082269ed909994e95cfe900f93660ba0d16b"
+  },
+  "pass_rule": "All required directional relations must hold; near-zero means <= 0.02, high means >= 0.70, and an order effect is material when any compared component differs by more than 0.05.",
+  "cases": [
+    {
+      "case_id": "style-self-match",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "person_truth": "targets/editorial-anime-poster-001/input/person-reference.png",
+        "candidate": "targets/editorial-anime-poster-001/truth/style-reference.png"
+      },
+      "presentation_order": "style_truth_person_truth_candidate",
+      "expected_relation": "Candidate is pixel-identical to Style truth; style, color, composition, and technical loss must be near zero.",
+      "observed_component_losses": {
+        "identity": 1.0,
+        "semantic": 0.75,
+        "composition": 0.0,
+        "color": 0.0,
+        "style": 0.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "Candidate and Style truth are the same local PNG, so the transferable poster layout, palette, contours, texture, and technical detail are visually identical.",
+        "The candidate depicts the non-transferable style-reference woman rather than the supplied man, which explains the identity and semantic losses and is not part of this style self-match relation."
+      ],
+      "confidence": 1.0,
+      "pass": true
+    },
+    {
+      "case_id": "identity-self-match",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "person_truth": "targets/editorial-anime-poster-001/input/person-reference.png",
+        "candidate": "targets/editorial-anime-poster-001/input/person-reference.png"
+      },
+      "presentation_order": "style_truth_person_truth_candidate",
+      "expected_relation": "Candidate is pixel-identical to Person truth; identity and semantic identity-subject loss must be near zero.",
+      "observed_component_losses": {
+        "identity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.85,
+        "color": 0.9,
+        "style": 1.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "Candidate and Person truth are the same local PNG, so the face, skin tone, haircut, gaze, expression, and pose are identical.",
+        "The candidate is an unstyled neutral-background photograph, not the requested editorial poster; the high style, color, and composition losses are expected and do not negate identity self-match."
+      ],
+      "confidence": 1.0,
+      "pass": true
+    },
+    {
+      "case_id": "obvious-cross-domain-mismatch",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "person_truth": "targets/editorial-anime-poster-001/input/person-reference.png",
+        "candidate": "targets/editorial-anime-poster-001/input/person-reference.png"
+      },
+      "presentation_order": "style_truth_person_truth_candidate",
+      "expected_relation": "The unstyled person photograph retains low identity loss but has high style and color loss against the editorial illustration.",
+      "observed_component_losses": {
+        "identity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.85,
+        "color": 0.9,
+        "style": 1.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "The candidate is exactly the person reference, preserving the same man’s visible face, hair, gaze, expression, and pose.",
+        "It is a pale neutral photographic close-up with no navy ink contours, cel-shading, coloured poster fields, abstract disks, rules, dry-brush marks, or printed-paper treatment."
+      ],
+      "confidence": 1.0,
+      "pass": true
+    },
+    {
+      "case_id": "target-candidate-order-swap",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "person_truth": "targets/editorial-anime-poster-001/input/person-reference.png",
+        "candidate": "targets/editorial-anime-poster-001/input/person-reference.png"
+      },
+      "presentation_order": "candidate_then_style_truth_person_truth_with_labels_preserved",
+      "expected_relation": "Changing only display order, while preserving image labels and roles, must not materially alter the assessment.",
+      "observed_component_losses": {
+        "identity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.85,
+        "color": 0.9,
+        "style": 1.0,
+        "technical": 0.0
+      },
+      "baseline_case_id": "obvious-cross-domain-mismatch",
+      "component_absolute_deltas_from_baseline": {
+        "identity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.0,
+        "color": 0.0,
+        "style": 0.0,
+        "technical": 0.0
+      },
+      "material_order_effect": false,
+      "evidence": [
+        "With labels preserved, the same photograph still exactly matches Person truth and still lacks every observed transferable editorial treatment from Style truth.",
+        "No component changed relative to the baseline cross-domain assessment."
+      ],
+      "confidence": 1.0,
+      "pass": true
+    }
+  ],
+  "all_required_relations_pass": true
+}

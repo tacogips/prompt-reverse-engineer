@@ -1,0 +1,21 @@
+{
+  "schema_version": 2,
+  "record_kind": "intended_shared_generation_settings",
+  "provider": "openai",
+  "model": "built-in-imagegen",
+  "model_version": null,
+  "tool_mode": "image-edit",
+  "input_images_policy": {"count": 1, "role": "source_reference", "forbidden_roles": ["style_reference", "style_truth", "target_reference"]},
+  "base_prompt_file": "targets/editorial-anime-poster-001/train-0012/rounds/round-0001/prompt/prompt.md",
+  "base_prompt_sha256": "c04673e2be2344a528d67e84c230570d48f6f7cba3b5f8cecf08720fe074c7f8",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0012/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "c04673e2be2344a528d67e84c230570d48f6f7cba3b5f8cecf08720fe074c7f8",
+  "optional_instructions": {},
+  "optional_instructions_canonical_json": "{}\n",
+  "optional_instructions_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+  "seed": null,
+  "provider_parameters": {"size": "1024x1536", "quality": "high"},
+  "raw_response_file": null,
+  "generation_status": "not_generated",
+  "provenance_contract": ".riela/workflows/prompt-reverse-train/generation-record-contract.json"
+}

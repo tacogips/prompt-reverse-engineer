@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "judge-v4-source-fidelity-style-transfer",
+  "provider": "openai",
+  "model": "gpt-5.6-terra",
+  "temperature": 0,
+  "repeats": 1,
+  "aggregation": "single_deterministic_assessment",
+  "prompt_sha256": "e1b430e07aa4fc53bca95f66083632b3954d96e97bab55691fe2752d97f99803",
+  "weights": {
+    "source_fidelity": 0.3,
+    "semantic": 0.1,
+    "composition": 0.15,
+    "color": 0.15,
+    "style": 0.25,
+    "technical": 0.05
+  },
+  "input_order": [
+    "style_truth",
+    "source_truth",
+    "candidate"
+  ],
+  "calibration_suite": "targets/editorial-anime-poster-001/train-0005/judge/calibration/v1/manifest.json",
+  "calibration_status": "provisional_passed",
+  "calibration_method": "single local original-resolution multimodal visual assessment per case; no repeated model calls claimed",
+  "notes": "This v4 evaluator replaces the legacy identity component with reusable source_fidelity. Its losses must not be numerically compared with prior legacy identity-judge results."
+}

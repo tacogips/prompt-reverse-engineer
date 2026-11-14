@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "style-inversion-v3",
+  "status": "passed",
+  "prompt_hash": "9bcef001c13e5361c5d6336d4f9d301c5a60e0cca557b99cce44e5c3d162e647",
+  "validation_manifest": {"path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json", "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8", "size": 3043},
+  "judge_version": "fa54cefc3f8d4091cf82aab05657a21de4fec241e1abc1761b4d2aeab752730c",
+  "weights": {"medium_rendering": 0.2, "palette_tone": 0.15, "line_shape": 0.15, "texture_material": 0.1, "graphic_language": 0.1, "source_fidelity": 0.2, "technical": 0.1},
+  "thresholds": {"aggregate_validation_loss": 0.3, "worst_case_loss": 0.4, "max_generalization_gap": 0.1, "style_component_max_loss": 0.25},
+  "training_loss": 0.1515,
+  "aggregate_validation_loss": 0.142625,
+  "aggregate_validation_loss_display": 0.143,
+  "worst_case_loss": 0.153,
+  "generalization_gap": -0.008875,
+  "source_hashes": ["71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9", "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1"],
+  "training_source_hash": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+  "case_coverage": [
+    {"id": "heldout-a-baseline", "type": "baseline", "source_sha256": "71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9", "loss": 0.1465, "passed": true},
+    {"id": "heldout-a-pose", "type": "pose", "source_sha256": "71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9", "loss": 0.153, "passed": true},
+    {"id": "heldout-b-composition", "type": "composition", "source_sha256": "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1", "loss": 0.1315, "passed": true},
+    {"id": "heldout-b-exact-text", "type": "text", "source_sha256": "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1", "loss": 0.1395, "passed": true}
+  ],
+  "pass_reasons": ["Frozen template validation passed with zero subject-specific and forbidden clauses.", "Four required case types use two held-out source hashes distinct from the training hash.", "All provenance records have exactly one source_reference image and verified base/effective-prompt, optional-instruction, source, and output hashes.", "All applicable optional-instruction and exact-text gates passed; no-text cases have no invented text.", "Every required style component and feedback semantic-region or typography gate is at or below the 0.25 ceiling.", "Aggregate, worst-case, and generalization-gap thresholds pass."],
+  "fail_reasons": [],
+  "completed_at": "2026-08-14T16:34:00Z"
+}

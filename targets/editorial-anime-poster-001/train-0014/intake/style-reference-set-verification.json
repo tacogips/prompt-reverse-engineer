@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "helper": "targets/editorial-anime-poster-001/train-0014/workflow/scripts/compute-style-reference-set-hash.sh",
+  "provisionalRecords": "targets/editorial-anime-poster-001/train-0014/intake/style-reference-records.provisional.json",
+  "canonicalFile": "targets/editorial-anime-poster-001/train-0014/style-reference-set.json",
+  "sha256": "805f0db0aec28aa2f7a74819d572c501a8a2406106de0f159b82ba929cabfc39",
+  "size": 870,
+  "serialization": "jq -ceS with final newline",
+  "verifiedAt": "2026-08-18T03:26:07Z"
+}

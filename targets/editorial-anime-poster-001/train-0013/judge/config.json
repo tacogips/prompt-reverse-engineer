@@ -1,0 +1,28 @@
+{
+  "schema_version": 4,
+  "loss_function_version": "style-inversion-v3-ensemble-v1",
+  "provider": "openai",
+  "model": "gpt-5.6-terra",
+  "temperature": 0,
+  "repeats": 3,
+  "actual_calibration_repeats": 1,
+  "aggregation": "per_reference_style_assessment_then_component_wise_median_across_five_references; source_fidelity_once_against_source; technical_once_from_candidate",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0013/judge/prompt.md",
+  "prompt_sha256": "8ef21ab103f0ab802388f258c14a4a5cd6476942a3e2237adb45727115d5c9b0",
+  "calibration_suite": "targets/editorial-anime-poster-001/train-0013/judge/calibration/v1/manifest.json",
+  "weights": {
+    "medium_rendering": 0.2,
+    "palette_tone": 0.15,
+    "line_shape": 0.15,
+    "texture_material": 0.1,
+    "graphic_language": 0.1,
+    "source_fidelity": 0.2,
+    "technical": 0.1
+  },
+  "style_weight_total": 0.7,
+  "style_component_max_loss": 0.25,
+  "palette_tone_aggregation": "for_each_reference max(overall_palette, skin_treatment, hair_treatment, clothing_treatment), preserving null for absent/unassessable regions; then median across five references",
+  "conditional_typography_dialogue": "authorized exact-text probes only; record typography style separately from exact-once spelling and absence of unrequested or pseudo-readable text",
+  "output_schema_version": 3,
+  "regime_comparison_note": "Ensemble-v1 losses are not numerically comparable with singleton style-inversion-v3 history."
+}

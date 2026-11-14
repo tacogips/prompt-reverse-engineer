@@ -1,0 +1,130 @@
+{
+  "intake-or-plan": {
+    "provider": "scenario-mock",
+    "model": "gpt-5.6-terra",
+    "when": {
+      "always": true
+    },
+    "payload": {
+      "status": "continue",
+      "nextStep": "analyze-images",
+      "phase": "analyze"
+    }
+  },
+  "analyze-images": {
+    "provider": "scenario-mock",
+    "model": "gpt-5.6-terra",
+    "when": {
+      "always": true
+    },
+    "payload": {
+      "status": "complete",
+      "nextStep": "generalize-prompt"
+    }
+  },
+  "generalize-prompt": {
+    "provider": "scenario-mock",
+    "model": "gpt-5.6-terra",
+    "when": {
+      "always": true
+    },
+    "payload": {
+      "status": "passed",
+      "nextStep": "generate-candidates",
+      "round": 1,
+      "contractVersion": "reusable-style-transfer-v1",
+      "forbiddenClauseCount": 0
+    }
+  },
+  "generate-candidates": {
+    "provider": "scenario-mock",
+    "model": "gpt-5.6-terra",
+    "when": {
+      "always": true
+    },
+    "payload": {
+      "status": "complete",
+      "nextStep": "judge-candidates",
+      "round": 1,
+      "candidatePaths": [
+        "candidate-001",
+        "candidate-002"
+      ]
+    }
+  },
+  "judge-candidates": {
+    "provider": "scenario-mock",
+    "model": "gpt-5.6-terra",
+    "when": {
+      "run_validation": true
+    },
+    "payload": {
+      "run_validation": true,
+      "nextStep": "validate-transferability",
+      "round": 1,
+      "selectedCandidate": "candidate-001",
+      "totalLoss": 0.14,
+      "reward": 0.86,
+      "exitReason": "training_target_reached"
+    }
+  },
+  "validate-transferability": {
+    "provider": "scenario-mock",
+    "model": "gpt-5.6-terra",
+    "when": {
+      "stop_training": true
+    },
+    "payload": {
+      "stop_training": true,
+      "nextStep": "audit-generalization",
+      "validationPassed": true,
+      "aggregateValidationLoss": 0.12,
+      "worstCaseLoss": 0.18,
+      "generalizationGap": -0.02,
+      "exitReason": "training_and_validation_reached"
+    }
+  },
+  "audit-generalization": {
+    "provider": "scenario-mock",
+    "model": "gpt-5.6-terra",
+    "when": {
+      "always": true
+    },
+    "payload": {
+      "status": "passed",
+      "nextStep": "review-training",
+      "testPassed": true,
+      "aggregateTestLoss": 0.13,
+      "worstCaseLoss": 0.19,
+      "validationTestGap": 0.01,
+      "exitReason": "target_validation_and_test_reached"
+    }
+  },
+  "review-training": {
+    "provider": "scenario-mock",
+    "model": "gpt-5.6-terra",
+    "when": {
+      "always": true
+    },
+    "payload": {
+      "status": "complete",
+      "nextStep": "workflow-output",
+      "exitReason": "target_validation_and_test_reached",
+      "bestCandidate": "candidate-001",
+      "totalLoss": 0.14
+    }
+  },
+  "workflow-output": {
+    "provider": "scenario-mock",
+    "model": "gpt-5.6-terra",
+    "when": {
+      "always": true
+    },
+    "payload": {
+      "status": "complete",
+      "exitReason": "target_validation_and_test_reached",
+      "bestCandidate": "candidate-001",
+      "totalLoss": 0.14
+    }
+  }
+}

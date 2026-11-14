@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "contract_id": "prompt-only-style-reconstruction-v1",
+  "contract_schema_version": 3,
+  "prompt_path": "targets/editorial-anime-poster-001/train-0008/rounds/round-0003/prompt/prompt.md",
+  "prompt_sha256": "0fd2a30929127f6e96d9e74861f2503d70abc5e7330fd98f1379c3dbd757ebf5",
+  "self_contained_text_check": {
+    "passed": true,
+    "evidence": "The executable prompt describes the medium, palette, contrast, lighting, contour and mark quality, paper and print texture, abstract graphic hierarchy, and overrideable composition defaults in text."
+  },
+  "sole_source_role_check": {
+    "passed": true,
+    "required_roles": [
+      "source_reference"
+    ],
+    "declared_generation_image": "Image 1",
+    "evidence": "The prompt states that Image 1 is the arbitrary source reference, exclusively controls depicted content and identity, and is the only image input available at generation time."
+  },
+  "forbidden_generation_role_check": {
+    "passed": true,
+    "forbidden_roles": [
+      "style_reference",
+      "style_truth",
+      "target_reference"
+    ],
+    "matches": []
+  },
+  "optional_instruction_fields": {
+    "required": [
+      "pose",
+      "composition",
+      "text",
+      "additional"
+    ],
+    "supported": [
+      "pose",
+      "composition",
+      "text",
+      "additional"
+    ],
+    "exact_text_behavior": "When supplied, text is rendered exactly verbatim with no other readable or pseudo-readable text; when absent, no text is rendered."
+  },
+  "required_literal_exact_checks": [
+    {
+      "clause": "Perform only a benign, non-sexual artistic style transformation; do not introduce nudity, sexualization, age changes, violence, injury, or other unsafe content.",
+      "present_verbatim": true
+    },
+    {
+      "clause": "The source reference is the only image input available at generation time.",
+      "present_verbatim": true
+    }
+  ],
+  "suspected_source_specific_clauses": [],
+  "forbidden_clause_count": 0,
+  "textual_style_clause_inventory": {
+    "medium_rendering": [
+      "refined editorial anime poster illustration",
+      "clean flat-to-gently-graded cel shading",
+      "crisp print-like color separation"
+    ],
+    "palette_tone": [
+      "ink navy, saturated blue-teal, coral pink, mustard yellow, and warm off-white",
+      "restrained matte-gold accent lines and dots",
+      "clearly bounded opaque print shapes with firm edges"
+    ],
+    "contrast_lighting": [
+      "deep-navy ink contours",
+      "warm off-white paper ground",
+      "limited palette and crisp color separation"
+    ],
+    "line_mark_quality": [
+      "elegant variable-weight deep-navy ink contours",
+      "taper into expressive fine strokes",
+      "sparse fine orbital line-and-dot accents"
+    ],
+    "texture_material": [
+      "subtle screen-print grain",
+      "imperfect overprint edges",
+      "sparse paint flecks and occasional dry-brush sweeps"
+    ],
+    "graphic_language": [
+      "adaptable asymmetric editorial balance",
+      "generous negative-space rhythm",
+      "broad opaque color fields, source-controlled focal form, then sparse fine ornaments"
+    ],
+    "overrideable_composition_defaults": [
+      "abstract layers frame rather than replace source-controlled content",
+      "no copied geometry or fixed placement",
+      "explicit composition instructions override these defaults"
+    ]
+  },
+  "precedence_check": {
+    "passed": true,
+    "declared_order": [
+      "safety_and_integrity",
+      "explicit_optional_instructions",
+      "source_content_and_identity_preservation",
+      "textual_style_specification"
+    ],
+    "evidence": "The prompt declares this order explicitly and scopes each optional field to only its named override."
+  },
+  "complexity_statistics": {
+    "positive_prompt_paragraphs": 5,
+    "negative_prompt_items": 9,
+    "optional_instruction_fields": 4,
+    "required_literal_clauses": 2,
+    "source_specific_clause_count": 0,
+    "style_dimension_count": 5
+  },
+  "status": "passed"
+}

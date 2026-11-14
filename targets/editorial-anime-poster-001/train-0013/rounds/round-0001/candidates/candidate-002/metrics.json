@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "candidate_id": "candidate-002",
+  "target_files":["targets/editorial-anime-poster-001/truth/style-reference.png","targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-01.jpg","targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-02.jpg","targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-03.jpg","targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-04.jpg"],
+  "loss_function_version":"style-inversion-v3-ensemble-v1",
+  "loss":{"total":0.134,"medium_rendering":0.11,"palette_tone":0.18,"line_shape":0.16,"texture_material":0.19,"graphic_language":0.17,"source_fidelity":0.10,"technical":0.05},
+  "reward":0.866,
+  "calculation":{"weights":{"medium_rendering":0.20,"palette_tone":0.15,"line_shape":0.15,"texture_material":0.10,"graphic_language":0.10,"source_fidelity":0.20,"technical":0.10},"unrounded_total":0.134,"style_aggregation":"component_wise_median_across_five_references"},
+  "style_component_ceiling":0.25,
+  "style_component_ceiling_passed":true,
+  "evaluators":[{"name":"prompt-as-a-judge","version":"style-inversion-v3-ensemble-v1","raw_output_file":"judge.json"}]
+}

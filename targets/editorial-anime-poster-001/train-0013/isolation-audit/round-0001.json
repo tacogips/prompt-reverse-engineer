@@ -1,0 +1,139 @@
+{
+  "schema_version": 2,
+  "round": 1,
+  "workflow_execution_id": "prompt-reverse-train-session-33",
+  "audited_at": "2026-08-18T02:58:36Z",
+  "audited_step_executions": [
+    {
+      "step_id": "intake-or-plan",
+      "execution_id": null,
+      "evidence": "targets/editorial-anime-poster-001/train-0013/intake-evidence.json",
+      "classification": "allowed"
+    },
+    {
+      "step_id": "analyze-images",
+      "execution_id": null,
+      "evidence": "No step-scoped session log or runtime snapshot was persisted; persisted analysis artifacts contain no current sealed manifest path or hash.",
+      "classification": "allowed"
+    },
+    {
+      "step_id": "generalize-prompt",
+      "execution_id": "generalize-prompt-attempt-1-exec-3",
+      "evidence": "Delivered communication comm-000210 and template validation identify only frozen prompt and template validation; no current sealed fixture data is present.",
+      "classification": "allowed"
+    },
+    {
+      "step_id": "audit-input-isolation",
+      "execution_id": null,
+      "evidence": "Authorized audit inspection of intake, run configuration, prompt validation, planned generation provenance, and session evidence.",
+      "classification": "allowed"
+    },
+    {
+      "step_id": "generate-candidates",
+      "execution_id": null,
+      "evidence": "candidate_generation_started is false and no candidate generation record exists.",
+      "classification": "allowed"
+    },
+    {
+      "step_id": "judge-candidates",
+      "execution_id": null,
+      "evidence": "No candidate or judge record exists for the current round.",
+      "classification": "allowed"
+    }
+  ],
+  "manifest_paths": {
+    "validation": {
+      "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+      "recorded_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "fresh_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "contents_opened_by_audit": false,
+      "hash_matches": true
+    },
+    "test": {
+      "path": "targets/editorial-anime-poster-001/test/sealed-test-0013.json",
+      "recorded_sha256": "d41d1a0d7b63452c683128c4f67dd6a51e2c1074f7b21af5804b547955b861fc",
+      "fresh_sha256": "d41d1a0d7b63452c683128c4f67dd6a51e2c1074f7b21af5804b547955b861fc",
+      "contents_opened_by_audit": false,
+      "hash_matches": true
+    }
+  },
+  "style_truth_set": {
+    "deterministic_set_hash_algorithm": "sha256(UTF-8 jq -cS ordered array of {path,sha256} plus final newline)",
+    "recorded_set_sha256": "179c6ac99cf6cc0dc80b69c2d422c0d8252eb1f228c78c6494f83cc938bbac99",
+    "fresh_set_sha256": "179c6ac99cf6cc0dc80b69c2d422c0d8252eb1f228c78c6494f83cc938bbac99",
+    "set_hash_matches": true,
+    "members": [
+      {
+        "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+      },
+      {
+        "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-01.jpg",
+        "sha256": "71fe06642b4bc4753b97625ac48f593afb8bb33ded7090142c63b0289be4b1c8"
+      },
+      {
+        "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-02.jpg",
+        "sha256": "349d5d960041ced65faf5513b54a417c5f8fdf5cadf0753d8c3f4f8cd9d17540"
+      },
+      {
+        "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-03.jpg",
+        "sha256": "f5f576a601b9c507747a687460f3002319420a17908e41604c7f5c72c26d8d2b"
+      },
+      {
+        "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-04.jpg",
+        "sha256": "40788ca42d71559e9720d7d3067a4242f63487501e78eb428a602bd92fc50896"
+      }
+    ]
+  },
+  "access_events": [
+    {
+      "step_id": "intake-or-plan",
+      "artifact": "targets/editorial-anime-poster-001/train-0013/intake-evidence.json",
+      "access": "recorded manifest path, byte size, and SHA-256 without opening contents",
+      "classification": "allowed"
+    },
+    {
+      "step_id": "audit-input-isolation",
+      "artifact": "targets/editorial-anime-poster-001/train-0013/run-config.json",
+      "access": "verified runtime configuration contains manifest paths only and no inline validation or test cases",
+      "classification": "allowed"
+    },
+    {
+      "step_id": "audit-input-isolation",
+      "artifact": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+      "access": "computed SHA-256 only; manifest bytes not opened or parsed",
+      "classification": "allowed"
+    },
+    {
+      "step_id": "audit-input-isolation",
+      "artifact": "targets/editorial-anime-poster-001/test/sealed-test-0013.json",
+      "access": "computed SHA-256 only; manifest bytes not opened or parsed",
+      "classification": "allowed"
+    },
+    {
+      "step_id": "generate-candidates",
+      "artifact": "targets/editorial-anime-poster-001/train-0013/rounds/round-0001/prompt/generation.json",
+      "access": "planned record has exactly one source_reference; no truth member path, hash, set hash, truth role, or style role; explicit source binding disables recent context",
+      "classification": "allowed"
+    }
+  ],
+  "checks": {
+    "runtime_contains_manifest_paths_only": true,
+    "prohibited_current_validation_access": false,
+    "prohibited_current_test_access": false,
+    "prohibited_optimization_directory_inventory": false,
+    "candidate_generation_started": false,
+    "generation_record_has_only_local_source": true,
+    "generation_record_has_no_truth_member_path_hash_or_set_hash": true,
+    "generation_record_has_no_truth_or_style_role": true,
+    "generation_policy_requires_referenced_image_paths": true,
+    "generation_policy_forbids_num_last_images_to_include": true,
+    "generation_policy_forbids_implicit_recent_image_context": true,
+    "generation_policy_requires_provider_source_binding": true,
+    "template_validation_status_passed": true,
+    "prompt_sha256_matches_template_validation": true,
+    "template_validation_file_sha256": "4b1feabca52973da3da3a616a5c26fd8a47841c179f9e4c8a87eee1a7d73a194"
+  },
+  "diagnostics": [],
+  "status": "passed"
+}

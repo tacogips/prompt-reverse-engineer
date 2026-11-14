@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "contract_version": "reusable-style-transfer-v1",
+  "prompt_path": "targets/editorial-anime-poster-001/train-0005/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "225d563ace0193437dbb976557ecdf0d1afd3cc463a3a33ffcbf4fe2968a87bf",
+  "normalization": {
+    "performed": false,
+    "reason": "The current prompt already contains only reference-role invariants, optional-instruction rules, and transferable style categories."
+  },
+  "required_role_checks": {
+    "style_reference_is_image_1_only": true,
+    "source_reference_is_image_2_only": true,
+    "style_reference_controls_only_transferable_visual_language": true,
+    "source_reference_exclusively_controls_depicted_content_and_identity": true,
+    "source_attributes_preserved_when_not_explicitly_overridden": true
+  },
+  "optional_field_checks": {
+    "pose": {
+      "supported": true,
+      "scope_limited_to_requested_pose_or_viewpoint": true,
+      "preserves_unspecified_source_attributes": true
+    },
+    "composition": {
+      "supported": true,
+      "scope_limited_to_requested_framing_placement_crop_or_layout": true,
+      "preserves_unspecified_source_attributes": true
+    },
+    "text": {
+      "supported": true,
+      "renders_supplied_text_verbatim": true,
+      "limits_change_to_text_and_required_layout": true,
+      "absent_text_produces_no_text_like_marks": true
+    },
+    "additional": {
+      "supported": true,
+      "scope_limited_to_explicit_narrow_changes": true,
+      "preserves_unspecified_source_attributes": true
+    }
+  },
+  "optional_instruction_precedence_check": {
+    "declared_order": [
+      "safety_and_integrity",
+      "explicit_optional_instructions",
+      "source_content_and_identity_preservation",
+      "style_transfer_defaults"
+    ],
+    "matches_contract": true,
+    "style_defaults_yield_to_explicit_optional_instructions": true
+  },
+  "suspected_subject_specific_clauses": [],
+  "forbidden_subject_specific_clause_count": 0,
+  "style_clause_inventory": [
+    "medium",
+    "aspect ratio and default framing/composition language",
+    "palette and contrast relationships",
+    "line work",
+    "shading",
+    "texture",
+    "print and graphic treatment",
+    "abstract design vocabulary"
+  ],
+  "complexity": {
+    "word_count": 377,
+    "style_clause_count": 8
+  },
+  "generation_record_check": {
+    "prompt_sha256_matches": true,
+    "required_input_roles_match_contract": true,
+    "optional_instruction_fields_match_contract": true
+  },
+  "state": {
+    "status": "passed",
+    "phase": "generate",
+    "next_step": "generate-candidates"
+  },
+  "status": "passed"
+}

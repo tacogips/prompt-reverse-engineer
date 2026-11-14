@@ -1,0 +1,12 @@
+{
+  "id": "generate-validation-cases",
+  "description": "Open the frozen validation manifest after prompt freeze and generate explicitly source-bound held-out cases without judging them.",
+  "nodeType": "agent",
+  "executionBackend": "codex-agent",
+  "model": "gpt-5.6-terra",
+  "promptTemplateFile": "prompts/generate-validation-cases.md",
+  "variables": {},
+  "output": {
+    "description": "Return adapter JSON routing complete validation generations to independent ensemble judging or failures directly to review."
+  }
+}

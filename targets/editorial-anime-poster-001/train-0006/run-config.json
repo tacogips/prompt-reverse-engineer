@@ -1,0 +1,36 @@
+{
+  "acceptanceCriteria": [
+    "The reusable prompt contains zero source-specific hard-coded clauses.",
+    "Every realized generation record conforms to generation-provenance-v1 and its hashes recompute from disk.",
+    "Frozen validation covers baseline, pose, composition, and exact text across two unseen source hashes.",
+    "Exact requested text is rendered verbatim and absent text produces no added typography.",
+    "Aggregate, worst-case, and generalization-gap thresholds pass on validation and sealed test.",
+    "No pre-validation node opens the validation manifest and no pre-audit node opens the test manifest.",
+    "All generation and judge models, prompts, hashes, and loss components are persisted."
+  ],
+  "candidatesPerRound": 3,
+  "constraints": [
+    "Use repository-relative paths in persisted artifacts.",
+    "Use the built-in image generation tool.",
+    "Do not open validationManifest before validate-transferability.",
+    "Do not open sealedTestManifest before audit-generalization.",
+    "Do not modify completed train-0001 through train-0003 or failed train-0004 and train-0005 evidence.",
+    "Do not compare legacy identity-judge loss numerically with the new source-fidelity judge."
+  ],
+  "maxGeneralizationGap": 0.1,
+  "maxRefinementRounds": 2,
+  "optionalInstructions": {},
+  "parentTrainDir": "train-0003",
+  "requestedWork": "Rerun reusable arbitrary-source style-transfer training after enforcing generation-provenance-v1 on every training, validation, and test generation record.",
+  "sealedTestManifest": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+  "sourceReference": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+  "styleReference": "targets/editorial-anime-poster-001/truth/style-reference.png",
+  "targetDir": "targets/editorial-anime-poster-001",
+  "targetLoss": 0.25,
+  "testTargetLoss": 0.32,
+  "testWorstCaseLoss": 0.42,
+  "trainDir": "train-0006",
+  "validationManifest": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+  "validationTargetLoss": 0.3,
+  "validationWorstCaseLoss": 0.4
+}

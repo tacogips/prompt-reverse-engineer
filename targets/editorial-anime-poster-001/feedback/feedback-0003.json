@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "feedback_id": "feedback-0003",
+  "source_iteration": "train-0012",
+  "summary": "A built-in image-edit call recorded the training source in generation provenance but implicitly consumed the most recent conversation image and returned the sealed garden-workbench source instead. The candidate was correctly rejected visually, but the workflow lacked an explicit tool-level source binding and a generation-failure graph branch.",
+  "items": [
+    {
+      "id": "explicit-local-source-binding",
+      "category": "artifact_integrity.image_input_binding",
+      "requirement": "Every candidate, validation, and test image-edit call must pass exactly one resolved local source through referenced_image_paths, must omit num_last_images_to_include, and must never use implicit recent-image context.",
+      "required_probe": "Inspect provider_parameters.source_binding and visually compare every output with its exact source before judging."
+    },
+    {
+      "id": "source-binding-failure-routing",
+      "category": "workflow_control.generation_failure",
+      "requirement": "An unrelated-source output or terminal generation batch failure must route directly from generation to review and output, without judge, refinement, validation, or test execution.",
+      "required_probe": "Run mock-scenario-source-binding-failure.json and require the seven-step failure path with no judge or refinement node."
+    }
+  ]
+}

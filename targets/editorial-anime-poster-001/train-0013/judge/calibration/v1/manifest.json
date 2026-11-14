@@ -1,0 +1,46 @@
+{
+  "schema_version": 2,
+  "status": "passed",
+  "loss_function_version": "style-inversion-v3-ensemble-v1",
+  "judge_prompt_file": "targets/editorial-anime-poster-001/train-0013/judge/prompt.md",
+  "judge_prompt_sha256": "8ef21ab103f0ab802388f258c14a4a5cd6476942a3e2237adb45727115d5c9b0",
+  "actual_repeat_count": 1,
+  "assessor": "repository-local multimodal visual inspection",
+  "assessed_at": "2026-08-18T02:53:04Z",
+  "cases": [
+    {
+      "id": "target-self-match",
+      "inputs": {"style_reference_set": ["targets/editorial-anime-poster-001/truth/style-reference.png", "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-01.jpg", "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-02.jpg", "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-03.jpg", "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-04.jpg"], "candidate_relation": "each reference visually compared with itself for its own reusable dimensions"},
+      "expected_relation": "each self-comparison has zero observable style discrepancy",
+      "observed_component_losses": {"per_reference_style": [{"reference_index":1,"medium_rendering":0.0,"palette_tone":0.0,"line_shape":0.0,"texture_material":0.0,"graphic_language":0.0},{"reference_index":2,"medium_rendering":0.0,"palette_tone":0.0,"line_shape":0.0,"texture_material":0.0,"graphic_language":0.0},{"reference_index":3,"medium_rendering":0.0,"palette_tone":0.0,"line_shape":0.0,"texture_material":0.0,"graphic_language":0.0},{"reference_index":4,"medium_rendering":0.0,"palette_tone":0.0,"line_shape":0.0,"texture_material":0.0,"graphic_language":0.0},{"reference_index":5,"medium_rendering":0.0,"palette_tone":0.0,"line_shape":0.0,"texture_material":0.0,"graphic_language":0.0}]},
+      "evidence": ["Each pair was the same saved image, so medium, palette, line, texture, and graphic language are visibly identical."],
+      "pass": true
+    },
+    {
+      "id": "source-self-match",
+      "inputs": {"source": "targets/editorial-anime-poster-001/input/source-child.jpeg", "candidate_relation": "source visually compared with itself"},
+      "expected_relation": "source fidelity is zero and there is no candidate-introduced technical loss",
+      "observed_component_losses": {"source_fidelity":0.0,"technical":0.0},
+      "evidence": ["The same saved source was compared to itself; identity, garment graphic, pose, objects, crop, and surroundings are unchanged."],
+      "pass": true
+    },
+    {
+      "id": "unstyled-source-cross-domain-mismatch",
+      "inputs": {"style_reference_set": "five named immutable style references", "source": "targets/editorial-anime-poster-001/input/source-child.jpeg", "candidate_relation": "unmodified photographic source used as candidate"},
+      "expected_relation": "unmodified photo is visibly a strong mismatch on all five transferable style dimensions while retaining source fidelity",
+      "observed_component_losses": {"per_reference_style": [{"reference_index":1,"medium_rendering":0.95,"palette_tone":0.89,"line_shape":0.92,"texture_material":0.86,"graphic_language":0.94},{"reference_index":2,"medium_rendering":0.94,"palette_tone":0.86,"line_shape":0.91,"texture_material":0.84,"graphic_language":0.93},{"reference_index":3,"medium_rendering":0.95,"palette_tone":0.90,"line_shape":0.93,"texture_material":0.88,"graphic_language":0.95},{"reference_index":4,"medium_rendering":0.95,"palette_tone":0.91,"line_shape":0.92,"texture_material":0.89,"graphic_language":0.95},{"reference_index":5,"medium_rendering":0.94,"palette_tone":0.85,"line_shape":0.90,"texture_material":0.83,"graphic_language":0.92}],"median_style":{"medium_rendering":0.95,"palette_tone":0.89,"line_shape":0.92,"texture_material":0.86,"graphic_language":0.94},"source_fidelity":0.0,"technical":0.0},
+      "evidence": ["The source is a natural photograph lacking the references' opaque cel planes, warm-paper print field, dark editorial ink, screen-print wear, and abstract poster hierarchy.", "Because candidate and source are identical, source content is retained."],
+      "pass": true
+    },
+    {
+      "id": "target-candidate-order-swap",
+      "inputs": {"style_reference_set": "five named immutable style references", "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg", "presentations": ["style_truth_then_candidate", "candidate_then_style_truth"]},
+      "expected_relation": "role-labelled order swap does not alter the visible cross-domain mismatch conclusion",
+      "observed_component_losses": {"style_truth_then_candidate":{"medium_rendering":0.95,"palette_tone":0.89,"line_shape":0.92,"texture_material":0.86,"graphic_language":0.94},"candidate_then_style_truth":{"medium_rendering":0.95,"palette_tone":0.89,"line_shape":0.92,"texture_material":0.86,"graphic_language":0.94},"absolute_difference":{"medium_rendering":0.0,"palette_tone":0.0,"line_shape":0.0,"texture_material":0.0,"graphic_language":0.0}},
+      "evidence": ["The same labelled images were visually inspected in reverse presentation order; the obvious photo-versus-editorial-print mismatch is unchanged."],
+      "pass": true
+    }
+  ],
+  "pass_criteria": ["self matches show zero relevant observable discrepancy", "unstyled source exceeds 0.8 in every median style component", "order-swap component differences are at most 0.05"],
+  "overall_pass": true
+}

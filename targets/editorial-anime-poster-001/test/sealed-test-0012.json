@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "sealed_for_iteration": "train-0012",
+  "source": {
+    "file": "targets/editorial-anime-poster-001/test/source-garden-workbench-0012.png",
+    "sha256": "1af81b2fe6d5b81105591cf33a71c595728d43eaa3a2556b1423f2f20d3d6c78",
+    "width": 1536,
+    "height": 1024,
+    "format": "PNG"
+  },
+  "testCases": [
+    {
+      "id": "garden-workbench-baseline",
+      "type": "baseline",
+      "sourceReference": "targets/editorial-anime-poster-001/test/source-garden-workbench-0012.png",
+      "optionalInstructions": {},
+      "expected": {
+        "preserve": [
+          "one blue metal watering can",
+          "one terracotta pot containing a leafy green herb",
+          "folded beige gardening gloves",
+          "two wooden-handled garden tools",
+          "wooden workbench",
+          "window and neutral wall",
+          "the source object's spatial relationships"
+        ],
+        "text": null
+      }
+    },
+    {
+      "id": "garden-workbench-combined-optional",
+      "type": "combined_optional",
+      "sourceReference": "targets/editorial-anime-poster-001/test/source-garden-workbench-0012.png",
+      "optionalInstructions": {
+        "composition": "Use a square editorial poster composition with the blue watering can as the central anchor, the potted herb behind and to its right, and the gloves and two hand tools visible along the lower foreground.",
+        "text": "GROW WITH CARE",
+        "additional": "Keep the scene unpopulated. Preserve every listed garden object and render the supplied text exactly once with no other readable or pseudo-readable lettering."
+      },
+      "expectedText": "GROW WITH CARE",
+      "expected": {
+        "aspect_ratio": "square poster",
+        "watering_can_position": "central anchor",
+        "preserve": [
+          "one blue metal watering can",
+          "one potted leafy herb",
+          "folded beige gloves",
+          "two hand tools",
+          "wooden workbench",
+          "unpopulated scene"
+        ],
+        "exact_text_occurrences": 1,
+        "additional_text": false
+      }
+    }
+  ]
+}

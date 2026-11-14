@@ -1,0 +1,43 @@
+{
+  "schema_version": 3,
+  "feedback_id": "feedback-0001",
+  "resolved_at": "2026-08-14T16:09:27Z",
+  "items": [
+    {
+      "id": "skin-color-treatment",
+      "disposition": "implemented",
+      "teacher_evidence": "Skin-like areas visibly use luminous light planes, restrained warm shadow bands, narrow highlights, and selective dark-ink containment.",
+      "source_preserving_rule": "Keep literal source skin identity; transfer only relative cel-shaded value, highlight, shadow, and contour behavior.",
+      "affected_style_model_path": "dimensions.palette_tone.semantic_regions.skin",
+      "exact_prompt_clauses": ["render visible skin as source-preserved coherent cel-shaded light, shadow, and narrow highlight planes with selective deep-navy contour", "never assign a fixed skin tone or change source identity"],
+      "validation_probe": "Frozen held-out person baseline with visible skin; record skin_treatment independently and aggregate palette_tone by maximum."
+    },
+    {
+      "id": "hair-color-treatment",
+      "disposition": "implemented",
+      "teacher_evidence": "Hair-like forms read as a dark grouped mass with sparse cool and warm accent planes and tapered dark-ink containment.",
+      "source_preserving_rule": "Keep literal source hair color, silhouette, arrangement, and identity; transfer only coherent value grouping, restrained relative accents, and contour behavior.",
+      "affected_style_model_path": "dimensions.palette_tone.semantic_regions.hair",
+      "exact_prompt_clauses": ["group hair in its source-preserved silhouette and literal color identity into controlled value blocks with restrained relative cool and warm accent planes and tapered navy contour", "do not alter hairstyle, hair color, or hair identity"],
+      "validation_probe": "Frozen held-out person baseline with visible hair; record hair_treatment independently and aggregate palette_tone by maximum."
+    },
+    {
+      "id": "clothing-color-treatment",
+      "disposition": "implemented",
+      "teacher_evidence": "Garment-like areas use interlocking dark, pale, and accent print facets with dark seam anchors and restrained print texture.",
+      "source_preserving_rule": "Retain the source garment's silhouette, construction, markings, logos, and literal color identity; apply only restrained fold-following source-relative facets, seam anchoring, accent edges, and overprint grain.",
+      "affected_style_model_path": "dimensions.palette_tone.semantic_regions.clothing",
+      "exact_prompt_clauses": ["treat clothing as the same source garment: retain its silhouette, construction, markings, logos, and literal color identity", "add only restrained source-relative flat print facets following existing folds, with dark seam and edge anchors, sparse harmonizing accent edges, and subtle overprint grain", "do not replace, redesign, recolor wholesale, obscure, or remove source garments, markings, or logos"],
+      "validation_probe": "Frozen held-out person baseline with visible clothing; record clothing_treatment independently, aggregate palette_tone by maximum, and fail any changed or obscured garment marking/logo."
+    },
+    {
+      "id": "typography-dialogue-treatment",
+      "disposition": "implemented",
+      "teacher_evidence": "Visible lettering is a restrained high-contrast editorial display accent with elegant thin strokes and sparse line/dot ornament.",
+      "source_preserving_rule": "Only caller-supplied exact text authorizes lettering; preserve spelling, render no other readable or pseudo-readable text, and never reuse teacher words or language.",
+      "affected_style_model_path": "dimensions.graphic_language.typography_dialogue",
+      "exact_prompt_clauses": ["only when optional text is supplied, render exactly that verbatim text as the only readable or pseudo-readable lettering", "use a readable high-contrast editorial display ink with elegant calligraphic/display-like strokes, adaptive orientation, open-space placement, and sparse dot/line ornament", "do not copy teacher wording, script, language, logo, or text placement"],
+      "validation_probe": "Frozen authorized exact-text case; separately score typography_dialogue, exact spelling, and absence of unrequested text."
+    }
+  ]
+}

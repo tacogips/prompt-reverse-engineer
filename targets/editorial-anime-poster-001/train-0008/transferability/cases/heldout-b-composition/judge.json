@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "style-inversion-v2",
+  "target_candidate_order": "style_truth_then_candidate",
+  "aggregation": "component_wise_median",
+  "repeat_count": 3,
+  "repeat_losses": [{"medium_rendering": 0.14, "palette_tone": 0.12, "line_shape": 0.19, "texture_material": 0.14, "graphic_language": 0.19, "source_fidelity": 0.03, "technical": 0.02}, {"medium_rendering": 0.14, "palette_tone": 0.12, "line_shape": 0.19, "texture_material": 0.14, "graphic_language": 0.19, "source_fidelity": 0.03, "technical": 0.02}, {"medium_rendering": 0.14, "palette_tone": 0.12, "line_shape": 0.19, "texture_material": 0.14, "graphic_language": 0.19, "source_fidelity": 0.03, "technical": 0.02}],
+  "loss": {"medium_rendering": 0.14, "palette_tone": 0.12, "line_shape": 0.19, "texture_material": 0.14, "graphic_language": 0.19, "source_fidelity": 0.03, "technical": 0.02},
+  "evidence": {"medium_rendering": ["The chair, bottle, and plant are redrawn in a crisp cel-shaded editorial illustration medium."], "palette_tone": ["The warm off-white ground, navy, teal, coral, mustard, and gold system is visibly applied."], "line_shape": ["Crisp navy contouring and fine gold orbits appear, while large color support shapes stay brush-led rather than panel-led."], "texture_material": ["Paper texture and restrained dry-brush/overprint irregularity are present."], "graphic_language": ["A square poster hierarchy has broad color fields, centered focal chair, and sparse fine ornaments."], "source_fidelity": ["Exactly one yellow chair, one blue bottle, and one potted plant are retained."], "technical": ["The object edges are coherent and the square output is sharp; no readable or pseudo-readable text is visible."]},
+  "dominant_transferable_differences": ["Add more sharply bounded geometric panels to complement the brush marks."],
+  "confidence": 0.91
+}

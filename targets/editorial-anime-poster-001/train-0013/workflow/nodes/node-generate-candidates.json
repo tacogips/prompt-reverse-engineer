@@ -1,0 +1,12 @@
+{
+  "id": "generate-candidates",
+  "description": "Generate N candidates from the reconstructed text prompt and source image only; target/style truth is forbidden as a generation input.",
+  "nodeType": "agent",
+  "executionBackend": "codex-agent",
+  "model": "gpt-5.6-terra",
+  "promptTemplateFile": "prompts/generate-candidates.md",
+  "variables": {},
+  "output": {
+    "description": "Return JSON with the round and exact candidate artifact paths."
+  }
+}

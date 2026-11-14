@@ -1,0 +1,23 @@
+{
+  "workflowInput": {
+    "requestedWork": "Train a reusable prompt that renders the supplied person in the supplied editorial anime poster style.",
+    "targetDir": "targets/editorial-anime-poster-001",
+    "trainDir": "train-0001",
+    "styleReference": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "personReference": "targets/editorial-anime-poster-001/input/person-reference.png",
+    "candidatesPerRound": 4,
+    "maxRefinementRounds": 3,
+    "targetLoss": 0.15,
+    "acceptanceCriteria": [
+      "The selected image preserves the person reference identity.",
+      "The selected image matches the style reference without copying its person's identity.",
+      "The judge loss is at or below the target, or the workflow exits honestly at the configured maximum round."
+    ],
+    "constraints": [
+      "Use repository-relative paths in persisted artifacts.",
+      "Use the built-in image generation tool, not an API or CLI fallback.",
+      "Preserve all candidates and raw judge evidence.",
+      "Do not alter truth or input images."
+    ]
+  }
+}

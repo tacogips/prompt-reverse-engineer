@@ -1,0 +1,18 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "judge_config": "targets/editorial-anime-poster-001/train-0010/judge/config.json",
+  "target_candidate_order": "style_truth_then_candidate",
+  "aggregation": "component_wise_median",
+  "repeats": [
+    {"repeat": 1, "loss": {"medium_rendering": 0.08, "palette_tone": 0.1, "line_shape": 0.08, "texture_material": 0.12, "graphic_language": 0.08, "source_fidelity": 0.08, "technical": 0.02}},
+    {"repeat": 2, "loss": {"medium_rendering": 0.08, "palette_tone": 0.1, "line_shape": 0.08, "texture_material": 0.12, "graphic_language": 0.08, "source_fidelity": 0.08, "technical": 0.02}},
+    {"repeat": 3, "loss": {"medium_rendering": 0.08, "palette_tone": 0.1, "line_shape": 0.08, "texture_material": 0.12, "graphic_language": 0.08, "source_fidelity": 0.08, "technical": 0.02}}
+  ],
+  "loss": {"medium_rendering": 0.08, "palette_tone": 0.1, "line_shape": 0.08, "texture_material": 0.12, "graphic_language": 0.08, "source_fidelity": 0.08, "technical": 0.02},
+  "palette_sub_losses": {"overall_palette": 0.1, "skin_treatment": 0.08, "hair_treatment": 0.08, "clothing_treatment": 0.09},
+  "conditional_checks": {"typography_dialogue": {"applicable": true, "loss": 0.02, "spelling_adherence": true, "unrequested_text": false, "evidence": ["STYLE IS RELATIVE is clearly legible in the upper headline area with a bold editorial brush-display treatment."]}},
+  "evidence": {"medium_rendering": ["The vertical poster uses polished anime cel-shading with clean opaque print-like planes."], "palette_tone": ["Source-relative skin, brown tied-back hair, black suit, and white shirt are retained while harmonized with navy, coral, teal, and gold."], "line_shape": ["Crisp navy contouring and gold orbit lines support the figure without copying the teacher geometry."], "texture_material": ["Warm paper grain, speckling, and dry-brush fields are clear but the overprint texture remains somewhat orderly."], "graphic_language": ["The lower-two-thirds figure, upper headline field, opaque support layers, and sparse ornament make an effective editorial hierarchy."], "source_fidelity": ["The person's glasses, hairstyle, facial identity, suit, and shirt are retained; the changed upward-pointing pose is explicitly authorized."], "technical": ["Anatomy is coherent and the only readable text is the requested headline." ]},
+  "dominant_transferable_differences": ["Add a little more imperfect overprint and fine ink nuance while retaining the clean exact-text hierarchy."],
+  "confidence": 0.89
+}

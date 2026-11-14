@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "judge_version": "source-style-judge-v2",
+  "judge_config": "targets/editorial-anime-poster-001/train-0007/judge/config.json",
+  "original_resolution_assessed": true,
+  "loss": { "source_fidelity": 0.04, "style_fidelity": 0.18, "text_adherence": 0.0, "technical": 0.02 },
+  "assertions": { "exact_text": "SIT WITH COLOR", "exact_text_occurrences": 1, "additional_text": false, "no_pseudo_text": true, "object_count_preserved": true },
+  "evidence": ["The headline reads exactly SIT WITH COLOR once, clearly and without substitution, omission, or additional readable or pseudo-readable text.", "One mustard-yellow chair, one cobalt-blue bottle, and one plant in a white pot are preserved.", "The visible off-white ground, cyan/navy/coral/yellow fields, ink outlines, and print-like texture match the transferable editorial style; object geometry and resolution are clean."],
+  "confidence": 0.95
+}

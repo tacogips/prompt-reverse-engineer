@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "round": 1,
+  "phase": "output",
+  "lossFunctionVersion": "style-inversion-v3-ensemble-v1",
+  "styleComponentMaxLoss": 0.25,
+  "candidatesPerRound": 2,
+  "maxRefinementRounds": 1,
+  "targetLoss": 0.18,
+  "validationTargetLoss": 0.3,
+  "validationWorstCaseLoss": 0.4,
+  "testTargetLoss": 0.32,
+  "testWorstCaseLoss": 0.42,
+  "maxGeneralizationGap": 0.1,
+  "bestCandidate": null,
+  "bestLoss": null,
+  "parentTrainDir": "train-0011",
+  "sourceReference": {
+    "path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+    "size": 296435,
+    "width": 1160,
+    "height": 1412,
+    "format": "JPEG"
+  },
+  "styleReferenceSet": {
+    "canonicalFile": "targets/editorial-anime-poster-001/train-0014/style-reference-set.json",
+    "sha256": "805f0db0aec28aa2f7a74819d572c501a8a2406106de0f159b82ba929cabfc39",
+    "size": 870,
+    "serialization": "jq -ceS with final newline",
+    "records": [
+      { "path": "targets/editorial-anime-poster-001/truth/style-reference.png", "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f" },
+      { "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-01.jpg", "sha256": "71fe06642b4bc4753b97625ac48f593afb8bb33ded7090142c63b0289be4b1c8" },
+      { "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-02.jpg", "sha256": "349d5d960041ced65faf5513b54a417c5f8fdf5cadf0753d8c3f4f8cd9d17540" },
+      { "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-03.jpg", "sha256": "f5f576a601b9c507747a687460f3002319420a17908e41604c7f5c72c26d8d2b" },
+      { "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-04.jpg", "sha256": "40788ca42d71559e9720d7d3067a4242f63487501e78eb428a602bd92fc50896" }
+    ]
+  },
+  "sealedManifests": {
+    "validation": { "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json", "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8", "size": 3043, "contentsOpened": false },
+    "test": { "path": "targets/editorial-anime-poster-001/test/sealed-test-0014.json", "sha256": "5006d3933a5218db6746836986e2f15345e1d48777e91e2d63726fa880744022", "size": 2163, "contentsOpened": false }
+  },
+  "feedbackFiles": [
+    { "path": "targets/editorial-anime-poster-001/feedback/feedback-0001.json", "sha256": "eda20f0f0b83d6fa9d09da1f538c9a71be6d330e84ce09d2c805900439208c00", "size": 2032, "feedbackId": "feedback-0001" },
+    { "path": "targets/editorial-anime-poster-001/feedback/feedback-0002.json", "sha256": "b23526bd2e44b53140fbc7dd4b70cca7eb938036b20443e79a2b44bfb4c0ce0d", "size": 1430, "feedbackId": "feedback-0002" },
+    { "path": "targets/editorial-anime-poster-001/feedback/feedback-0003.json", "sha256": "7a35acbb1037ed3525ea3e7d588d0b72f6a0699d151f5ec1c49f368fa4bcc4eb", "size": 1441, "feedbackId": "feedback-0003" },
+    { "path": "targets/editorial-anime-poster-001/feedback/feedback-0004.json", "sha256": "6113c64312786971ce45ffe0652c274c15b6803bbe4b17c0c369b131e027d743", "size": 1315, "feedbackId": "feedback-0004" }
+  ],
+  "workflowSnapshot": {
+    "path": "targets/editorial-anime-poster-001/train-0014/workflow",
+    "generationRecordContract": { "path": "targets/editorial-anime-poster-001/train-0014/workflow/generation-record-contract.json", "sha256": "18ac13345342fb49bfe600b5160d78ee350a22f5ec955119d974150363d16138", "size": 4274 },
+    "styleReferenceSetHelper": { "path": "targets/editorial-anime-poster-001/train-0014/workflow/scripts/compute-style-reference-set-hash.sh", "sha256": "faf2967cb894efb851ba5d35935d512b2efd919ed6b80ab1429ce634e712b6ef", "size": 1204, "executable": true }
+  },
+  "startedAt": "2026-08-18T03:26:07Z",
+  "exitReason": "generation_tool_terminal_failure",
+  "generationFailure": {
+    "round": 1,
+    "candidate": "rounds/round-0001/candidates/candidate-001",
+    "attemptEvidence": "targets/editorial-anime-poster-001/train-0014/rounds/round-0001/candidates/candidate-001/attempts/attempt-001.json",
+    "failureClass": "generation_tool_terminal_failure",
+    "sourceBindingContaminated": false,
+    "retryPermitted": false
+  },
+  "review": {
+    "reviewedAt": "2026-08-18T03:40:47Z",
+    "status": "failed",
+    "reason": "No realized candidate image exists after a terminal image-generation moderation block; training, frozen validation, and sealed test gates cannot be evaluated.",
+    "generationProvenancePreflight": "passed",
+    "styleReferenceSetVerification": "passed",
+    "sealedManifestContentsOpenedDuringFailedRun": false
+  },
+  "completedAt": "2026-08-18T03:40:47Z",
+  "updatedAt": "2026-08-18T03:40:47Z"
+}

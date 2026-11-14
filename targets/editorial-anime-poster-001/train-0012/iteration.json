@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "iteration": 12,
+  "parent_iteration": 11,
+  "status": "failed",
+  "started_at": "2026-08-18T01:39:43Z",
+  "completed_at": "2026-08-18T02:41:18Z",
+  "hypothesis": "Recurring evidence across five same-prompt truth images will yield a more transferable style model than a singleton truth.",
+  "workflow_family": "multi-truth-component-median-style-inversion",
+  "workflow_revision": "pre-explicit-source-binding",
+  "judge_revision": "style-inversion-v3-ensemble-v1",
+  "selected_candidate": null,
+  "exit_reason": "source_binding_contaminated"
+}

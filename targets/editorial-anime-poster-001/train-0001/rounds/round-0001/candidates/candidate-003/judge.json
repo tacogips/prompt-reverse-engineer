@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.17,
+    "semantic": 0.015,
+    "composition": 0.11,
+    "color": 0.07,
+    "style": 0.19,
+    "technical": 0.02
+  },
+  "evidence": {
+    "identity": ["The candidate retains a masculine tan-skinned subject with black close-sided hair, pronounced brows, brown eyes, a straight nose, and a leftward three-quarter pose from the person truth.", "The chin, cheek planes, and eye direction are more stylized and less specifically aligned to the source photo than the closest candidate."],
+    "semantic": ["One clear male editorial portrait fills the vertical poster and no non-transferable source woman, jewelry, or readable words appear."],
+    "composition": ["The visible large colored discs, tall rules, blocks, broad shoulders, and negative-space layout are consistent with the transferable editorial arrangement.", "The lower-right oversized circle competes with the portrait more than the reference's figure-dominant lower composition."],
+    "color": ["The cream, coral, mustard, teal, and navy palette is preserved with substantial contrast.", "Mustard dominates more strongly and the color accents are less interwoven with the portrait than in the style truth."],
+    "style": ["The candidate includes clean cel shading, navy outlines, distressed speckles, and brush gestures characteristic of the supplied poster.", "It has comparatively uniform digital shading and simpler hair and garment illustration than the reference."],
+    "technical": ["The rendered anatomy, facial placement, and edges are clean and intact at native resolution; no artifacts, watermark, or malformed text are visible."]
+  },
+  "dominant_differences": ["Reduce the competing lower-right circle.", "More closely preserve the photographed facial planes and upward eye direction.", "Increase lineweight and texture variety in the portrait and clothing."],
+  "confidence": 0.92
+}

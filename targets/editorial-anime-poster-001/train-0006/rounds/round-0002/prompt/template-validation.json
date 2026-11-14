@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "contract_version": "reusable-style-transfer-v2",
+  "prompt_path": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/prompt/prompt.md",
+  "prompt_sha256": "3cb3612d3c0c59fa4abed41709c1482e1152d6391d08d483d35bd3ae7991b69d",
+  "normalization": {
+    "rewritten": true,
+    "reason": "Inserted the contract-required safety-and-integrity literal clause verbatim. The remaining prompt uses only generic reference-driven invariants and transferable style language."
+  },
+  "required_role_checks": {
+    "style_reference_image_1_only": {
+      "passed": true,
+      "evidence": "Image 1 is limited to reusable visual language and explicitly excludes depicted content."
+    },
+    "source_reference_image_2_exclusive_content_authority": {
+      "passed": true,
+      "evidence": "Image 2 is explicitly the exclusive authority for depicted content and identity, including unspecified visible detail and scene structure."
+    },
+    "unspecified_source_attributes_preserved": {
+      "passed": true,
+      "evidence": "The prompt requires preservation of unspecified source-controlled attributes and forbids replacing or simplifying visible source details through stylization."
+    }
+  },
+  "optional_field_checks": {
+    "pose": {
+      "passed": true,
+      "behavior": "Overrides only the requested pose or viewpoint."
+    },
+    "composition": {
+      "passed": true,
+      "behavior": "Overrides only requested framing, crop, placement, or layout."
+    },
+    "text": {
+      "passed": true,
+      "behavior": "Renders supplied text exactly and only verbatim; absent text prohibits text-like marks."
+    },
+    "additional": {
+      "passed": true,
+      "behavior": "Applies only an explicit, narrowly scoped change."
+    }
+  },
+  "required_literal_clause_checks": [
+    {
+      "clause": "Perform only a benign, non-sexual artistic style transformation; do not introduce nudity, sexualization, age changes, violence, injury, or other unsafe content.",
+      "exact_presence": true
+    }
+  ],
+  "suspected_subject_specific_clauses": [],
+  "forbidden_subject_specific_clause_count": 0,
+  "style_clause_inventory": [
+    "illustration medium",
+    "framing language",
+    "palette relationships",
+    "contour and mark-making quality",
+    "abstract graphic vocabulary",
+    "print/brush texture",
+    "graphic treatment"
+  ],
+  "complexity_statistics": {
+    "word_count": 383,
+    "style_clause_count": 7,
+    "optional_instruction_field_count": 4,
+    "subject_specific_clause_count_before_normalization": 0,
+    "subject_specific_clause_count_after_normalization": 0
+  },
+  "optional_instruction_precedence_check": {
+    "passed": true,
+    "declared_order": [
+      "safety_and_integrity",
+      "explicit_optional_instructions",
+      "source_content_and_identity_preservation",
+      "style_transfer_defaults"
+    ],
+    "evidence": "Each optional field remains scoped to its named attribute; source detail and scene structure remain preserved unless an explicit optional instruction overrides the relevant property."
+  },
+  "status": "passed"
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "failure_kind": "incomplete_required_judging_and_provenance",
+  "prompt_sha256": "5d36046b9f55c28d0766db8b2256bd3297afe77dbac7f1b9e784a4c5c0cd4638",
+  "validation_manifest": {
+    "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "bytes": 3043
+  },
+  "source_hashes": [
+    "71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9",
+    "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1"
+  ],
+  "case_coverage": ["baseline", "pose", "composition", "text"],
+  "aggregate_validation_loss": null,
+  "worst_case_loss": null,
+  "generalization_gap": null,
+  "pass": false,
+  "reasons": ["Required per-case generation.json, five-reference judge.json, and recomputed metrics.json records are not all complete; no loss is claimed."]
+}

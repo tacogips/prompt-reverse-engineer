@@ -1,0 +1,54 @@
+{
+  "workflowInput": {
+    "requestedWork": "Re-run prompt inversion with the immutable primary truth plus four additional images generated from the same original hidden prompt. Infer only visual language recurring across the five-image truth set, use train-0011 evidence to retain source-relative semantic-region and exact-text policies, and correct its effective-prompt provenance defects. Keep all truth images analysis-and-judge-only and validate the frozen prompt on a fresh one-shot source.",
+    "targetDir": "targets/editorial-anime-poster-001",
+    "trainDir": "train-0012",
+    "parentTrainDir": "train-0011",
+    "feedbackFiles": [
+      "targets/editorial-anime-poster-001/feedback/feedback-0001.json",
+      "targets/editorial-anime-poster-001/feedback/feedback-0002.json"
+    ],
+    "styleReference": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "styleReferences": [
+      "targets/editorial-anime-poster-001/truth/style-reference.png",
+      "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-01.jpg",
+      "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-02.jpg",
+      "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-03.jpg",
+      "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-04.jpg"
+    ],
+    "sourceReference": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "optionalInstructions": {},
+    "lossFunctionVersion": "style-inversion-v3-ensemble-v1",
+    "styleComponentMaxLoss": 0.25,
+    "candidatesPerRound": 3,
+    "maxRefinementRounds": 2,
+    "targetLoss": 0.18,
+    "validationTargetLoss": 0.3,
+    "validationWorstCaseLoss": 0.4,
+    "testTargetLoss": 0.32,
+    "testWorstCaseLoss": 0.42,
+    "maxGeneralizationGap": 0.1,
+    "validationManifest": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sealedTestManifest": "targets/editorial-anime-poster-001/test/sealed-test-0012.json",
+    "acceptanceCriteria": [
+      "The style model distinguishes five-image recurrence from per-image subject, wording, palette choice, pose, crop, objects, and concrete layout.",
+      "Every training, validation, and test judge record contains per-reference style losses for all five truth images and aggregates each style component by median.",
+      "Every feedback item remains traceable and passes its independent semantic-region, typography, or provenance gate.",
+      "Every generation-provenance-v2 record hashes the immutable base prompt, exact effective prompt bytes sent to the tool, and canonical optional-instruction JSON separately.",
+      "Every generation receives exactly one source_reference image and contains no truth-set path, member hash, set hash, or truth/style role.",
+      "The final prompt is self-contained text, preserves arbitrary source identity and content, and requires no target or style-reference image at generation time.",
+      "Frozen validation and the fresh garden-workbench one-shot test prove baseline transfer, optional composition, exact-text adherence, and absence of unrequested text."
+    ],
+    "constraints": [
+      "Use exact-path allowlisted reads only before validation; do not inventory target, validation, test, or prior-train directories.",
+      "Use repository-relative paths in persisted artifacts.",
+      "Use the built-in image generation tool.",
+      "Treat train-0011 evidence as research evidence, not as unquestioned truth.",
+      "Do not modify prior iteration evidence or the existing truth manifest.",
+      "All five target/style truth images are analysis-and-judge-only and forbidden as generation inputs.",
+      "Do not open validationManifest before validate-transferability.",
+      "Do not open sealedTestManifest before audit-generalization.",
+      "Do not compare style-inversion-v3-ensemble-v1 losses numerically with singleton style-inversion-v3 or earlier versions, and do not update the singleton-regime best.json without recalibration."
+    ]
+  }
+}

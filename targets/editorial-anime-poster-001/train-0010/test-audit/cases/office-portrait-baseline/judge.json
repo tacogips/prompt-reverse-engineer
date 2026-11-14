@@ -1,0 +1,18 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "judge_config": "targets/editorial-anime-poster-001/train-0010/judge/config.json",
+  "target_candidate_order": "style_truth_then_candidate",
+  "aggregation": "component_wise_median",
+  "repeats": [
+    {"repeat": 1, "loss": {"medium_rendering": 0.08, "palette_tone": 0.1, "line_shape": 0.09, "texture_material": 0.12, "graphic_language": 0.1, "source_fidelity": 0.08, "technical": 0.03}},
+    {"repeat": 2, "loss": {"medium_rendering": 0.08, "palette_tone": 0.1, "line_shape": 0.09, "texture_material": 0.12, "graphic_language": 0.1, "source_fidelity": 0.08, "technical": 0.03}},
+    {"repeat": 3, "loss": {"medium_rendering": 0.08, "palette_tone": 0.1, "line_shape": 0.09, "texture_material": 0.12, "graphic_language": 0.1, "source_fidelity": 0.08, "technical": 0.03}}
+  ],
+  "loss": {"medium_rendering": 0.08, "palette_tone": 0.1, "line_shape": 0.09, "texture_material": 0.12, "graphic_language": 0.1, "source_fidelity": 0.08, "technical": 0.03},
+  "palette_sub_losses": {"overall_palette": 0.1, "skin_treatment": 0.08, "hair_treatment": 0.09, "clothing_treatment": 0.1},
+  "conditional_checks": {"typography_dialogue": {"applicable": false, "loss": null, "spelling_adherence": null, "unrequested_text": false, "evidence": ["No readable or pseudo-readable text is visible."]}},
+  "evidence": {"medium_rendering": ["The image uses crisp cel-shaded planes and opaque print-like color separation."], "palette_tone": ["Warm paper, navy, teal, coral, and gold are cohesive while skin, brown hair, and dark suit remain source-relative."], "line_shape": ["Dark variable contours and fine gold orbital ornament are clean and graphic."], "texture_material": ["Paper grain, speckling, and dry-brush support fields are visible, though overprint irregularity is restrained."], "graphic_language": ["Asymmetric teal, coral, navy, and pale support fields create a transferable editorial hierarchy."], "source_fidelity": ["The source person's glasses, tied-back brown hair, black suit, white shirt, crossed arms, and broad studio framing remain recognizable."], "technical": ["No obvious anatomy defects, unreadable marks, or unrequested text are visible."]},
+  "dominant_transferable_differences": ["Increase subtle imperfect overprint and fine tapered strand nuance without reducing source fidelity."],
+  "confidence": 0.87
+}

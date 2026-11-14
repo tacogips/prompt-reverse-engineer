@@ -1,0 +1,22 @@
+[
+  {
+    "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+  },
+  {
+    "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-01.jpg",
+    "sha256": "71fe06642b4bc4753b97625ac48f593afb8bb33ded7090142c63b0289be4b1c8"
+  },
+  {
+    "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-02.jpg",
+    "sha256": "349d5d960041ced65faf5513b54a417c5f8fdf5cadf0753d8c3f4f8cd9d17540"
+  },
+  {
+    "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-03.jpg",
+    "sha256": "f5f576a601b9c507747a687460f3002319420a17908e41604c7f5c72c26d8d2b"
+  },
+  {
+    "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-04.jpg",
+    "sha256": "40788ca42d71559e9720d7d3067a4242f63487501e78eb428a602bd92fc50896"
+  }
+]

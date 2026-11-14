@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "feedback_id": "feedback-0004",
+  "source_iteration": "train-0013",
+  "summary": "Explicit local source binding fixed the recent-image contamination and produced source-faithful training and validation images. Review then found nondeterministic style-set serialization, while the combined validation generation-and-ensemble-judging node exhausted its agent execution window.",
+  "items": [
+    {
+      "id": "canonical-style-set-helper",
+      "category": "artifact_integrity.style_reference_set",
+      "requirement": "Create and verify the ordered style-reference-set hash only with the checked-in helper using jq -ceS and a final newline; never serialize it ad hoc.",
+      "required_probe": "The five known records must hash to 805f0db0aec28aa2f7a74819d572c501a8a2406106de0f159b82ba929cabfc39."
+    },
+    {
+      "id": "split-validation-generation-and-judging",
+      "category": "workflow_control.validation_budget",
+      "requirement": "Generate and provenance-check the four frozen validation cases in one node, then perform five-reference ensemble judging in a separate node that never regenerates or reopens the manifest.",
+      "required_probe": "The success mock must execute generate-validation-cases before validate-transferability and complete eleven nodes."
+    }
+  ]
+}

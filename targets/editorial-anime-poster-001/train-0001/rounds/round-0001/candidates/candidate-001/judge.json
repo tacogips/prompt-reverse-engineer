@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.14,
+    "semantic": 0.015,
+    "composition": 0.08,
+    "color": 0.06,
+    "style": 0.18,
+    "technical": 0.02
+  },
+  "evidence": {
+    "identity": ["The candidate depicts a young adult man with warm tan skin, short textured black hair with close sides, strong dark brows, brown almond eyes, a defined nose and jaw, and a leftward gaze matching the person truth.", "The illustrated cheek, nose, and jaw proportions are slightly more idealized and the gaze is less upward-directed than the photo."],
+    "semantic": ["A single masculine head-and-shoulders editorial illustration is clearly present.", "The image contains no female identity, jewelry, source-specific outfit, or readable typography from the style truth."],
+    "composition": ["The tall poster uses a dominant close portrait, left-facing three-quarter pose, oversized discs, vertical rules, dark blocks, and balanced cream negative space.", "The portrait is more centered and the shoulder treatment is less asymmetric than the style truth."],
+    "color": ["Deep navy contours and garment blocks, teal, coral, mustard yellow, cream, and high-contrast layered fields closely match the transferable palette.", "The candidate has less coral and teal integration within the hair and figure than the style truth."],
+    "style": ["Crisp dark contouring, cel-like face shading, printed speckles, dry-brush marks, and graphic poster layering visibly adopt the reference's editorial language.", "The face is more smooth digital portrait rendering, with less delicate line variation, energetic hair accents, and complex illustrative garment detail."],
+    "technical": ["Facial features, ear, hairline, and clothing edges are coherent at full resolution, with no duplicated anatomy, watermark, or garbled text."]
+  },
+  "dominant_differences": ["Introduce finer varied ink lines and colored accent strands in the hair.", "Make the upward-left gaze more explicit while retaining the source facial geometry.", "Increase the asymmetrical editorial garment and layered brush-detail complexity without importing source-specific clothing."],
+  "confidence": 0.93
+}

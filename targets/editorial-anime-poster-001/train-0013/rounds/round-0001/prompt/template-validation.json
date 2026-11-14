@@ -1,0 +1,83 @@
+{
+  "schema_version": 2,
+  "contract_schema_version": 3,
+  "contract_id": "prompt-only-style-reconstruction-v1",
+  "contract_file": "targets/editorial-anime-poster-001/train-0013/workflow/prompt-template-contract.json",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0013/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "5d36046b9f55c28d0766db8b2256bd3297afe77dbac7f1b9e784a4c5c0cd4638",
+  "status": "passed",
+  "sole_source_role_check": {
+    "passed": true,
+    "declared_generation_role": "source_reference",
+    "prompt_binding": "Image 1 is the arbitrary source reference and the exclusive authority for depicted content and identity."
+  },
+  "forbidden_generation_role_check": {
+    "passed": true,
+    "forbidden_roles": ["style_reference", "style_truth", "target_reference"],
+    "style_image_required": false,
+    "style_image_mentions": []
+  },
+  "optional_instruction_fields": {
+    "declared": ["pose", "composition", "text", "additional"],
+    "all_supported": true,
+    "text_behavior": "Supplied text is rendered exactly once verbatim; absent text renders no text or pseudo-text."
+  },
+  "suspected_source_specific_clauses": [
+    {
+      "text": "age, anatomy, object count, geometry, hairstyle, clothing, garment construction, markings, logos, pose, crop, and scene",
+      "disposition": "allowed generic source-preservation list; it asserts no observed attribute or source content"
+    },
+    {
+      "text": "skin, hair, and clothing treatment",
+      "disposition": "allowed target-derived relative semantic-region rendering; it fixes no literal source or teacher trait"
+    }
+  ],
+  "subject_specific_clause_count": 0,
+  "forbidden_clause_count": 0,
+  "textual_style_clause_inventory": {
+    "medium_rendering": ["polished editorial anime poster illustration", "opaque two-to-three-step cel-shaded planes", "screen-print-like color separation"],
+    "palette_tone": ["limited warm-paper poster-print relationship", "deep-navy or deep-teal anchors", "coordinated teal/cyan, coral/magenta, yellow/orange, and restrained ochre/gold accents", "source-preserved literal color identity with relative value grouping"],
+    "contrast_lighting": ["controlled cel shadows, highlights, and small highlight planes", "high-contrast editorial display ink"],
+    "line_mark_quality": ["decisive variable-weight deep-navy ink contours", "sparse tapered fine strokes", "dark seam and edge anchors"],
+    "texture_material": ["warm paper grain", "restrained screen-print speckling", "halftone or stipple", "imperfect overprint edges", "sparse paint flecks", "selective dry-brush interruptions"],
+    "graphic_language": ["broad opaque abstract discs, blocks, wedges, rules, halftone fields, brush sweeps, arcs, dots, and connectors", "fine dot, orbital-line, halftone, or brush ornament"],
+    "composition_defaults": ["adaptable asymmetric editorial hierarchy", "generous usable negative-space rhythm", "graphics frame or support source-controlled focal content without fixed geometry or placement"],
+    "semantic_region_treatment": ["source-preserved skin, hair, and clothing identities receive relative cel-shading, value blocks, accents, contours, print facets, and grain without fixed literal colors"]
+  },
+  "required_literal_exact_checks": [
+    {
+      "clause": "Perform only a benign, non-sexual artistic style transformation; do not introduce nudity, sexualization, age changes, violence, injury, or other unsafe content.",
+      "present_verbatim": true
+    },
+    {
+      "clause": "The source reference is the only image input available at generation time.",
+      "present_verbatim": true
+    }
+  ],
+  "precedence_check": {
+    "passed": true,
+    "order": ["safety_and_integrity", "explicit_optional_instructions", "source_content_and_identity_preservation", "textual_style_specification"],
+    "evidence": "The prompt scopes each optional field to its named attribute, preserves unspecified source attributes, and makes style composition defaults yield to source control."
+  },
+  "checks": {
+    "required_image_role_only_source_reference": true,
+    "required_literal_clauses_verbatim": true,
+    "self_contained_style_text": true,
+    "style_image_not_required_or_mentioned": true,
+    "optional_pose_composition_text_additional_exposed": true,
+    "no_text_when_absent": true,
+    "exact_text_when_supplied": true,
+    "source_relative_skin_hair_clothing_treatment": true,
+    "teacher_or_source_content_hard_coding": false
+  },
+  "complexity_statistics": {
+    "line_count": 21,
+    "word_count": 542,
+    "byte_count": 4111,
+    "positive_prompt_paragraphs": 6,
+    "negative_prompt_terms": 14,
+    "required_literal_clause_count": 2,
+    "forbidden_clause_count": 0
+  },
+  "validated_at": "2026-08-18T02:56:45Z"
+}

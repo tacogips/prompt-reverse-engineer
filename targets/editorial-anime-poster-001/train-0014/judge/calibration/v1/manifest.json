@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "style-inversion-v3-ensemble-v1",
+  "judge_prompt_file": "targets/editorial-anime-poster-001/train-0014/judge/prompt.md",
+  "judge_prompt_sha256": "5fd91d64332cba9cc99ce757e0f7b014c0e67314b2b021ef613219cb84e3e30c",
+  "actual_repeat_count": 1,
+  "assessed_at": "2026-08-18T03:35:00Z",
+  "assessments": [
+    {"id":"target-self-match","inputs":{"style_truth":"targets/editorial-anime-poster-001/truth/style-reference.png","candidate":"targets/editorial-anime-poster-001/truth/style-reference.png"},"expected_relation":"identical image has zero reusable-style loss","observed_component_losses":{"medium_rendering":0,"palette_tone":0,"line_shape":0,"texture_material":0,"graphic_language":0},"evidence":["Same saved image is compared to itself; all visible transferable style attributes coincide."],"pass":true},
+    {"id":"source-self-match","inputs":{"source_truth":"targets/editorial-anime-poster-001/input/source-child.jpeg","candidate":"targets/editorial-anime-poster-001/input/source-child.jpeg"},"expected_relation":"identical image has zero source-fidelity and technical loss","observed_component_losses":{"source_fidelity":0,"technical":0},"evidence":["Same saved image is compared to itself; identity, content, crop, and technical condition coincide."],"pass":true},
+    {"id":"unstyled-source-cross-domain","inputs":{"style_truth":"targets/editorial-anime-poster-001/truth/style-reference.png","source_truth":"targets/editorial-anime-poster-001/input/source-child.jpeg","candidate":"targets/editorial-anime-poster-001/input/source-child.jpeg"},"expected_relation":"unaltered photograph preserves source but is an obvious mismatch for the editorial-print style","observed_component_losses":{"medium_rendering":0.98,"palette_tone":0.79,"line_shape":0.95,"texture_material":0.93,"graphic_language":0.88,"source_fidelity":0,"technical":0},"evidence":["Candidate is continuous-tone photography rather than bounded anime print planes.","Candidate lacks navy illustration contours, warm-paper support fields, print grain, and editorial ornament while still preserving the source exactly."],"pass":true},
+    {"id":"order-swap-check","inputs":{"style_truth":"targets/editorial-anime-poster-001/truth/style-reference.png","candidate":"targets/editorial-anime-poster-001/input/source-child.jpeg"},"expected_relation":"swapping presentation labels must not change the visible mismatch conclusion","observed_component_losses":{"medium_rendering":0.98,"palette_tone":0.79,"line_shape":0.95,"texture_material":0.93,"graphic_language":0.88},"evidence":["The same style mismatch remains when image presentation order is swapped; the labels, not position, define roles."],"pass":true}
+  ],
+  "status": "passed",
+  "pass_criteria": "self comparisons are zero; obvious photo-to-editorial cross-domain mismatch is high for all five style dimensions; order-swap conclusion is unchanged"
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "evidence_id": "same-prompt-2026-08-18",
+  "relationship": "Generated with the same original hidden prompt as the immutable primary style truth.",
+  "images": [
+    {
+      "file": "style-sample-01.jpg",
+      "role": "same_prompt_style_evidence",
+      "width": 1122,
+      "height": 1402,
+      "format": "JPEG",
+      "sha256": "71fe06642b4bc4753b97625ac48f593afb8bb33ded7090142c63b0289be4b1c8"
+    },
+    {
+      "file": "style-sample-02.jpg",
+      "role": "same_prompt_style_evidence",
+      "width": 1054,
+      "height": 1492,
+      "format": "JPEG",
+      "sha256": "349d5d960041ced65faf5513b54a417c5f8fdf5cadf0753d8c3f4f8cd9d17540"
+    },
+    {
+      "file": "style-sample-03.jpg",
+      "role": "same_prompt_style_evidence",
+      "width": 1122,
+      "height": 1402,
+      "format": "JPEG",
+      "sha256": "f5f576a601b9c507747a687460f3002319420a17908e41604c7f5c72c26d8d2b"
+    },
+    {
+      "file": "style-sample-04.jpg",
+      "role": "same_prompt_style_evidence",
+      "width": 1122,
+      "height": 1402,
+      "format": "JPEG",
+      "sha256": "40788ca42d71559e9720d7d3067a4242f63487501e78eb428a602bd92fc50896"
+    }
+  ]
+}

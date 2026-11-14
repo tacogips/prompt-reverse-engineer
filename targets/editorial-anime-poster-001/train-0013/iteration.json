@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "iteration": 13,
+  "parent_iteration": 11,
+  "status": "failed",
+  "started_at": "2026-08-18T02:49:33Z",
+  "completed_at": "2026-08-18T03:18:39Z",
+  "hypothesis": "Five-image same-prompt ensemble inversion with explicit local source binding will recover transferable editorial-anime poster language without recent-image contamination.",
+  "workflow_family": "analyze-generate-select-refine-loop",
+  "workflow_revision": "targets/editorial-anime-poster-001/train-0013/workflow/workflow.json",
+  "judge_revision": "style-inversion-v3-ensemble-v1",
+  "selected_candidate": "rounds/round-0001/candidates/candidate-001",
+  "exit_reason": "style_truth_set_hash_provenance_mismatch_and_transferability_validation_failed"
+}

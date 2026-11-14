@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "style_model_version": "editorial-anime-poster-style-v1",
+  "evidence": {
+    "style_reference": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "analysis_scope": "transferable visual language only"
+  },
+  "dimensions": {
+    "medium_rendering": {
+      "observations": [
+        "Polished editorial anime/fashion-poster illustration.",
+        "Opaque flat-to-gently-graded cel-shaded form planes.",
+        "Crisp vector-like color edges combined with precise hand-inked detail."
+      ],
+      "transferable_rule": "Convert the source into a refined editorial anime illustration with controlled cel-shaded planes and crisp, print-like color separation.",
+      "prompt_clauses": [
+        "refined editorial anime poster illustration",
+        "clean flat-to-gently-graded cel shading",
+        "crisp print-like color separation and high-resolution ink detail"
+      ],
+      "confidence": 0.94,
+      "leakage_blacklist": [
+        "target subject identity", "target portrait crop", "target head direction", "target accessories", "target garment"
+      ]
+    },
+    "palette_tone": {
+      "observations": [
+        "Constrained ink navy, blue-teal, coral pink, mustard yellow, warm off-white, and sparse gold accents.",
+        "Graphic complementary blocks with pale negative space and dark navy anchors.",
+        "Warm accents read as matte ink/overprint, not as glossy metal."
+      ],
+      "transferable_rule": "Use a saturated, screen-print-like teal/navy/coral/mustard palette on a warm off-white ground, with restrained gold accent marks and graphic tonal contrast.",
+      "prompt_clauses": [
+        "limited ink-navy, blue-teal, coral-pink, mustard-yellow, and warm off-white palette",
+        "sparse matte-gold accent lines and dots",
+        "bold graphic contrast with airy pale negative space",
+        "clearly bounded opaque teal, coral-pink, and mustard support fields with firm print edges and limited dry-brush interruption"
+      ],
+      "confidence": 0.97,
+      "leakage_blacklist": [
+        "target color-field positions", "target color-field sizes", "target background geometry", "target scene"
+      ]
+    },
+    "line_shape": {
+      "observations": [
+        "Variable-weight near-navy ink contours taper into fine energetic strands.",
+        "Large circles, panels, stripes, and diagonal bands provide an abstract scaffold.",
+        "Fine orbital/constellation-like line-and-dot ornament overlays larger shapes."
+      ],
+      "transferable_rule": "Pair elegant variable-weight dark ink drawing with adaptable oversized geometric support shapes and fine linear ornament.",
+      "prompt_clauses": [
+        "elegant variable-weight deep-navy ink contours with tapered expressive strokes",
+        "adaptable abstract circles, panels, and diagonal color bands",
+        "fine gold line-and-dot orbital ornament"
+      ],
+      "confidence": 0.92,
+      "leakage_blacklist": [
+        "target hair strands", "target facial geometry", "target circles' exact geometry", "target panel layout", "target pose"
+      ]
+    },
+    "texture_material": {
+      "observations": [
+        "Warm paper stock remains visible beneath color.",
+        "Subtle grain, pinprick flecks, paint splatter, dry-brush sweeps, and imperfect overprint edges are selective.",
+        "Texture supports, rather than obscures, legibility."
+      ],
+      "transferable_rule": "Add restrained tactile paper and screen-print distress with sparse dry-brush and flecked marks while retaining clear source detail.",
+      "prompt_clauses": [
+        "warm off-white paper grain",
+        "restrained screen-print speckling, imperfect overprint edges, and sparse paint flecks",
+        "occasional dry-brush sweeps that do not obscure the source"
+      ],
+      "confidence": 0.90,
+      "leakage_blacklist": [
+        "target-specific brushstroke trajectories", "target-specific splatter placement", "target clothing texture", "target scene texture"
+      ]
+    },
+    "graphic_language": {
+      "observations": [
+        "Asymmetric editorial hierarchy alternates a source-controlled focal form, oversized color blocks, and breathing room.",
+        "Opaque geometric layers, painterly passes, fine ornament, and sparse splatter form a print hierarchy.",
+        "Vertical poster rhythm is present without requiring an exact target composition."
+      ],
+      "transferable_rule": "Use adaptable asymmetric editorial balance with a deliberate broad-field, focal-form, and fine-ornament print hierarchy while preserving source composition by default.",
+      "prompt_clauses": [
+        "asymmetric editorial poster balance with generous negative-space rhythm",
+        "a deliberate three-level print hierarchy: broad opaque color fields, the source-controlled focal form, then sparse fine orbital line-and-dot accents",
+        "strong print hierarchy without copied geometry or placement"
+      ],
+      "confidence": 0.88,
+      "leakage_blacklist": [
+        "target text and language", "target logo", "target exact layout", "target crop", "target object arrangement", "target scene"
+      ]
+    }
+  },
+  "global_leakage_blacklist": [
+    "teacher subject and identity", "teacher objects", "teacher readable text", "teacher pose", "teacher camera crop", "teacher exact composition", "teacher concrete layout", "teacher scene", "training-source content or appearance", "held-out-source content or appearance"
+  ],
+  "generation_constraint": "The textual style specification is self-contained. Generation receives exactly one image with role source_reference and never receives a truth or style image."
+}

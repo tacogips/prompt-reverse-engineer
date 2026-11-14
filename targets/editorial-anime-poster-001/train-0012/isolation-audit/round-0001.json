@@ -1,0 +1,178 @@
+{
+  "schema_version": 2,
+  "round": "round-0001",
+  "session_id": "prompt-reverse-train-session-30",
+  "audited_at": "2026-08-18T01:50:23Z",
+  "audited_step_executions": [
+    {
+      "step_id": "intake-or-plan",
+      "execution_id": "intake-or-plan-attempt-1-exec-1",
+      "status": "completed",
+      "created_at": "2026-08-18T01:38:45Z",
+      "completed_at": "2026-08-18T01:41:29Z"
+    },
+    {
+      "step_id": "analyze-images",
+      "execution_id": "analyze-images-attempt-1-exec-2",
+      "status": "completed",
+      "created_at": "2026-08-18T01:41:29Z",
+      "completed_at": "2026-08-18T01:46:37Z"
+    },
+    {
+      "step_id": "generalize-prompt",
+      "execution_id": "generalize-prompt-attempt-1-exec-3",
+      "status": "completed",
+      "created_at": "2026-08-18T01:46:37Z",
+      "completed_at": "2026-08-18T01:48:23Z"
+    },
+    {
+      "step_id": "audit-input-isolation",
+      "execution_id": "audit-input-isolation-attempt-1-exec-4",
+      "status": "running",
+      "created_at": "2026-08-18T01:48:23Z"
+    }
+  ],
+  "manifests": {
+    "validation": {
+      "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+      "recorded_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "fresh_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "recorded_size": 3043,
+      "hash_matches": true,
+      "contents_opened_by_audit": false
+    },
+    "sealed_test": {
+      "path": "targets/editorial-anime-poster-001/test/sealed-test-0012.json",
+      "recorded_sha256": "bd9cd3e91491eabb1a0501c5433a99fd311a9e75547b149d24384befdf34c1bc",
+      "fresh_sha256": "bd9cd3e91491eabb1a0501c5433a99fd311a9e75547b149d24384befdf34c1bc",
+      "recorded_size": 2090,
+      "hash_matches": true,
+      "contents_opened_by_audit": false
+    }
+  },
+  "style_truth_set": {
+    "members": [
+      {
+        "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "recorded_sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f",
+        "fresh_sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f",
+        "hash_matches": true
+      },
+      {
+        "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-01.jpg",
+        "recorded_sha256": "71fe06642b4bc4753b97625ac48f593afb8bb33ded7090142c63b0289be4b1c8",
+        "fresh_sha256": "71fe06642b4bc4753b97625ac48f593afb8bb33ded7090142c63b0289be4b1c8",
+        "hash_matches": true
+      },
+      {
+        "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-02.jpg",
+        "recorded_sha256": "349d5d960041ced65faf5513b54a417c5f8fdf5cadf0753d8c3f4f8cd9d17540",
+        "fresh_sha256": "349d5d960041ced65faf5513b54a417c5f8fdf5cadf0753d8c3f4f8cd9d17540",
+        "hash_matches": true
+      },
+      {
+        "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-03.jpg",
+        "recorded_sha256": "f5f576a601b9c507747a687460f3002319420a17908e41604c7f5c72c26d8d2b",
+        "fresh_sha256": "f5f576a601b9c507747a687460f3002319420a17908e41604c7f5c72c26d8d2b",
+        "hash_matches": true
+      },
+      {
+        "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-04.jpg",
+        "recorded_sha256": "40788ca42d71559e9720d7d3067a4242f63487501e78eb428a602bd92fc50896",
+        "fresh_sha256": "40788ca42d71559e9720d7d3067a4242f63487501e78eb428a602bd92fc50896",
+        "hash_matches": true
+      }
+    ],
+    "set_serialization": "canonical JSON of the ordered members array, UTF-8, compact keys sorted",
+    "recorded_set_sha256": "805f0db0aec28aa2f7a74819d572c501a8a2406106de0f159b82ba929cabfc39",
+    "fresh_set_sha256": "805f0db0aec28aa2f7a74819d572c501a8a2406106de0f159b82ba929cabfc39",
+    "set_hash_matches": true
+  },
+  "prompt_template_validation": {
+    "prompt_path": "targets/editorial-anime-poster-001/train-0012/rounds/round-0001/prompt/prompt.md",
+    "prompt_sha256_from_template_validation": "c04673e2be2344a528d67e84c230570d48f6f7cba3b5f8cecf08720fe074c7f8",
+    "fresh_prompt_sha256": "c04673e2be2344a528d67e84c230570d48f6f7cba3b5f8cecf08720fe074c7f8",
+    "template_validation_path": "targets/editorial-anime-poster-001/train-0012/rounds/round-0001/prompt/template-validation.json",
+    "fresh_template_validation_sha256": "cf989b98b4e06354a01266ce8af883cabed447e88897f52f191247bb079729fa",
+    "validation_status": "passed",
+    "prompt_hash_matches": true
+  },
+  "runtime_input_check": {
+    "record_source": ".riela/sessions/runtime-records/runtime-message-log.sqlite:cli_workflow_sessions.runtimeVariables",
+    "runtime_variable_top_level_keys": [
+      "workflowInput"
+    ],
+    "workflow_input_contains_validation_manifest_path": true,
+    "workflow_input_contains_sealed_test_manifest_path": true,
+    "workflow_input_contains_manifest_hashes": false,
+    "forbidden_inline_case_or_fixture_keys_present": [],
+    "paths_only": true
+  },
+  "access_events": [
+    {
+      "order": 1,
+      "step_id": "intake-or-plan",
+      "execution_id": "intake-or-plan-attempt-1-exec-1",
+      "evidence": "intake-evidence.json and state.json record both manifest paths, SHA-256 values, byte sizes, and contentsOpened:false",
+      "resource_scope": "current validation and sealed-test manifest metadata only",
+      "classification": "allowed",
+      "reason": "Intake is authorized to check existence and record hash and size without opening contents."
+    },
+    {
+      "order": 2,
+      "step_id": "analyze-images",
+      "execution_id": "analyze-images-attempt-1-exec-2",
+      "evidence": "session execution evidence contains no manifest, fixture, runtime-snapshot, session-log, run-config, or intake-evidence access event; its accepted payload names only analysis, prompt, judge, and calibration artifacts",
+      "resource_scope": "current validation/test manifests and fixtures",
+      "classification": "allowed",
+      "reason": "No prohibited access is evidenced before validation."
+    },
+    {
+      "order": 3,
+      "step_id": "generalize-prompt",
+      "execution_id": "generalize-prompt-attempt-1-exec-3",
+      "evidence": "session execution evidence contains no manifest, fixture, run-config, intake-evidence, runtime-snapshot, or session-log access event; its accepted payload names only prompt and template-validation artifacts",
+      "resource_scope": "current validation/test manifests and fixtures",
+      "classification": "allowed",
+      "reason": "No prohibited access is evidenced before validation."
+    },
+    {
+      "order": 4,
+      "step_id": "audit-input-isolation",
+      "execution_id": "audit-input-isolation-attempt-1-exec-4",
+      "evidence": "fresh SHA-256 computations were performed on both manifest byte streams without parsing or opening their JSON contents",
+      "resource_scope": "current validation and sealed-test manifest bytes",
+      "classification": "allowed",
+      "reason": "This audit step is explicitly authorized to hash, but not open, the sealed manifests."
+    },
+    {
+      "order": 5,
+      "step_id": "generate-candidates",
+      "execution_id": null,
+      "evidence": "no generate-candidates execution or generation call exists in this session; the sole pre-generation settings record declares exactly one source_reference input and no realized candidate generation record exists",
+      "resource_scope": "style-truth set paths, member hashes, set hash, and image roles",
+      "classification": "allowed",
+      "reason": "No generation input exists yet; the preflight policy permits only source_reference. Forbidden role names appear only as a rejection policy, not as supplied inputs."
+    }
+  ],
+  "generation_separation_check": {
+    "generation_calls_observed": 0,
+    "realized_generation_records_observed": 0,
+    "shared_generation_record": "targets/editorial-anime-poster-001/train-0012/rounds/round-0001/prompt/generation.json",
+    "declared_input_image_count": 1,
+    "declared_input_image_role": "source_reference",
+    "truth_member_path_or_hash_in_supplied_input": false,
+    "style_truth_set_hash_in_supplied_input": false,
+    "truth_or_style_role_in_supplied_input": false,
+    "passed": true
+  },
+  "checks": {
+    "no_prohibited_access": true,
+    "validation_manifest_hash_unchanged": true,
+    "sealed_test_manifest_hash_unchanged": true,
+    "runtime_input_paths_only": true,
+    "prompt_template_validation_hash_matches": true,
+    "generation_separation_passed": true
+  },
+  "status": "passed"
+}

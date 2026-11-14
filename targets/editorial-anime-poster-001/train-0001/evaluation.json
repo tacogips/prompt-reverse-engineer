@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "iteration": 1,
+  "status": "failed",
+  "selected_candidate": "rounds/round-0001/candidates/candidate-001",
+  "rounds_executed": 1,
+  "configured_max_refinement_rounds": 3,
+  "configured_target_loss": 0.15,
+  "workflow_exit_reason": "target_loss_reached",
+  "exit_reason": "verification_failed",
+  "selection_rule": "lowest_total_loss_then_candidate_id",
+  "total_loss": 0.1105,
+  "reward": 0.8895,
+  "previous_best_loss": null,
+  "absolute_improvement": null,
+  "relative_improvement": null,
+  "is_new_best": false,
+  "judge_version": "80418297c36f21277861589325ebed27544c7e22655c2a0a71236dc6b563306f",
+  "verification": {
+    "passed_checks": [
+      "All four candidate image files exist inside the project and decode as PNG files.",
+      "Each candidate image SHA-256 matches its generation record.",
+      "All candidate component losses are within [0, 1].",
+      "Weighted totals and rewards recompute exactly from judge/config.json weights.",
+      "candidate-001 is the deterministic lowest-loss round winner and global best.",
+      "target_loss_reached agrees with 0.1105 <= 0.15 at round 1 of 3.",
+      "Training JSON artifacts parse and the persisted Riela workflow validates."
+    ],
+    "failed_checks": [
+      "Missing required target metadata: target.json.",
+      "Missing required immutable truth manifest: truth/manifest.json.",
+      "Missing required judge calibration version: judge/config.json has calibration_suite set to null."
+    ]
+  }
+}

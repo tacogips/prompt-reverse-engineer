@@ -1,0 +1,124 @@
+{
+  "schema_version": 2,
+  "contract_schema_version": 3,
+  "contract_id": "prompt-only-style-reconstruction-v1",
+  "prompt_path": "targets/editorial-anime-poster-001/train-0012/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "c04673e2be2344a528d67e84c230570d48f6f7cba3b5f8cecf08720fe074c7f8",
+  "base_prompt_file": "targets/editorial-anime-poster-001/train-0012/rounds/round-0001/prompt/prompt.md",
+  "base_prompt_sha256": "c04673e2be2344a528d67e84c230570d48f6f7cba3b5f8cecf08720fe074c7f8",
+  "sole_source_role_check": {
+    "required_image_roles": [
+      "source_reference"
+    ],
+    "image_1_declared_as_source_reference": true,
+    "source_is_exclusive_content_and_identity_authority": true,
+    "passed": true
+  },
+  "forbidden_generation_role_check": {
+    "forbidden_roles": [
+      "style_reference",
+      "style_truth",
+      "target_reference"
+    ],
+    "forbidden_role_mentions_or_requirements": [],
+    "requires_style_image_at_generation": false,
+    "passed": true
+  },
+  "optional_instruction_fields": [
+    "pose",
+    "composition",
+    "text",
+    "additional"
+  ],
+  "required_literal_clause_results": [
+    {
+      "clause": "Perform only a benign, non-sexual artistic style transformation; do not introduce nudity, sexualization, age changes, violence, injury, or other unsafe content.",
+      "present_verbatim": true
+    },
+    {
+      "clause": "The source reference is the only image input available at generation time.",
+      "present_verbatim": true
+    }
+  ],
+  "suspected_source_specific_clauses": [],
+  "source_specific_clause_dispositions": [],
+  "forbidden_clause_count": 0,
+  "textual_style_clause_inventory": {
+    "medium_rendering": [
+      "polished editorial anime poster illustration",
+      "crisp opaque cel-shaded value planes",
+      "print-like color separation"
+    ],
+    "palette_tone": [
+      "limited warm-paper, deep-navy, teal/cyan, coral-or-orange, yellow/ochre, and restrained muted-gold poster-print relationship",
+      "source-relative value grouping, cel shadows, highlights, contours, and print-facet behavior"
+    ],
+    "contrast_lighting": [
+      "coherent cel-shaded light, restrained shadow, and narrow highlight planes",
+      "high-contrast editorial display ink"
+    ],
+    "line_mark_quality": [
+      "precise variable-weight deep-navy ink",
+      "sparse tapered loose strokes",
+      "tapered navy contour"
+    ],
+    "texture_material": [
+      "warm paper grain",
+      "screen-print speckling",
+      "imperfect overprint edges",
+      "sparse paint flecks and dry-brush interruptions"
+    ],
+    "graphic_vocabulary": [
+      "broad opaque abstract support fields, cropped discs or blocks, fine rules, arcs, dots, halftone clusters, connectors, and restrained brush sweeps"
+    ],
+    "default_composition": [
+      "adaptable asymmetric editorial hierarchy around source-controlled content"
+    ],
+    "semantic_regions": [
+      "skin uses source-preserving cel-shaded light, shadow, highlight, and containment planes without a fixed skin tone",
+      "hair retains source silhouette and literal color identity while receiving relative accent planes and contour",
+      "clothing retains the source garment and literal color identity while receiving restrained fold-following facets and print treatment"
+    ],
+    "conditional_typography": [
+      "supplied text is rendered exactly once, verbatim, as the only readable or pseudo-readable lettering",
+      "absent text renders no readable or pseudo-readable text"
+    ]
+  },
+  "precedence_check": {
+    "declared_order": [
+      "safety_and_integrity",
+      "explicit_optional_instructions",
+      "source_content_and_identity_preservation",
+      "textual_style_specification"
+    ],
+    "optional_instructions_outrank_style_defaults": true,
+    "unspecified_attributes_remain_source_controlled": true,
+    "passed": true
+  },
+  "complexity_statistics": {
+    "line_count": 23,
+    "word_count": 507,
+    "byte_count": 3958,
+    "positive_prompt_paragraph_count": 6,
+    "required_literal_clause_count": 2,
+    "optional_field_count": 4,
+    "suspected_source_specific_clause_count": 0
+  },
+  "checks": {
+    "self_contained_textual_style": true,
+    "requires_style_reference_at_generation": false,
+    "source_is_exclusive_content_authority": true,
+    "preserves_unspecified_source_attributes": true,
+    "semantic_region_rules_are_source_relative": true,
+    "conditional_text_only": true,
+    "absent_text_renders_none": true,
+    "exact_text_single_instance_only": true,
+    "optional_instruction_precedence_declared": true,
+    "subject_specific_clause_count": 0,
+    "forbidden_clause_count": 0,
+    "teacher_wording_or_language_copied": false,
+    "teacher_content_or_layout_copied": false
+  },
+  "status": "passed",
+  "validated_at": "2026-08-18T01:47:13Z"
+}

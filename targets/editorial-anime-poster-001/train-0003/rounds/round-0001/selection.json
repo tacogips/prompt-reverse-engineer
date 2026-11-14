@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "round": 1,
+  "selection_rule": "lowest_total_loss_then_candidate_id",
+  "judge_version": "judge-v3-style-identity-provenance",
+  "calibration_status": "provisional_passed",
+  "candidates": [
+    {
+      "candidate_id": "candidate-001",
+      "path": "targets/editorial-anime-poster-001/train-0003/rounds/round-0001/candidates/candidate-001",
+      "total_loss": 0.0875
+    },
+    {
+      "candidate_id": "candidate-002",
+      "path": "targets/editorial-anime-poster-001/train-0003/rounds/round-0001/candidates/candidate-002",
+      "total_loss": 0.0885
+    },
+    {
+      "candidate_id": "candidate-003",
+      "path": "targets/editorial-anime-poster-001/train-0003/rounds/round-0001/candidates/candidate-003",
+      "total_loss": 0.0815
+    },
+    {
+      "candidate_id": "candidate-004",
+      "path": "targets/editorial-anime-poster-001/train-0003/rounds/round-0001/candidates/candidate-004",
+      "total_loss": 0.0785
+    }
+  ],
+  "round_winner": "targets/editorial-anime-poster-001/train-0003/rounds/round-0001/candidates/candidate-004",
+  "global_best_before_round": null,
+  "global_best_loss_before_round": null,
+  "global_best_after_round": "targets/editorial-anime-poster-001/train-0003/rounds/round-0001/candidates/candidate-004",
+  "global_best_loss_after_round": 0.0785,
+  "retained_global_best": "round_winner",
+  "target_loss": 0.08,
+  "target_reached": true
+}

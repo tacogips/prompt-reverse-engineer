@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_source_truth_candidate",
+  "judge": {
+    "loss_function_version": "judge-v4-source-fidelity-style-transfer",
+    "prompt_sha256": "e1b430e07aa4fc53bca95f66083632b3954d96e97bab55691fe2752d97f99803",
+    "model": "gpt-5.6-terra",
+    "temperature": 0,
+    "repeat": 1,
+    "assessed_at": "2026-08-14T07:11:58Z"
+  },
+  "inputs": {
+    "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "candidate": "targets/editorial-anime-poster-001/train-0005/rounds/round-0001/candidates/candidate-001/image.png"
+  },
+  "loss": {
+    "source_fidelity": 0.16,
+    "semantic": 0.05,
+    "composition": 0.12,
+    "color": 0.10,
+    "style": 0.11,
+    "technical": 0.05
+  },
+  "evidence": {
+    "source_fidelity": ["The same seated child, right-facing gaze, short dark hair, and extended near arm are retained.", "The shirt graphic and its original gray-to-yellow-black appearance are substantially replaced by abstract colored blocks."],
+    "semantic": ["There is one child in the same tiled setting with no borrowed figure, accessories, or objects from the style truth."],
+    "composition": ["The close vertical crop and right-facing seated pose follow the source.", "The oversized yellow disc and broad geometric background fields impose more poster layout than the source framing."],
+    "color": ["Cream ground, teal, yellow, coral, navy, and distressed gold accents closely follow the style truth palette relationships."],
+    "style": ["Clean dark anime contours, flat cel-like planes, brush marks, speckling, and bold circles convincingly transfer the poster visual language.", "The rendering is less ornate in hair and fine decorative linework than the style truth."],
+    "technical": ["Edges, facial anatomy, hands, and tiles are coherent at the delivered resolution.", "No added readable or pseudo-readable typography is visible." ]
+  },
+  "dominant_differences": ["Preserve more of the source shirt's graphic and color structure.", "Keep the source framing less dominated by added poster geometry.", "Add the style truth's finer ornamental linework without importing its content."],
+  "confidence": 0.94
+}

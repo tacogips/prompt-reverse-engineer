@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "images": [
+    {
+      "file": "style-reference.png",
+      "role": "style",
+      "width": 1023,
+      "height": 1537,
+      "format": "PNG",
+      "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 4,
+  "resolved_at": "2026-08-18T01:42:28Z",
+  "items": [
+    {
+      "feedback_id": "feedback-0001",
+      "id": "skin-color-treatment",
+      "disposition": "implemented",
+      "teacher_evidence": "Across the portrait-containing references, skin is represented by luminous source-relative light planes, restrained warmer shadow bands, narrow highlights, and selective dark containment.",
+      "source_preserving_rule": "Preserve source skin identity; transfer only relative cel-shaded light, shadow, highlight, and contour grouping.",
+      "affected_style_model_path": "dimensions.palette_tone.semantic_regions.skin",
+      "exact_prompt_clauses": ["render visible skin as source-preserved coherent cel-shaded light, shadow, and narrow highlight planes with selective deep-navy contour", "never assign a fixed skin tone or change source identity"],
+      "validation_probe": "Frozen held-out baseline with visible skin; independently record skin_treatment and aggregate palette_tone as the maximum of its four sub-losses."
+    },
+    {
+      "feedback_id": "feedback-0001",
+      "id": "hair-color-treatment",
+      "disposition": "implemented",
+      "teacher_evidence": "Hair-bearing references show coherent value grouping, restrained relative cool/warm accents, and tapered dark containment while the literal colors and silhouettes differ.",
+      "source_preserving_rule": "Preserve source hair color, silhouette, arrangement, and identity; transfer only value grouping, restrained relative accents, and contour behavior.",
+      "affected_style_model_path": "dimensions.palette_tone.semantic_regions.hair",
+      "exact_prompt_clauses": ["group hair in its source-preserved silhouette and literal color identity into controlled value blocks with restrained relative cool and warm accent planes and tapered navy contour", "do not alter hairstyle, hair color, or hair identity"],
+      "validation_probe": "Frozen held-out baseline with visible hair; independently record hair_treatment and aggregate palette_tone as the maximum of its four sub-losses."
+    },
+    {
+      "feedback_id": "feedback-0001",
+      "id": "clothing-color-treatment",
+      "disposition": "implemented",
+      "teacher_evidence": "References use garment-like interlocking value facets, dark seam anchors, controlled accent edges, and mild print texture, but their garments and colors differ materially.",
+      "source_preserving_rule": "Retain the source garment silhouette, construction, markings, logos, and literal color identity; allow only restrained fold-following source-relative print facets.",
+      "affected_style_model_path": "dimensions.palette_tone.semantic_regions.clothing",
+      "exact_prompt_clauses": ["treat clothing as the same source garment: retain its silhouette, construction, markings, logos, and literal color identity", "add only restrained source-relative flat print facets following existing folds, with dark seam and edge anchors, sparse harmonizing accent edges, and subtle overprint grain", "do not replace, redesign, recolor wholesale, obscure, or remove source garments, markings, or logos"],
+      "validation_probe": "Frozen held-out baseline with visible clothing; independently record clothing_treatment, aggregate palette_tone by maximum, and fail any changed or obscured garment marking/logo."
+    },
+    {
+      "feedback_id": "feedback-0001",
+      "id": "typography-dialogue-treatment",
+      "disposition": "implemented",
+      "teacher_evidence": "Several references use readable high-contrast editorial display lettering with elegant strokes and sparse line/dot ornament; wording, script, amount, and placement vary.",
+      "source_preserving_rule": "Only caller-supplied exact text authorizes lettering; render it once verbatim, preserve spelling, render no other readable or pseudo-readable text, and never reuse reference wording or language.",
+      "affected_style_model_path": "dimensions.graphic_language.typography_dialogue",
+      "exact_prompt_clauses": ["only when optional text is supplied, render exactly that verbatim string once as the only readable or pseudo-readable lettering", "use readable high-contrast editorial display ink with elegant calligraphic/display-like strokes, adaptive orientation, open-space placement, and sparse dot/line ornament", "do not add any other readable word, pseudo-word, subtitle, article, decorative lexeme, duplicate, or teacher wording/script/language"],
+      "validation_probe": "Frozen authorized exact-text case; separately score typography_dialogue, exact spelling, one-instance count, and absence of unrequested text."
+    },
+    {
+      "feedback_id": "feedback-0002",
+      "id": "exact-text-no-extra-lexeme",
+      "disposition": "implemented",
+      "teacher_evidence": "Reference lettering establishes a display-ink treatment only; it does not authorize copying words, adding captions, or introducing pseudo-words.",
+      "source_preserving_rule": "Optional exact text is the sole authorization for lettering; absent text means none. The supplied string must appear exactly once with no additional readable or pseudo-readable lexeme.",
+      "affected_style_model_path": "dimensions.graphic_language.typography_dialogue.prompt_clauses",
+      "exact_prompt_clauses": ["when text is absent, render no readable or pseudo-readable text", "when text is supplied, render exactly the caller-provided string once and render no other readable word, pseudo-word, subtitle, article, decorative lexeme, or duplicated fragment"],
+      "validation_probe": "Fresh sealed baseline no-text and combined-optional exact-text cases; independent typography, spelling, one-instance, and no-unrequested-text gates."
+    },
+    {
+      "feedback_id": "feedback-0002",
+      "id": "deterministic-effective-prompt-provenance",
+      "disposition": "implemented",
+      "teacher_evidence": "This is an artifact-integrity requirement, not a visual characteristic; train-0011 review documented malformed empty and non-empty effective prompt assembly.",
+      "source_preserving_rule": "Freeze the base prompt bytes. For empty instructions, use the identical base file; for non-empty instructions, append only the contract's two-newline header plus canonical compact key-sorted JSON and final newline.",
+      "affected_style_model_path": "artifact_integrity.effective_prompt",
+      "exact_prompt_clauses": ["Optional instructions are not prose substitutions: append only canonical authorized JSON using the generation-provenance-v2 deterministic suffix."],
+      "validation_probe": "Byte-level prefix/suffix verification and SHA-256 recomputation for empty and non-empty optional instruction cases before generation records are accepted."
+    }
+  ]
+}

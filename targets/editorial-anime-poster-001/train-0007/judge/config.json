@@ -1,0 +1,26 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "source-style-judge-v2",
+  "provider": "openai",
+  "model": "gpt-5.6-terra",
+  "temperature": 0,
+  "repeats": 3,
+  "aggregation": "component_wise_median",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0007/judge/prompt.md",
+  "prompt_sha256": "1b31fe0e0aed4d5da1bba8acd60a182a9eaf10f5b7f8365c82dca7c857b4a892",
+  "calibration_suite": "targets/editorial-anime-poster-001/train-0007/judge/calibration/v1/manifest.json",
+  "weights": {
+    "source_fidelity": 0.3,
+    "semantic": 0.1,
+    "composition": 0.15,
+    "color": 0.15,
+    "style": 0.25,
+    "technical": 0.05
+  },
+  "input_contract": {
+    "style_truth_role": "judge_only",
+    "source_truth_role": "judge_only",
+    "candidate_role": "judge_only",
+    "target_candidate_order_bias_check_required": true
+  }
+}

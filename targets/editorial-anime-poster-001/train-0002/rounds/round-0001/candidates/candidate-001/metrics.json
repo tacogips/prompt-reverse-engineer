@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "candidate_id": "candidate-001",
+  "target_files": [
+    "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "targets/editorial-anime-poster-001/input/person-reference.png"
+  ],
+  "loss": {
+    "total": 0.09325,
+    "identity": 0.13,
+    "semantic": 0.01,
+    "composition": 0.07,
+    "color": 0.03,
+    "style": 0.15,
+    "technical": 0.015
+  },
+  "reward": 0.90675,
+  "evaluators": [
+    {
+      "name": "prompt-as-a-judge",
+      "version": "judge-v2-style-identity",
+      "raw_output_file": "judge.json"
+    }
+  ]
+}

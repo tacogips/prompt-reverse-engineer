@@ -1,0 +1,54 @@
+{
+  "schema_version": 2,
+  "iteration": 13,
+  "selected_candidate": "rounds/round-0001/candidates/candidate-001",
+  "rounds_executed": 1,
+  "selection_rule": "lowest_total_loss_among_contract_and_provenance_eligible_candidates_then_candidate_id",
+  "training_loss": 0.117,
+  "validation_loss": null,
+  "test_loss": null,
+  "reward": 0.883,
+  "generalization_gap": null,
+  "validation_test_gap": null,
+  "validation_case_coverage": [
+    "baseline",
+    "pose",
+    "composition",
+    "text"
+  ],
+  "test_case_coverage": [],
+  "promotion_eligible": false,
+  "is_new_best": false,
+  "exit_reason": "style_truth_set_hash_provenance_mismatch_and_transferability_validation_failed",
+  "failure_diagnostics": [
+    {
+      "id": "style_truth_set_hash_provenance_mismatch",
+      "severity": "blocking",
+      "recorded_field": "state.styleReferenceSetSha256",
+      "recorded_value": "179c6ac99cf6cc0dc80b69c2d422c0d8252eb1f228c78c6494f83cc938bbac99",
+      "fresh_value": "805f0db0aec28aa2f7a74819d572c501a8a2406106de0f159b82ba929cabfc39",
+      "algorithm": "sha256(UTF-8 jq -cS ordered array of {path,sha256} plus final newline)",
+      "evidence": "The recorded value equals the compact JSON serialization without its required final newline. The isolation audit repeats the same stale value while claiming the stated algorithm.",
+      "effect": "Truth-set provenance cannot pass; promotion is rejected."
+    },
+    {
+      "id": "transferability_validation_failed",
+      "severity": "blocking",
+      "evidence": "transferability/evaluation.json records incomplete required five-reference judging and provenance, with null aggregate and worst-case loss.",
+      "effect": "Required held-out evidence, exact-text/no-text gates, disjoint-source proof, aggregate/worst-case thresholds, and train/validation gap are unavailable."
+    },
+    {
+      "id": "one_shot_test_skipped",
+      "severity": "blocking",
+      "evidence": "test-audit/evaluation.json is skipped_prerequisite_failed and records no test cases, losses, coverage, or validation/test gap.",
+      "effect": "No arbitrary-input or reusable-success claim is permitted."
+    },
+    {
+      "id": "incomplete_execution_evidence",
+      "severity": "blocking_for_independent_isolation_confirmation",
+      "evidence": "isolation-audit/round-0001.json states that no step-scoped session log or runtime snapshot was persisted for analyze-images. It asserts allowed access but does not independently prove all pre-validation/test nodes avoided manifest contents.",
+      "effect": "The reviewer cannot independently confirm the required manifest-access negative assertion."
+    }
+  ],
+  "verified_at": "2026-08-18T03:18:39Z"
+}

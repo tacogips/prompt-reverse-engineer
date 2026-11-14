@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "suite_id": "ensemble-style-inversion-calibration-v1",
+  "loss_function_version": "style-inversion-v3-ensemble-v1",
+  "judge_prompt_file": "targets/editorial-anime-poster-001/train-0012/judge/prompt.md",
+  "judge_prompt_sha256": "699c5da8291695aebfc4dc0b2d77c246582bc11ec147073387895b97eecfc3e2",
+  "actual_repeat_count": 1,
+  "timestamp": "2026-08-18T01:45:06Z",
+  "cases": [
+    {
+      "id": "target-self-match",
+      "inputs": {"style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png", "candidate": "targets/editorial-anime-poster-001/truth/style-reference.png"},
+      "expected_relation": "A reference compared to itself has zero observable reusable-style loss.",
+      "observed_component_losses": {"medium_rendering": 0.0, "palette_tone": 0.0, "line_shape": 0.0, "texture_material": 0.0, "graphic_language": 0.0},
+      "evidence": ["The same immutable pixel file was presented in both roles; its observed medium, palette relation, line, texture, and graphic language match exactly."],
+      "pass": true
+    },
+    {
+      "id": "source-self-match",
+      "inputs": {"source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg", "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"},
+      "expected_relation": "A source compared to itself has zero source-fidelity and technical loss.",
+      "observed_component_losses": {"source_fidelity": 0.0, "technical": 0.0},
+      "evidence": ["The same immutable pixel file preserves every visible source-controlled attribute and introduces no technical alteration."],
+      "pass": true
+    },
+    {
+      "id": "unstyled-source-cross-domain-mismatch",
+      "inputs": {"style_truth_set": ["targets/editorial-anime-poster-001/truth/style-reference.png", "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-01.jpg", "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-02.jpg", "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-03.jpg", "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-04.jpg"], "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg", "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"},
+      "expected_relation": "An unstyled photographic source preserves source content but has materially worse ensemble style loss than a self-match.",
+      "observed_component_losses": {"medium_rendering": 0.95, "palette_tone": 0.76, "line_shape": 0.91, "texture_material": 0.84, "graphic_language": 0.94, "source_fidelity": 0.0, "technical": 0.0},
+      "evidence": ["The candidate is a photograph rather than a cel-shaded editorial illustration.", "It lacks the recurring warm-paper poster field, opaque abstract support shapes, deep-ink contour system, print overmarking, and editorial hierarchy.", "Because candidate equals source, source content is preserved and no new technical defect is present."],
+      "pass": true
+    },
+    {
+      "id": "style-order-swap",
+      "inputs": {"style_truth": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-02.jpg", "candidate": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-03.jpg", "swapped_presentation": true},
+      "expected_relation": "Swapping presentation order does not change the reusable-style comparison rule or introduce target/candidate order bias.",
+      "observed_component_losses": {"medium_rendering": 0.08, "palette_tone": 0.14, "line_shape": 0.11, "texture_material": 0.12, "graphic_language": 0.13},
+      "evidence": ["Both images visibly share the inferred editorial anime, paper-print, dark-contour, texture, and asymmetric graphic language while differing in content and literal palette.", "The assessment labels style truth and candidate explicitly and ignore their subjects, text, and layouts in either presentation order."],
+      "pass": true
+    }
+  ],
+  "status": "passed",
+  "pass_criteria": "Self matches score zero on their applicable dimensions; the unstyled source is materially mismatched on all five style dimensions while retaining source fidelity; the order-swap check remains low for recurring style and follows the same role-separated rubric."
+}

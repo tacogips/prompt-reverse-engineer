@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "sealed_for_iteration": "train-0014",
+  "source": {
+    "file": "targets/editorial-anime-poster-001/test/source-bicycle-workshop-0013.png",
+    "sha256": "2294dbfb88fff54b860d01a73cee9f1233c2b6582899abc57d0779229709b0e3",
+    "width": 1536,
+    "height": 1024,
+    "format": "PNG"
+  },
+  "testCases": [
+    {
+      "id": "bicycle-workshop-baseline",
+      "type": "baseline",
+      "sourceReference": "targets/editorial-anime-poster-001/test/source-bicycle-workshop-0013.png",
+      "optionalInstructions": {},
+      "expected": {
+        "preserve": [
+          "one complete red city bicycle",
+          "two bicycle wheels",
+          "one floor pump",
+          "one open wooden crate",
+          "one coiled inner tube",
+          "two metal wrenches",
+          "one folded navy cloth",
+          "gray garage wall and floor",
+          "the source objects' spatial relationships"
+        ],
+        "text": null
+      }
+    },
+    {
+      "id": "bicycle-workshop-combined-optional",
+      "type": "combined_optional",
+      "sourceReference": "targets/editorial-anime-poster-001/test/source-bicycle-workshop-0013.png",
+      "optionalInstructions": {
+        "composition": "Use a square editorial poster composition with the complete red bicycle as the central anchor, both wheels fully visible, the floor pump on the left, and the crate, tools, inner tube, and navy cloth visible along the lower foreground.",
+        "text": "RIDE WITH CARE",
+        "additional": "Keep the scene unpopulated. Preserve every listed workshop object and render the supplied text exactly once with no other readable or pseudo-readable lettering."
+      },
+      "expectedText": "RIDE WITH CARE",
+      "expected": {
+        "aspect_ratio": "square poster",
+        "bicycle_position": "central anchor",
+        "preserve": [
+          "one complete red bicycle with two wheels",
+          "one floor pump on the left",
+          "one crate with one inner tube and two wrenches",
+          "one navy cloth",
+          "unpopulated garage scene"
+        ],
+        "exact_text_occurrences": 1,
+        "additional_text": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+# Workflow Input Contract
+
+`prompt-reverse-train` reconstructs a reusable textual image-generation style prompt. It does not describe the training source and does not require the target/style truth at inference time.
+
+## Required inputs
+
+- `targetDir`: repository-relative target directory.
+- `trainDir`: new immutable iteration directory name.
+- One of the following target/style-truth forms, used only for analysis and loss evaluation and forbidden as generation input:
+  - `styleReference`: one repository-relative image path (legacy-compatible form); or
+  - `styleReferences`: a non-empty array of distinct repository-relative image paths. When both forms are present, `styleReferences` is authoritative and must include the legacy `styleReference` path if that image remains part of the evidence set.
+- `sourceReference`: repository-relative training source. The legacy name `personReference` is accepted for old runs only.
+- `candidatesPerRound`, `maxRefinementRounds`, and `targetLoss`.
+- `validationTargetLoss`, `validationWorstCaseLoss`, `testTargetLoss`, `testWorstCaseLoss`, and `maxGeneralizationGap`.
+- `validationManifest`: repository-relative path to the frozen optimization-validation manifest.
+- `sealedTestManifest`: repository-relative path to the one-shot test manifest.
+
+## Optional research feedback
+
+`feedbackFiles` is an optional array of repository-relative JSON or Markdown files containing explicit human findings from earlier iterations. Intake verifies and hashes these files, analysis records how each finding changes the style model and prompt, and review requires every finding to be resolved, rejected with evidence, or deferred with a test requirement. Feedback is ordinary training evidence, not a sealed fixture.
+
+`parentTrainDir` optionally authorizes the previous iteration's exact state, analysis, evaluation, judge, feedback-resolution, and final-prompt files as research evidence. Nodes must open only the explicit allowlisted files and must not inventory prior directories. Historical validation/test findings recorded in those files may guide a later outer iteration only when it has a fresh sealed test set; referenced historical fixtures themselves remain closed during optimization.
+
+```json
+{
+  "feedbackFiles": [
+    "targets/example/feedback/feedback-0001.json"
+  ]
+}
+```
+
+Feedback must describe transferable behavior. A request to copy a teacher subject's literal identity, skin tone, hair color, garment, wording, or exact layout must be converted into a relative style rule or rejected as content leakage.
+
+## Optional generation instructions
+
+```json
+{
+  "optionalInstructions": {
+    "pose": null,
+    "composition": null,
+    "text": null,
+    "additional": null
+  }
+}
+```
+
+Every field is independently optional. `null` or absence means no override. `text` is verbatim: the output must contain exactly the supplied string and no additional text. Explicit instructions override only the named attribute; all unspecified source content remains invariant.
+
+Every candidate, validation, test, and final inference generation receives exactly one image: the corresponding `sourceReference`. The learned prompt text must carry the reconstructed style. Passing `styleReference` or its hash to the generator invalidates the run.
+
+For a multi-image truth set, intake hashes every member in declared order and stores a deterministic set hash over the canonical JSON array of `{path,sha256}` records. Analysis separates attributes recurring across the set from per-image content and stochastic variation. Training judging evaluates every candidate independently against every truth image, persists per-reference component losses, and uses the component-wise median as the aggregate style loss. `source_fidelity` remains a single comparison against the training source, and `technical` remains a single candidate-quality assessment. No truth-set member may enter `input_images` or any generation call.
+
+Use loss-function version `style-inversion-v3` for a singleton truth and `style-inversion-v3-ensemble-v1` for a multi-image truth set. The ensemble aggregation is a distinct measurement regime: do not compare its numeric losses directly with singleton-v3 history, and do not update a singleton-v3 `best.json` from an ensemble run without an explicitly recalibrated common regime.
+
+## Frozen optimization validation cases
+
+These cases may provide refinement feedback, but must not be embedded in ordinary workflow variables. The runtime input contains only `validationManifest`. Intake records its path, SHA-256, and size without opening it. Only `validate-transferability` may verify the hash and open it after the current prompt hash is frozen. Prompt-synthesis, analysis, generation, and training-judge nodes must not inspect its contents through the manifest, run configuration, intake evidence, runtime snapshots, or logs.
+
+```json
+{
+  "validationManifest": "targets/example/validation/sealed-validation-manifest.json"
+}
+```
+
+The frozen file uses at least two source hashes distinct from the training source and covers all four case types:
+
+```json
+{
+  "validationCases": [
+    {
+      "id": "heldout-a-baseline",
+      "type": "baseline",
+      "sourceReference": "targets/example/validation/source-a.png",
+      "optionalInstructions": {}
+    },
+    {
+      "id": "heldout-a-pose",
+      "type": "pose",
+      "sourceReference": "targets/example/validation/source-a.png",
+      "optionalInstructions": {
+        "pose": "repository fixture's predeclared pose instruction"
+      }
+    },
+    {
+      "id": "heldout-b-composition",
+      "type": "composition",
+      "sourceReference": "targets/example/validation/source-b.png",
+      "optionalInstructions": {
+        "composition": "repository fixture's predeclared composition instruction"
+      }
+    },
+    {
+      "id": "heldout-b-text",
+      "type": "text",
+      "sourceReference": "targets/example/validation/source-b.png",
+      "optionalInstructions": {
+        "text": "EXACT FIXTURE TEXT"
+      },
+      "expectedText": "EXACT FIXTURE TEXT"
+    }
+  ]
+}
+```
+
+Expected pose and composition assertions must be frozen in the case record before execution. Do not derive them from generated output.
+
+## Sealed one-shot test cases
+
+The normal workflow input contains only `sealedTestManifest`, a repository-relative path to a JSON file. Intake records its path, SHA-256, and size without opening it. The manifest must use at least one additional source hash that appears in neither training nor validation. Prompt synthesis, refinement, training judge, and validation nodes must not inspect it. Only `audit-generalization` may open and consume it, once, after optimization stops.
+
+```json
+{
+  "sealedTestManifest": "targets/example/test/sealed-test-manifest.json"
+}
+```
+
+The sealed file has this structure:
+
+```json
+{
+  "testCases": [
+    {
+      "id": "test-c-baseline",
+      "type": "baseline",
+      "sourceReference": "targets/example/test/source-c.png",
+      "optionalInstructions": {}
+    },
+    {
+      "id": "test-c-combined",
+      "type": "combined_optional",
+      "sourceReference": "targets/example/test/source-c.png",
+      "optionalInstructions": {
+        "pose": "sealed pose instruction",
+        "composition": "sealed composition instruction",
+        "text": "SEALED EXACT TEXT"
+      },
+      "expectedText": "SEALED EXACT TEXT"
+    }
+  ]
+}
+```
+
+An audit failure cannot route back to refinement. A later outer iteration may learn from it only after replacing the now-consumed test set with a newly sealed one.
+
+## Prototype escape hatch
+
+`allowUnvalidatedPrototype: true` permits workflow research without complete validation/test fixtures. Such a run is always non-promotable, cannot update `best.json`, and cannot report reusable or arbitrary-input success.

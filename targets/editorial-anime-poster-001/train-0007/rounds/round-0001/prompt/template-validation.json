@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "contract_id": "prompt-only-style-reconstruction-v1",
+  "contract_schema_version": 3,
+  "prompt_path": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "8b5c0b8d88d86154665bb11281c19992ddefea8bf98e4f7f029c7146c9972e5f",
+  "generation_metadata_path": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/prompt/generation.json",
+  "sole_source_role_check": {
+    "status": "passed",
+    "required_role": "source_reference",
+    "recorded_input_roles": [
+      "source_reference"
+    ],
+    "input_image_count": 1,
+    "detail": "The planned generation record has exactly one input image and its role is source_reference."
+  },
+  "forbidden_generation_role_check": {
+    "status": "passed",
+    "forbidden_roles": [
+      "style_reference",
+      "style_truth",
+      "target_reference"
+    ],
+    "recorded_input_roles": [
+      "source_reference"
+    ],
+    "forbidden_roles_found": []
+  },
+  "optional_instruction_fields": {
+    "supported": [
+      "pose",
+      "composition",
+      "text",
+      "additional"
+    ],
+    "status": "passed",
+    "exact_text_behavior": "text renders exactly the supplied verbatim characters and no other readable or pseudo-readable text; absent text produces no text-like marks."
+  },
+  "suspected_source_specific_clauses": [],
+  "forbidden_clause_count": 0,
+  "textual_style_clause_inventory": [
+    "contemporary anime-fashion editorial illustration medium",
+    "deep-navy variable-width ink contours and loose strand-like accent lines",
+    "pale cel-shaded planes and sharp graphic shadow facets",
+    "warm off-white lightly fibrous paper ground",
+    "saturated teal/cyan, deep navy, golden yellow, coral red, and pink palette",
+    "asymmetrical abstract overlays, discs, color fields, rules, dots, panels, and dry-brush arcs",
+    "sparse gold/ochre overprint and restrained ink/paint speckles",
+    "high chromatic contrast, clean silhouette separation, and controlled navy linework",
+    "screen-print registration irregularity and light dry-brush texture",
+    "bold portrait-poster crop and large subject scale as overrideable defaults"
+  ],
+  "required_literal_exact_checks": [
+    {
+      "clause": "Perform only a benign, non-sexual artistic style transformation; do not introduce nudity, sexualization, age changes, violence, injury, or other unsafe content.",
+      "present_verbatim": true
+    },
+    {
+      "clause": "The source reference is the only image input available at generation time.",
+      "present_verbatim": true
+    }
+  ],
+  "precedence_check": {
+    "status": "passed",
+    "order": [
+      "safety_and_integrity",
+      "explicit_optional_instructions",
+      "source_content_and_identity_preservation",
+      "textual_style_specification"
+    ],
+    "detail": "The executable prompt states that optional instructions follow safety, are narrowly scoped, override only their named attributes, and leave all unspecified attributes controlled by Image 1."
+  },
+  "self_contained_text_check": {
+    "status": "passed",
+    "detail": "The prompt specifies the medium, palette, contrast, lighting/shadow treatment, line and mark quality, texture, abstract graphic vocabulary, and overrideable composition defaults in text. It contains no instruction to attach, inspect, or assume a target or style image."
+  },
+  "complexity_statistics": {
+    "characters": 2754,
+    "words": 373,
+    "lines": 17,
+    "required_literal_clause_count": 2,
+    "style_clause_count": 10,
+    "suspected_source_specific_clause_count": 0
+  },
+  "status": "passed"
+}

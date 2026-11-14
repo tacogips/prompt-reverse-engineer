@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "sealed_for_iteration": "train-0005",
+  "sources": [
+    {
+      "id": "heldout-a",
+      "file": "targets/editorial-anime-poster-001/validation/heldout-a-0005.png",
+      "sha256": "71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9",
+      "width": 1024,
+      "height": 1536,
+      "format": "PNG"
+    },
+    {
+      "id": "heldout-b",
+      "file": "targets/editorial-anime-poster-001/validation/heldout-b-0005.png",
+      "sha256": "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1",
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG"
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "heldout-a-baseline",
+      "type": "baseline",
+      "sourceReference": "targets/editorial-anime-poster-001/validation/heldout-a-0005.png",
+      "optionalInstructions": {},
+      "expected": {
+        "subject_count": 1,
+        "framing": "full body",
+        "both_hands_visible": true,
+        "both_feet_visible": true,
+        "preserve": ["facial identity", "shoulder-length dark hair", "green sweater", "cream trousers", "brown shoes", "wooden stool"],
+        "text": null
+      }
+    },
+    {
+      "id": "heldout-a-pose",
+      "type": "pose",
+      "sourceReference": "targets/editorial-anime-poster-001/validation/heldout-a-0005.png",
+      "optionalInstructions": {
+        "pose": "Show the same person seated upright on the wooden stool in a three-quarter view, with both hands folded visibly on the lap."
+      },
+      "expected": {
+        "subject_count": 1,
+        "pose": "seated upright on stool",
+        "view": "three-quarter",
+        "both_hands_visible": true,
+        "hand_position": "folded on lap",
+        "preserve": ["facial identity", "hair", "green sweater", "cream trousers", "brown shoes", "wooden stool"],
+        "text": null
+      }
+    },
+    {
+      "id": "heldout-b-composition",
+      "type": "composition",
+      "sourceReference": "targets/editorial-anime-poster-001/validation/heldout-b-0005.png",
+      "optionalInstructions": {
+        "composition": "Use a square poster layout with the yellow chair centered, the blue bottle to its left, the plant to its right, and generous negative space above."
+      },
+      "expected": {
+        "aspect_ratio": "1:1",
+        "chair_position": "center",
+        "bottle_position": "left",
+        "plant_position": "right",
+        "negative_space": "above",
+        "preserve": ["one mustard-yellow chair", "one cobalt-blue bottle", "one plant in a white pot"],
+        "text": null
+      }
+    },
+    {
+      "id": "heldout-b-exact-text",
+      "type": "text",
+      "sourceReference": "targets/editorial-anime-poster-001/validation/heldout-b-0005.png",
+      "optionalInstructions": {
+        "text": "SIT WITH COLOR"
+      },
+      "expectedText": "SIT WITH COLOR",
+      "expected": {
+        "exact_text_occurrences": 1,
+        "additional_text": false,
+        "preserve": ["one mustard-yellow chair", "one cobalt-blue bottle", "one plant in a white pot"]
+      }
+    }
+  ]
+}

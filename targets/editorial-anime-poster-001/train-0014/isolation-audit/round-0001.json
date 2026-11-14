@@ -1,0 +1,145 @@
+{
+  "schema_version": 2,
+  "round": 1,
+  "session_id": "prompt-reverse-train-session-36",
+  "audited_at": "2026-08-18T03:36:24Z",
+  "status": "passed",
+  "prompt": {
+    "path": "targets/editorial-anime-poster-001/train-0014/rounds/round-0001/prompt/prompt.md",
+    "sha256": "6cac0681206df6c29f3daa5fd48530e98c853baa6238d4a77d20d5631660e9b1"
+  },
+  "template_validation": {
+    "path": "targets/editorial-anime-poster-001/train-0014/rounds/round-0001/prompt/template-validation.json",
+    "sha256": "9b01f9974fae82bc51c10add7e99f3930e272b396e45137a7d3ad420d93212f4",
+    "status": "passed",
+    "forbidden_clause_count": 0,
+    "prompt_hash_matches": true
+  },
+  "manifests": {
+    "validation": {
+      "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+      "recorded_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "fresh_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "recorded_size": 3043,
+      "hash_matches": true,
+      "contents_opened_by_audit": false
+    },
+    "test": {
+      "path": "targets/editorial-anime-poster-001/test/sealed-test-0014.json",
+      "recorded_sha256": "5006d3933a5218db6746836986e2f15345e1d48777e91e2d63726fa880744022",
+      "fresh_sha256": "5006d3933a5218db6746836986e2f15345e1d48777e91e2d63726fa880744022",
+      "recorded_size": 2163,
+      "hash_matches": true,
+      "contents_opened_by_audit": false
+    }
+  },
+  "style_reference_set": {
+    "canonical_file": "targets/editorial-anime-poster-001/train-0014/style-reference-set.json",
+    "helper": {
+      "path": "targets/editorial-anime-poster-001/train-0014/workflow/scripts/compute-style-reference-set-hash.sh",
+      "sha256": "faf2967cb894efb851ba5d35935d512b2efd919ed6b80ab1429ce634e712b6ef"
+    },
+    "serialization": "jq -ceS with final newline",
+    "recorded_sha256": "805f0db0aec28aa2f7a74819d572c501a8a2406106de0f159b82ba929cabfc39",
+    "fresh_sha256": "805f0db0aec28aa2f7a74819d572c501a8a2406106de0f159b82ba929cabfc39",
+    "helper_output_matches_canonical_file": true,
+    "members": [
+      { "path": "targets/editorial-anime-poster-001/truth/style-reference.png", "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f" },
+      { "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-01.jpg", "sha256": "71fe06642b4bc4753b97625ac48f593afb8bb33ded7090142c63b0289be4b1c8" },
+      { "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-02.jpg", "sha256": "349d5d960041ced65faf5513b54a417c5f8fdf5cadf0753d8c3f4f8cd9d17540" },
+      { "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-03.jpg", "sha256": "f5f576a601b9c507747a687460f3002319420a17908e41604c7f5c72c26d8d2b" },
+      { "path": "targets/editorial-anime-poster-001/style-evidence/same-prompt-2026-08-18/style-sample-04.jpg", "sha256": "40788ca42d71559e9720d7d3067a4242f63487501e78eb428a602bd92fc50896" }
+    ]
+  },
+  "audited_step_executions": [
+    {
+      "step_id": "intake-or-plan",
+      "execution_id": null,
+      "classification": "allowed",
+      "evidence": "intake-evidence.json records path, SHA-256, byte size, and sealedManifestContentsOpened false for both current manifests."
+    },
+    {
+      "step_id": "analyze-images",
+      "execution_id": null,
+      "classification": "allowed",
+      "evidence": "No persisted session, runtime-snapshot, or step-log access event for either current manifest or fixture was found."
+    },
+    {
+      "step_id": "generalize-prompt",
+      "execution_id": "generalize-prompt-attempt-1-exec-3",
+      "classification": "allowed",
+      "evidence": "Delivered communication comm-000235 contains only prompt-validation routing metadata; it contains no validation/test case, fixture, assertion, or manifest-content payload."
+    },
+    {
+      "step_id": "generate-candidates",
+      "execution_id": null,
+      "classification": "not_yet_executed",
+      "evidence": "The only round generation record is planned_not_yet_called and binds one source_reference only."
+    },
+    {
+      "step_id": "judge-candidates",
+      "execution_id": null,
+      "classification": "not_yet_executed",
+      "evidence": "No candidate generation or judge artifact exists for this round."
+    }
+  ],
+  "access_events": [
+    {
+      "actor": "intake-or-plan",
+      "resource": "current validation and test manifests",
+      "operation": "existence, SHA-256, and byte-size recording only",
+      "classification": "allowed"
+    },
+    {
+      "actor": "audit-input-isolation",
+      "resource": "current validation and test manifests",
+      "operation": "fresh SHA-256 recomputation only; contents not opened",
+      "classification": "allowed"
+    },
+    {
+      "actor": "audit-input-isolation",
+      "resource": "current prompt, template validation, generation policy, generation-record contract, state, intake evidence, and style-reference-set helper",
+      "operation": "contract and provenance verification",
+      "classification": "allowed"
+    },
+    {
+      "actor": "generate-candidates",
+      "resource": "generation input",
+      "operation": "not called; planned record contains only targets/editorial-anime-poster-001/input/source-child.jpeg with role source_reference",
+      "classification": "allowed"
+    }
+  ],
+  "runtime_input_check": {
+    "validation_manifest_is_path_only": true,
+    "sealed_test_manifest_is_path_only": true,
+    "inline_validation_or_test_cases_present": false
+  },
+  "generation_separation": {
+    "planned_generation_records_checked": ["targets/editorial-anime-poster-001/train-0014/rounds/round-0001/prompt/generation.json"],
+    "generation_calls_observed": 0,
+    "truth_member_path_or_hash_in_generation_record_or_input": false,
+    "truth_or_style_role_in_generation_record_or_input": false,
+    "source_binding": {
+      "source_path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+      "source_sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+      "mechanism": "referenced_image_paths",
+      "requested_paths_match_input_images": true,
+      "requested_hashes_match_input_images": true,
+      "recent_image_context_used": false
+    }
+  },
+  "policy_checks": {
+    "generation_policy_requires_exactly_one_explicit_referenced_image_path": true,
+    "generation_policy_forbids_num_last_images_to_include": true,
+    "generation_policy_forbids_recent_image_fallback": true,
+    "generation_record_contract_requires_source_binding": true,
+    "generation_record_contract_forbids_implicit_recent_image_context": true,
+    "generation_record_contract_hash_matches_snapshot": true
+  },
+  "execution_evidence": {
+    "session_trace_files_found": [],
+    "scope": "Persisted current-iteration artifacts and delivered workflow communication; no separate session-trace file was present in the repository.",
+    "prohibited_access_events_found": []
+  },
+  "diagnostics": []
+}

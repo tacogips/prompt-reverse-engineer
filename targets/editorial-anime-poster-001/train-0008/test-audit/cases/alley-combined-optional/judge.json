@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "style-inversion-v2",
+  "target_candidate_order": "style_truth_then_candidate",
+  "loss": {
+    "medium_rendering": 0.14,
+    "palette_tone": 0.09,
+    "line_shape": 0.12,
+    "texture_material": 0.12,
+    "graphic_language": 0.16,
+    "source_fidelity": 0.09,
+    "technical": 0.06
+  },
+  "evidence": {
+    "medium_rendering": ["The candidate applies clean cel-shaded editorial illustration and crisp print-like separation to the source alley."],
+    "palette_tone": ["The warm off-white, navy, coral, teal, mustard, and matte-gold system is visibly consistent with the transferable style language."],
+    "line_shape": ["Crisp navy contours define the bicycle and architecture, with graphic brush and fine arc marks."],
+    "texture_material": ["Paper grain, dry-brush sweeps, and light distressed printing are visible and do not conceal requested content."],
+    "graphic_language": ["The square poster uses broad color fields, asymmetrical framing, and sparse orbital details, though it has a simpler hierarchy than the style truth."],
+    "source_fidelity": ["The single red bicycle, doorway, potted plants, and alley depth are retained, but the bicycle remains right-weighted rather than the explicitly requested centered foreground placement."],
+    "technical": ["The square image is sharp and coherent; the only readable text is the requested RAIN ROUTE." ]
+  },
+  "dominant_transferable_differences": ["Honor explicit compositional placement more strongly while retaining the current print language."],
+  "confidence": 0.92,
+  "instruction_assertions": {
+    "source_preservation": true,
+    "square_aspect_ratio": true,
+    "bicycle_count_exactly_one": true,
+    "bicycle_center_foreground": false,
+    "exact_text": {"applicable": true, "expected": "RAIN ROUTE", "observed": "RAIN ROUTE", "passed": true},
+    "no_unrequested_text": true
+  }
+}
