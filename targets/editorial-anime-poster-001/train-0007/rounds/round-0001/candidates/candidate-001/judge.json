@@ -1,0 +1,37 @@
+{
+  "confidence": 0.9,
+  "dominant_differences": [
+    "Use cleaner pale cel-shaded planes and stronger saturated color fields.",
+    "Integrate poster overlays more like the truth's refined layering."
+  ],
+  "evidence": {
+    "color": [
+      "Off-white, navy, teal, yellow, and coral-pink graphics echo the style truth, but the grey central garment makes the palette less saturated and balanced."
+    ],
+    "composition": [
+      "The close vertical crop retains the source head, torso, bent arm, and tiled corner while overlays stay in surrounding negative space."
+    ],
+    "semantic": [
+      "The single seated child and tiled setting remain recognizable, though photographic fabric and tile detail are simplified."
+    ],
+    "source_fidelity": [
+      "The child remains a seated right-facing profile with short dark hair, grey graphic T-shirt, light trousers, forearm placement, and tiled corner from the source."
+    ],
+    "style": [
+      "Navy contours, paper grain, speckles, rules, discs, and dry-brush marks establish editorial styling, but the result is sketchier and less polished than the truth's cel-shaded planes."
+    ],
+    "technical": [
+      "Face, anatomy, and shirt graphic are clean, with minor dense hair-line buildup and rough overlay intersections."
+    ]
+  },
+  "loss": {
+    "color": 0.16,
+    "composition": 0.13,
+    "semantic": 0.05,
+    "source_fidelity": 0.08,
+    "style": 0.26,
+    "technical": 0.05
+  },
+  "presentation_order": "style_truth_source_truth_candidate",
+  "schema_version": 2
+}

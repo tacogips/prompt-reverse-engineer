@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "round": 1,
+  "selection_rule": "lowest_total_loss_then_candidate_id",
+  "loss_function_version": "style-inversion-v2",
+  "candidate_paths_received": [],
+  "candidates": [],
+  "round_winner": null,
+  "selected_candidate": null,
+  "selection_status": "no_eligible_candidate",
+  "selection_failure": {
+    "reason": "generation_failed_before_artifact_persistence",
+    "attempt_evidence": "targets/editorial-anime-poster-001/train-0008/rounds/round-0001/candidates/attempts/attempt-0001.json",
+    "detail": "The generation attempt was moderation-blocked before any candidate image or realized generation record was persisted. No candidate could be inspected or assigned a loss."
+  },
+  "contract_eligibility": {
+    "current_contract_id": "prompt-only-style-reconstruction-v1",
+    "template_validation_path": "targets/editorial-anime-poster-001/train-0008/rounds/round-0001/prompt/template-validation.json",
+    "template_validation_status": "passed",
+    "template_validation_contract_version": "prompt-only-style-reconstruction-v1",
+    "prompt_sha256_matches_prompt_file": true,
+    "required_literal_clauses_present_verbatim": true,
+    "eligible_current_candidates": [],
+    "excluded_prior_bests": [
+      {
+        "candidate": "targets/editorial-anime-poster-001/best.json -> train-0003/rounds/round-0001/candidates/candidate-004",
+        "reason": "The recorded best uses judge-v3-style-identity-provenance, not style-inversion-v2, and has no current prompt-template-contract eligibility evidence; its loss is not comparable or promotion-eligible for this run."
+      },
+      {
+        "candidate": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/candidates/candidate-003",
+        "reason": "The prior selection records judge_version source-style-judge-v2 rather than style-inversion-v2; it is excluded from numeric comparison in this run."
+      }
+    ]
+  },
+  "global_best_before_round": null,
+  "global_best_after_round": null,
+  "global_best_loss_before_round": null,
+  "global_best_loss_after_round": null,
+  "target_reached": false,
+  "provenance_check": {
+    "candidate_records_verified": false,
+    "reason": "No realized candidate generation records exist.",
+    "generation_attempt_provenance_verified": true,
+    "attempt_has_exactly_one_source_reference": true,
+    "truth_or_style_input_detected": false
+  }
+}

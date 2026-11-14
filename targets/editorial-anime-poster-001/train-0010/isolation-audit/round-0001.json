@@ -1,0 +1,115 @@
+{
+  "schema_version": 2,
+  "round": 1,
+  "session_id": "prompt-reverse-train-session-27",
+  "audited_at": "2026-08-14T15:33:40Z",
+  "status": "passed",
+  "candidate_generation_authorized": true,
+  "prompt": {
+    "path": "targets/editorial-anime-poster-001/train-0010/rounds/round-0001/prompt/prompt.md",
+    "sha256": "796cf42cadd935d4bb1fe3ce366a02fc307204380ee06fbbbcbfead6582e98e1"
+  },
+  "template_validation": {
+    "path": "targets/editorial-anime-poster-001/train-0010/rounds/round-0001/prompt/template-validation.json",
+    "sha256": "6c45d2cd25cae24c3eac8b0893ae5334bc295e47759d38f0a2054f430c6f0496",
+    "recorded_prompt_sha256": "796cf42cadd935d4bb1fe3ce366a02fc307204380ee06fbbbcbfead6582e98e1",
+    "status": "passed",
+    "matches_current_prompt": true
+  },
+  "manifests": {
+    "validation": {
+      "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+      "fresh_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "recorded_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "hash_matches": true,
+      "contents_opened_by_audit": false
+    },
+    "sealed_test": {
+      "path": "targets/editorial-anime-poster-001/test/sealed-test-0010.json",
+      "fresh_sha256": "4a539b78b5a4fd70429b0d6bf058ea6eb69383236bf2c0b95eeadb737865258c",
+      "recorded_sha256": "4a539b78b5a4fd70429b0d6bf058ea6eb69383236bf2c0b95eeadb737865258c",
+      "hash_matches": true,
+      "contents_opened_by_audit": false
+    }
+  },
+  "target_style_truth": {
+    "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+  },
+  "runtime_input": {
+    "validation_and_test_are_paths_only": true,
+    "inline_validation_cases_present": false,
+    "inline_test_cases_present": false,
+    "current_delivery": {
+      "communication_id": "comm-000162",
+      "source_step_execution_id": "generalize-prompt-attempt-1-exec-3",
+      "source_step_id": "generalize-prompt",
+      "payload_fields": [
+        "contractVersion",
+        "forbiddenClauseCount",
+        "nextStep",
+        "promptPath",
+        "round",
+        "status",
+        "templateValidationPath"
+      ]
+    }
+  },
+  "audited_step_executions": [
+    {
+      "execution_id": "generalize-prompt-attempt-1-exec-3",
+      "step_id": "generalize-prompt",
+      "status": "completed",
+      "evidence_source": "current workflow communication comm-000162"
+    }
+  ],
+  "access_events": [
+    {
+      "step_execution_id": "intake-or-plan",
+      "step_id": "intake-or-plan",
+      "path_scope": "current frozen validation and sealed-test manifest metadata",
+      "operation": "recorded path, SHA-256, and byte size without contents",
+      "classification": "allowed",
+      "evidence": "train-0010/intake-evidence.json records contentsOpened false for both current manifests."
+    },
+    {
+      "step_execution_id": "generalize-prompt-attempt-1-exec-3",
+      "step_id": "generalize-prompt",
+      "path_scope": "workflow delivery and current prompt contract artifacts",
+      "operation": "delivered only prompt-validation routing fields; no validation/test case, fixture, description, instruction, assertion, or manifest hash was present in the delivery payload",
+      "classification": "allowed",
+      "evidence": "Current workflow communication comm-000162."
+    },
+    {
+      "step_execution_id": "audit-input-isolation",
+      "step_id": "audit-input-isolation",
+      "path_scope": "state, intake evidence, runtime snapshot, prompt/template validation, intended generation record, and manifest byte streams for hashing only",
+      "operation": "inspected authorized audit records and computed SHA-256 values without opening either manifest or any fixture",
+      "classification": "allowed",
+      "evidence": "This is the designated isolation-enforcement step; both freshly computed manifest hashes match intake/state records."
+    },
+    {
+      "step_execution_id": "generate-candidates",
+      "step_id": "generate-candidates",
+      "path_scope": "candidate generation provenance",
+      "operation": "no realized candidate-generation record or generation-call evidence exists before this audit; the intended shared record declares one source_reference image only",
+      "classification": "allowed",
+      "evidence": "rounds/round-0001/prompt/generation.json has input_images length 1, role source_reference, and no target/style-truth hash."
+    }
+  ],
+  "generation_separation": {
+    "realized_generation_records_found": 0,
+    "generation_step_executions_found": 0,
+    "planned_generation_record": "targets/editorial-anime-poster-001/train-0010/rounds/round-0001/prompt/generation.json",
+    "planned_input_image_count": 1,
+    "planned_input_roles": [
+      "source_reference"
+    ],
+    "target_style_truth_hash_found_in_generation_evidence": false,
+    "truth_or_style_image_role_found_in_generation_evidence": false,
+    "classification": "allowed",
+    "evidence": "No candidate generation has executed; the planned record satisfies the one-source-image contract."
+  },
+  "diagnostics": [],
+  "exit_reason": null
+}

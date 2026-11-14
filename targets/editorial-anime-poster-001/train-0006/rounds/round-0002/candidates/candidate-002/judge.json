@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_source_truth_candidate",
+  "loss": {
+    "source_fidelity": 0.13,
+    "semantic": 0.04,
+    "composition": 0.1,
+    "color": 0.09,
+    "style": 0.12,
+    "technical": 0.02
+  },
+  "evidence": {
+    "source_fidelity": [
+      "The candidate retains one seated young child, the source's right-facing three-quarter view, short dark undercut, grey Batman T-shirt, pale blue bottoms, bent right arm, and surrounding tiles.",
+      "The hair is considerably fuller and more tousled than in the source, while the face is simplified into smooth illustrative planes."
+    ],
+    "semantic": [
+      "The source scene remains a single child seated indoors, with the source clothing mark retained and none of the style truth's woman, jewelry, adult clothing, or long hair copied into the result.",
+      "There is no newly added readable copy, watermark, or unrelated subject."
+    ],
+    "composition": [
+      "The vertical crop, off-center face, cream negative space, colored circles, fine vertical rules, teal diagonal field, and brush accents adapt the style truth's poster organization while preserving the source's seated placement.",
+      "The source's broad seated framing remains more prominent than the style truth's narrower upward portrait."
+    ],
+    "color": [
+      "Cream, navy, teal, coral, mustard, and sparse gold flecks closely reproduce the reference's poster palette relationships without erasing the source clothing colors."
+    ],
+    "style": [
+      "Crisp ink outlines, cel-shaded forms, paper grain, splatter, dry-brush texture, and flat geometric fields clearly transfer the reference's editorial anime-poster treatment.",
+      "The candidate has less of the reference's intricate layered linework and ornate graphic detailing."
+    ],
+    "technical": [
+      "The face, ear, arms, clothing mark, tiles, and graphic elements are clean and coherent at original resolution, with no visible corruption, duplication, watermark, or garbled text."
+    ]
+  },
+  "dominant_differences": [
+    "Keep the compact source haircut instead of the enlarged tousled crown.",
+    "Add the reference's finer layered contour and graphic-detail density.",
+    "Preserve the source framing while strengthening the reference's upward poster rhythm."
+  ],
+  "confidence": 0.94,
+  "provenance_verification": {
+    "candidate_image": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-002/image.png",
+    "recorded_sha256": "408b410ed87712072b0dc36dfd460f541f3b48f73c0faba4749a959fc1c39e9a",
+    "observed_sha256": "408b410ed87712072b0dc36dfd460f541f3b48f73c0faba4749a959fc1c39e9a",
+    "verified": true
+  }
+}

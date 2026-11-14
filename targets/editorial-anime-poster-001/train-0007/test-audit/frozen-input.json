@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_generation",
+  "sealed_test_manifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+    "sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+    "byteSize": 1410,
+    "integrity_verified_before_open": true
+  },
+  "prompt": {
+    "path": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/prompt/prompt.md",
+    "sha256": "8b5c0b8d88d86154665bb11281c19992ddefea8bf98e4f7f029c7146c9972e5f"
+  },
+  "judge": {
+    "version": "source-style-judge-v2",
+    "config": "targets/editorial-anime-poster-001/train-0007/judge/config.json",
+    "config_sha256": "40acd720a8766cf3c2cbc097ec4ef632a76ee94e7eb65fc21c96b83a29f1ac98",
+    "prompt_sha256": "1b31fe0e0aed4d5da1bba8acd60a182a9eaf10f5b7f8365c82dca7c857b4a892"
+  },
+  "thresholds": {
+    "aggregate_test_loss_max": 0.32,
+    "worst_case_loss_max": 0.42,
+    "validation_to_test_gap_max": 0.1
+  },
+  "training_source_hash": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+  "validation_source_hashes": [
+    "71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9",
+    "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1"
+  ],
+  "test_source_hashes": [
+    "56f945880a137fb787e0d2dba7d56b869f8bbf26c9b14488ad27a28e1fbb05f9"
+  ],
+  "source_separation_passed": true,
+  "required_case_coverage": ["baseline", "combined_optional"],
+  "frozen_cases": [
+    {"id": "alley-baseline", "type": "baseline", "optionalInstructions": {}, "expected": {"text": null}},
+    {"id": "alley-combined-optional", "type": "combined_optional", "optionalInstructions": {"composition": "Use a square poster composition with the bicycle centered in the foreground and the alley receding behind it.", "text": "RAIN ROUTE", "additional": "Keep exactly one red bicycle and retain the doorway and potted green plants."}, "expectedText": "RAIN ROUTE"}
+  ]
+}

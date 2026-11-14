@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "candidate_id": "candidate-002",
+  "attempt": 1,
+  "recorded_at": "2026-08-14T08:59:52Z",
+  "stage": "built-in-image-generation",
+  "status": "failed",
+  "error_type": "moderation_blocked",
+  "error_message": "The built-in image generator rejected the request at output moderation (category: other) before image bytes were produced.",
+  "output_created": false
+}

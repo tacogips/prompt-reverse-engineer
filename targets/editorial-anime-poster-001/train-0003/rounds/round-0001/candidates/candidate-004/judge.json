@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.14,
+    "semantic": 0.02,
+    "composition": 0.04,
+    "color": 0.02,
+    "style": 0.1,
+    "technical": 0.01
+  },
+  "evidence": {
+    "identity": [
+      "The candidate clearly preserves the intended man's warm tan complexion, thick brows, brown almond eyes, straight prominent nose, medium-full closed lips, lean defined jaw, cheek moles, close sides, unadorned ear, and left-facing three-quarter face.",
+      "Its hair still forms a much fuller windblown crown than the person reference's compact swept-up quiff, but the facial geometry and leftward/upward gaze are closest to the person reference in this assessment."
+    ],
+    "semantic": [
+      "It visibly depicts one masculine editorial-anime poster portrait, with no duplicated people or unrelated scene.",
+      "The man remains distinct from the style-reference woman and the image contains no copied long hair, jewelry, accessory, readable text, logo, watermark, or pseudo-typography."
+    ],
+    "composition": [
+      "The vertical 2:3 frame has a dominant close portrait, cream ground, coral and mustard disks, teal fields, thin vertical rules, navy blocks, and dry-brush gestures.",
+      "The portrait is a little more centered and the upward direction is gentler than the style truth, while the transferable poster arrangement remains strong."
+    ],
+    "color": [
+      "Deep navy, teal/cyan, coral, mustard-gold, and cream are cleanly distributed in high-contrast flat regions with integrated accent colour."
+    ],
+    "style": [
+      "Crisp dark variable contours, flat cel shading, layered abstract graphics, flecks, dry brush, and subtle printed-paper grain convincingly reproduce the transferable editorial-anime treatment.",
+      "The oversized crown and broad geometric garment panels are slightly more uniform than the reference's restrained hair accents and finer layered illustration."
+    ],
+    "technical": [
+      "The 1023x1537 image has coherent facial anatomy, ear, hairline, collar, and clean graphic edges, without visible duplication, corruption, watermark, logo, or text-like marks."
+    ]
+  },
+  "dominant_differences": [
+    "Make the black quiff shorter, more compact, and less windblown.",
+    "Increase the upward-left gaze slightly without changing the source facial geometry.",
+    "Vary the hair and garment linework more finely."
+  ],
+  "confidence": 0.95,
+  "provenance_verification": {
+    "candidate_image": "targets/editorial-anime-poster-001/train-0003/rounds/round-0001/candidates/candidate-004/image.png",
+    "recorded_sha256": "ff555a90695b6c709718b19d635ca8057a1061d509dd76c5c14a4ea3b4353367",
+    "observed_sha256": "ff555a90695b6c709718b19d635ca8057a1061d509dd76c5c14a4ea3b4353367",
+    "verified": true
+  }
+}

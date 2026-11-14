@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "communication_id": "comm-000168",
+  "workflow_execution_id": "prompt-reverse-train-session-27",
+  "target": "editorial-anime-poster-001",
+  "train_iteration": "train-0010",
+  "terminal_status": "failed",
+  "exit_reason": "generalization_test_failed",
+  "evidence": {
+    "state": "targets/editorial-anime-poster-001/train-0010/state.json",
+    "evaluation": "targets/editorial-anime-poster-001/train-0010/evaluation.json",
+    "analysis": "targets/editorial-anime-poster-001/train-0010/analysis.md",
+    "validation": "targets/editorial-anime-poster-001/train-0010/transferability/evaluation.json",
+    "test_audit": "targets/editorial-anime-poster-001/train-0010/test-audit/evaluation.json"
+  },
+  "training": {
+    "rounds_executed": 1,
+    "candidates_generated": 3,
+    "best_candidate": "rounds/round-0001/candidates/candidate-003",
+    "total_loss": 0.139,
+    "reward": 0.861,
+    "loss": {
+      "medium_rendering": 0.12,
+      "palette_tone": 0.24,
+      "line_shape": 0.13,
+      "texture_material": 0.18,
+      "graphic_language": 0.16,
+      "source_fidelity": 0.09,
+      "technical": 0.07
+    }
+  },
+  "validation": {
+    "status": "passed",
+    "coverage": ["baseline", "pose", "composition", "text"],
+    "distinct_held_out_source_hashes": 2,
+    "aggregate_loss": 0.1058,
+    "worst_case_loss": 0.1135,
+    "train_validation_gap": -0.0332
+  },
+  "test_audit": {
+    "status": "failed",
+    "coverage": ["baseline", "combined_optional"],
+    "distinct_test_source_hashes": 1,
+    "aggregate_loss": 0.0875,
+    "worst_case_loss": 0.0955,
+    "validation_test_gap": -0.0183,
+    "failure": "realized_generation_prompt_hash_did_not_match_frozen_final_prompt_hash; persisted metric totals also fail style-inversion-v3 weight arithmetic"
+  },
+  "recorded_at": "2026-08-14T16:02:02Z"
+}

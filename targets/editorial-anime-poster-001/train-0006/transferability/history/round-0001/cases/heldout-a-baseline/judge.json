@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "judge_version": "judge-v4-source-fidelity-style-transfer",
+  "original_resolution_assessed": true,
+  "loss": {
+    "source_fidelity": 0.24,
+    "style_fidelity": 0.06,
+    "text_adherence": 0.0,
+    "technical": 0.04
+  },
+  "assertions": {
+    "both_feet_visible": true,
+    "both_hands_visible": true,
+    "framing_full_body": true,
+    "source_identity_preserved": true,
+    "green_sweater_preserved": true,
+    "cream_trousers_preserved": true,
+    "brown_shoes_preserved": true,
+    "wooden_stool_preserved": false,
+    "no_invented_text": true
+  },
+  "evidence": [
+    "The person, clothing, shoes, full-body crop, and both hands and feet remain visible.",
+    "The source stool is absent, so the required source object is not preserved.",
+    "The candidate transfers the colorful graphic poster language without readable or pseudo text."
+  ]
+}

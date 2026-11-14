@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "case_id": "alley-combined-optional",
+  "loss": {"total": 0.11, "medium_rendering": 0.14, "palette_tone": 0.09, "line_shape": 0.12, "texture_material": 0.12, "graphic_language": 0.16, "source_fidelity": 0.09, "technical": 0.06},
+  "reward": 0.89,
+  "style_component_ceiling": 0.25,
+  "style_component_ceilings_passed": true,
+  "assertions_passed": false,
+  "failed_assertions": ["bicycle_center_foreground"],
+  "evaluators": [{"name": "prompt-as-a-judge", "version": "09e7ebb8913bf5574e67aaf3bc4b0ab462d403430f304b70a0c7bbe61619e295", "raw_output_file": "judge.json"}]
+}

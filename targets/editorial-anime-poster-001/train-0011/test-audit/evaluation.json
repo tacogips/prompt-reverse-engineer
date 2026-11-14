@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "style-inversion-v3",
+  "status": "failed",
+  "sealed_test_manifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-0011.json",
+    "sha256": "0f8eba695bd5e47c81d84af96d15b6070cd0aeee08dee332147553c0a310a3ef",
+    "size": 1799,
+    "intake_hash_verified_before_read": true
+  },
+  "prompt_hash": "9bcef001c13e5361c5d6336d4f9d301c5a60e0cca557b99cce44e5c3d162e647",
+  "judge_version": "fa54cefc3f8d4091cf82aab05657a21de4fec241e1abc1761b4d2aeab752730c",
+  "weights": {
+    "medium_rendering": 0.2,
+    "palette_tone": 0.15,
+    "line_shape": 0.15,
+    "texture_material": 0.1,
+    "graphic_language": 0.1,
+    "source_fidelity": 0.2,
+    "technical": 0.1
+  },
+  "thresholds": {
+    "aggregate_test_loss": 0.32,
+    "worst_case_loss": 0.42,
+    "max_validation_test_gap": 0.1,
+    "style_component_max_loss": 0.25
+  },
+  "validation_loss": 0.142625,
+  "aggregate_test_loss": 0.08425,
+  "aggregate_test_loss_display": 0.084,
+  "worst_case_loss": 0.0985,
+  "validation_to_test_gap": -0.058375,
+  "coverage": {
+    "required_case_types": ["baseline", "combined_optional"],
+    "observed_case_types": ["baseline", "combined_optional"],
+    "required_source_hashes_distinct_from_training_and_validation": true,
+    "untouched_test_source_count": 1,
+    "test_source_hashes": ["3f549d23fc70b278222062e81994a2ee385e402ab56be283d1b7daf40b6d1942"],
+    "training_source_hash": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+    "validation_source_hashes": ["71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9", "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1"]
+  },
+  "cases": [
+    {
+      "id": "sea-landscape-baseline",
+      "type": "baseline",
+      "source_sha256": "3f549d23fc70b278222062e81994a2ee385e402ab56be283d1b7daf40b6d1942",
+      "loss": 0.07,
+      "generation": "targets/editorial-anime-poster-001/train-0011/test-audit/cases/sea-landscape-baseline/generation.json",
+      "metrics": "targets/editorial-anime-poster-001/train-0011/test-audit/cases/sea-landscape-baseline/metrics.json",
+      "terminal": true,
+      "passed": false
+    },
+    {
+      "id": "sea-landscape-combined-optional",
+      "type": "combined_optional",
+      "source_sha256": "3f549d23fc70b278222062e81994a2ee385e402ab56be283d1b7daf40b6d1942",
+      "loss": 0.0985,
+      "generation": "targets/editorial-anime-poster-001/train-0011/test-audit/cases/sea-landscape-combined-optional/generation.json",
+      "metrics": "targets/editorial-anime-poster-001/train-0011/test-audit/cases/sea-landscape-combined-optional/metrics.json",
+      "terminal": true,
+      "passed": false
+    }
+  ],
+  "pass_reasons": [
+    "The manifest hash matched intake before it was read.",
+    "The test source is distinct from the training source and both validation sources.",
+    "Coverage contains both required case types and one untouched test source.",
+    "Both weighted totals were recomputed from persisted style-inversion-v3 components; no proposed arithmetic mismatch was accepted.",
+    "Aggregate loss, worst-case loss, and validation-to-test gap meet their numeric thresholds."
+  ],
+  "fail_reasons": [
+    "Baseline provenance fails: with empty optional instructions, the exact sent prompt bytes differ from the immutable frozen base prompt bytes.",
+    "Combined-optional provenance fails: the exact sent prompt differs by one newline from the frozen deterministic effective-prompt bytes.",
+    "Combined-optional exact-text gate fails: the image contains unrequested readable text 'THE' in addition to the authorized exact text 'BEYOND THE BLUE'.",
+    "Combined-optional no-unrequested-text gate fails."
+  ],
+  "exit_reason": "generalization_test_failed",
+  "completed_at": "2026-08-14T16:39:50Z"
+}

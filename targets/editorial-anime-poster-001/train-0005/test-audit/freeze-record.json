@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-08-14T07:22:12Z",
+  "manifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+    "sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+    "integrity_verified_before_parse": true
+  },
+  "prompt_sha256": "225d563ace0193437dbb976557ecdf0d1afd3cc463a3a33ffcbf4fe2968a87bf",
+  "judge_version": "judge-v4-source-fidelity-style-transfer",
+  "thresholds": {
+    "aggregate_test_loss_max": 0.32,
+    "worst_case_loss_max": 0.42,
+    "max_validation_test_gap": 0.1
+  },
+  "generation_authorization": "sealed one-shot audit; no refinement permitted",
+  "cases_frozen": [
+    "alley-baseline",
+    "alley-combined-optional"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "frozen_for_iteration": "train-0004",
+  "images": [
+    {
+      "id": "adult-person",
+      "file": "../input/person-reference.png",
+      "role": "held_out_source",
+      "width": 1196,
+      "height": 1370,
+      "format": "PNG",
+      "sha256": "813ec67c85c0a3bcc7749b58d6560e09419759a8a73f1680c228fc5023cb1aeb"
+    },
+    {
+      "id": "ceramic-clock",
+      "file": "source-clock.png",
+      "role": "held_out_source",
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "sha256": "580246325a2ef1b223d12f6310e3264356279475f9383eb79ef11f5387e95104"
+    }
+  ]
+}

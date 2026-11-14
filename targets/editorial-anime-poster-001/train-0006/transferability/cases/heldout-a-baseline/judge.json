@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "judge_version": "judge-v4-source-fidelity-style-transfer",
+  "original_resolution_assessed": true,
+  "loss": { "source_fidelity": 0.04, "style_fidelity": 0.07, "text_adherence": 0.0, "technical": 0.03 },
+  "assertions": { "both_feet_visible": true, "both_hands_visible": true, "framing_full_body": true, "source_identity_preserved": true, "green_sweater_preserved": true, "cream_trousers_preserved": true, "brown_shoes_preserved": true, "wooden_stool_preserved": true, "no_invented_text": true },
+  "evidence": ["The full figure, dark shoulder-length hair, green sweater, cream trousers, brown shoes, and wooden stool are all retained.", "The image applies the colorful editorial poster palette, contours, geometric fields, and brush texture without importing the style-reference subject.", "No visible lettering or pseudo-text appears."]
+}

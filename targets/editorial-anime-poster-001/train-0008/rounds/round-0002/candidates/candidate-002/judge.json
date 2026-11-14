@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "style-inversion-v2",
+  "target_candidate_order": "style_truth_then_candidate",
+  "aggregation": "component_wise_median",
+  "repeat_count": 3,
+  "repeat_losses": [
+    { "medium_rendering": 0.22, "palette_tone": 0.2, "line_shape": 0.22, "texture_material": 0.21, "graphic_language": 0.24, "source_fidelity": 0.12, "technical": 0.1 },
+    { "medium_rendering": 0.22, "palette_tone": 0.2, "line_shape": 0.22, "texture_material": 0.21, "graphic_language": 0.24, "source_fidelity": 0.12, "technical": 0.1 },
+    { "medium_rendering": 0.22, "palette_tone": 0.2, "line_shape": 0.22, "texture_material": 0.21, "graphic_language": 0.24, "source_fidelity": 0.12, "technical": 0.1 }
+  ],
+  "loss": {
+    "medium_rendering": 0.22,
+    "palette_tone": 0.2,
+    "line_shape": 0.22,
+    "texture_material": 0.21,
+    "graphic_language": 0.24,
+    "source_fidelity": 0.12,
+    "technical": 0.1
+  },
+  "evidence": {
+    "medium_rendering": [
+      "The candidate has crisp cel shading and deep-navy outline work, but its rendering remains comparatively conventional character illustration.",
+      "It lacks some of the truth's precise layered print-and-ink richness."
+    ],
+    "palette_tone": [
+      "The warm paper ground, navy, teal, coral, mustard, and gold marks follow the target palette system.",
+      "The palette is slightly pale and the coral field reads more like a brush stroke than a dense editorial color plane."
+    ],
+    "line_shape": [
+      "Fine gold orbital arcs and dots are present around the source-controlled figure.",
+      "The contour work is more uniform and the background support shapes are less varied than the style truth's expressive tapered linework."
+    ],
+    "texture_material": [
+      "Paper grain, spatters, and dry-brush texture are visibly restrained.",
+      "The candidate has less selective overprint distress and fewer tactile layered print imperfections."
+    ],
+    "graphic_language": [
+      "The retained tile wedge, teal field, coral sweep, and orbital arcs make a balanced poster-like arrangement.",
+      "The abstract vocabulary is relatively sparse and lacks the style truth's richer broad-field-to-fine-ornament hierarchy."
+    ],
+    "source_fidelity": [
+      "The source person's face, hairstyle, shirt graphic, trousers, seated pose, and part of the tiled environment remain recognizable.",
+      "The right-side environment is substantially replaced by poster background treatment."
+    ],
+    "technical": [
+      "Anatomy, face, clothing folds, and the readable shirt graphic are cleanly resolved.",
+      "There are no material distortions beyond minor simplified fabric detail."
+    ]
+  },
+  "dominant_transferable_differences": [
+    "Increase expressive tapered ink variation and the density of controlled print layers.",
+    "Make the broad color fields more opaque and graphic while retaining the source scene."
+  ],
+  "confidence": 0.87,
+  "provenance_eligibility": {
+    "eligible": true,
+    "input_image_count": 1,
+    "input_roles": ["source_reference"],
+    "truth_or_style_input_detected": false,
+    "prompt_hash_verified": true,
+    "output_hash_verified": true
+  }
+}

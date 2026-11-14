@@ -1,0 +1,42 @@
+{
+  "workflowInput": {
+    "requestedWork": "Invert the hidden reusable style prompt, not the teacher image: extract and model transferable style factors, synthesize a self-contained text prompt, and optimize it on arbitrary source images. Never optimize pixel similarity or teacher subject, pose, crop, exact composition, objects, text, or scene.",
+    "targetDir": "targets/editorial-anime-poster-001",
+    "trainDir": "train-0008",
+    "styleReference": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "sourceReference": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "optionalInstructions": {},
+    "lossFunctionVersion": "style-inversion-v2",
+    "styleComponentMaxLoss": 0.25,
+    "candidatesPerRound": 3,
+    "maxRefinementRounds": 3,
+    "targetLoss": 0.18,
+    "validationTargetLoss": 0.30,
+    "validationWorstCaseLoss": 0.40,
+    "testTargetLoss": 0.32,
+    "testWorstCaseLoss": 0.42,
+    "maxGeneralizationGap": 0.10,
+    "validationManifest": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sealedTestManifest": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+    "acceptanceCriteria": [
+      "style-model.json separates medium_rendering, palette_tone, line_shape, texture_material, and graphic_language from teacher-image content leakage and maps each dimension to prompt clauses.",
+      "The five reusable style dimensions contribute 70 percent of training loss and each satisfies the frozen per-style ceiling.",
+      "Pixel similarity and teacher subject, objects, text, pose, crop, exact layout, and scene are never scored as desired reconstruction targets.",
+      "The final prompt is self-contained text and requires no target or style-reference image at generation time.",
+      "Every candidate, validation, and test generation record contains exactly one source_reference image input.",
+      "The target/style truth path and SHA-256 never appear in generation input_images or generation calls.",
+      "The prompt contains zero training-source, teacher-content, or held-out-source hard-coded clauses.",
+      "Frozen validation and sealed test prove style transfer, source preservation, and optional pose, composition, and exact-text adherence on disjoint images.",
+      "All generation and judge models, prompts, hashes, style-vector components, and loss calculations are persisted."
+    ],
+    "constraints": [
+      "Use repository-relative paths in persisted artifacts.",
+      "Use the built-in image generation tool.",
+      "Target/style truth is analysis-and-judge-only and forbidden as a generation input.",
+      "Do not open validationManifest before validate-transferability.",
+      "Do not open sealedTestManifest before audit-generalization.",
+      "Do not modify prior iteration evidence.",
+      "Do not compare style-inversion-v2 losses numerically with prior metric versions."
+    ]
+  }
+}

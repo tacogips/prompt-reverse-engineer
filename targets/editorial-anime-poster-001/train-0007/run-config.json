@@ -1,0 +1,37 @@
+{
+  "acceptanceCriteria": [
+    "The final prompt is self-contained text and requires no target or style-reference image at generation time.",
+    "Every candidate, validation, and test generation record contains exactly one source_reference image input.",
+    "The target/style truth path and SHA-256 never appear in generation input_images or generation calls.",
+    "The prompt contains zero training-source or held-out-source hard-coded clauses.",
+    "Every realized generation record conforms to generation-provenance-v1 and its hashes recompute from disk.",
+    "Frozen validation covers baseline, pose, composition, and exact text across two unseen source hashes.",
+    "Aggregate, worst-case, explicit assertions, and generalization-gap thresholds pass on validation and sealed test.",
+    "All generation and judge models, prompts, hashes, and loss components are persisted."
+  ],
+  "candidatesPerRound": 3,
+  "constraints": [
+    "Use repository-relative paths in persisted artifacts.",
+    "Use the built-in image generation tool.",
+    "Target/style truth is analysis-and-judge-only and forbidden as a generation input.",
+    "Do not open validationManifest before validate-transferability.",
+    "Do not open sealedTestManifest before audit-generalization.",
+    "Do not modify prior iteration evidence.",
+    "Do not compare losses across incompatible judge or prompt-input contracts."
+  ],
+  "maxGeneralizationGap": 0.1,
+  "maxRefinementRounds": 3,
+  "optionalInstructions": {},
+  "requestedWork": "Train prompt-only style reconstruction: use target truth for analysis and judging only, and generate every candidate, validation case, and test case from the source image plus reconstructed text prompt without a style-reference image.",
+  "sealedTestManifest": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+  "sourceReference": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+  "styleReference": "targets/editorial-anime-poster-001/truth/style-reference.png",
+  "targetDir": "targets/editorial-anime-poster-001",
+  "targetLoss": 0.25,
+  "testTargetLoss": 0.32,
+  "testWorstCaseLoss": 0.42,
+  "trainDir": "train-0007",
+  "validationManifest": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+  "validationTargetLoss": 0.3,
+  "validationWorstCaseLoss": 0.4
+}

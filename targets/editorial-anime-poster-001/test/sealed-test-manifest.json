@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "sealed_for_iteration": "train-0004",
+  "source": {
+    "file": "targets/editorial-anime-poster-001/test/source-alley.png",
+    "sha256": "56f945880a137fb787e0d2dba7d56b869f8bbf26c9b14488ad27a28e1fbb05f9",
+    "width": 1536,
+    "height": 1024,
+    "format": "PNG"
+  },
+  "testCases": [
+    {
+      "id": "alley-baseline",
+      "type": "baseline",
+      "sourceReference": "targets/editorial-anime-poster-001/test/source-alley.png",
+      "optionalInstructions": {},
+      "expected": {
+        "preserve": ["one red bicycle", "wet narrow alley", "pale concrete wall", "doorway", "potted green plants"],
+        "text": null
+      }
+    },
+    {
+      "id": "alley-combined-optional",
+      "type": "combined_optional",
+      "sourceReference": "targets/editorial-anime-poster-001/test/source-alley.png",
+      "optionalInstructions": {
+        "composition": "Use a square poster composition with the bicycle centered in the foreground and the alley receding behind it.",
+        "text": "RAIN ROUTE",
+        "additional": "Keep exactly one red bicycle and retain the doorway and potted green plants."
+      },
+      "expectedText": "RAIN ROUTE",
+      "expected": {
+        "aspect_ratio": "1:1",
+        "bicycle_position": "center foreground",
+        "bicycle_count": 1,
+        "preserve": ["red bicycle", "alley depth", "doorway", "potted green plants"]
+      }
+    }
+  ]
+}

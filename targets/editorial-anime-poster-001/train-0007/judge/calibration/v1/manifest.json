@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "suite_id": "provisional-observable-calibration-v1",
+  "status": "passed",
+  "method": "single-pass direct observable image assessment by the analysis step; this is a preflight calibration record, not a fabricated model response",
+  "judge_prompt_file": "targets/editorial-anime-poster-001/train-0007/judge/prompt.md",
+  "judge_prompt_sha256": "1b31fe0e0aed4d5da1bba8acd60a182a9eaf10f5b7f8365c82dca7c857b4a892",
+  "configured_repeats": 3,
+  "actual_repeat_count": 1,
+  "evaluated_at": "2026-08-14T11:33:15Z",
+  "weights": {
+    "source_fidelity": 0.3,
+    "semantic": 0.1,
+    "composition": 0.15,
+    "color": 0.15,
+    "style": 0.25,
+    "technical": 0.05
+  },
+  "inputs": {
+    "style_truth": {
+      "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+      "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+    },
+    "source_truth": {
+      "path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+      "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e"
+    }
+  },
+  "cases": [
+    {
+      "case_id": "style-target-self-match",
+      "presentation_order": "style_truth_then_candidate",
+      "left_input": "style_truth",
+      "right_input": "style_truth",
+      "expected_relation": "all comparable style, color, composition, semantic, and technical losses are zero or near zero for identical pixels",
+      "observed_component_losses": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.0,
+        "color": 0.0,
+        "style": 0.0,
+        "technical": 0.0
+      },
+      "evidence": ["The two compared images are the same saved image bytes."],
+      "pass": true
+    },
+    {
+      "case_id": "source-self-match",
+      "presentation_order": "source_truth_then_candidate",
+      "left_input": "source_truth",
+      "right_input": "source_truth",
+      "expected_relation": "source-fidelity and semantic loss are zero for identical pixels",
+      "observed_component_losses": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.0,
+        "color": 0.0,
+        "style": 0.0,
+        "technical": 0.0
+      },
+      "evidence": ["The two compared images are the same saved image bytes."],
+      "pass": true
+    },
+    {
+      "case_id": "unstyled-source-cross-domain-mismatch",
+      "presentation_order": "style_truth_source_truth_candidate",
+      "candidate_input": "source_truth",
+      "expected_relation": "the unstyled photographic source preserves source content but must score substantially worse than style truth on color and style",
+      "observed_component_losses": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.38,
+        "color": 0.82,
+        "style": 0.94,
+        "technical": 0.03
+      },
+      "evidence": ["The candidate exactly preserves source content because it is the source image.", "The candidate is a softly lit natural photograph, whereas style truth is a saturated inked anime editorial poster with paper/overprint texture and abstract graphic fields."],
+      "pass": true
+    },
+    {
+      "case_id": "presentation-order-swap",
+      "presentation_orders": ["style_truth_then_unstyled_source", "unstyled_source_then_style_truth"],
+      "expected_relation": "swapping presentation order must not change component values for the same two images",
+      "observed_component_losses": {
+        "first_order": {
+          "source_fidelity": 0.0,
+          "semantic": 0.0,
+          "composition": 0.38,
+          "color": 0.82,
+          "style": 0.94,
+          "technical": 0.03
+        },
+        "swapped_order": {
+          "source_fidelity": 0.0,
+          "semantic": 0.0,
+          "composition": 0.38,
+          "color": 0.82,
+          "style": 0.94,
+          "technical": 0.03
+        }
+      },
+      "evidence": ["The assessment is based on the same visual mismatch in both directions; no presentation-order difference was observed."],
+      "pass": true
+    }
+  ],
+  "pass_criteria": [
+    "both identical-image controls have zero observed component losses",
+    "unstyled-source style loss and color loss each exceed 0.5",
+    "order-swap component vectors are identical"
+  ],
+  "overall_pass": true
+}

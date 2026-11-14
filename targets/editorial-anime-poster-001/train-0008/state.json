@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "round": 3,
+  "phase": "output",
+  "lossFunctionVersion": "style-inversion-v2",
+  "styleComponentMaxLoss": 0.25,
+  "candidatesPerRound": 3,
+  "maxRefinementRounds": 3,
+  "targetLoss": 0.18,
+  "validationTargetLoss": 0.3,
+  "validationWorstCaseLoss": 0.4,
+  "testTargetLoss": 0.32,
+  "testWorstCaseLoss": 0.42,
+  "maxGeneralizationGap": 0.1,
+  "bestCandidate": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/candidates/candidate-001",
+  "bestLoss": 0.183,
+  "provisionalExitReason": "training_and_validation_reached",
+  "lastSelection": "targets/editorial-anime-poster-001/train-0008/rounds/round-0003/selection.json",
+  "parentTrainDir": "train-0007",
+  "startedAt": "2026-08-14T12:53:50Z",
+  "updatedAt": "2026-08-14T14:39:00Z",
+  "templateValidation": {
+    "round": 3,
+    "path": "targets/editorial-anime-poster-001/train-0008/rounds/round-0003/prompt/template-validation.json",
+    "promptPath": "targets/editorial-anime-poster-001/train-0008/rounds/round-0003/prompt/prompt.md",
+    "promptSha256": "0fd2a30929127f6e96d9e74861f2503d70abc5e7330fd98f1379c3dbd757ebf5",
+    "contractId": "prompt-only-style-reconstruction-v1",
+    "contractSchemaVersion": 3,
+    "forbiddenClauseCount": 0,
+    "status": "passed"
+  },
+  "transferability": {
+    "status": "passed",
+    "evaluationPath": "targets/editorial-anime-poster-001/train-0008/transferability/evaluation.json",
+    "promptSha256": "327ed88e2ca58c4e247bb52304706af0e59915e74c6ce06840628da2ce3c045a",
+    "validationManifestSha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "aggregateValidationLoss": 0.05125,
+    "worstCaseLoss": 0.055,
+    "generalizationGap": -0.13175,
+    "validatedAt": "2026-08-14T14:15:29Z"
+  },
+  "validationManifest": {
+    "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "byteSize": 3043,
+    "contentsOpened": false
+  },
+  "sealedTestManifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+    "sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+    "byteSize": 1410,
+    "contentsOpened": false
+  },
+  "generationFailures": [
+    {
+      "round": 3,
+      "attemptEvidence": "targets/editorial-anime-poster-001/train-0008/rounds/round-0003/candidates/attempts/attempt-0001.json",
+      "errorCode": "moderation_blocked",
+      "detail": "All requested candidate calls failed before artifact persistence; no candidate image or realized generation record exists."
+    }
+  ],
+  "testAudit": {
+    "status": "complete",
+    "evaluationPath": "targets/editorial-anime-poster-001/train-0008/test-audit/evaluation.json",
+    "promptSha256": "327ed88e2ca58c4e247bb52304706af0e59915e74c6ce06840628da2ce3c045a",
+    "sealedTestManifestSha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+    "testPassed": false,
+    "aggregateTestLoss": 0.1045,
+    "worstCaseLoss": 0.11,
+    "validationTestGap": 0.05325,
+    "completedAt": "2026-08-14T14:31:00Z"
+  },
+  "exitReason": "generalization_test_failed",
+  "review": {
+    "reviewedAt": "2026-08-14T14:39:00Z",
+    "status": "failed",
+    "evaluationPath": "targets/editorial-anime-poster-001/train-0008/evaluation.json",
+    "analysisPath": "targets/editorial-anime-poster-001/train-0008/analysis.md",
+    "findings": [
+      "The one-shot sealed test failed the required combined optional-instruction assertion bicycle_center_foreground.",
+      "The combined optional test metrics record total 0.110 and reward 0.890, but the frozen style-inversion-v2 weights recompute them as 0.1115 and 0.8885 from the persisted components.",
+      "Round template-validation records do not persist a subject-specific-clause count or required-literal-clause result; this is incomplete template-gate evidence, although direct prompt inspection found both required literal clauses in the selected prompt."
+    ],
+    "bestJsonUpdated": false
+  }
+}

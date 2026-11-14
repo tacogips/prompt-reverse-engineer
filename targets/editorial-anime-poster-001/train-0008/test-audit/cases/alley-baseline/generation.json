@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "provider": "openai",
+  "model": "built-in-imagegen",
+  "model_version": null,
+  "tool_mode": "image-edit",
+  "output": {
+    "path": "targets/editorial-anime-poster-001/train-0008/test-audit/cases/alley-baseline/image.png",
+    "sha256": "e0123423d3d8b8d8093675a83bbdee30abe94de0ebd8f3326b951ff38bb37f42",
+    "width": 1536,
+    "height": 1024,
+    "format": "png"
+  },
+  "input_images": [
+    {
+      "role": "source_reference",
+      "path": "targets/editorial-anime-poster-001/test/source-alley.png",
+      "sha256": "56f945880a137fb787e0d2dba7d56b869f8bbf26c9b14488ad27a28e1fbb05f9"
+    }
+  ],
+  "prompt_file": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/prompt/prompt.md",
+  "prompt_sha256": "327ed88e2ca58c4e247bb52304706af0e59915e74c6ce06840628da2ce3c045a",
+  "seed": null,
+  "provider_parameters": {
+    "structured_optional_instructions": {}
+  },
+  "generated_at": "2026-08-14T14:27:00Z",
+  "raw_response_file": null
+}

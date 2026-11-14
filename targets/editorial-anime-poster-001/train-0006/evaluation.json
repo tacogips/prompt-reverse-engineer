@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "iteration": 6,
+  "status": "failed",
+  "selected_candidate": "rounds/round-0002/candidates/candidate-002",
+  "rounds_executed": 2,
+  "configured_max_refinement_rounds": 2,
+  "configured_target_loss": 0.25,
+  "workflow_exit_reason": "transferability_validation_failed",
+  "exit_reason": "validation_required_assertions_failed_and_generation_provenance_history_mismatch",
+  "selection_rule": "lowest_total_loss_then_candidate_id_with_current_template_contract_eligibility",
+  "total_loss": 0.1025,
+  "reward": 0.8975,
+  "training_loss": 0.1025,
+  "validation_loss": 0.0485,
+  "validation_worst_case_loss": 0.08,
+  "train_validation_generalization_gap": -0.054,
+  "validation_test_generalization_gap": null,
+  "validation_case_coverage": {
+    "baseline": 1,
+    "pose": 1,
+    "composition": 1,
+    "text": 1,
+    "distinct_heldout_sources": 2,
+    "training_source_excluded": true
+  },
+  "test_case_coverage": null,
+  "is_new_best": false,
+  "best_json_updated": false,
+  "comparison_note": "The existing best uses legacy judge-v3-style-identity-provenance, so its 0.0785 loss is not numerically comparable with judge-v4-source-fidelity-style-transfer. This failed iteration is not promotable.",
+  "verification": {
+    "passed": false,
+    "tolerance": 1e-9,
+    "passed_checks": [
+      "All six candidate metrics and eight validation metrics have components in [0, 1], recompute from their corresponding judge records, and have correct totals and rewards under their declared aggregation rules.",
+      "The eligible round-0002 candidate-002 is the deterministic lowest-loss winner at 0.1025. The lower round-0001 winner is explicitly ineligible because it used reusable-style-transfer-v1 instead of the current v2 contract; no eligible best was replaced by a worse round winner.",
+      "All current training and final validation generated images exist under the project and their generation-provenance-v1 output, prompt, and input-image hashes recompute from repository-root paths.",
+      "Both round template validations passed with zero forbidden subject-specific clauses. The final v2 executable prompt contains the required literal safety clause verbatim.",
+      "Both isolation audits passed, recorded fixed validation and test-manifest hashes, and documented only permitted pre-validation/pre-audit path/hash/size access.",
+      "The frozen validation suite covers baseline, pose, composition, and exact-text cases across two source hashes disjoint from the training source. Exact-text and no-text checks pass in the final evaluation.",
+      "The validation aggregate (0.0485), worst case (0.08), and train/validation gap (-0.054) satisfy their configured thresholds."
+    ],
+    "failed_checks": [
+      "Validation required assertions failed for heldout-a-pose: three_quarter_view and brown_shoes_preserved. Threshold-only success cannot override failed required assertions.",
+      "The sealed one-shot test audit was skipped because validation failed; therefore required sealed-test coverage, thresholds, source disjointness confirmation, and validation/test gap are absent.",
+      "Four realized historical validation generation records are nonconformant: their declared output.path points to the current validation image while their recorded output.sha256 is for the preserved history image. Fresh hashes of the declared paths differ from all four recorded values.",
+      "A failed or missing generalization audit and nonconformant realized provenance prevent reusable or arbitrary-input success."
+    ]
+  }
+}

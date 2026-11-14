@@ -1,0 +1,12 @@
+{
+  "id": "analyze-images",
+  "description": "Analyze the style truth and person identity reference and author the initial generation prompt.",
+  "nodeType": "agent",
+  "executionBackend": "codex-agent",
+  "model": "gpt-5.6-terra",
+  "promptTemplateFile": "prompts/analyze-images.md",
+  "variables": {},
+  "output": {
+    "description": "Return JSON listing analysis, judge, and round-1 prompt artifacts."
+  }
+}

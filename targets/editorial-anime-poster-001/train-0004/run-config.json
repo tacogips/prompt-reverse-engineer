@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "workflowExecutionId": "prompt-reverse-train-session-11",
+  "acceptanceCriteria": [
+    "The reusable prompt contains zero source-specific hard-coded clauses.",
+    "All four validation case types pass across two held-out source hashes.",
+    "Exact requested text is rendered verbatim and absent text produces no added typography.",
+    "Aggregate, worst-case, and generalization-gap thresholds pass on validation and sealed test.",
+    "All generation and judge models, prompts, hashes, and loss components are persisted."
+  ],
+  "candidatesPerRound": 3,
+  "constraints": [
+    "Use repository-relative paths in persisted artifacts.",
+    "Use the built-in image generation tool.",
+    "Do not inspect the sealed test manifest before audit-generalization.",
+    "Do not modify completed train-0001 through train-0003 evidence.",
+    "Do not compare legacy identity-judge loss numerically with the new source-fidelity judge."
+  ],
+  "maxGeneralizationGap": 0.1,
+  "maxRefinementRounds": 2,
+  "optionalInstructions": {},
+  "parentTrainDir": "train-0003",
+  "requestedWork": "Train a reusable arbitrary-source style-transfer prompt with explicit optional-instruction handling and held-out overfitting checks.",
+  "sealedTestManifest": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+  "sourceReference": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+  "styleReference": "targets/editorial-anime-poster-001/truth/style-reference.png",
+  "targetDir": "targets/editorial-anime-poster-001",
+  "targetLoss": 0.25,
+  "testTargetLoss": 0.32,
+  "testWorstCaseLoss": 0.42,
+  "trainDir": "train-0004",
+  "validationCases": [
+    {
+      "expected": {
+        "preserve": [
+          "one adult person",
+          "facial identity",
+          "plain dark shirt",
+          "three-quarter portrait"
+        ],
+        "text": null
+      },
+      "id": "adult-baseline",
+      "optionalInstructions": {},
+      "sourceReference": "targets/editorial-anime-poster-001/input/person-reference.png",
+      "type": "baseline"
+    },
+    {
+      "expected": {
+        "both_hands_visible": true,
+        "framing": "full body",
+        "pose": "standing contrapposto",
+        "preserve": [
+          "facial identity",
+          "hair",
+          "plain dark clothing"
+        ],
+        "subject_count": 1,
+        "text": null
+      },
+      "id": "adult-pose",
+      "optionalInstructions": {
+        "pose": "Show the same person standing in a full-body contrapposto pose with both hands visible."
+      },
+      "sourceReference": "targets/editorial-anime-poster-001/input/person-reference.png",
+      "type": "pose"
+    },
+    {
+      "expected": {
+        "aspect_ratio": "1:1",
+        "clock_fully_visible": true,
+        "clock_position": "center",
+        "negative_space": "above",
+        "preserve": [
+          "one teal ceramic alarm clock",
+          "cream folded cloth"
+        ],
+        "text": null
+      },
+      "id": "clock-composition",
+      "optionalInstructions": {
+        "composition": "Use a square, centered product-poster composition with the clock fully visible and generous negative space above it."
+      },
+      "sourceReference": "targets/editorial-anime-poster-001/validation/source-clock.png",
+      "type": "composition"
+    },
+    {
+      "expected": {
+        "additional_text": false,
+        "exact_text_occurrences": 1,
+        "preserve": [
+          "one teal ceramic alarm clock",
+          "cream folded cloth"
+        ]
+      },
+      "expectedText": "TIME TO DREAM",
+      "id": "clock-exact-text",
+      "optionalInstructions": {
+        "text": "TIME TO DREAM"
+      },
+      "sourceReference": "targets/editorial-anime-poster-001/validation/source-clock.png",
+      "type": "text"
+    }
+  ],
+  "validationTargetLoss": 0.3,
+  "validationWorstCaseLoss": 0.4
+}

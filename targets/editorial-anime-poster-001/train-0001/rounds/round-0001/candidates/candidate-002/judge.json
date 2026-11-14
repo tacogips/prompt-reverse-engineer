@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.16,
+    "semantic": 0.015,
+    "composition": 0.1,
+    "color": 0.06,
+    "style": 0.18,
+    "technical": 0.02
+  },
+  "evidence": {
+    "identity": ["The candidate is a tan-skinned young adult man with the source's dark textured quiff, close sides, strong brows, brown eyes, left-facing pose, and neutral expression.", "Its face is more symmetrical and forward-looking, with a broader, more idealized lower face than the person truth."],
+    "semantic": ["The image visibly delivers one male editorial anime-poster portrait.", "It contains no copied feminine person, ear jewelry, or readable text."],
+    "composition": ["The vertical frame has a large portrait, coral and yellow circles, teal edge fields, vertical rules, blocks, and negative space in the intended poster arrangement.", "The portrait sits more centrally and is more front-facing than the reference's upward-looking three-quarter figure."],
+    "color": ["Navy, teal, coral, mustard, and cream appear in the same high-contrast graphic balance as the style truth.", "The figure itself uses fewer coral and cyan accent passages than the reference."],
+    "style": ["Navy contour work, flat-shaded illustration, paper grain, speckling, and brush arcs are visibly aligned with the editorial reference.", "The candidate remains cleaner and more digitally modeled, lacking the source's fine expressive hair linework and intricate patterned styling."],
+    "technical": ["The face, ears, hair, and garment are anatomically coherent and sharply resolved, without accidental duplicate features, logos, or pseudo-text."]
+  },
+  "dominant_differences": ["Restore a clearer upward-left gaze and less frontal facial geometry.", "Add nuanced editorial ink and dry-brush variation.", "Develop more varied but non-source-specific garment layering."],
+  "confidence": 0.93
+}

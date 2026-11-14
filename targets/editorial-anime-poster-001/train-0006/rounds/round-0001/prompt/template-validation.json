@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "contract_version": "reusable-style-transfer-v1",
+  "prompt_path": "targets/editorial-anime-poster-001/train-0006/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "5f48e6b147faa25c74460bf6469016c6d5b622831afd48c1a352111b381219f4",
+  "normalization": {
+    "rewritten": false,
+    "reason": "The current prompt contains only role-bound source-preservation invariants and transferable style properties; it contains no observed or inferred source-specific values."
+  },
+  "required_role_checks": {
+    "style_reference_image_1_only": {
+      "passed": true,
+      "evidence": "Image 1 is limited to reusable visual language and explicitly excludes depicted content."
+    },
+    "source_reference_image_2_exclusive_content_authority": {
+      "passed": true,
+      "evidence": "Image 2 is explicitly the exclusive authority for depicted content and identity."
+    },
+    "unspecified_source_attributes_preserved": {
+      "passed": true,
+      "evidence": "The prompt preserves all unspecified source-controlled attributes and prohibits blending source content with Image 1 content."
+    }
+  },
+  "optional_field_checks": {
+    "pose": {
+      "passed": true,
+      "behavior": "Overrides only the requested pose or viewpoint."
+    },
+    "composition": {
+      "passed": true,
+      "behavior": "Overrides only requested framing, crop, placement, or layout."
+    },
+    "text": {
+      "passed": true,
+      "behavior": "Renders supplied text exactly and only verbatim; absent text prohibits text-like marks."
+    },
+    "additional": {
+      "passed": true,
+      "behavior": "Applies only an explicit, narrowly scoped change."
+    }
+  },
+  "suspected_subject_specific_clauses": [],
+  "forbidden_subject_specific_clause_count": 0,
+  "style_clause_inventory": [
+    "illustration medium",
+    "framing language",
+    "palette relationships",
+    "contour and mark-making quality",
+    "abstract graphic vocabulary",
+    "print/brush texture",
+    "graphic treatment"
+  ],
+  "optional_instruction_precedence_check": {
+    "passed": true,
+    "declared_order": [
+      "safety_and_integrity",
+      "explicit_optional_instructions",
+      "source_content_and_identity_preservation",
+      "style_transfer_defaults"
+    ],
+    "evidence": "Each optional field is scoped to its named attribute, and the prompt states that unspecified attributes remain source-controlled."
+  },
+  "complexity": {
+    "word_count": 327,
+    "style_clause_count": 7,
+    "suspected_subject_specific_clause_count_before_normalization": 0,
+    "forbidden_subject_specific_clause_count_after_normalization": 0
+  },
+  "status": "passed"
+}

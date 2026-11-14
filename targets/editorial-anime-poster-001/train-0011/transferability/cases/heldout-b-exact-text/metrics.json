@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "case_id": "heldout-b-exact-text",
+  "case_type": "text",
+  "loss": {"total": 0.140, "medium_rendering": 0.16, "palette_tone": 0.17, "line_shape": 0.18, "texture_material": 0.19, "graphic_language": 0.18, "source_fidelity": 0.07, "technical": 0.04},
+  "weighted_total_unrounded": 0.1395,
+  "judge_proposed_total": null,
+  "total_correction": null,
+  "instruction_gates": {"text_adherence": {"passed": true, "reason": "Exactly one visible instance of SIT WITH COLOR; no added or pseudo-readable text."}, "typography_dialogue": {"passed": true, "loss": 0.15}},
+  "style_component_ceiling": 0.25,
+  "style_component_ceiling_passed": true,
+  "feedback_gates_passed": true
+}

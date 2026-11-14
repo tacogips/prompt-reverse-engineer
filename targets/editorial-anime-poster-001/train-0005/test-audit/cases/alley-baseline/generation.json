@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "provider": "openai",
+  "model": "image_gen",
+  "model_version": null,
+  "tool_mode": "built_in_image_generation",
+  "prompt_sha256": "225d563ace0193437dbb976557ecdf0d1afd3cc463a3a33ffcbf4fe2968a87bf",
+  "frozen_prompt_path": "targets/editorial-anime-poster-001/train-0005/rounds/round-0001/prompt/prompt.md",
+  "input_roles": [
+    {
+      "position": 1,
+      "role": "style_reference",
+      "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+      "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+    },
+    {
+      "position": 2,
+      "role": "source_reference",
+      "path": "targets/editorial-anime-poster-001/test/source-alley.png",
+      "sha256": "56f945880a137fb787e0d2dba7d56b869f8bbf26c9b14488ad27a28e1fbb05f9"
+    }
+  ],
+  "optional_instructions": {},
+  "seed": null,
+  "provider_parameters": {
+    "execution_path": "built-in-image-generation-tool",
+    "raw_response_file": null
+  },
+  "output": {
+    "file": "image.png",
+    "sha256": "ef67b8eafb2bd5621e8c1809abd2017f5bce85f5f94b0fd22ae75a08929b852a",
+    "width": 1536,
+    "height": 1024
+  },
+  "generated_at": "2026-08-14T07:30:37Z"
+}

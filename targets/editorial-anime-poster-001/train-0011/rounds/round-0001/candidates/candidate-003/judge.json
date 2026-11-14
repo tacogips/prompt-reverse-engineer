@@ -1,0 +1,77 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "target_candidate_order": "style_truth_then_candidate",
+  "assessment_scope": "Visible-image assessment only; the style truth supplied reusable style evidence and the source truth supplied content-preservation evidence.",
+  "provenance_check": {
+    "eligible": true,
+    "input_image_roles": [
+      "source_reference"
+    ],
+    "style_or_truth_input_detected": false,
+    "evidence": "generation.json records exactly the source-child JPEG as the sole input image; its recorded SHA-256 matches the source state and the candidate output hash recomputed from saved bytes."
+  },
+  "loss": {
+    "medium_rendering": 0.17,
+    "palette_tone": 0.19,
+    "line_shape": 0.18,
+    "texture_material": 0.16,
+    "graphic_language": 0.18,
+    "source_fidelity": 0.12,
+    "technical": 0.04
+  },
+  "palette_sub_losses": {
+    "overall_palette": 0.18,
+    "skin_treatment": 0.16,
+    "hair_treatment": 0.16,
+    "clothing_treatment": 0.19
+  },
+  "conditional_checks": {
+    "typography_dialogue": {
+      "applicable": false,
+      "loss": null,
+      "spelling_adherence": null,
+      "unrequested_text": false,
+      "evidence": [
+        "No optional exact-text instruction was authorized. The Batman word and bat symbol are preserved source-clothing markings, not unrequested poster text."
+      ]
+    }
+  },
+  "evidence": {
+    "medium_rendering": [
+      "The photo is translated into polished anime poster rendering with opaque, cleanly separated cel values and precise navy focal outlines.",
+      "The candidate has somewhat finer, more naturalistic facial and hair rendering than the target's broader graphic planes."
+    ],
+    "palette_tone": [
+      "Overall palette: paper beige, deep navy, teal, coral, and restrained gold create a close source-independent poster relationship.",
+      "Skin treatment: source complexion and facial identity are retained using a luminous main plane, warm shadow band, and narrow highlight without imposing the teacher's literal color.",
+      "Hair treatment: the source's dark hairstyle and silhouette are retained as a grouped navy mass with controlled warm edge accents.",
+      "Clothing treatment: the original gray shirt, Batman logo, construction, and folds remain legible with restrained gray value facets and dark seam anchors; the garment still has fewer harmonizing accent facets than the target language allows."
+    ],
+    "line_shape": [
+      "Variable deep-navy contours cleanly contain the child, garment seams, tiles, and graphic support strokes; fine tapered hair strands and gold connectors are present.",
+      "The contour system is slightly finer and more uniformly illustrative than the truth's bolder editorial alternation."
+    ],
+    "texture_material": [
+      "Visible paper grain, faint speckling, distressed brush sweeps, and small flecks reproduce the truth's tactile print behavior while retaining logo legibility.",
+      "The surface is cleaner and less varied in overprint breakage than the style evidence."
+    ],
+    "graphic_language": [
+      "Coral disc, teal brush field, navy dot arrays, thin gold orbits, and generous paper negative space form an adaptable editorial support/focal/ornament sequence.",
+      "Retained tile context reduces the abstract-field dominance and leaves the hierarchy less graphic than the truth, without copying its concrete layout."
+    ],
+    "source_fidelity": [
+      "The source child’s recognizable profile, haircut, shirt silhouette, Batman word and symbol, folded shirt construction, arm pose, trousers, tile steps, and adjacent wall context are all retained.",
+      "Only nonessential scene coloration and surface treatment are stylized; no garment or logo replacement is visible."
+    ],
+    "technical": [
+      "The anatomy, logo, garment seams, tile geometry, and facial features are coherent and sharply rendered. No unrequested lettering beyond the source garment mark, unsafe change, or obvious generation artifact is visible."
+    ]
+  },
+  "dominant_transferable_differences": [
+    "Use a few stronger but still fold-following source-relative clothing accent facets, without recoloring or redesigning the garment.",
+    "Push the editorial support-field hierarchy slightly ahead of retained environmental detail while preserving the source scene.",
+    "Reduce fine naturalistic modeling into more decisive bounded cel planes and selectively broken print edges."
+  ],
+  "confidence": 0.9
+}

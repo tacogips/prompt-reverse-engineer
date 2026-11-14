@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "iteration": 2,
+  "status": "failed",
+  "selected_candidate": "rounds/round-0002/candidates/candidate-001",
+  "rounds_executed": 2,
+  "configured_max_refinement_rounds": 3,
+  "configured_target_loss": 0.08,
+  "workflow_exit_reason": "target_loss_reached",
+  "exit_reason": "verification_failed_image_provenance_mismatch",
+  "selection_rule": "lowest_total_loss_then_candidate_id",
+  "total_loss": 0.073,
+  "reward": 0.927,
+  "previous_best_loss": null,
+  "absolute_improvement": null,
+  "relative_improvement": null,
+  "is_new_best": false,
+  "judge_version": "judge-v2-style-identity",
+  "judge_prompt_sha256": "fa5ee740833c0f6745c32f4c3c0c082269ed909994e95cfe900f93660ba0d16b",
+  "verification": {
+    "passed_checks": [
+      "Required target, input, truth, workflow, analysis, judge, calibration, state, prompt, selection, generation, metric, and raw judge artifacts are present.",
+      "All eight generated candidate images are repository-local PNG files and decode at 1023x1537 pixels.",
+      "All candidate component losses are within [0, 1].",
+      "Judge component losses match the corresponding metric records.",
+      "The judge weights sum to 1.0; totals and rewards recompute within floating-point rounding tolerance for all eight candidates.",
+      "Each round winner is the deterministic lowest-loss candidate, and round 2 retained an improved global best of 0.073 over round 1's 0.08275.",
+      "The provisional calibration manifest records all required relations as passed.",
+      "The target_loss_reached workflow exit agrees with 0.073 <= 0.08 at round 2 of the configured maximum 3 rounds.",
+      "All persisted JSON files in train-0002 parse successfully."
+    ],
+    "failed_checks": [
+      "The recorded image_sha256 does not match the repository-local image.png bytes for every round-0001 candidate (candidate-001 through candidate-004)."
+    ],
+    "tolerance": 1e-9
+  }
+}

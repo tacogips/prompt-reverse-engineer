@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "record_type": "planned_shared_generation_settings",
+  "contract_id": "generation-provenance-v1",
+  "provider": "openai",
+  "model": "image_gen",
+  "model_version": null,
+  "tool_mode": "image-edit",
+  "input_images": [{"role": "source_reference", "path": "targets/editorial-anime-poster-001/input/source-child.jpeg", "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e"}],
+  "prompt_file": "targets/editorial-anime-poster-001/train-0009/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "0b0f346eafd6f47c17ae1f547f75835365b26491e6edf34a0d27ef30e7ef5d3d",
+  "seed": null,
+  "provider_parameters": {"requested_output_count": 3, "requested_aspect_ratio": "portrait", "style_reference_input": false},
+  "generated_at": null,
+  "raw_response_file": null,
+  "status": "planned",
+  "note": "This is a planned shared settings record, not a realized generation record. Realized candidates must add a verified output object and actual timestamp."
+}

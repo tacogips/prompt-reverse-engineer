@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "judge_version": "judge-v4-source-fidelity-style-transfer",
+  "original_resolution_assessed": true,
+  "loss": { "source_fidelity": 0.06, "style_fidelity": 0.07, "composition_adherence": 0.01, "text_adherence": 0.0, "technical": 0.03 },
+  "assertions": { "square_aspect_ratio": true, "yellow_chair_centered": true, "blue_bottle_left": true, "plant_right": true, "negative_space_above": true, "object_count_preserved": true, "no_invented_text": true },
+  "evidence": ["The output is square, with the yellow chair centered, blue bottle at left, plant at right, and generous open space above.", "Each source object is retained once, while the composition is translated to the requested editorial graphic poster treatment.", "No lettering or pseudo-text is visible."]
+}

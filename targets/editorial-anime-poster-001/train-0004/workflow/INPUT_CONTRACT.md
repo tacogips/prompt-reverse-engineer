@@ -1,0 +1,113 @@
+# Workflow Input Contract
+
+`prompt-reverse-train` learns a reusable style policy. It does not learn a textual description of the training source.
+
+## Required inputs
+
+- `targetDir`: repository-relative target directory.
+- `trainDir`: new immutable iteration directory name.
+- `styleReference`: repository-relative style truth.
+- `sourceReference`: repository-relative training source. The legacy name `personReference` is accepted for old runs only.
+- `candidatesPerRound`, `maxRefinementRounds`, and `targetLoss`.
+- `validationTargetLoss`, `validationWorstCaseLoss`, `testTargetLoss`, `testWorstCaseLoss`, and `maxGeneralizationGap`.
+
+## Optional generation instructions
+
+```json
+{
+  "optionalInstructions": {
+    "pose": null,
+    "composition": null,
+    "text": null,
+    "additional": null
+  }
+}
+```
+
+Every field is independently optional. `null` or absence means no override. `text` is verbatim: the output must contain exactly the supplied string and no additional text. Explicit instructions override only the named attribute; all unspecified source content remains invariant.
+
+## Optimization validation cases
+
+These cases may provide refinement feedback. Use at least two source hashes distinct from the training source and cover all four case types.
+
+```json
+{
+  "validationCases": [
+    {
+      "id": "heldout-a-baseline",
+      "type": "baseline",
+      "sourceReference": "targets/example/validation/source-a.png",
+      "optionalInstructions": {}
+    },
+    {
+      "id": "heldout-a-pose",
+      "type": "pose",
+      "sourceReference": "targets/example/validation/source-a.png",
+      "optionalInstructions": {
+        "pose": "repository fixture's predeclared pose instruction"
+      }
+    },
+    {
+      "id": "heldout-b-composition",
+      "type": "composition",
+      "sourceReference": "targets/example/validation/source-b.png",
+      "optionalInstructions": {
+        "composition": "repository fixture's predeclared composition instruction"
+      }
+    },
+    {
+      "id": "heldout-b-text",
+      "type": "text",
+      "sourceReference": "targets/example/validation/source-b.png",
+      "optionalInstructions": {
+        "text": "EXACT FIXTURE TEXT"
+      },
+      "expectedText": "EXACT FIXTURE TEXT"
+    }
+  ]
+}
+```
+
+Expected pose and composition assertions must be frozen in the case record before execution. Do not derive them from generated output.
+
+## Sealed one-shot test cases
+
+The normal workflow input contains only `sealedTestManifest`, a repository-relative path to a JSON file. Intake records its path, SHA-256, and size without opening it. The manifest must use at least one additional source hash that appears in neither training nor validation. Prompt synthesis, refinement, training judge, and validation nodes must not inspect it. Only `audit-generalization` may open and consume it, once, after optimization stops.
+
+```json
+{
+  "sealedTestManifest": "targets/example/test/sealed-test-manifest.json"
+}
+```
+
+The sealed file has this structure:
+
+```json
+{
+  "testCases": [
+    {
+      "id": "test-c-baseline",
+      "type": "baseline",
+      "sourceReference": "targets/example/test/source-c.png",
+      "optionalInstructions": {}
+    },
+    {
+      "id": "test-c-combined",
+      "type": "combined_optional",
+      "sourceReference": "targets/example/test/source-c.png",
+      "optionalInstructions": {
+        "pose": "sealed pose instruction",
+        "composition": "sealed composition instruction",
+        "text": "SEALED EXACT TEXT"
+      },
+      "expectedText": "SEALED EXACT TEXT"
+    }
+  ]
+}
+```
+
+An audit failure cannot route back to refinement. A later outer iteration may learn from it only after replacing the now-consumed test set with a newly sealed one.
+
+## Prototype escape hatch
+
+`allowUnvalidatedPrototype: true` permits workflow research without complete validation/test fixtures. Such a run is always non-promotable, cannot update `best.json`, and cannot report reusable or arbitrary-input success.

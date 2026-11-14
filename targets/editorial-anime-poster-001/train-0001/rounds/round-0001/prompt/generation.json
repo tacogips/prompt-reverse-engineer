@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "round": 1,
+  "mode": "style-transfer",
+  "provider": "openai-built-in",
+  "model": "image_gen__imagegen",
+  "model_version": null,
+  "width": 1024,
+  "height": 1536,
+  "aspect_ratio": "2:3",
+  "seed": null,
+  "steps": null,
+  "guidance": null,
+  "sampler": null,
+  "prompt_file": "targets/editorial-anime-poster-001/train-0001/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "d0aa2b6320767fa15dd08eeb29c6f29c5ec4826bb8b5446931e4e2482e2ae4bb",
+  "input_images": [
+    {
+      "label": "Image 1",
+      "role": "style_reference_only",
+      "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+      "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+    },
+    {
+      "label": "Image 2",
+      "role": "person_identity_reference_only",
+      "path": "targets/editorial-anime-poster-001/input/person-reference.png",
+      "sha256": "813ec67c85c0a3bcc7749b58d6560e09419759a8a73f1680c228fc5023cb1aeb"
+    }
+  ],
+  "provider_parameters": {
+    "built_in_tool_required": true,
+    "candidates_per_round": 4,
+    "reference_roles_must_be_labeled": true,
+    "no_api_or_cli_fallback": true
+  },
+  "notes": "Values are intended shared settings. Realized per-candidate records must preserve only metadata exposed by the built-in generator."
+}

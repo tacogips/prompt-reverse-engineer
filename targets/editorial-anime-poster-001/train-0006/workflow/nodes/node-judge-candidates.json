@@ -1,0 +1,12 @@
+{
+  "id": "judge-candidates",
+  "description": "Apply the versioned training-image loss function and route provisional convergence to held-out validation.",
+  "nodeType": "agent",
+  "executionBackend": "codex-agent",
+  "model": "gpt-5.6-terra",
+  "promptTemplateFile": "prompts/judge-candidates.md",
+  "variables": {},
+  "output": {
+    "description": "Return adapter JSON with when.run_validation and the selected candidate, loss, reward, round, and provisional exit reason."
+  }
+}

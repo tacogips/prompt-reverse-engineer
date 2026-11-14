@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "judge_version": "source-style-judge-v2",
+  "judge_config": "targets/editorial-anime-poster-001/train-0007/judge/config.json",
+  "original_resolution_assessed": true,
+  "loss": { "source_fidelity": 0.04, "style_fidelity": 0.15, "text_adherence": 0.0, "technical": 0.03 },
+  "assertions": { "subject_count": true, "framing_full_body": true, "both_hands_visible": true, "both_feet_visible": true, "facial_identity_preserved": true, "shoulder_length_dark_hair_preserved": true, "green_sweater_preserved": true, "cream_trousers_preserved": true, "brown_shoes_preserved": true, "wooden_stool_preserved": true, "no_invented_text": true },
+  "evidence": ["The single full-body person, facial likeness, dark shoulder-length hair, green sweater, cream trousers, brown shoes, and wooden stool are visibly retained.", "The candidate uses saturated cyan, navy, yellow, and coral fields with ink contouring, paper texture, and dry-brush marks, but is less ornate than the style truth.", "No readable or pseudo-readable text is visible; anatomy and edges are clean."],
+  "confidence": 0.91
+}

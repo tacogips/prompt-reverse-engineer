@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "provider": "openai",
+  "model": "image_gen",
+  "model_version": null,
+  "prompt_sha256": "225d563ace0193437dbb976557ecdf0d1afd3cc463a3a33ffcbf4fe2968a87bf",
+  "frozen_prompt_path": "targets/editorial-anime-poster-001/train-0005/rounds/round-0001/prompt/prompt.md",
+  "input_roles": [{"image": "targets/editorial-anime-poster-001/truth/style-reference.png", "role": "style_reference", "position": 1}, {"image": "targets/editorial-anime-poster-001/validation/heldout-a-0005.png", "role": "source_reference", "position": 2}],
+  "optional_instructions": {},
+  "seed": null,
+  "provider_parameters": {"execution_path": "built-in-image-generation-tool", "raw_response_file": null},
+  "output": {"file": "image.png", "sha256": "6c4cae768aeb64e55ff9139cb94587285a3c13547d5f54ead878f69a4ea8d181", "width": 1023, "height": 1537}
+}

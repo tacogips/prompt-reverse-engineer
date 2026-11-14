@@ -1,0 +1,104 @@
+{
+  "schema_version": 2,
+  "round": 1,
+  "session_id": "prompt-reverse-train-session-26",
+  "audited_at": "2026-08-14T15:19:11Z",
+  "status": "failed",
+  "candidate_generation_authorized": false,
+  "prompt": {
+    "path": "targets/editorial-anime-poster-001/train-0009/rounds/round-0001/prompt/prompt.md",
+    "sha256": "0b0f346eafd6f47c17ae1f547f75835365b26491e6edf34a0d27ef30e7ef5d3d"
+  },
+  "template_validation": {
+    "path": "targets/editorial-anime-poster-001/train-0009/rounds/round-0001/prompt/template-validation.json",
+    "sha256": "8cc0b827797f89084ba4b168a20ebac08aa1d73dee67771879cd3a01c1e85d6f",
+    "recorded_prompt_sha256": "0b0f346eafd6f47c17ae1f547f75835365b26491e6edf34a0d27ef30e7ef5d3d",
+    "status": "passed",
+    "matches_current_prompt": true
+  },
+  "manifests": {
+    "validation": {
+      "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+      "fresh_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "recorded_sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+      "hash_matches": true,
+      "contents_opened_by_audit": false
+    },
+    "sealed_test": {
+      "path": "targets/editorial-anime-poster-001/test/sealed-test-0009.json",
+      "fresh_sha256": "20c5f991fadd4ed4efe3eff5cfec42c53044bba24dafe4c570cc90fa0c02db9d",
+      "recorded_sha256": "20c5f991fadd4ed4efe3eff5cfec42c53044bba24dafe4c570cc90fa0c02db9d",
+      "hash_matches": true,
+      "contents_opened_by_audit": false
+    }
+  },
+  "target_style_truth": {
+    "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+  },
+  "runtime_input": {
+    "validation_and_test_are_paths_only": true,
+    "inline_validation_cases_present": false,
+    "inline_test_cases_present": false
+  },
+  "audited_step_executions": [
+    {"execution_id": "intake-or-plan-attempt-1-exec-1", "step_id": "intake-or-plan", "status": "completed"},
+    {"execution_id": "analyze-images-attempt-1-exec-2", "step_id": "analyze-images", "status": "completed"},
+    {"execution_id": "generalize-prompt-attempt-1-exec-3", "step_id": "generalize-prompt", "status": "completed"},
+    {"execution_id": "audit-input-isolation-attempt-1-exec-4", "step_id": "audit-input-isolation", "status": "running"}
+  ],
+  "access_events": [
+    {
+      "step_execution_id": "intake-or-plan-attempt-1-exec-1",
+      "step_id": "intake-or-plan",
+      "path_scope": "frozen validation and sealed-test manifest metadata",
+      "operation": "recorded path, SHA-256, and byte size without contents",
+      "classification": "allowed",
+      "evidence": "intake-evidence.json records contentsOpened false for both manifests."
+    },
+    {
+      "step_execution_id": "analyze-images-attempt-1-exec-2",
+      "step_id": "analyze-images",
+      "path_scope": "historical validation/test fixture directories",
+      "operation": "repository filename inventory printed fixture paths before the authorized validation or test stages",
+      "classification": "prohibited",
+      "evidence": "The step's persisted execution evidence explicitly records this early inventory and routes the run to review. No sealed manifest or fixture bytes were opened, parsed, copied, or decoded."
+    },
+    {
+      "step_execution_id": "generalize-prompt-attempt-1-exec-3",
+      "step_id": "generalize-prompt",
+      "path_scope": "current prompt contract artifacts",
+      "operation": "validated prompt contract while preserving the prior isolation failure",
+      "classification": "allowed",
+      "evidence": "Execution evidence contains no validation/test manifest, fixture, description, instruction, or assertion payload."
+    },
+    {
+      "step_execution_id": "audit-input-isolation-attempt-1-exec-4",
+      "step_id": "audit-input-isolation",
+      "path_scope": "manifest hashes and session/state evidence",
+      "operation": "computed manifest SHA-256 values without opening contents and inspected authorized audit evidence",
+      "classification": "allowed",
+      "evidence": "This audit is the designated enforcement step."
+    }
+  ],
+  "generation_separation": {
+    "realized_generation_records_found": 0,
+    "generation_step_executions_found": 0,
+    "planned_generation_record": "targets/editorial-anime-poster-001/train-0009/rounds/round-0001/prompt/generation.json",
+    "planned_input_image_count": 1,
+    "planned_input_roles": ["source_reference"],
+    "target_style_truth_hash_found_in_generation_evidence": false,
+    "truth_or_style_image_role_found_in_generation_evidence": false,
+    "classification": "allowed",
+    "evidence": "No candidate generation was executed; the planned record has exactly one source_reference input and does not contain the style-truth hash."
+  },
+  "diagnostics": [
+    {
+      "code": "PROHIBITED_FIXTURE_PATH_INVENTORY",
+      "severity": "error",
+      "step_execution_id": "analyze-images-attempt-1-exec-2",
+      "message": "A prohibited analysis-stage filename inventory exposed validation/test fixture paths. Preserve this contamination evidence and begin a later iteration with a clean pre-generation audit."
+    }
+  ],
+  "exit_reason": "input_isolation_contaminated"
+}

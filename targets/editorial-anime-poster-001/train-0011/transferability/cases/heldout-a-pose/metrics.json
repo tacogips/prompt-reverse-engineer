@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "case_id": "heldout-a-pose",
+  "case_type": "pose",
+  "loss": {"total": 0.153, "medium_rendering": 0.17, "palette_tone": 0.18, "line_shape": 0.20, "texture_material": 0.20, "graphic_language": 0.17, "source_fidelity": 0.10, "technical": 0.05},
+  "weighted_total_unrounded": 0.153,
+  "judge_proposed_total": null,
+  "total_correction": null,
+  "instruction_gates": {"pose_adherence": {"passed": true, "reason": "Seated upright, three-quarter view, folded hands on lap."}, "no_text": {"passed": true, "reason": "No text is visible."}},
+  "style_component_ceiling": 0.25,
+  "style_component_ceiling_passed": true,
+  "feedback_gates_passed": true
+}

@@ -1,0 +1,12 @@
+{
+  "id": "judge-candidates",
+  "description": "Apply the versioned prompt-as-a-judge loss function to all candidates and select the best-so-far result.",
+  "nodeType": "agent",
+  "executionBackend": "codex-agent",
+  "model": "gpt-5.6-terra",
+  "promptTemplateFile": "prompts/judge-candidates.md",
+  "variables": {},
+  "output": {
+    "description": "Return adapter JSON with when.stop_training and the selected candidate, loss, reward, round, and exit reason."
+  }
+}

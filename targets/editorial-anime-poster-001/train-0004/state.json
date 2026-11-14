@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "round": 1,
+  "phase": "output",
+  "candidatesPerRound": 3,
+  "maxRefinementRounds": 2,
+  "targetLoss": 0.25,
+  "validationTargetLoss": 0.3,
+  "validationWorstCaseLoss": 0.4,
+  "testTargetLoss": 0.32,
+  "testWorstCaseLoss": 0.42,
+  "maxGeneralizationGap": 0.1,
+  "bestCandidate": null,
+  "bestLoss": null,
+  "parentTrainDir": "train-0003",
+  "lossFunctionVersion": "source-fidelity-judge-v1",
+  "exitReason": "validation_input_contamination_detected",
+  "failureReason": "Prompt-synthesis execution evidence accessed runtime material containing inline validation cases before the prompt was frozen.",
+  "sealedTestManifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+    "sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+    "byteSize": 1410,
+    "contentsOpened": false
+  },
+  "createdAt": "2026-08-14T06:32:36Z",
+  "updatedAt": "2026-08-14T06:37:25Z"
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "case_id": "heldout-b-exact-text",
+  "case_type": "text",
+  "loss": {"total": 0.0435, "source_fidelity": 0.04, "semantic": 0.01, "composition": 0.06, "color": 0.04, "style": 0.06, "technical": 0.01},
+  "weights": {"source_fidelity": 0.3, "semantic": 0.1, "composition": 0.15, "color": 0.15, "style": 0.25, "technical": 0.05},
+  "instruction_losses": {"text_adherence": 0.0},
+  "reward": 0.9565,
+  "raw_judge_file": "judge.json"
+}

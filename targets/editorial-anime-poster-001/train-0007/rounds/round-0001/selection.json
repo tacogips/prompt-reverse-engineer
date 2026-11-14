@@ -1,0 +1,72 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "candidate-001",
+      "path": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/candidates/candidate-001",
+      "promotion_eligible": true,
+      "provenance_eligible": true,
+      "reward": 0.86,
+      "total_loss": 0.14
+    },
+    {
+      "candidate_id": "candidate-002",
+      "path": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/candidates/candidate-002",
+      "promotion_eligible": true,
+      "provenance_eligible": true,
+      "reward": 0.885,
+      "total_loss": 0.115
+    },
+    {
+      "candidate_id": "candidate-003",
+      "path": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/candidates/candidate-003",
+      "promotion_eligible": true,
+      "provenance_eligible": true,
+      "reward": 0.8905,
+      "total_loss": 0.1095
+    }
+  ],
+  "contract_eligibility": {
+    "current_contract_id": "prompt-only-style-reconstruction-v1",
+    "eligible_current_candidates": [
+      "candidate-001",
+      "candidate-002",
+      "candidate-003"
+    ],
+    "excluded_prior_bests": [
+      {
+        "candidate": "targets/editorial-anime-poster-001/best.json -> train-0003/rounds/round-0001/candidates/candidate-004",
+        "reason": "It uses legacy judge-v3-style-identity-provenance and has no prompt-only-style-reconstruction-v1 template-validation record; its identity-based loss is not comparable to the current source-fidelity loss."
+      },
+      {
+        "candidate": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-002",
+        "reason": "The parent iteration selected it under reusable-style-transfer-v2 rather than current prompt-only-style-reconstruction-v1, so it is ineligible for promotion comparison."
+      }
+    ],
+    "prompt_path": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/prompt/prompt.md",
+    "prompt_sha256": "8b5c0b8d88d86154665bb11281c19992ddefea8bf98e4f7f029c7146c9972e5f",
+    "required_literal_clauses_present_verbatim": true,
+    "template_validation_path": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/prompt/template-validation.json",
+    "template_validation_status": "passed"
+  },
+  "global_best_after_round": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/candidates/candidate-003",
+  "global_best_before_round": null,
+  "global_best_loss_after_round": 0.1095,
+  "global_best_loss_before_round": null,
+  "judge_version": "source-style-judge-v2",
+  "provenance_check": {
+    "candidate_records_verified": true,
+    "exactly_one_source_reference_per_candidate": true,
+    "generation_contract_id": "generation-provenance-v1",
+    "output_hashes_verified": true,
+    "prompt_hash_verified": true,
+    "source_hash_verified": true,
+    "truth_or_style_input_detected": false
+  },
+  "retained_global_best": "round_winner_after_contract_eligibility_filter",
+  "round": 1,
+  "round_winner": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/candidates/candidate-003",
+  "schema_version": 1,
+  "selection_rule": "lowest_total_loss_then_candidate_id",
+  "target_loss": 0.25,
+  "target_reached": true
+}

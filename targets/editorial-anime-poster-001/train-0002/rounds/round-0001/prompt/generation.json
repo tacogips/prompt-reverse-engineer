@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "status": "planned",
+  "round": 1,
+  "mode": "style-transfer",
+  "provider": "openai-built-in",
+  "model": "image_gen__imagegen",
+  "model_version": null,
+  "seed": null,
+  "width": null,
+  "height": null,
+  "output_aspect_ratio": "2:3",
+  "steps": null,
+  "guidance": null,
+  "sampler": null,
+  "prompt_file": "targets/editorial-anime-poster-001/train-0002/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "5a3c8612590b7c154623ef5f9f4605cc545dbf179157dd1dedee244b2da582ff",
+  "input_images": [
+    {
+      "label": "Image 1",
+      "role": "style_reference_only",
+      "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+      "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+    },
+    {
+      "label": "Image 2",
+      "role": "person_identity_reference_only",
+      "path": "targets/editorial-anime-poster-001/input/person-reference.png",
+      "sha256": "813ec67c85c0a3bcc7749b58d6560e09419759a8a73f1680c228fc5023cb1aeb"
+    }
+  ],
+  "provider_parameters": {
+    "tool_mode": "built-in-image-generation",
+    "candidates_requested": 4,
+    "source_images_supplied": 2,
+    "seed_reproducibility": "not guaranteed; provider does not expose a seed for this planned request"
+  },
+  "raw_response_file": null
+}
