@@ -1,0 +1,12 @@
+{
+  "id": "generalize-prompt",
+  "description": "Normalize the current prompt into a subject-agnostic reusable template and reject identity leakage before generation.",
+  "nodeType": "agent",
+  "executionBackend": "codex-agent",
+  "model": "gpt-5.6-terra",
+  "promptTemplateFile": "prompts/generalize-prompt.md",
+  "variables": {},
+  "output": {
+    "description": "Return JSON with the normalized prompt and a passing template-validation artifact."
+  }
+}

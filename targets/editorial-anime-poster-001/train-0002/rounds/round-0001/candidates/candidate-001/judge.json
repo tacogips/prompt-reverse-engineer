@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.13,
+    "semantic": 0.01,
+    "composition": 0.07,
+    "color": 0.03,
+    "style": 0.15,
+    "technical": 0.015
+  },
+  "evidence": {
+    "identity": [
+      "The candidate shows a warm tan-skinned young man with the reference's thick brows, brown almond eyes, straight nose, closed lips, defined jaw, close-sided dark quiff, and left-facing three-quarter view.",
+      "Its forehead and hair mass are substantially taller and more stylized, and its eye line is less distinctly upward-left than the person reference."
+    ],
+    "semantic": [
+      "One clear masculine head-and-shoulders editorial anime portrait is present.",
+      "No woman, long hair, jewelry, source-specific garment, readable text, logo, or watermark is visible."
+    ],
+    "composition": [
+      "The vertical poster has a dominant portrait, overlapping coral and mustard disks, teal edge fields, cream negative space, thin vertical rules, and navy blocks.",
+      "The face is more centered and the garment is less vertically asymmetric than the transferable reference arrangement."
+    ],
+    "color": [
+      "Deep navy, teal, coral, mustard, and cream appear in clean, high-contrast graphic regions close to the style truth palette.",
+      "The hair has accent streaks, but the coral and teal are less integrated through the figure than in the reference."
+    ],
+    "style": [
+      "Variable dark contours, cel-shaded planes, colored hair strokes, dry-brush arcs, flecks, and paper-like grain visibly use the transferable editorial language.",
+      "The facial rendering and large hair fill are smoother and more uniform than the reference's delicate loose linework and more intricate graphic layering."
+    ],
+    "technical": [
+      "Facial features, ear, hairline, garment edges, and background geometry are coherent at 1023x1537, with no duplicate anatomy, malformed text, logo, or watermark."
+    ]
+  },
+  "dominant_differences": [
+    "Reduce the oversized hair mass while retaining the source's short swept-up quiff.",
+    "Strengthen the source's upward-left gaze and facial-plane specificity.",
+    "Add finer varied ink detail and less uniform editorial texture."
+  ],
+  "confidence": 0.93
+}

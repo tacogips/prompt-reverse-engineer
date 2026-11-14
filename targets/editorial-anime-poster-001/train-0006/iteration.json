@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "iteration": 6,
+  "parent_iteration": 3,
+  "status": "failed",
+  "started_at": "2026-08-14T07:44:47Z",
+  "completed_at": "2026-08-14T10:49:25Z",
+  "hypothesis": "Enforcing generation-provenance-v1 and reusable-style-transfer-v2 before each generation will support a promotable arbitrary-source style-transfer run.",
+  "workflow_family": "analyze-generate-select-refine-loop",
+  "workflow_revision": "train-0006/workflow",
+  "judge_revision": "20bd547710cbd50731ed7e30f7cfe6f624544e67bf7ca47b4b3df0d9c6ad5b74",
+  "selected_candidate": "rounds/round-0002/candidates/candidate-002",
+  "failure_reason": "Validation required pose assertions failed; sealed one-shot test was not run; and four preserved historical realized generation records have output-path/hash mismatches."
+}

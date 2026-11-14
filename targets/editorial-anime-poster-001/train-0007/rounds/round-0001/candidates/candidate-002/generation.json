@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "provider": "openai",
+  "model": "built-in-imagegen",
+  "model_version": null,
+  "tool_mode": "image-edit",
+  "output": {
+    "path": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/candidates/candidate-002/image.png",
+    "sha256": "e39c8ad70fb21581b28b7e380bb466e7e6b443b6ab1524ef5e71104d783c81c2",
+    "width": 1135,
+    "height": 1386,
+    "format": "png"
+  },
+  "input_images": [
+    {
+      "role": "source_reference",
+      "path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+      "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e"
+    }
+  ],
+  "prompt_file": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "8b5c0b8d88d86154665bb11281c19992ddefea8bf98e4f7f029c7146c9972e5f",
+  "seed": null,
+  "provider_parameters": {},
+  "generated_at": "2026-08-14T12:06:59Z",
+  "raw_response_file": null
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "manifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+    "sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+    "byteSize": 1410,
+    "integrity_verified_before_open": true
+  },
+  "frozen_input": "targets/editorial-anime-poster-001/train-0007/test-audit/frozen-input.json",
+  "prompt": {
+    "path": "targets/editorial-anime-poster-001/train-0007/rounds/round-0001/prompt/prompt.md",
+    "sha256": "8b5c0b8d88d86154665bb11281c19992ddefea8bf98e4f7f029c7146c9972e5f",
+    "frozen_before_generation": true
+  },
+  "judge_version": "source-style-judge-v2",
+  "judge_config": "targets/editorial-anime-poster-001/train-0007/judge/config.json",
+  "source_separation": {
+    "training_source_hash": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+    "validation_source_hashes": ["71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9", "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1"],
+    "test_source_hashes": ["56f945880a137fb787e0d2dba7d56b869f8bbf26c9b14488ad27a28e1fbb05f9"],
+    "all_test_sources_distinct_from_training_and_validation": true,
+    "untouched_test_source_count": 1
+  },
+  "case_coverage": {"baseline": 1, "combined_optional": 1, "required_coverage_passed": true},
+  "generation_provenance": {
+    "contract_id": "generation-provenance-v1",
+    "all_records_conformant": true,
+    "each_record_has_exactly_one_source_reference": true,
+    "truth_or_style_input_found": false,
+    "all_recorded_hashes_recomputed_before_judging": true
+  },
+  "loss_method": "Unweighted mean of each case's applicable component losses, matching the frozen validation audit methodology.",
+  "cases": [
+    {"id": "alley-baseline", "type": "baseline", "source_hash": "56f945880a137fb787e0d2dba7d56b869f8bbf26c9b14488ad27a28e1fbb05f9", "loss": 0.0625, "assertions_passed": true, "failed_assertions": []},
+    {"id": "alley-combined-optional", "type": "combined_optional", "source_hash": "56f945880a137fb787e0d2dba7d56b869f8bbf26c9b14488ad27a28e1fbb05f9", "loss": 0.052, "assertions_passed": true, "failed_assertions": []}
+  ],
+  "aggregate_test_loss": 0.05725,
+  "worst_case_loss": 0.0625,
+  "aggregate_validation_loss": 0.05425,
+  "validation_to_test_gap": 0.003,
+  "thresholds": {"aggregate_test_loss_max": 0.32, "worst_case_loss_max": 0.42, "validation_to_test_gap_max": 0.1},
+  "pass_reasons": [
+    "The sealed manifest hash matched the intake record before it was opened.",
+    "The untouched test source hash is distinct from the training source and both validation source hashes.",
+    "Baseline and combined_optional coverage are present, and every explicit source, composition, exact-text, and no-unrequested-text assertion passed.",
+    "Each realized generation record conforms to generation-provenance-v1, has exactly one source_reference input, excludes truth/style inputs, and has recomputed input, prompt, and output hashes.",
+    "Aggregate test loss 0.05725, worst-case loss 0.0625, and validation-to-test gap 0.003 meet the frozen thresholds."
+  ],
+  "fail_reasons": [],
+  "terminal_one_shot_result": true,
+  "next_action": "review-training"
+}

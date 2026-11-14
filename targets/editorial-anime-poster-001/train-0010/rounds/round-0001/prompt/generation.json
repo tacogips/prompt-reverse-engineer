@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "record_type": "intended_shared_settings",
+  "provider": "openai",
+  "model": "built-in-imagegen",
+  "model_version": null,
+  "tool_mode": "image-edit",
+  "input_images": [
+    {
+      "role": "source_reference",
+      "path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+      "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e"
+    }
+  ],
+  "prompt_file": "targets/editorial-anime-poster-001/train-0010/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "796cf42cadd935d4bb1fe3ce366a02fc307204380ee06fbbbcbfead6582e98e1",
+  "seed": null,
+  "width": 1024,
+  "height": 1536,
+  "provider_parameters": {
+    "candidates_per_round": 3,
+    "style_truth_attached": false
+  },
+  "generated_at": null,
+  "raw_response_file": null,
+  "realized_generation_record": "Each candidate must write the full generation-provenance-v1 contract after its output exists."
+}

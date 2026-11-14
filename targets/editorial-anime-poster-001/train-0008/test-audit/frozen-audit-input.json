@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-08-14T14:25:48Z",
+  "manifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+    "sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+    "byte_size": 1410,
+    "integrity_verified_before_open": true
+  },
+  "prompt": {
+    "path": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/prompt/prompt.md",
+    "sha256": "327ed88e2ca58c4e247bb52304706af0e59915e74c6ce06840628da2ce3c045a"
+  },
+  "judge": {
+    "loss_function_version": "style-inversion-v2",
+    "config_path": "targets/editorial-anime-poster-001/train-0008/judge/config.json",
+    "config_sha256": "91388395f779d3b2dd96499c95c10ed15984c9ef123331571f9d3f38bb4fa42c",
+    "prompt_sha256": "09e7ebb8913bf5574e67aaf3bc4b0ab462d403430f304b70a0c7bbe61619e295",
+    "model": "gpt-5.6-terra",
+    "repeats": 3,
+    "aggregation": "component_wise_median"
+  },
+  "thresholds": {
+    "aggregate_test_loss_max": 0.32,
+    "worst_case_loss_max": 0.42,
+    "validation_to_test_gap_max": 0.1,
+    "style_component_loss_max": 0.25
+  },
+  "source_separation": {
+    "training_source_sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+    "validation_source_sha256": [
+      "71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9",
+      "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1"
+    ],
+    "test_source_sha256": "56f945880a137fb787e0d2dba7d56b869f8bbf26c9b14488ad27a28e1fbb05f9",
+    "passed": true
+  },
+  "cases": [
+    {
+      "id": "alley-baseline",
+      "type": "baseline",
+      "source_reference": "targets/editorial-anime-poster-001/test/source-alley.png",
+      "source_sha256": "56f945880a137fb787e0d2dba7d56b869f8bbf26c9b14488ad27a28e1fbb05f9",
+      "optional_instructions": {},
+      "expected": {"preserve": ["one red bicycle", "wet narrow alley", "pale concrete wall", "doorway", "potted green plants"], "text": null}
+    },
+    {
+      "id": "alley-combined-optional",
+      "type": "combined_optional",
+      "source_reference": "targets/editorial-anime-poster-001/test/source-alley.png",
+      "source_sha256": "56f945880a137fb787e0d2dba7d56b869f8bbf26c9b14488ad27a28e1fbb05f9",
+      "optional_instructions": {"composition": "Use a square poster composition with the bicycle centered in the foreground and the alley receding behind it.", "text": "RAIN ROUTE", "additional": "Keep exactly one red bicycle and retain the doorway and potted green plants."},
+      "expected_text": "RAIN ROUTE",
+      "expected": {"aspect_ratio": "1:1", "bicycle_position": "center foreground", "bicycle_count": 1, "preserve": ["red bicycle", "alley depth", "doorway", "potted green plants"]}
+    }
+  ],
+  "coverage": {"baseline": true, "combined_optional": true, "untouched_test_sources": 1, "required_coverage_complete": true}
+}

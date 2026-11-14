@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.14,
+    "semantic": 0.01,
+    "composition": 0.08,
+    "color": 0.03,
+    "style": 0.15,
+    "technical": 0.015
+  },
+  "evidence": {
+    "identity": [
+      "The candidate retains the reference man's warm tan skin, close-sided black hair, strong brows, brown eyes, straight nose, neutral closed mouth, and leftward orientation.",
+      "The face is more symmetrical and polished, with a less specific jaw, cheek structure, and upward gaze than the person truth."
+    ],
+    "semantic": [
+      "A single masculine editorial anime poster portrait is clearly visible.",
+      "It contains no copied feminine identity, jewelry, readable text, logo, or watermark."
+    ],
+    "composition": [
+      "The portrait, coral and mustard disks, cream field, teal areas, vertical rules, and dark blocks reproduce the transferable poster system.",
+      "The centered, nearly frontal framing is less dynamically upward-left and less asymmetric than the style truth."
+    ],
+    "color": [
+      "Navy, teal, coral, mustard, and cream are balanced in high-contrast poster blocks.",
+      "The figure and hair have fewer interwoven accent passages than the style reference."
+    ],
+    "style": [
+      "Dark ink contours, cel-like face planes, speckling, brush marks, and restrained colored hair accents visibly match the reference's transferable treatment.",
+      "The linework and garment construction remain cleaner and simpler than the reference's more expressive, varied editorial illustration."
+    ],
+    "technical": [
+      "The native-resolution portrait has coherent anatomy, ears, eyes, hair, and clean edges, without warping, pseudo-text, watermark, or logo."
+    ]
+  },
+  "dominant_differences": [
+    "Make the face less frontal and restore a clearer upward-left eye line.",
+    "Preserve more of the person reference's distinctive cheek and jaw geometry.",
+    "Increase fine lineweight and layered graphic variation without source-specific clothing."
+  ],
+  "confidence": 0.92
+}

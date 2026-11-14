@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "provider": "openai",
+  "model": "built-in-imagegen",
+  "model_version": null,
+  "tool_mode": "image-edit",
+  "output": {
+    "path": "targets/editorial-anime-poster-001/train-0006/transferability/cases/heldout-b-exact-text/image.png",
+    "sha256": "4f3733a4ebbb1e70ba95bdef5e5f66c87935d71a9b97664332a4a7ce050d87d8",
+    "width": 1536,
+    "height": 1024,
+    "format": "png"
+  },
+  "input_images": [
+    {
+      "role": "style_reference",
+      "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+      "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f"
+    },
+    {
+      "role": "source_reference",
+      "path": "targets/editorial-anime-poster-001/validation/heldout-b-0005.png",
+      "sha256": "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1"
+    }
+  ],
+  "prompt_file": "targets/editorial-anime-poster-001/train-0006/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "5f48e6b147faa25c74460bf6469016c6d5b622831afd48c1a352111b381219f4",
+  "seed": null,
+  "provider_parameters": {
+    "optionalInstructions": {
+      "text": "SIT WITH COLOR"
+    }
+  },
+  "generated_at": "2026-08-14T08:18:00Z",
+  "raw_response_file": null
+}

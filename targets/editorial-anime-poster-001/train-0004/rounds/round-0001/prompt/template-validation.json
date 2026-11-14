@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "contract_path": "targets/editorial-anime-poster-001/train-0004/workflow/prompt-template-contract.json",
+  "prompt_path": "targets/editorial-anime-poster-001/train-0004/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "2c974052a42d45d038a4d69a41177db6cd8598eb02b7218aff8f02f72027ef79",
+  "required_image_roles_present": true,
+  "optional_instruction_fields_present": [
+    "pose",
+    "composition",
+    "text",
+    "additional"
+  ],
+  "instruction_precedence_declared": true,
+  "zero_subject_specific_clauses": true,
+  "subject_specific_clause_count": 0,
+  "text_behavior": {
+    "exact_when_supplied": true,
+    "absent_means_no_text": true
+  },
+  "status": "passed",
+  "validated_at": "2026-08-14T06:37:25Z"
+}

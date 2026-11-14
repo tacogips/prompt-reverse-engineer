@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "sealed_for_iteration": "train-0011",
+  "source": {
+    "file": "targets/editorial-anime-poster-001/test/source-sea-0011.jpg",
+    "sha256": "3f549d23fc70b278222062e81994a2ee385e402ab56be283d1b7daf40b6d1942",
+    "width": 3840,
+    "height": 2160,
+    "format": "JPEG"
+  },
+  "testCases": [
+    {
+      "id": "sea-landscape-baseline",
+      "type": "baseline",
+      "sourceReference": "targets/editorial-anime-poster-001/test/source-sea-0011.jpg",
+      "optionalInstructions": {},
+      "expected": {
+        "preserve": [
+          "wide layered mountain range",
+          "calm foreground lake and reflections",
+          "small dark central island",
+          "low sun or bright glow between the mountains",
+          "open clouded sky",
+          "the source landscape's spatial depth"
+        ],
+        "text": null
+      }
+    },
+    {
+      "id": "sea-landscape-combined-optional",
+      "type": "combined_optional",
+      "sourceReference": "targets/editorial-anime-poster-001/test/source-sea-0011.jpg",
+      "optionalInstructions": {
+        "composition": "Use a square editorial poster composition centered on the island, keeping layered mountains behind it and the lake reflection below.",
+        "text": "BEYOND THE BLUE",
+        "additional": "Keep the landscape unpopulated. Apply the learned lettering treatment to the supplied text only and preserve the mountain, island, lake, sky, and reflected depth."
+      },
+      "expectedText": "BEYOND THE BLUE",
+      "expected": {
+        "aspect_ratio": "square poster",
+        "island_position": "center",
+        "preserve": [
+          "layered mountains",
+          "central island",
+          "lake reflection",
+          "open sky",
+          "unpopulated landscape"
+        ]
+      }
+    }
+  ]
+}

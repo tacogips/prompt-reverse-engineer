@@ -1,0 +1,92 @@
+{
+  "workflowInput": {
+    "requestedWork": "Train a reusable arbitrary-source style-transfer prompt with explicit optional-instruction handling and held-out overfitting checks.",
+    "targetDir": "targets/editorial-anime-poster-001",
+    "trainDir": "train-0004",
+    "parentTrainDir": "train-0003",
+    "styleReference": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "sourceReference": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "optionalInstructions": {},
+    "candidatesPerRound": 3,
+    "maxRefinementRounds": 2,
+    "targetLoss": 0.25,
+    "validationTargetLoss": 0.30,
+    "validationWorstCaseLoss": 0.40,
+    "testTargetLoss": 0.32,
+    "testWorstCaseLoss": 0.42,
+    "maxGeneralizationGap": 0.10,
+    "validationCases": [
+      {
+        "id": "adult-baseline",
+        "type": "baseline",
+        "sourceReference": "targets/editorial-anime-poster-001/input/person-reference.png",
+        "optionalInstructions": {},
+        "expected": {
+          "preserve": ["one adult person", "facial identity", "plain dark shirt", "three-quarter portrait"],
+          "text": null
+        }
+      },
+      {
+        "id": "adult-pose",
+        "type": "pose",
+        "sourceReference": "targets/editorial-anime-poster-001/input/person-reference.png",
+        "optionalInstructions": {
+          "pose": "Show the same person standing in a full-body contrapposto pose with both hands visible."
+        },
+        "expected": {
+          "subject_count": 1,
+          "framing": "full body",
+          "pose": "standing contrapposto",
+          "both_hands_visible": true,
+          "preserve": ["facial identity", "hair", "plain dark clothing"],
+          "text": null
+        }
+      },
+      {
+        "id": "clock-composition",
+        "type": "composition",
+        "sourceReference": "targets/editorial-anime-poster-001/validation/source-clock.png",
+        "optionalInstructions": {
+          "composition": "Use a square, centered product-poster composition with the clock fully visible and generous negative space above it."
+        },
+        "expected": {
+          "aspect_ratio": "1:1",
+          "clock_position": "center",
+          "clock_fully_visible": true,
+          "negative_space": "above",
+          "preserve": ["one teal ceramic alarm clock", "cream folded cloth"],
+          "text": null
+        }
+      },
+      {
+        "id": "clock-exact-text",
+        "type": "text",
+        "sourceReference": "targets/editorial-anime-poster-001/validation/source-clock.png",
+        "optionalInstructions": {
+          "text": "TIME TO DREAM"
+        },
+        "expectedText": "TIME TO DREAM",
+        "expected": {
+          "exact_text_occurrences": 1,
+          "additional_text": false,
+          "preserve": ["one teal ceramic alarm clock", "cream folded cloth"]
+        }
+      }
+    ],
+    "sealedTestManifest": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+    "acceptanceCriteria": [
+      "The reusable prompt contains zero source-specific hard-coded clauses.",
+      "All four validation case types pass across two held-out source hashes.",
+      "Exact requested text is rendered verbatim and absent text produces no added typography.",
+      "Aggregate, worst-case, and generalization-gap thresholds pass on validation and sealed test.",
+      "All generation and judge models, prompts, hashes, and loss components are persisted."
+    ],
+    "constraints": [
+      "Use repository-relative paths in persisted artifacts.",
+      "Use the built-in image generation tool.",
+      "Do not inspect the sealed test manifest before audit-generalization.",
+      "Do not modify completed train-0001 through train-0003 evidence.",
+      "Do not compare legacy identity-judge loss numerically with the new source-fidelity judge."
+    ]
+  }
+}

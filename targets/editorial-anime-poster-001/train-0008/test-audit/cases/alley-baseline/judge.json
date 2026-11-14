@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "loss_function_version": "style-inversion-v2",
+  "target_candidate_order": "style_truth_then_candidate",
+  "loss": {
+    "medium_rendering": 0.13,
+    "palette_tone": 0.08,
+    "line_shape": 0.12,
+    "texture_material": 0.12,
+    "graphic_language": 0.15,
+    "source_fidelity": 0.05,
+    "technical": 0.06
+  },
+  "evidence": {
+    "medium_rendering": ["The candidate uses polished anime-adjacent cel shading with print-like planar color separation, though architectural rendering is more literal than the style truth."],
+    "palette_tone": ["Warm paper ground, deep navy, coral, teal, and mustard accents reproduce the transferable palette system."],
+    "line_shape": ["Architectural and bicycle forms have crisp deep-navy, variably weighted contours, with finer marks around edges."],
+    "texture_material": ["Visible paper grain, sparse speckling, and distressed brush/overprint treatment are present without obscuring the bicycle."],
+    "graphic_language": ["Large abstract color fields and orbital gold line-and-dot accents create an editorial frame, but the hierarchy is less elaborate than the style truth."],
+    "source_fidelity": ["One red bicycle, wet alley, pale wall, doorway, and potted plants are all retained in the source arrangement."],
+    "technical": ["Bicycle geometry and building edges are coherent; no readable or pseudo-readable text appears." ]
+  },
+  "dominant_transferable_differences": ["Increase the density and delicacy of fine ornamental linework while retaining the source scene."],
+  "confidence": 0.89,
+  "instruction_assertions": {
+    "source_preservation": true,
+    "no_unrequested_text": true,
+    "exact_text": {"applicable": false, "passed": true},
+    "composition": {"applicable": false, "passed": true}
+  }
+}

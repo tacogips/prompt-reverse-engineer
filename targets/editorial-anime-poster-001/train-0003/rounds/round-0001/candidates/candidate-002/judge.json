@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.16,
+    "semantic": 0.02,
+    "composition": 0.05,
+    "color": 0.02,
+    "style": 0.11,
+    "technical": 0.01
+  },
+  "evidence": {
+    "identity": [
+      "The candidate visibly keeps the source man's warm tan complexion, strong dark brows, almond brown eyes, long straight nose, closed lips, defined jaw, close sides, unadorned ear, and left-facing three-quarter face.",
+      "The top hair remains a large windblown mass instead of the compact quiff, while the eye direction is nearly horizontal-left rather than the source's upward-left gaze."
+    ],
+    "semantic": [
+      "It shows one masculine editorial-anime portrait and no unrelated subject or duplicate person.",
+      "The illustrated man is distinct from the style-reference woman and has no jewelry, readable text, logo, watermark, or pseudo-typography."
+    ],
+    "composition": [
+      "The portrait, cream ground, oversized coral and mustard disks, teal area, navy vertical blocks, rules, and brush gestures form a clear vertical editorial poster.",
+      "The head is more centered and occupies a somewhat more frontal, lower-energy pose than the reference's upward-directed profile composition."
+    ],
+    "color": [
+      "Navy, teal, coral, mustard-gold, and cream are present as integrated, high-contrast flat graphic blocks."
+    ],
+    "style": [
+      "Dark variable contour lines, cel-shaded facial planes, dry brush, flecks, and printed-paper texture align with the transferable editorial-anime language.",
+      "The hair is rendered as a dense uniform mesh, and the large geometric clothing panels feel more rigid and less finely layered than the style truth."
+    ],
+    "technical": [
+      "Facial anatomy, the visible ear, collar, and edges are clean at the supplied resolution, without visible corruption, watermark, logo, or text-like marks."
+    ]
+  },
+  "dominant_differences": [
+    "Compact the windblown hair to the source quiff silhouette.",
+    "Raise the gaze and leftward directional energy.",
+    "Replace the uniform hair mesh with more restrained, hair-following linework."
+  ],
+  "confidence": 0.93,
+  "provenance_verification": {
+    "candidate_image": "targets/editorial-anime-poster-001/train-0003/rounds/round-0001/candidates/candidate-002/image.png",
+    "recorded_sha256": "74fe6f89880f946c011556891288eda6ed0b049a76940b5c019d2403a8c1ec03",
+    "observed_sha256": "74fe6f89880f946c011556891288eda6ed0b049a76940b5c019d2403a8c1ec03",
+    "verified": true
+  }
+}

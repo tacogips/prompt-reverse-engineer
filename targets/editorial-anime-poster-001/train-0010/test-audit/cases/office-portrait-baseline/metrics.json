@@ -1,0 +1,10 @@
+{
+  "schema_version": 2,
+  "case_id": "office-portrait-baseline",
+  "case_type": "baseline",
+  "loss": {"total": 0.0955, "style_fidelity": 0.0971, "medium_rendering": 0.08, "palette_tone": 0.1, "line_shape": 0.09, "texture_material": 0.12, "graphic_language": 0.1, "source_fidelity": 0.08, "technical": 0.03, "pose_adherence": null, "composition_adherence": null, "text_adherence": 0.0},
+  "style_component_ceiling": 0.25,
+  "style_component_ceiling_passed": true,
+  "assertions": {"source_preserved": true, "no_unrequested_text": true, "generation_input_is_sole_source_reference": true, "frozen_prompt_hash_matches": false},
+  "reward": 0.9045
+}

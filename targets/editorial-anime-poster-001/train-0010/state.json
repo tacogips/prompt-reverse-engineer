@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "round": 1,
+  "phase": "output",
+  "lossFunctionVersion": "style-inversion-v3",
+  "styleComponentMaxLoss": 0.25,
+  "candidatesPerRound": 3,
+  "maxRefinementRounds": 3,
+  "targetLoss": 0.18,
+  "validationTargetLoss": 0.3,
+  "validationWorstCaseLoss": 0.4,
+  "testTargetLoss": 0.32,
+  "testWorstCaseLoss": 0.42,
+  "maxGeneralizationGap": 0.1,
+  "bestCandidate": "rounds/round-0001/candidates/candidate-003",
+  "bestLoss": 0.139,
+  "selectedCandidate": "rounds/round-0001/candidates/candidate-003",
+  "selectedReward": 0.861,
+  "provisionalExitReason": "training_and_validation_reached",
+  "styleComponentCeilingPassed": true,
+  "selectionFile": "targets/editorial-anime-poster-001/train-0010/rounds/round-0001/selection.json",
+  "parentTrainDir": "train-0009",
+  "feedbackFiles": [
+    {
+      "path": "targets/editorial-anime-poster-001/feedback/feedback-0001.json",
+      "sha256": "eda20f0f0b83d6fa9d09da1f538c9a71be6d330e84ce09d2c805900439208c00",
+      "size": 2032,
+      "feedbackId": "feedback-0001"
+    }
+  ],
+  "validationManifest": {
+    "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "size": 3043,
+    "contentsOpened": true,
+    "verifiedAt": "2026-08-14T15:48:51Z",
+    "verifiedSha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "verifiedSize": 3043
+  },
+  "sealedTestManifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-0010.json",
+    "sha256": "4a539b78b5a4fd70429b0d6bf058ea6eb69383236bf2c0b95eeadb737865258c",
+    "size": 2090,
+    "contentsOpened": true,
+    "verifiedAt": "2026-08-15T00:00:00Z",
+    "verifiedSha256": "4a539b78b5a4fd70429b0d6bf058ea6eb69383236bf2c0b95eeadb737865258c",
+    "verifiedSize": 2090
+  },
+  "startedAt": "2026-08-14T15:25:54Z",
+  "validation": {
+    "status": "passed",
+    "evaluation": "targets/editorial-anime-poster-001/train-0010/transferability/evaluation.json",
+    "promptSha256": "796cf42cadd935d4bb1fe3ce366a02fc307204380ee06fbbbcbfead6582e98e1",
+    "aggregateLoss": 0.1058,
+    "worstCaseLoss": 0.1135,
+    "generalizationGap": -0.0332
+  },
+  "testAudit": {
+    "status": "failed",
+    "evaluation": "targets/editorial-anime-poster-001/train-0010/test-audit/evaluation.json",
+    "sealedManifestSha256": "4a539b78b5a4fd70429b0d6bf058ea6eb69383236bf2c0b95eeadb737865258c",
+    "aggregateLoss": 0.0875,
+    "worstCaseLoss": 0.0955,
+    "validationTestGap": -0.0183,
+    "failure": "realized_generation_prompt_hash_did_not_match_frozen_final_prompt_hash"
+  },
+  "exitReason": "generalization_test_failed",
+  "review": {
+    "status": "failed",
+    "reviewedAt": "2026-08-14T16:00:01Z",
+    "failureReasons": [
+      "one_shot_test_realized_prompt_hash_mismatch",
+      "one_shot_test_metrics_weighted_total_mismatch"
+    ],
+    "promotionEligible": false,
+    "bestJsonUpdated": false
+  },
+  "completedAt": "2026-08-14T16:00:01Z",
+  "updatedAt": "2026-08-14T16:00:01Z"
+}

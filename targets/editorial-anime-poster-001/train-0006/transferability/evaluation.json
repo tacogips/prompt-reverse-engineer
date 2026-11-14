@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "manifest": {
+    "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "byteSize": 3043,
+    "integrity_verified_before_open": true
+  },
+  "prompt": {
+    "path": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/prompt/prompt.md",
+    "sha256": "3cb3612d3c0c59fa4abed41709c1482e1152d6391d08d483d35bd3ae7991b69d",
+    "frozen_before_manifest_open": true
+  },
+  "judge_version": "judge-v4-source-fidelity-style-transfer",
+  "source_hashes": [
+    "71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9",
+    "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1"
+  ],
+  "training_source_hash": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+  "case_coverage": {
+    "baseline": 1,
+    "pose": 1,
+    "composition": 1,
+    "text": 1,
+    "distinct_heldout_sources": 2,
+    "training_source_excluded": true
+  },
+  "generation_provenance": {
+    "contract_id": "generation-provenance-v1",
+    "all_records_conformant": true,
+    "all_recorded_hashes_recomputed_before_judging": true
+  },
+  "loss_method": "unweighted mean of each case's applicable components; intake persisted thresholds but no separate validation weights.",
+  "cases": [
+    { "id": "heldout-a-baseline", "type": "baseline", "loss": 0.035, "assertions_passed": true, "failed_assertions": [] },
+    { "id": "heldout-a-pose", "type": "pose", "loss": 0.08, "assertions_passed": false, "failed_assertions": ["three_quarter_view", "brown_shoes_preserved"] },
+    { "id": "heldout-b-composition", "type": "composition", "loss": 0.034, "assertions_passed": true, "failed_assertions": [] },
+    { "id": "heldout-b-exact-text", "type": "text", "loss": 0.045, "assertions_passed": true, "failed_assertions": [] }
+  ],
+  "aggregate_validation_loss": 0.0485,
+  "worst_case_loss": 0.08,
+  "training_loss": 0.1025,
+  "generalization_gap": -0.054,
+  "thresholds": {
+    "aggregate_validation_loss_max": 0.3,
+    "worst_case_loss_max": 0.4,
+    "generalization_gap_max": 0.1
+  },
+  "thresholds_passed": true,
+  "pass_reasons": [
+    "Template validation passed with zero forbidden clauses.",
+    "All four required case types are covered across two source hashes disjoint from training.",
+    "Every current generation record conforms to generation-provenance-v1 and its prompt, input, and output hashes recomputed from disk before judging.",
+    "Baseline and composition cases contain no invented text; the exact-text case reads SIT WITH COLOR once with no additional text.",
+    "Aggregate, worst-case, and generalization-gap thresholds passed."
+  ],
+  "fail_reasons": [
+    "Pose required assertion failed: the result is nearly frontal rather than the requested three-quarter view.",
+    "Pose required preservation assertion failed: the crop omits the source's brown shoes."
+  ],
+  "next_action": "audit-generalization",
+  "audit_prerequisite_passed": false
+}

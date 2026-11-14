@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "provider": "openai",
+  "model": "built-in-imagegen",
+  "model_version": null,
+  "tool_mode": "image-edit",
+  "output": {"path": "targets/editorial-anime-poster-001/train-0010/transferability/cases/heldout-a-baseline/image.png", "sha256": "ca7a1bc38cc33140e9f9f7c16a39489d4864b94f9aaa8a08102b13bd73d6328f", "width": 1024, "height": 1536, "format": "png"},
+  "input_images": [{"role": "source_reference", "path": "targets/editorial-anime-poster-001/validation/heldout-a-0005.png", "sha256": "71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9"}],
+  "prompt_file": "targets/editorial-anime-poster-001/train-0010/rounds/round-0001/prompt/prompt.md",
+  "prompt_sha256": "796cf42cadd935d4bb1fe3ce366a02fc307204380ee06fbbbcbfead6582e98e1",
+  "seed": null,
+  "provider_parameters": {"case_id": "heldout-a-baseline", "optional_instructions": {}},
+  "generated_at": "2026-08-14T15:48:51Z",
+  "raw_response_file": null
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 2,
+  "status": "failed",
+  "terminal": true,
+  "sealed_test_manifest": {"path": "targets/editorial-anime-poster-001/test/sealed-test-0010.json", "sha256": "4a539b78b5a4fd70429b0d6bf058ea6eb69383236bf2c0b95eeadb737865258c", "size": 2090, "intake_hash_verified_before_parse": true},
+  "frozen": {"final_prompt_path": "targets/editorial-anime-poster-001/train-0010/rounds/round-0001/prompt/prompt.md", "final_prompt_sha256": "796cf42cadd935d4bb1fe3ce366a02fc307204380ee06fbbbcbfead6582e98e1", "judge_loss_function_version": "style-inversion-v3", "judge_config": "targets/editorial-anime-poster-001/train-0010/judge/config.json", "judge_prompt_sha256": "49d0dec16e4fc644fcb31974182e145fe471d4d7eb6ca4c6c054e5f6a6fa7cae", "thresholds": {"aggregate_test_loss_max": 0.32, "worst_case_loss_max": 0.42, "validation_test_gap_max": 0.1, "style_component_loss_max": 0.25}, "instructions_and_expected_assertions": "targets/editorial-anime-poster-001/test/sealed-test-0010.json"},
+  "source_separation": {"training_source_sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e", "validation_source_sha256s": ["71fe6564287be5984bbf8a2c852054d100c565026aca0e431b3be0d23bc52cc9", "2916c7c6618b60e12a6c61e08ebdfa4325105aace5835fa6542b38e93af349b1"], "test_source_sha256s": ["a8cb92edc23638e890924efbac706f16bd0568d0aad8669f47cd11433cde20bf"], "all_test_sources_distinct_from_training_and_validation": true, "untouched_test_source_count": 1},
+  "coverage": {"required_case_types": ["baseline", "combined_optional"], "observed_case_types": ["baseline", "combined_optional"], "required_case_types_present": true, "case_count": 2},
+  "cases": [{"id": "office-portrait-baseline", "type": "baseline", "source_sha256": "a8cb92edc23638e890924efbac706f16bd0568d0aad8669f47cd11433cde20bf", "loss": 0.0955, "metrics": "targets/editorial-anime-poster-001/train-0010/test-audit/cases/office-portrait-baseline/metrics.json", "passed_visual_assertions": true, "frozen_prompt_hash_matches": false}, {"id": "office-portrait-combined-optional", "type": "combined_optional", "source_sha256": "a8cb92edc23638e890924efbac706f16bd0568d0aad8669f47cd11433cde20bf", "loss": 0.0795, "metrics": "targets/editorial-anime-poster-001/train-0010/test-audit/cases/office-portrait-combined-optional/metrics.json", "passed_visual_assertions": true, "frozen_prompt_hash_matches": false}],
+  "aggregate_test_loss": 0.0875,
+  "worst_case_loss": 0.0955,
+  "aggregate_validation_loss": 0.1058,
+  "validation_to_test_gap": -0.0183,
+  "pass_reasons": ["The sealed manifest hash and size matched the intake record before it was parsed.", "One test source hash is distinct from the training source and both validation source hashes.", "Both required baseline and combined_optional probes are present.", "The visual assertions, style ceilings, aggregate loss, worst-case loss, and validation-to-test gap pass on the preserved images.", "Each generation record contains exactly one source_reference input and no style or truth input."],
+  "fail_reasons": ["The realized prompt hashes 0aedb8e8583d5ca019805eba11b79b9a4bcd42629e06ee84f70700b99e99fc13 and 540e3f65f72f6a92b1d579f55443755d2344a4b9997df716b09ad35b478c0149 do not equal the frozen final prompt hash 796cf42cadd935d4bb1fe3ce366a02fc307204380ee06fbbbcbfead6582e98e1. The one-shot batch therefore cannot establish final-prompt generalization and must not be regenerated or tuned against."],
+  "exit_reason": "generalization_test_failed",
+  "next_phase": "review",
+  "evaluated_at": "2026-08-14T15:56:08Z"
+}

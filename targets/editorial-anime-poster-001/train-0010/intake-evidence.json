@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "recordedAt": "2026-08-14T15:25:54Z",
+  "targetDir": "targets/editorial-anime-poster-001",
+  "styleReference": {
+    "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f",
+    "width": 1023,
+    "height": 1537,
+    "format": "PNG"
+  },
+  "sourceReference": {
+    "path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+    "width": 1160,
+    "height": 1412,
+    "format": "JPEG"
+  },
+  "feedbackFiles": [
+    {
+      "path": "targets/editorial-anime-poster-001/feedback/feedback-0001.json",
+      "sha256": "eda20f0f0b83d6fa9d09da1f538c9a71be6d330e84ce09d2c805900439208c00",
+      "size": 2032,
+      "feedbackId": "feedback-0001"
+    }
+  ],
+  "validationManifest": {
+    "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "size": 3043,
+    "contentsOpened": false
+  },
+  "sealedTestManifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-0010.json",
+    "sha256": "4a539b78b5a4fd70429b0d6bf058ea6eb69383236bf2c0b95eeadb737865258c",
+    "size": 2090,
+    "contentsOpened": false
+  },
+  "workflowSnapshot": "targets/editorial-anime-poster-001/train-0010/workflow",
+  "generationRecordContract": "targets/editorial-anime-poster-001/train-0010/workflow/generation-record-contract.json"
+}

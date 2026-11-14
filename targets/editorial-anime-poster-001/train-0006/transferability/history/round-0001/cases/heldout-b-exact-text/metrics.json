@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "case_id": "heldout-b-exact-text",
+  "applicable_components": [
+    "source_fidelity",
+    "style_fidelity",
+    "text_adherence",
+    "technical"
+  ],
+  "loss": {
+    "total": 0.0575,
+    "source_fidelity": 0.12,
+    "style_fidelity": 0.07,
+    "text_adherence": 0.01,
+    "technical": 0.03
+  },
+  "assertions_passed": true,
+  "failed_assertions": []
+}

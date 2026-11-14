@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "provider": "openai",
+  "model": "built-in-imagegen",
+  "model_version": null,
+  "tool_mode": "image-edit",
+  "prompt_file": "targets/editorial-anime-poster-001/train-0008/rounds/round-0002/prompt/prompt.md",
+  "prompt_sha256": "327ed88e2ca58c4e247bb52304706af0e59915e74c6ce06840628da2ce3c045a",
+  "input_images": [
+    {
+      "role": "source_reference",
+      "path": "targets/editorial-anime-poster-001/inference/oogiri-prompt-only-v2-0001/source.webp",
+      "sha256": "a8cb92edc23638e890924efbac706f16bd0568d0aad8669f47cd11433cde20bf"
+    }
+  ],
+  "optional_instructions": {
+    "pose": null,
+    "composition": null,
+    "text": null,
+    "additional": null
+  },
+  "output": {
+    "path": "targets/editorial-anime-poster-001/inference/oogiri-prompt-only-v2-0001/image.png",
+    "sha256": "c6c780477c0cc2cb7856abbb4d7dccc8188dd36209df06b8f7195de33e8e4b79",
+    "width": 1536,
+    "height": 1024,
+    "format": "png"
+  },
+  "seed": null,
+  "steps": null,
+  "guidance": null,
+  "sampler": null,
+  "raw_response_file": null,
+  "provider_parameters": {}
+}

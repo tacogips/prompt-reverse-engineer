@@ -1,0 +1,47 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "target_candidate_order": "style_truth_then_candidate",
+  "loss": {
+    "medium_rendering": 0.09,
+    "palette_tone": 0.07,
+    "line_shape": 0.08,
+    "texture_material": 0.07,
+    "graphic_language": 0.05,
+    "source_fidelity": 0.09,
+    "technical": 0.28
+  },
+  "palette_sub_losses": {
+    "overall_palette": 0.07,
+    "skin_treatment": 0,
+    "hair_treatment": 0,
+    "clothing_treatment": 0
+  },
+  "conditional_checks": {
+    "typography_dialogue": {
+      "applicable": true,
+      "loss": 0.04,
+      "spelling_adherence": false,
+      "unrequested_text": true,
+      "evidence": [
+        "The requested words 'BEYOND' and 'BLUE' are readable and the display treatment is editorial, but an unrequested readable 'THE' appears between them."
+      ]
+    },
+    "composition_adherence": {
+      "applicable": true,
+      "passed": true,
+      "evidence": ["The result is square, centers the island, retains mountains behind it, and keeps lake reflection below."]
+    }
+  },
+  "evidence": {
+    "medium_rendering": ["The landscape is rendered with crisp opaque cel-shaded planes and screen-print separation."],
+    "palette_tone": ["Warm paper, deep navy, teal, coral, and gold accents form the intended restrained poster-print relationship."],
+    "line_shape": ["Navy contours, sweeping arcs, and brush accents are controlled and graphic."],
+    "texture_material": ["Paper grain, speckling, and imperfect brush/overprint character are apparent."],
+    "graphic_language": ["Large title hierarchy, abstract support fields, orbital lines, and negative space provide strong editorial graphic language."],
+    "source_fidelity": ["The mountain layers, central island, lake reflection, open sky, and unpopulated landscape remain recognizable; title scale reduces the sky's visible area but is authorized by the poster/text instruction."],
+    "technical": ["Rendering is clean, but the extra readable word 'THE' violates the exact-text and no-unrequested-text requirements."]
+  },
+  "dominant_transferable_differences": ["Exact-text handling must suppress all unrequested connecting words."],
+  "confidence": 0.95
+}

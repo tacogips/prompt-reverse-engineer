@@ -1,0 +1,12 @@
+{
+  "id": "refine-prompt",
+  "description": "Revise the reusable style policy from training or held-out evidence without adding source-specific clauses.",
+  "nodeType": "agent",
+  "executionBackend": "codex-agent",
+  "model": "gpt-5.6-terra",
+  "promptTemplateFile": "prompts/refine-prompt.md",
+  "variables": {},
+  "output": {
+    "description": "Return JSON with the new round, revised prompt path, dominant error, and expected effect."
+  }
+}

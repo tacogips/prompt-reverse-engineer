@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "recordedAt": "2026-08-14T07:44:47Z",
+  "styleReference": {
+    "path": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "sha256": "376f91fec32deab39af831e9fe3c376279cbbbd82904d74768ba3a2da90e2a4f",
+    "width": 1023,
+    "height": 1537,
+    "format": "PNG"
+  },
+  "sourceReference": {
+    "path": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "sha256": "3fc6b01a5ced550d71a4ec1ef1d8f52c233317b52f0ee869e850087391a3ec5e",
+    "width": 1160,
+    "height": 1412,
+    "format": "JPEG"
+  },
+  "validationManifest": {
+    "path": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+    "sha256": "ebda3a9041ae197f1cbbe2595b01f727390f49436fda1895d5cc8808f276f8d8",
+    "byteSize": 3043,
+    "contentsOpened": false
+  },
+  "sealedTestManifest": {
+    "path": "targets/editorial-anime-poster-001/test/sealed-test-manifest.json",
+    "sha256": "359591077fb124bae649cc9b0a98bc437e18178ef95b37dce7ec5c8a496c369c",
+    "byteSize": 1410,
+    "contentsOpened": false
+  },
+  "manifestContentsLearned": false,
+  "machineLocalAbsolutePathsAuthored": false
+}

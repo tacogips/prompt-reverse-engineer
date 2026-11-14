@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "suite_id": "calibration/v1",
+  "executed_at": "2026-08-14T06:57:28Z",
+  "assessment_method": "Local original-resolution multimodal visual inspection using judge-v4-source-fidelity-style-transfer; one actual assessment per case.",
+  "judge_prompt_path": "targets/editorial-anime-poster-001/train-0005/judge/prompt.md",
+  "judge_prompt_sha256": "e1b430e07aa4fc53bca95f66083632b3954d96e97bab55691fe2752d97f99803",
+  "repeat_count": 1,
+  "component_order": [
+    "source_fidelity",
+    "semantic",
+    "composition",
+    "color",
+    "style",
+    "technical"
+  ],
+  "cases": [
+    {
+      "case_id": "style-self-match",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "candidate": "targets/editorial-anime-poster-001/truth/style-reference.png"
+      },
+      "expected_relation": "Identical style truth and candidate produce near-zero style, color, composition, and technical loss.",
+      "observed_loss": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.0,
+        "color": 0.0,
+        "style": 0.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "Candidate is byte-identical to the style truth, so the visible layout, palette, contour treatment, texture, and rendered detail are unchanged.",
+        "Source-fidelity and semantic fields are recorded as zero for this style-only control and are not the relation under test."
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "source-self-match",
+      "inputs": {
+        "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+        "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"
+      },
+      "expected_relation": "Identical source truth and candidate produce near-zero source_fidelity and semantic loss.",
+      "observed_loss": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.0,
+        "color": 0.0,
+        "style": 0.0,
+        "technical": 0.0
+      },
+      "evidence": [
+        "Candidate is byte-identical to the source truth, retaining all visible identity/content, entities, pose, geometry, markings, and scene relations.",
+        "Style, color, composition, and technical fields are recorded as zero for this source-only control and are not the relation under test."
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "cross-domain-unstyled-source",
+      "inputs": {
+        "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+        "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+        "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"
+      },
+      "expected_relation": "The unstyled source retains low source_fidelity loss while receiving high style and color loss against the style truth.",
+      "observed_loss": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.78,
+        "color": 0.86,
+        "style": 0.94,
+        "technical": 0.02
+      },
+      "evidence": [
+        "Candidate is the same photograph as the source truth, so its subject, clothing, pose, surrounding objects, and visible markings are preserved.",
+        "Candidate lacks the reference's illustrated ink contours, flat graphic color fields, abstract poster layout, dry-brush marks, and printed-paper treatment; its photographic palette and rendering differ strongly.",
+        "The photo itself is coherent and has no evident corruption, so technical loss remains low."
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "target-candidate-order-swap",
+      "inputs": {
+        "first_presentation": {
+          "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+          "candidate": "targets/editorial-anime-poster-001/input/source-child.jpeg"
+        },
+        "swapped_presentation": {
+          "style_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+          "candidate": "targets/editorial-anime-poster-001/truth/style-reference.png"
+        }
+      },
+      "expected_relation": "The assessment should identify the large cross-domain visual mismatch in either display order; component direction is not comparable after labels are deliberately reversed.",
+      "observed_loss": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.78,
+        "color": 0.86,
+        "style": 0.94,
+        "technical": 0.02
+      },
+      "swapped_observed_loss": {
+        "source_fidelity": 0.0,
+        "semantic": 0.0,
+        "composition": 0.78,
+        "color": 0.86,
+        "style": 0.94,
+        "technical": 0.02
+      },
+      "material_order_change": false,
+      "evidence": [
+        "In both presentations, the two images visibly differ between an illustrated graphic poster and an unstyled photograph.",
+        "The deliberate label reversal does not change the detected cross-domain mismatch magnitude in this calibration control."
+      ],
+      "pass": true
+    }
+  ],
+  "all_relations_passed": true,
+  "calibration_status": "provisional_passed"
+}

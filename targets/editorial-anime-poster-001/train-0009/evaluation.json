@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "iteration": 9,
+  "status": "failed",
+  "selected_candidate": null,
+  "rounds_executed": 0,
+  "rounds_started": 1,
+  "configured_max_refinement_rounds": 3,
+  "exit_reason": "input_isolation_contaminated",
+  "selection_rule": "lowest_total_loss_with_style_ceiling_and_feedback_gates",
+  "training_loss": null,
+  "validation_loss": null,
+  "test_loss": null,
+  "generalization_gap": null,
+  "validation_test_gap": null,
+  "reward": null,
+  "is_new_best": false,
+  "promotion_eligible": false,
+  "validation_case_coverage": {
+    "evaluated": false,
+    "reason": "Validation manifest was not opened and validation was not authorized after the isolation failure."
+  },
+  "test_case_coverage": {
+    "evaluated": false,
+    "reason": "Sealed test manifest was not opened and the one-shot test audit was not authorized after the isolation failure."
+  },
+  "gates": {
+    "input_isolation": false,
+    "template_contract": true,
+    "candidate_generation": false,
+    "style_component_ceilings": false,
+    "feedback_probes": false,
+    "transferability": false,
+    "one_shot_test": false,
+    "best_promotion": false
+  },
+  "review_evidence": "targets/editorial-anime-poster-001/train-0009/review-evidence.json"
+}

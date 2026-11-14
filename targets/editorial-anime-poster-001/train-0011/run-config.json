@@ -1,0 +1,43 @@
+{
+  "acceptanceCriteria": [
+    "Every feedback-0001 item remains traceable and passes its independent semantic-region or typography gate.",
+    "Clothing treatment uses restrained source-relative print facets and preserves source garment identity, markings, and logos.",
+    "Every generation-provenance-v2 record hashes the immutable base prompt, exact effective prompt bytes sent to the tool, and canonical optional-instruction JSON separately.",
+    "Every v3 total is recomputed from persisted components with the frozen weights before it is accepted.",
+    "The final prompt is self-contained text, preserves arbitrary source identity and content, and requires no target or style-reference image at generation time.",
+    "Frozen validation and the fresh landscape one-shot test prove baseline transfer and optional composition and exact-text adherence across person, object, and landscape sources."
+  ],
+  "candidatesPerRound": 3,
+  "constraints": [
+    "Use exact-path allowlisted reads only before validation; do not inventory target, validation, test, or prior-train directories.",
+    "Use repository-relative paths in persisted artifacts.",
+    "Use the built-in image generation tool.",
+    "Treat train-0010 evidence as research evidence, not as unquestioned truth.",
+    "Do not modify prior iteration evidence.",
+    "Target/style truth is analysis-and-judge-only and forbidden as a generation input.",
+    "Do not open validationManifest before validate-transferability.",
+    "Do not open sealedTestManifest before audit-generalization.",
+    "Do not compare style-inversion-v3 losses numerically with style-inversion-v2 or earlier versions."
+  ],
+  "feedbackFiles": [
+    "targets/editorial-anime-poster-001/feedback/feedback-0001.json"
+  ],
+  "lossFunctionVersion": "style-inversion-v3",
+  "maxGeneralizationGap": 0.1,
+  "maxRefinementRounds": 3,
+  "optionalInstructions": {},
+  "parentTrainDir": "train-0010",
+  "requestedWork": "Continue style-prompt inversion from train-0010. Preserve its successful feedback-driven semantic-region and typography policy, improve the still-high clothing treatment loss without changing source garments, and correct the recorded effective-prompt provenance and loss-arithmetic defects. Use train-0010 evidence as research input but require a new one-shot sealed source.",
+  "sealedTestManifest": "targets/editorial-anime-poster-001/test/sealed-test-0011.json",
+  "sourceReference": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+  "styleComponentMaxLoss": 0.25,
+  "styleReference": "targets/editorial-anime-poster-001/truth/style-reference.png",
+  "targetDir": "targets/editorial-anime-poster-001",
+  "targetLoss": 0.18,
+  "testTargetLoss": 0.32,
+  "testWorstCaseLoss": 0.42,
+  "trainDir": "train-0011",
+  "validationManifest": "targets/editorial-anime-poster-001/validation/sealed-validation-0005.json",
+  "validationTargetLoss": 0.3,
+  "validationWorstCaseLoss": 0.4
+}

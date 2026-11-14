@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "provider": "openai",
+  "model": "built-in-imagegen",
+  "model_version": null,
+  "tool_mode": "image-edit",
+  "output": {
+    "path": "targets/editorial-anime-poster-001/train-0010/test-audit/cases/office-portrait-combined-optional/image.png",
+    "sha256": "86be763f35dcb81b37cf66dbcb02941c17870423ce29f6f378d641b7471851e1",
+    "width": 1024,
+    "height": 1536,
+    "format": "png"
+  },
+  "input_images": [
+    {
+      "role": "source_reference",
+      "path": "targets/editorial-anime-poster-001/inference/oogiri-prompt-only-v2-0001/source.webp",
+      "sha256": "a8cb92edc23638e890924efbac706f16bd0568d0aad8669f47cd11433cde20bf"
+    }
+  ],
+  "prompt_file": "targets/editorial-anime-poster-001/train-0010/test-audit/cases/office-portrait-combined-optional/runtime-generation-prompt.md",
+  "prompt_sha256": "540e3f65f72f6a92b1d579f55443755d2344a4b9997df716b09ad35b478c0149",
+  "seed": null,
+  "provider_parameters": {
+    "case_id": "office-portrait-combined-optional",
+    "optional_instructions": {
+      "pose": "Uncross her arms and have her point confidently upward with one hand.",
+      "composition": "Use a vertical editorial poster composition with the person in the lower two-thirds and clear headline space above.",
+      "text": "STYLE IS RELATIVE",
+      "additional": "Preserve her identity, brown hair, black eyeglasses, black business suit, and white shirt. Apply the learned dialogue and lettering treatment to the supplied text only."
+    },
+    "frozen_final_prompt_file": "targets/editorial-anime-poster-001/train-0010/rounds/round-0001/prompt/prompt.md",
+    "frozen_final_prompt_sha256": "796cf42cadd935d4bb1fe3ce366a02fc307204380ee06fbbbcbfead6582e98e1",
+    "frozen_final_prompt_applied_verbatim": false
+  },
+  "generated_at": "2026-08-14T15:56:08Z",
+  "raw_response_file": null
+}

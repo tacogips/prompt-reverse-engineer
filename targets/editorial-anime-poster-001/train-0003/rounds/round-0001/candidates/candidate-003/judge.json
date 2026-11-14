@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.15,
+    "semantic": 0.02,
+    "composition": 0.04,
+    "color": 0.02,
+    "style": 0.1,
+    "technical": 0.01
+  },
+  "evidence": {
+    "identity": [
+      "The candidate preserves the man's warm tan skin, dark brows, brown almond eyes, straight nose, closed lips, defined jaw, cheek moles, short close sides, unadorned ear, and left-facing three-quarter pose.",
+      "Its crown is much larger and more windblown than the compact source quiff, and the leftward gaze does not rise as clearly as in the person reference."
+    ],
+    "semantic": [
+      "One masculine editorial-anime head-and-shoulders portrait is clearly depicted.",
+      "The candidate does not substitute the style-reference woman's identity or copy her long hair, jewelry, accessories, readable text, logo, watermark, or pseudo-typography."
+    ],
+    "composition": [
+      "The 2:3 vertical poster uses a close portrait with cream negative space, large coral and mustard circles, teal fields, vertical rules, navy blocks, and brush marks.",
+      "Its centered head and nearly level gaze retain less of the upward-left directional energy than the transferable reference composition."
+    ],
+    "color": [
+      "The navy, teal/cyan, coral, mustard-gold, and cream palette is integrated into clean, high-contrast graphic regions."
+    ],
+    "style": [
+      "Crisp ink contours, cel-shaded facial planes, subtle paper grain, flecks, dry brush, and layered original abstract graphics successfully carry the reference's editorial-anime style.",
+      "Hair linework is denser and more repetitive than the reference's restrained hair-following accent lines."
+    ],
+    "technical": [
+      "The face, ear, hairline, collar, and abstract edges are coherent and clean at 1023x1537, with no visible duplication, warping, watermark, logo, or text-like marks."
+    ]
+  },
+  "dominant_differences": [
+    "Reduce and compact the windblown crown.",
+    "Make the gaze subtly upward-left.",
+    "Restrain the repetitive hair-line texture."
+  ],
+  "confidence": 0.94,
+  "provenance_verification": {
+    "candidate_image": "targets/editorial-anime-poster-001/train-0003/rounds/round-0001/candidates/candidate-003/image.png",
+    "recorded_sha256": "4530e173559d2177f0c711c77b8941eb7adef266b2d38a6c27f0e216d51bb09d",
+    "observed_sha256": "4530e173559d2177f0c711c77b8941eb7adef266b2d38a6c27f0e216d51bb09d",
+    "verified": true
+  }
+}

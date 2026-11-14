@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_source_truth_candidate",
+  "loss": {
+    "source_fidelity": 0.14,
+    "semantic": 0.04,
+    "composition": 0.12,
+    "color": 0.09,
+    "style": 0.12,
+    "technical": 0.02
+  },
+  "evidence": {
+    "source_fidelity": [
+      "The candidate keeps one seated young child in the source's right-facing three-quarter view, with a short dark haircut, grey Batman T-shirt, pale blue bottoms, bent right arm, and tiled interior.",
+      "The hairstyle is much larger and more windblown than the source, and the face has a more idealized jaw, nose, and cheek rendering."
+    ],
+    "semantic": [
+      "The result remains the source's single seated child indoors and does not copy the style truth's adult woman, long hair, jewelry, or clothing.",
+      "No newly added readable copy, watermark, or unrelated subject appears."
+    ],
+    "composition": [
+      "The cream field, teal diagonal band, large colored circles, thin rules, and dry-brush strokes establish poster-like organization related to the style truth.",
+      "The wider seated crop and dominant lower body are less aligned with the reference's tall upward-facing bust composition."
+    ],
+    "color": [
+      "The cream, navy, teal, coral, mustard, and gold palette has the reference's contrast hierarchy and integrated color-block treatment."
+    ],
+    "style": [
+      "Cel-shaded illustration, dark contour work, paper grain, splatter, flat geometric fields, and brush accents visibly transfer the editorial anime-poster style.",
+      "The face and shirt have less refined layered ink detail than the reference."
+    ],
+    "technical": [
+      "The anatomy, clothing mark, tile structure, contours, and graphic elements are coherent at original resolution, with no visible corruption, duplicate subject, watermark, or garbled text."
+    ]
+  },
+  "dominant_differences": [
+    "Keep the source haircut's compact silhouette rather than introducing a larger tousled crown.",
+    "Increase fine contour and layered graphic-detail density.",
+    "Bring more upward portrait energy to the preserved source framing."
+  ],
+  "confidence": 0.93,
+  "provenance_verification": {
+    "candidate_image": "targets/editorial-anime-poster-001/train-0006/rounds/round-0002/candidates/candidate-003/image.png",
+    "recorded_sha256": "7f40359bcd93a8aacc26671a84e1ed429df9484ce49f6d82c651cb80c7d7f61c",
+    "observed_sha256": "7f40359bcd93a8aacc26671a84e1ed429df9484ce49f6d82c651cb80c7d7f61c",
+    "verified": true
+  }
+}

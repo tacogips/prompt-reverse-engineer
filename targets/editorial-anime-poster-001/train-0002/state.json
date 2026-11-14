@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "round": 2,
+  "phase": "output",
+  "candidatesPerRound": 4,
+  "maxRefinementRounds": 3,
+  "targetLoss": 0.08,
+  "bestCandidate": "targets/editorial-anime-poster-001/train-0002/rounds/round-0002/candidates/candidate-001",
+  "bestLoss": 0.073,
+  "exitReason": "target_loss_reached",
+  "parentTrainDir": "train-0001",
+  "createdAt": "2026-08-14T03:48:58Z",
+  "updatedAt": "2026-08-14T04:38:17Z",
+  "completedAt": "2026-08-14T04:38:17Z"
+}

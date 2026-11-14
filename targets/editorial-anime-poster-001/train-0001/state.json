@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "round": 1,
+  "phase": "output",
+  "candidatesPerRound": 4,
+  "maxRefinementRounds": 3,
+  "targetLoss": 0.15,
+  "bestCandidate": "targets/editorial-anime-poster-001/train-0001/rounds/round-0001/candidates/candidate-001",
+  "bestLoss": 0.1105,
+  "exitReason": "target_loss_reached",
+  "createdAt": "2026-08-14T03:18:11Z",
+  "updatedAt": "2026-08-14T03:43:22Z",
+  "completedAt": "2026-08-14T03:43:22Z",
+  "verification": {
+    "status": "failed",
+    "verifiedAt": "2026-08-14T03:43:22Z",
+    "diagnostics": [
+      "Required target metadata file is missing: targets/editorial-anime-poster-001/target.json.",
+      "Required immutable truth manifest is missing: targets/editorial-anime-poster-001/truth/manifest.json.",
+      "Judge configuration has no calibration version: judge/config.json sets calibration_suite to null."
+    ]
+  }
+}

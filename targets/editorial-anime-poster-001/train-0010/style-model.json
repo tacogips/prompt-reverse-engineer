@@ -1,0 +1,84 @@
+{
+  "schema_version": 3,
+  "loss_function_version": "style-inversion-v3",
+  "evidence_scope": {
+    "style_truth": "targets/editorial-anime-poster-001/truth/style-reference.png",
+    "source_truth": "targets/editorial-anime-poster-001/input/source-child.jpeg",
+    "style_truth_usage": "analysis_and_judge_only",
+    "generation_constraint": "Generation receives exactly one source_reference image and self-contained prompt text."
+  },
+  "dimensions": {
+    "medium_rendering": {
+      "observations": ["Polished editorial anime illustration", "Opaque crisp poster-print fields", "Clean two- to three-step cel-shaded form planes"],
+      "transferable_rule": "Render source-controlled content as polished editorial anime illustration with crisp opaque cel-shaded print planes, not photorealism or 3D.",
+      "prompt_clauses": ["polished editorial anime poster illustration", "clean opaque flat-to-gently-graded cel-shaded planes", "crisp screen-print-like color separation"],
+      "confidence": 0.96,
+      "leakage_blacklist": ["teacher subject", "teacher pose", "teacher portrait crop", "teacher accessories", "teacher scene"]
+    },
+    "palette_tone": {
+      "observations": ["Warm off-white paper ground", "Deep navy anchors", "Saturated teal, coral, and warm yellow fields", "Sparse muted-gold ornament", "Depth via value grouping rather than photographic gradients"],
+      "transferable_rule": "Use a limited warm-paper, navy, teal, coral, yellow, and muted-gold print relationship with opaque grouping; preserve literal source colors and identity through relative semantic-region treatment.",
+      "prompt_clauses": ["limited graphic relationship of warm off-white paper ground, deep navy anchors, saturated teal, coral, and warm yellow support colors, with restrained matte-gold line-and-dot accents", "Treat each visible source semantic region relatively, never by replacing its literal identity"],
+      "semantic_regions": {
+        "skin": {
+          "observed_relative_behavior": {"value": "light plane with restrained darker warm band", "chroma": "subdued warm relationship against saturated supports", "shading": "clean cel-shadow and narrow highlight", "outline": "selective deep-navy containment"},
+          "source_preserving_transferable_rule": "Preserve the source's literal skin identity; translate only its relative light, shadow, highlight, and contour grouping into graphic cel-shaded planes.",
+          "prompt_clauses": ["render skin as a source-preserved coherent light-to-shadow cel-shaded plane with a restrained warm shadow band, sparse narrow highlight, and selective deep-navy contour", "Never assign a fixed skin tone or change source identity"],
+          "confidence": 0.93,
+          "literal_teacher_color_leakage_exclusions": ["teacher complexion", "teacher facial coloration", "teacher skin hue", "teacher facial features"]
+        },
+        "hair": {
+          "observed_relative_behavior": {"value": "dark grouped mass", "chroma": "limited cool teal/cyan and warm coral accents", "shading": "separated value blocks and rim/strand planes", "outline": "tapered deep-navy contour"},
+          "source_preserving_transferable_rule": "Preserve source hair color, silhouette, arrangement, and identity while grouping its values as a dark mass with restrained cool/warm accent relationships.",
+          "prompt_clauses": ["group hair in its source-preserved silhouette and literal color identity as a dark value mass with restrained cool teal/cyan and warm coral accent planes or rim strands, controlled value blocks, and tapered navy contour", "Do not alter hairstyle, hair color, or hair identity"],
+          "confidence": 0.91,
+          "literal_teacher_color_leakage_exclusions": ["teacher hair color", "teacher hairstyle", "teacher hair silhouette", "teacher strand placement"]
+        },
+        "clothing": {
+          "observed_relative_behavior": {"value": "interlocking dark, pale, and accented planes", "chroma": "selective teal/coral/yellow harmonization", "shading": "simplified folds and facets", "outline": "dark seam and edge anchors"},
+          "source_preserving_transferable_rule": "Preserve source garments and markings while simplifying their existing values and folds into limited-palette print facets, anchored by dark seams and subtle texture.",
+          "prompt_clauses": ["simplify clothing into source-preserved garment shapes and markings using a few interlocking value planes, dark seam and edge anchors, selective teal/coral/warm-yellow harmonizing facets, and subtle print texture", "Do not replace the source outfit, markings, or logos"],
+          "confidence": 0.92,
+          "literal_teacher_color_leakage_exclusions": ["teacher outfit", "teacher garment design", "teacher garment colors", "teacher jewelry", "teacher collar"]
+        }
+      },
+      "confidence": 0.95,
+      "leakage_blacklist": ["teacher complexion", "teacher hair", "teacher outfit", "teacher color-field coordinates", "teacher scene"]
+    },
+    "line_shape": {
+      "observations": ["Variable-weight deep-navy contour", "Sparse tapered fine strokes", "Adaptable circles, panels, rules, diagonals, curved sweeps, dots, and connectors"],
+      "transferable_rule": "Use decisive variable-weight navy ink plus sparse tapered detail and adaptable abstract support forms without copying literal teacher geometry.",
+      "prompt_clauses": ["precise variable-weight deep-navy ink contours that resolve into sparse tapered fine strokes", "adaptable abstract support forms and sparse fine gold orbital lines, dots, and connectors"],
+      "confidence": 0.94,
+      "leakage_blacklist": ["teacher facial linework", "teacher hair strands", "teacher circle positions", "teacher panel geometry", "teacher layout"]
+    },
+    "texture_material": {
+      "observations": ["Visible warm paper ground", "Subtle screen-print grain", "Imperfect overprint edges", "Sparse flecks and dry-brush interruption"],
+      "transferable_rule": "Layer light tactile print texture that preserves legibility and avoids copied mark trajectories or damaged overlays.",
+      "prompt_clauses": ["visible warm paper grain", "restrained screen-print speckling, imperfect overprint edges, sparse paint flecks, and occasional dry-brush sweeps without obscuring source detail"],
+      "confidence": 0.92,
+      "leakage_blacklist": ["teacher brushstroke paths", "teacher splatter coordinates", "teacher paper defects", "teacher scene texture"]
+    },
+    "graphic_language": {
+      "observations": ["Asymmetric editorial balance", "Broad opaque support fields precede focal content", "Sparse fine ornament completes the hierarchy"],
+      "transferable_rule": "Use adaptable asymmetric poster hierarchy and negative-space rhythm around source-controlled content; lettering is conditional on exact caller text.",
+      "prompt_clauses": ["broad opaque abstract fields frame the source-controlled focal content, then sparse fine gold orbital lines, dots, and connectors supply a final ornament layer", "Keep broad support fields firm-edged and opaque, with pale negative space and no copied geometry or placement"],
+      "typography_dialogue": {
+        "conditional": true,
+        "activation": "Only when optional text is supplied; when absent, render no text.",
+        "medium": "High-contrast editorial display ink integrated with the poster-print surface.",
+        "stroke": "Elegant, readable calligraphic/display-like primary stroke with crisp edges and restrained fine ink detail.",
+        "hierarchy": "Supplied exact text is the only lettering content and functions as one restrained display accent.",
+        "orientation": "Adapt orientation for readability; do not use a fixed teacher angle.",
+        "placement_grammar": "Use available negative space or a suitable support field without covering important source content or copying teacher placement.",
+        "ornament": "Sparse fine dot/line ornament may frame supplied text without introducing words.",
+        "prompt_clauses": ["If optional text is supplied, render exactly that verbatim text and no other readable or pseudo-readable text", "Use it as an opt-in high-contrast editorial display accent with elegant readable calligraphic/display-like ink on a suitably dark or saturated support field, adaptive orientation and placement, and sparse fine dot/line ornament", "Do not copy teacher wording, script, language, logo, or text placement"],
+        "confidence": 0.88,
+        "literal_teacher_wording_language_exclusions": ["teacher wording", "teacher script", "teacher language", "teacher text placement", "teacher logo"]
+      },
+      "confidence": 0.93,
+      "leakage_blacklist": ["teacher readable text", "teacher language", "teacher exact layout", "teacher crop", "teacher objects", "teacher scene"]
+    }
+  },
+  "global_leakage_blacklist": ["teacher subject and identity", "teacher objects", "teacher readable text and language", "teacher pose", "teacher crop", "teacher exact composition", "teacher concrete layout", "teacher scene", "training-source appearance or content", "held-out source content"]
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": 2,
+  "loss_function_version": "style-inversion-v3",
+  "target_candidate_order": "style_truth_then_candidate",
+  "assessment_scope": "Visible-image assessment only; the style truth supplied reusable style evidence and the source truth supplied content-preservation evidence.",
+  "provenance_check": {
+    "eligible": true,
+    "input_image_roles": [
+      "source_reference"
+    ],
+    "style_or_truth_input_detected": false,
+    "evidence": "generation.json records exactly the source-child JPEG as the sole input image; its recorded SHA-256 matches the source state and the candidate output hash recomputed from saved bytes."
+  },
+  "loss": {
+    "medium_rendering": 0.16,
+    "palette_tone": 0.2,
+    "line_shape": 0.18,
+    "texture_material": 0.17,
+    "graphic_language": 0.17,
+    "source_fidelity": 0.16,
+    "technical": 0.05
+  },
+  "palette_sub_losses": {
+    "overall_palette": 0.17,
+    "skin_treatment": 0.17,
+    "hair_treatment": 0.18,
+    "clothing_treatment": 0.2
+  },
+  "conditional_checks": {
+    "typography_dialogue": {
+      "applicable": false,
+      "loss": null,
+      "spelling_adherence": null,
+      "unrequested_text": false,
+      "evidence": [
+        "No optional exact-text instruction was authorized. The Batman lettering is retained source garment artwork, not added typography."
+      ]
+    }
+  },
+  "evidence": {
+    "medium_rendering": [
+      "Crisp opaque cel planes, dark ink contours, and a warm print ground clearly depart from the photo and carry the target's editorial anime medium.",
+      "The rendering contains more fine hair and face modeling than the simpler bounded poster planes of the style truth."
+    ],
+    "palette_tone": [
+      "Overall palette: coral, teal, warm paper, navy, and gold form a coherent restrained poster system.",
+      "Skin treatment: the visible source complexion is preserved within warm shadow and highlight planes rather than replaced with a teacher-specific hue.",
+      "Hair treatment: the original dark haircut is preserved and framed by navy outlines, with limited accent separation.",
+      "Clothing treatment: shirt color, Batman logo, construction, and seams survive clearly, but gray fold facets dominate and the source-preserving harmonizing accent treatment remains modest."
+    ],
+    "line_shape": [
+      "Navy silhouette, facial, sleeve, and logo contours are decisive; hair includes fine tapered strokes.",
+      "The field-edge brush strokes and ornament are less varied than the target's broader mark vocabulary."
+    ],
+    "texture_material": [
+      "Fine paper grain, distressed brush edges, flecks, and dot screens give the candidate a tactile print surface without covering the Batman mark.",
+      "Overprint imperfections are still more regular and less materially broken than in the style truth."
+    ],
+    "graphic_language": [
+      "Coral field, teal plane, navy brush sweep, gold orbit, dot grid, and open paper form a transferable layered editorial hierarchy.",
+      "The hierarchy is slightly more balanced and centered than the truth's energetic asymmetric support-field rhythm."
+    ],
+    "source_fidelity": [
+      "The child’s face direction, hairstyle, gray shirt, Batman marking, bent arm, and trousers remain recognizable.",
+      "The source surroundings and crop are simplified into poster fields, so not all unspecified scene context is retained."
+    ],
+    "technical": [
+      "Contours, anatomy, clothing folds, and the existing graphic mark are clean and legible, with no unrequested text or unsafe addition."
+    ]
+  },
+  "dominant_transferable_differences": [
+    "Use a more asymmetrical support-field rhythm and stronger variation in print interruption.",
+    "Increase only the fold-following, source-relative clothing accent hierarchy; do not alter the gray shirt or Batman mark.",
+    "Compress facial and hair micro-modeling into fewer larger cel planes."
+  ],
+  "confidence": 0.88
+}

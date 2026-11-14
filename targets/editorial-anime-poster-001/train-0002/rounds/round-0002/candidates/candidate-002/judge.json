@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.14,
+    "semantic": 0.01,
+    "composition": 0.055,
+    "color": 0.02,
+    "style": 0.125,
+    "technical": 0.01
+  },
+  "evidence": {
+    "identity": [
+      "The candidate preserves the intended man's tan skin, thick brows, almond eyes, straight nose, closed lips, jaw, visible ear, short dark close-sided hair, and left-facing three-quarter orientation.",
+      "The face is smoother and slightly more idealized than the photo, its jaw and nose read less individual, and the enlarged swept hair obscures the source's compact haircut silhouette."
+    ],
+    "semantic": [
+      "The image visibly contains one masculine editorial anime poster portrait.",
+      "There is no visible feminine source identity, long hair, jewelry, accessory, logo, watermark, or readable/pseudo-readable text."
+    ],
+    "composition": [
+      "A vertical close portrait sits with a coral disk, mustard upper disk, cream field, teal edges, vertical rules, navy blocks, and dry-brush marks.",
+      "The centered, level-eyed framing has less of the style truth's upward directional energy."
+    ],
+    "color": [
+      "Navy, teal, coral, mustard, cream, and muted gold are all visibly integrated in crisp, high-contrast areas.",
+      "The distribution is slightly more uniform and less layered than the style truth."
+    ],
+    "style": [
+      "The image uses clear dark contours, cel-shaded planes, coloured hair accents, disks, rules, paint flecks, brush gestures, and subtle paper grain.",
+      "Compared with the style truth, the linework is heavier and more uniform, hair flyaways are less delicately integrated, and the garment lacks its fine layered graphic complexity."
+    ],
+    "technical": [
+      "The 1023x1537 image has coherent eyes, ear, hairline, neck, and collar, with clean edges and no visible text-like artifacts, watermark, or logo."
+    ]
+  },
+  "dominant_differences": [
+    "Restore more individual source-face structure.",
+    "Reduce the oversized hair silhouette.",
+    "Use finer, more varied contour and garment-line detail."
+  ],
+  "confidence": 0.93
+}

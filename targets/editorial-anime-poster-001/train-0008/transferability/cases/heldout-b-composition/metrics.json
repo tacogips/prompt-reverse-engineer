@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "case_id": "heldout-b-composition",
+  "case_type": "composition",
+  "applicable_components": ["source_fidelity", "style_fidelity", "composition_adherence", "text_adherence", "technical"],
+  "style_sub_losses": {"medium_rendering": 0.14, "palette_tone": 0.12, "line_shape": 0.19, "texture_material": 0.14, "graphic_language": 0.19},
+  "loss": {"total": 0.046, "source_fidelity": 0.03, "style_fidelity": 0.16, "composition_adherence": 0.02, "text_adherence": 0.0, "technical": 0.02},
+  "assertions_passed": true,
+  "failed_assertions": [],
+  "style_component_ceiling": 0.25,
+  "style_component_ceiling_passed": true,
+  "raw_judge_file": "judge.json"
+}

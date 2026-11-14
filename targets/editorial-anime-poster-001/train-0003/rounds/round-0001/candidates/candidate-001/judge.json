@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "comparison_order": "style_truth_person_truth_candidate",
+  "loss": {
+    "identity": 0.17,
+    "semantic": 0.02,
+    "composition": 0.04,
+    "color": 0.02,
+    "style": 0.1,
+    "technical": 0.01
+  },
+  "evidence": {
+    "identity": [
+      "The candidate retains the reference man's warm tan skin, thick dark brows, brown almond eyes, prominent straight nose, closed medium-full lips, lean jaw, cheek moles, unadorned ear, and left-facing three-quarter pose.",
+      "Its black hair is substantially taller, wider, and more windblown than the person reference's compact swept-up quiff, and the gaze reads level-left rather than distinctly upward-left."
+    ],
+    "semantic": [
+      "It is one masculine editorial-anime head-and-shoulders poster portrait with no second person.",
+      "It does not use the style-reference woman's face, long hair, jewelry, readable text, logo, watermark, or pseudo-typography."
+    ],
+    "composition": [
+      "The vertical 2:3 frame contains a dominant close portrait, cream negative space, large coral and mustard disks, teal fields, thin vertical rules, navy blocks, and dry-brush movement.",
+      "The candidate places the man more centrally and with less upward directional energy than the transferable reference arrangement."
+    ],
+    "color": [
+      "Deep navy, teal, coral, mustard, gold, and cream appear as clean high-contrast poster regions matching the transferable palette distribution."
+    ],
+    "style": [
+      "Crisp dark ink contours, flat cel-shaded planes, layered disks and rules, dry-brush marks, flecks, and paper-like grain visibly reproduce the editorial-anime treatment.",
+      "The dense hair rendering is more uniformly scratchy and the geometric garment is simpler than the style truth's more varied fine-line layering."
+    ],
+    "technical": [
+      "At 1023x1537, face, ear, collar, and graphic edges are coherent and clean, with no visible duplication, warping, watermark, logo, or text-like marks."
+    ]
+  },
+  "dominant_differences": [
+    "Reduce the quiff's windblown height and width to the compact source silhouette.",
+    "Shift the leftward gaze subtly upward.",
+    "Use more varied fine-line detail rather than uniform hair scratches."
+  ],
+  "confidence": 0.94,
+  "provenance_verification": {
+    "candidate_image": "targets/editorial-anime-poster-001/train-0003/rounds/round-0001/candidates/candidate-001/image.png",
+    "recorded_sha256": "a8605c50823d949f7bdf6e9ec87a01a600e521782fdb263f16713b9d2149d3f7",
+    "observed_sha256": "a8605c50823d949f7bdf6e9ec87a01a600e521782fdb263f16713b9d2149d3f7",
+    "verified": true
+  }
+}

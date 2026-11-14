@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "feedback_id": "feedback-0001",
+  "resolved_at": "2026-08-14T15:27:47Z",
+  "items": [
+    {
+      "id": "skin-color-treatment",
+      "disposition": "implemented",
+      "teacher_evidence": "Visible skin-like planes are organized as a light warm plane with restrained warm shadow, narrow highlights, and selective deep-navy contour against saturated print fields.",
+      "source_preserving_rule": "Preserve literal source skin identity; translate only relative value, chroma restraint, cel-shadow/highlight, and contour behavior.",
+      "affected_style_model_path": "dimensions.palette_tone.semantic_regions.skin",
+      "exact_prompt_clauses": ["render skin as a source-preserved coherent light-to-shadow cel-shaded plane with a restrained warm shadow band, sparse narrow highlight, and selective deep-navy contour", "Never assign a fixed skin tone or change source identity"],
+      "validation_probe": "Authorized frozen held-out person baseline with visible skin; persist skin_treatment sub-loss and set palette_tone to the maximum of all palette sub-losses."
+    },
+    {
+      "id": "hair-color-treatment",
+      "disposition": "implemented",
+      "teacher_evidence": "Hair-like mass is a deep ink value group with restrained cool teal/cyan and warm coral accent planes, tapered navy containment, and sparse fine strands.",
+      "source_preserving_rule": "Preserve literal source hair color, silhouette, arrangement, and identity while applying relative dark mass grouping, controlled accents, and contour behavior.",
+      "affected_style_model_path": "dimensions.palette_tone.semantic_regions.hair",
+      "exact_prompt_clauses": ["group hair in its source-preserved silhouette and literal color identity as a dark value mass with restrained cool teal/cyan and warm coral accent planes or rim strands, controlled value blocks, and tapered navy contour", "Do not alter hairstyle, hair color, or hair identity"],
+      "validation_probe": "Authorized frozen held-out person baseline with visible hair; persist hair_treatment sub-loss independently and prevent masking through max aggregation."
+    },
+    {
+      "id": "clothing-color-treatment",
+      "disposition": "implemented",
+      "teacher_evidence": "Garment-like areas resolve into interlocking pale, dark, teal, coral, and warm-yellow print facets separated by clear dark seams and light grain.",
+      "source_preserving_rule": "Preserve source garments and markings while simplifying existing folds and values into limited-palette planes, dark seam anchors, and subtle print texture.",
+      "affected_style_model_path": "dimensions.palette_tone.semantic_regions.clothing",
+      "exact_prompt_clauses": ["simplify clothing into source-preserved garment shapes and markings using a few interlocking value planes, dark seam and edge anchors, selective teal/coral/warm-yellow harmonizing facets, and subtle print texture", "Do not replace the source outfit, markings, or logos"],
+      "validation_probe": "Authorized frozen held-out person baseline with visible clothing; persist clothing_treatment sub-loss independently and prevent masking through max aggregation."
+    },
+    {
+      "id": "typography-dialogue-treatment",
+      "disposition": "implemented",
+      "teacher_evidence": "Visible lettering is a restrained high-contrast editorial display accent with elegant thin strokes, adaptable support-field placement, and sparse line/dot ornament.",
+      "source_preserving_rule": "Only caller-supplied exact text authorizes lettering; preserve spelling and render no other readable or pseudo-readable text, without copying teacher wording or language.",
+      "affected_style_model_path": "dimensions.graphic_language.typography_dialogue",
+      "exact_prompt_clauses": ["If optional text is supplied, render exactly that verbatim text and no other readable or pseudo-readable text", "Use it as an opt-in high-contrast editorial display accent with elegant readable calligraphic/display-like ink on a suitably dark or saturated support field, adaptive orientation and placement, and sparse fine dot/line ornament", "Do not copy teacher wording, script, language, logo, or text placement"],
+      "validation_probe": "Authorized frozen held-out exact-text case; score conditional typography_dialogue separately from spelling adherence and fail teacher-wording leakage or unrequested text."
+    }
+  ]
+}
